@@ -1,0 +1,5 @@
+# InCitta — https://www.incitta.eu
+User-agent: *
+Allow: /
+
+Sitemap: https://www.incitta.eu/sitemap.xml

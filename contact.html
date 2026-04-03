@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+ <title>Contactez-nous InCitta</title>
+
+ <!-- ✅ Favicon : attention, ton chemin actuel pointe vers ../Site_InCitta/... (souvent casse en prod) -->
+ <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.png">
+
+ <link rel="stylesheet" href="styles.css">
+ <style>
+.logo-img{max-height:48px;width:auto;height:auto;display:block}
+
+/* Réduire les espaces au-dessus du bloc formulaire */
+.contact-page{margin-top:0;padding-top:0;}
+.contact-grid{margin-top:0;padding-top:0;}
+.contact-block.form-block{margin-top:0;padding-top:0;padding-left:1rem;padding-right:1rem;padding-bottom:1rem;}
+/* Add comfortable block-content padding */
+.block-content{
+  padding: 1rem 0.25rem 0.25rem;
+}
+
+#contactForm{
+  margin-top: 1rem;
+}
+.block-header{margin-top:0;padding-top:0;}
+
+/* Centrer verticalement le texte d'introduction */
+.block-intro{padding:1.5rem 0; display:flex; align-items:center;}
+
+/* FAQ (contact) : conteneur parent */
+.faq-section .container {
+  background: linear-gradient(135deg, rgba(210, 154, 5, 0.05), rgba(124, 42, 0, 0.05));
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.faq-grid .faq-item {
+  border-radius: 35px;
+  overflow: hidden;
+  padding: 1.1rem;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   Contact – harmonisation design
+   ========================= */
+.contact-block.form-block{
+  border-radius: 18px;
+}
+
+.block-header{
+  border-radius: 18px !important;
+  background: linear-gradient(90deg, var(--primary-2), var(--accent)) !important;
+  box-shadow: 0 16px 46px rgba(11,107,107,0.18);
+}
+
+.block-header h3{
+  letter-spacing: -0.01em;
+}
+
+.block-intro{
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(5,59,59,0.14);
+  border-radius: 16px;
+  padding: 1rem 1rem;
+}
+
+.block-intro a{
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+#submitBtn{ margin-top: .35rem; }
+
+/* FAQ – grille premium */
+.faq-section .container{
+  background: rgba(255,255,255,0.70);
+  border: 1px solid rgba(5,59,59,0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.faq-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 800px){
+  .faq-grid{ grid-template-columns: 1fr; }
+}
+
+.faq-grid .faq-item{
+  border-radius: 18px;
+  border: 1px solid rgba(5,59,59,0.12);
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  margin-bottom: 0;
+}
+
+.faq-grid .faq-item:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(11,107,107,0.22);
+}
+
+.faq-grid .faq-item h3{
+  margin-top: 0;
+  color: var(--primary);
+}
+ </style>
+
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+ <!-- PWA Meta Tags -->
+ <link rel="manifest" href="manifest.json">
+ <meta name="theme-color" content="#003333">
+ <meta name="mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="default">
+ <meta name="apple-mobile-web-app-title" content="InCitta">
+
+ <!-- SEO Meta Tags -->
+ <meta name="description" content="Contactez InCitta — cabinet d'études en aménagement du territoire pour demandes de missions, concertation et évaluation.">
+ <meta name="keywords" content="contact, InCitta, aménagement du territoire, concertation, évaluation">
+ <link rel="canonical" href="https://www.incitta.eu/contact.html">
+
+ <!-- Open Graph -->
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.InCitta.eu/contact.html">
+ <meta property="og:title" content="Contact — InCitta (cabinet d'études)">
+ <meta property="og:description" content="Contactez InCitta pour des missions en aménagement, concertation et évaluation.">
+ <meta property="og:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.png">
+ <meta property="og:locale" content="fr_FR">
+ <meta property="og:site_name" content="InCitta">
+
+ <!-- Twitter Card -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:url" content="https://www.InCitta.eu/contact.html">
+ <meta name="twitter:title" content="Contact InCitta">
+ <meta name="twitter:description" content="Contactez InCitta pour des demandes de mission, concertation, AMO/AMU et évaluation.">
+ <meta name="twitter:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.png">
+
+ <!-- Données structurées Schema.org -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "InCitta",
+ "url": "https://www.incitta.eu",
+ "telephone": "",
+ "image": "https://www.incitta.eu/assets/Logo/Logo InCitta.png"
+ }
+ </script>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [{
+ "@type": "ListItem",
+ "position": 1,
+ "name": "Accueil",
+"item": "https://www.incitta.eu/"
+ },{
+"@type": "ListItem",
+"position": 2,
+"name": "Contact",
+"item": "https://www.incitta.eu/contact.html"
+ }]
+ }
+ </script>
+</head>
+
+<body>
+ <!-- Navigation -->
+ <nav class="navbar">
+  <div class="nav-container">
+   <div class="nav-logo">
+    <a href="index.html" aria-label="Accueil">
+     <img src="assets/Logo/Logo InCitta.png" alt="Logo InCitta" class="logo-img">
+    </a>
+   </div>
+
+   <ul class="nav-menu">
+    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+    <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
+    <li class="nav-item"><a href="synergies.html" class="nav-link">Synergies</a></li>
+    <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+    <li class="nav-item"><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+   </ul>
+
+   <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+   </button>
+  </div>
+ </nav>
+
+ <!-- Section Contact -->
+ <section class="contact-page">
+  <div class="container">
+   <div class="contact-grid" style="display:block;">
+
+    <div class="contact-block form-block">
+     <div class="block-header" style="padding:2.5rem 1.5rem;display:flex;align-items:center;justify-content:center;text-align:center;">
+      <h3 style="color:#ffffff;margin:0;">
+       <i class="fas fa-envelope" style="margin-right:0.6rem;color:#ffffff;"></i>
+       Envoyez-nous un mail ou un message
+      </h3>
+     </div>
+
+     <div class="block-intro" style="margin:1rem 0 1rem 0;">
+      <p style="margin:0;font-size:calc(1rem + 2pt);">
+       Vous pouvez nous contacter via le formulaire ci-dessous ou directement par email :
+       <a href="mailto:contact@incitta.eu">contact@incitta.eu</a>
+      </p>
+     </div>
+
+     <div class="block-content">
+      <div class="form-inner" style="padding: 0.75rem 0.75rem 0;">
+       <form id="contactForm" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+       <div style="display: none;">
+        <label>Ne remplissez pas ce champ : <input name="bot-field"></label>
+       </div>
+       <input type="hidden" name="form-name" value="contact">
+
+       <div class="form-row">
+        <div class="form-group">
+         <label for="firstName">Prénom *</label>
+         <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+         <label for="lastName">Nom *</label>
+         <input type="text" id="lastName" name="lastName" required>
+        </div>
+       </div>
+
+       <div class="form-row">
+        <div class="form-group">
+         <label for="email">Email *</label>
+         <input type="email" id="email" name="email" required>
+        </div>
+       </div>
+
+       <div class="form-group">
+        <label for="subject">Sujet *</label>
+        <select id="subject" name="subject" required>
+         <option value="">Choisir un sujet</option>
+         <option value="mission">Demande d'accompagnement / mission</option>
+         <option value="concertation">Concertation / ateliers</option>
+         <option value="evaluation">Évaluation / suivi</option>
+         <option value="cartographie">Cartographie / supports</option>
+         <option value="other">Autre</option>
+        </select>
+       </div>
+
+       <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" placeholder="Décrivez votre demande (objectifs, périmètre, échéances, contexte)..." required></textarea>
+       </div>
+
+       <div id="formSuccess" class="form-message success" style="display: none;">
+        <i class="fas fa-check-circle"></i>
+        <span>Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.</span>
+       </div>
+
+       <div id="formError" class="form-message error" style="display: none;">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>Une erreur s'est produite. Veuillez réessayer plus tard ou nous contacter par email.</span>
+       </div>
+
+       <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+        <i class="fas fa-paper-plane"></i>
+        Envoyer le message
+       </button>
+      </form>
+     </div>
+    </div>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Section FAQ -->
+ <section class="faq-section">
+  <div class="container">
+   <div class="faq-grid">
+    <div class="faq-item">
+     <h3>Quels types de missions proposez-vous ?</h3>
+     <p>AMO/AMU, concertation (ateliers, réunions), diagnostics territoriaux, cartographie, évaluation et appui au pilotage de projets.</p>
+    </div>
+    <div class="faq-item">
+     <h3>Travaillez-vous avec les collectivités ?</h3>
+     <p>Oui : communes, intercommunalités, syndicats, bailleurs, associations et partenaires locaux. L’intervention s’adapte à votre gouvernance et vos contraintes.</p>
+    </div>
+    <div class="faq-item">
+     <h3>Intervenez-vous partout en France ?</h3>
+     <p>Oui. Les échanges amont peuvent se faire à distance, puis des temps en présentiel sont planifiés selon les besoins (ateliers, réunions, visites de terrain).</p>
+    </div>
+    <div class="faq-item">
+     <h3>Quels livrables puis-je attendre ?</h3>
+     <p>Note de cadrage, diagnostic, cartographies, supports de restitution, plan d’actions, indicateurs de suivi, bilans et recommandations opérationnelles.</p>
+    </div>
+    <div class="faq-item">
+     <h3>Quels sont vos délais habituels ?</h3>
+     <p>Après un premier échange, vous recevez une proposition (périmètre, méthode, calendrier, budget) rapidement. Les délais dépendent de la taille du territoire et du nombre de temps participatifs.</p>
+    </div>
+    <div class="faq-item">
+     <h3>Comment obtenir un devis ?</h3>
+     <p>Décrivez votre besoin via le formulaire (objectifs, périmètre, échéances). Vous pouvez aussi nous écrire directement : <a href="mailto:contact@incitta.eu">contact@incitta.eu</a>.</p>
+    </div>
+    <div class="faq-item">
+     <h3>Proposez-vous des restitutions publiques ?</h3>
+     <p>Oui : ateliers, réunions publiques, comités techniques/pilotage, restitutions avec supports clairs et pédagogiques (carto, infographies, synthèses).</p>
+    </div>
+    <div class="faq-item">
+     <h3>Confidentialité et traitement des données</h3>
+     <p>Les informations transmises servent uniquement au traitement de votre demande. Aucun usage commercial ni diffusion à des tiers.</p>
+    </div>
+   </div>
+
+   <div style="height:1cm;"></div>
+  </div>
+ </section>
+
+<footer class="footer footer--site">
+  <div class="container">
+    <div class="footer-site-inner">
+      <img src="assets/Logo/LogoPied.png" alt="InCitta" class="footer-logo">
+      <p class="footer-site-copy">&copy; 2026 InCitta. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

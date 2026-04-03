@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+ <title>Concertation et animation de démarches participatives — InCitta</title>
+ <meta name="description" content="Animation de démarches participatives et concertation citoyenne : méthodes, médiation et outils pour les collectivités. Expertise InCitta en ingénierie territoriale.">
+ <meta name="robots" content="index, follow, max-image-preview:large">
+ <link rel="canonical" href="https://www.incitta.eu/demarche-participative.html">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.incitta.eu/demarche-participative.html">
+ <meta property="og:title" content="Concertation et démarches participatives — InCitta">
+ <meta property="og:description" content="Accompagnement des collectivités en animation participative, médiation et concertation territoriale.">
+ <meta property="og:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
+ <meta property="og:locale" content="fr_FR">
+ <meta property="og:site_name" content="InCitta">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Démarches participatives — InCitta">
+ <meta name="twitter:description" content="Concertation citoyenne et animation de démarches participatives pour projets territoriaux.">
+ <meta name="twitter:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
+ <script type="application/ld+json">
+ {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.incitta.eu/"},
+   {"@type":"ListItem","position":2,"name":"Démarche participative","item":"https://www.incitta.eu/demarche-participative.html"}
+ ]}
+ </script>
+ <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.png">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css">
+ <style>
+ .logo-img{max-height:48px;width:auto;height:auto;display:block}
+ .main-read{
+  width: min(100% - 40px, 1100px);
+  margin: 1.2rem auto 2rem;
+  padding: 1.6rem;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(5,59,59,0.12);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+.page-intro {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(5, 59, 59, 0.1);
+}
+.page-intro .container {
+  max-width: 100%;
+  padding: 0;
+}
+.page-back-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin-bottom: 1rem;
+}
+.page-back-bar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-2);
+  text-decoration: none;
+  padding: 0.35rem 0.15rem 0.35rem 0;
+  border-radius: 8px;
+  transition: color 0.18s ease, transform 0.15s ease;
+}
+.page-back-bar__link:hover {
+  color: var(--primary);
+  transform: translateX(-2px);
+}
+.page-back-bar__link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.page-back-bar__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+.page-back-bar__sep {
+  color: rgba(5, 59, 59, 0.35);
+  font-weight: 600;
+  user-select: none;
+}
+.page-back-bar__here {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.page-title{
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  color: var(--primary);
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+ .page-lead{font-size:1.05rem;line-height:1.65;color:#000;font-weight:600}
+ .content-wrap { max-width: 1200px; margin: 0 auto; padding: 0 4px; box-sizing: border-box; }
+ .content-grid{display:flex;gap:1.25rem;align-items:flex-start;max-width:1200px;margin:0 auto;padding:0}
+ .content-grid--single .content-text{flex:1;min-width:0;max-width:100%}
+ .content-text{flex:1}
+ @media (max-width:900px){
+   .content-grid{flex-direction:column;align-items:stretch}
+ }
+ /* Espacement et mise en forme des titres */
+ .main-read h2{font-size:20px;color:var(--primary);margin-top:1.25rem}
+ .main-read h3{margin-top:2rem;margin-bottom:0.85rem;line-height:1.3;font-size:1.05rem;color:var(--primary);font-weight:800}
+ .content-text p{ text-align:justify; text-justify:inter-word; font-family:'Inter',system-ui,-apple-system,sans-serif; font-weight:300; color:#000; line-height:1.65; }
+ .page-back-row {
+   margin-top: 2.25rem;
+   padding-top: 1.5rem;
+   border-top: 1px solid rgba(5, 59, 59, 0.1);
+   display: flex;
+   justify-content: center;
+ }
+ .page-back-btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5rem;
+   min-height: 48px;
+   padding: 0 1.35rem;
+   border-radius: 999px;
+   border: 2px solid var(--primary-2);
+   background: rgba(255, 255, 255, 0.95);
+   color: var(--primary-2) !important;
+   font-family: 'Inter', system-ui, sans-serif;
+   font-size: 0.95rem;
+   font-weight: 600;
+   text-decoration: none;
+   box-shadow: 0 4px 18px rgba(5, 59, 59, 0.08);
+   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+ }
+ .page-back-btn:hover {
+   background: var(--primary);
+   color: #fff !important;
+   border-color: var(--primary);
+   transform: translateY(-2px);
+   box-shadow: 0 10px 28px rgba(5, 59, 59, 0.14);
+ }
+ .page-back-btn:focus-visible {
+   outline: none;
+   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 0 0 6px rgba(2, 102, 102, 0.35);
+ }
+ .page-back-btn__icon {
+   width: 1.15rem;
+   height: 1.15rem;
+   flex-shrink: 0;
+ }
+
+ /* Cards – niveaux de participation */
+.levels-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 0.25rem;
+}
+@media (max-width: 900px){
+  .levels-grid{ grid-template-columns: 1fr; }
+}
+
+.level-card{
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(5,59,59,0.12);
+  border-radius: 18px;
+  padding: 1rem 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.level-card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(11,107,107,0.22);
+}
+
+.level-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: .75rem;
+  margin-bottom: .5rem;
+}
+
+.level-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(2,102,102,0.14);
+  border: 1px solid rgba(5,59,59,0.14);
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.level-title{
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+
+.level-sub{
+  margin: .1rem 0 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.level-card p{
+  margin: .5rem 0 0;
+  color: #000;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar" aria-label="Navigation principale">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="index.html" class="nav-brand" aria-label="InCitta">
+        <img src="assets/Logo/Logo InCitta.png" alt="InCitta" class="logo-img">
+      </a>
+    </div>
+
+    <ul class="nav-menu" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+      <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
+      <li class="nav-item"><a href="synergies.html" class="nav-link">Synergies</a></li>
+      <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</nav>
+
+<main class="main-read">
+  <section class="page-intro">
+    <div class="container">
+      <div class="page-back-bar">
+        <a href="index.html" class="page-back-bar__link" aria-label="Retour à l’accueil InCitta">
+          <svg class="page-back-bar__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Accueil
+        </a>
+        <span class="page-back-bar__sep" aria-hidden="true">/</span>
+        <span class="page-back-bar__here">Démarche participative</span>
+      </div>
+      <h1 class="page-title">Concertation et animation de démarches participatives pour un renouvellement de l'action publique</h1>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="content-wrap">
+      <div class="content-grid content-grid--single">
+        <div class="content-text">
+          <p class="page-lead">Démarches participatives, médiation et concertation pour renouveler l’action publique et renforcer l’appropriation des projets par les habitants et les acteurs du territoire.</p>
+
+          <p>L’élaboration de projets de territoire, la mise en place de démarches de contractualisation, ainsi que la définition de stratégies de planification à différentes échelles constituent des leviers essentiels pour accompagner la <strong>transition écologique</strong>, <strong>sociale</strong> et <strong>économique</strong> des territoires. Dans un contexte de mutations profondes (changement climatique, transformations démographiques, fractures territoriales), ces démarches doivent être pensées de manière <strong>transversale</strong>, <strong>participative</strong> et <strong>prospective</strong>, en intégrant les enjeux du <strong>développement durable</strong> et de la <strong>résilience</strong>.</p>
+
+          <h3>Les dispositifs de démocratie participative</h3>
+          <p>Les dispositifs de démocratie participative se déclinent selon plusieurs niveaux d’implication des citoyens, chacun correspondant à un degré spécifique d’ouverture du processus décisionnel. Cette gradation permet de distinguer les démarches en fonction de leur ambition démocratique et de leur portée concrète dans l’élaboration des politiques publiques. On peut identifier cinq principaux niveaux de participation :</p>
+
+          <h3>Les différents niveaux de la <strong>participation citoyenne</strong></h3>
+
+          <div class="levels-grid">
+  <article class="level-card">
+    <div class="level-head">
+      <div>
+        <h4 class="level-title"><span class="level-badge">1</span> <strong>Information</strong></h4>
+        <div class="level-sub">Un préalable indispensable</div>
+      </div>
+    </div>
+    <p>L’information constitue le socle de toute démarche participative. Elle transmet aux citoyens les éléments nécessaires à la compréhension d’un projet ou d’une politique publique. Essentielle à la <strong>transparence</strong> de l’action publique, elle reste toutefois <strong>unilatérale</strong> (sans interaction ni rétroaction).</p>
+  </article>
+
+  <article class="level-card">
+    <div class="level-head">
+      <div>
+        <h4 class="level-title"><span class="level-badge">2</span> <strong>Consultation</strong></h4>
+        <div class="level-sub">Recueillir les avis sans engagement formel</div>
+      </div>
+    </div>
+    <p>La consultation sollicite l’avis des citoyens (questionnaires, enquêtes, plateformes en ligne, appels à contributions). Elle permet d’identifier <strong>attentes</strong> et <strong>propositions</strong>, sans contraindre formellement les décideurs à en tenir compte.</p>
+  </article>
+
+  <article class="level-card">
+    <div class="level-head">
+      <div>
+        <h4 class="level-title"><span class="level-badge">3</span> <strong>Concertation</strong></h4>
+        <div class="level-sub">Instaurer le dialogue et l’échange d’arguments</div>
+      </div>
+    </div>
+    <p>La concertation engage un dialogue entre porteurs de projet, décideurs et citoyens via <strong>ateliers</strong>, <strong>forums</strong>, <strong>jurys citoyens</strong> ou réunions publiques interactives. Elle enrichit la conception des projets sans conférer nécessairement un pouvoir de codécision.</p>
+  </article>
+
+  <article class="level-card">
+    <div class="level-head">
+      <div>
+        <h4 class="level-title"><span class="level-badge">4</span> <strong>Co‑construction</strong></h4>
+        <div class="level-sub">Partager la responsabilité de la décision</div>
+      </div>
+    </div>
+    <p>La co‑construction suppose une collaboration active entre institutions et citoyens, dès les premières étapes et tout au long du projet. Elle favorise des <strong>solutions partagées</strong>, adaptées au contexte local et mieux <strong>appropriées</strong> par les habitants.</p>
+  </article>
+
+  <article class="level-card">
+    <div class="level-head">
+      <div>
+        <h4 class="level-title"><span class="level-badge">5</span> <strong>Participation décisionnelle</strong></h4>
+        <div class="level-sub">Implication directe dans l’action publique</div>
+      </div>
+    </div>
+    <p>À ce stade, les citoyens peuvent orienter ou déterminer des choix publics : <strong>budgets participatifs</strong>, conseils de quartier disposant de pouvoirs, ou participation citoyenne aux <strong>comités de pilotage</strong>.</p>
+  </article>
+</div>
+
+          <p>Selon la typologie du projet, des réunions publiques, permanences et registres en mairie d'enquête publique peuvent être obligatoires. Toutefois, de nombreux outils sont mobilisables pour renforcer la participation citoyenne.</p>
+
+          <h3>Et concrètement, comment le mettre en œuvre ?</h3>
+          <p><strong>L'urbanisme transitoire</strong><br>
+          Investir temporairement des espaces en attente de transformation pour prévenir la vacance, tester de nouveaux usages et impliquer les habitants dans des projets co-construits.</p>
+
+          <p><strong>L'urbanisme tactique</strong><br>
+          Expérimentations urbaines à petite échelle menées avec les habitants pour tester aménagements et usages avant intégration définitive.</p>
+
+          <p><strong>L'assistance à Maîtrise d’Usage (AMU)</strong><br>
+          Complément de la MOA et MOE, l’AMU intègre les usagers via méthodes participatives (ateliers, balades urbaines, entretiens) pour garantir une co-construction continue.</p>
+
+          <h3>Outils mobilisables</h3>
+          <p><strong>Psychanalyse en concertation :</strong> explorer représentations, affects collectifs et blocages émotionnels (récits métaphoriques, dessins, jeux de rôle).</p>
+          <p><strong>Cartes postales du futur :</strong> imaginer un avenir souhaité et stimuler la projection citoyenne.</p>
+          <p><strong>Carte postale à réaction :</strong> support visuel provocant prise de position et réflexion.</p>
+          <p><strong>Cartographie participative :</strong> co-production de cartes mentales ou sensibles par les habitants.</p>
+          <p><strong>Jeux de plateau / jeux de rôle :</strong> mobiliser la participation par des formats ludiques.</p>
+          <p><strong>Travail de mémoire :</strong> mise en récit du territoire via portraits, archives et diffusion en scénographies valorisant les contributions.</p>
+
+        </div>
+      </div>
+      <div class="page-back-row">
+        <a href="index.html" class="page-back-btn" aria-label="Retour à l’accueil InCitta">
+          <svg class="page-back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Retour à l’accueil
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 'Autres ressources' supprimée -->
+</main>
+
+<footer class="footer footer--site">
+  <div class="container">
+    <div class="footer-site-inner">
+      <img src="assets/Logo/LogoPied.png" alt="InCitta" class="footer-logo">
+      <p class="footer-site-copy">&copy; 2026 InCitta. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </div>
+</footer>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

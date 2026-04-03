@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+ <title>Programmation territoriale — InCitta</title>
+ <meta name="description" content="Programmation et ingénierie territoriale : schémas, documents de planification, cohérence des projets publics. Accompagnement méthodologique par le cabinet InCitta.">
+ <meta name="robots" content="index, follow, max-image-preview:large">
+ <link rel="canonical" href="https://www.incitta.eu/programmation-territoriale.html">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.incitta.eu/programmation-territoriale.html">
+ <meta property="og:title" content="Programmation territoriale — InCitta">
+ <meta property="og:description" content="Accompagnement en programmation et planification territoriale pour collectivités et acteurs publics.">
+ <meta property="og:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
+ <meta property="og:locale" content="fr_FR">
+ <meta property="og:site_name" content="InCitta">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Programmation territoriale — InCitta">
+ <meta name="twitter:description" content="Ingénierie et programmation territoriale : méthodes et missions d’études.">
+ <meta name="twitter:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
+ <script type="application/ld+json">
+ {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+   {"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.incitta.eu/"},
+   {"@type":"ListItem","position":2,"name":"Programmation territoriale","item":"https://www.incitta.eu/programmation-territoriale.html"}
+ ]}
+ </script>
+ <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.png">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css">
+ <style>
+ .logo-img{max-height:48px;width:auto;height:auto;display:block}
+ .main-read{
+  width: min(100% - 40px, 1100px);
+  margin: 1.2rem auto 2rem;
+  padding: 1.6rem;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(5,59,59,0.12);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+.page-intro {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(5, 59, 59, 0.1);
+}
+.page-intro .container {
+  max-width: 100%;
+  padding: 0;
+}
+.page-back-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin-bottom: 1rem;
+}
+.page-back-bar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-2);
+  text-decoration: none;
+  padding: 0.35rem 0.15rem 0.35rem 0;
+  border-radius: 8px;
+  transition: color 0.18s ease, transform 0.15s ease;
+}
+.page-back-bar__link:hover {
+  color: var(--primary);
+  transform: translateX(-2px);
+}
+.page-back-bar__link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.page-back-bar__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+.page-back-bar__sep {
+  color: rgba(5, 59, 59, 0.35);
+  font-weight: 600;
+  user-select: none;
+}
+.page-back-bar__here {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.page-title{
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  color: var(--primary);
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.page-lead{font-size:1.05rem;line-height:1.65;color:#000;font-weight:600}
+.content-wrap { max-width: 1200px; margin: 0 auto; padding: 0 4px; box-sizing: border-box; }
+.content-grid{display:flex;gap:1.25rem;align-items:flex-start;max-width:1200px;margin:0 auto;padding:0}
+.content-grid--single .content-text{flex:1;min-width:0;max-width:100%}
+.content-text{flex:1}
+@media (max-width:900px){
+  .content-grid{flex-direction:column;align-items:stretch}
+}
+.main-read h3, .content-text h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.3;
+  font-size: 1.05rem;
+  color: var(--primary);
+  font-weight: 800;
+}
+.content-text p, .page-lead {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.content-text p {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  color: #000;
+  line-height: 1.65;
+}
+.page-back-row {
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(5, 59, 59, 0.1);
+  display: flex;
+  justify-content: center;
+}
+.page-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1.35rem;
+  border-radius: 999px;
+  border: 2px solid var(--primary-2);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--primary-2) !important;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(5, 59, 59, 0.08);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.page-back-btn:hover {
+  background: var(--primary);
+  color: #fff !important;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(5, 59, 59, 0.14);
+}
+.page-back-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 0 0 6px rgba(2, 102, 102, 0.35);
+}
+.page-back-btn__icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+</style>
+</head>
+<body>
+
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html" class="nav-brand" aria-label="InCitta">
+          <img src="assets/Logo/Logo InCitta.png" alt="InCitta" class="logo-img">
+        </a>
+      </div>
+
+      <ul class="nav-menu" role="list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
+        <li class="nav-item"><a href="synergies.html" class="nav-link">Synergies</a></li>
+        <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+<main class="main-read">
+  <section class="page-intro">
+    <div class="container">
+      <div class="page-back-bar">
+        <a href="index.html" class="page-back-bar__link" aria-label="Retour à l’accueil InCitta">
+          <svg class="page-back-bar__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Accueil
+        </a>
+        <span class="page-back-bar__sep" aria-hidden="true">/</span>
+        <span class="page-back-bar__here">Programmation territoriale</span>
+      </div>
+      <h1 class="page-title">Élaboration de projets de territoire, démarches de contractualisation et stratégies de planification multi-échelles pour des territoires résilients et durables</h1>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="content-wrap">
+      <div class="content-grid content-grid--single">
+        <div class="content-text">
+          <p class="page-lead">Projets de territoire, contractualisation et planification à plusieurs échelles pour des territoires plus résilients — avec une approche <strong>transversale</strong>, <strong>participative</strong> et tournée vers le <strong>développement durable</strong>.</p>
+
+          <p>L’élaboration de projets de territoire, la mise en place de démarches de contractualisation, ainsi que la définition de stratégies de planification à différentes échelles constituent des leviers essentiels pour accompagner la <strong>transition écologique</strong>, <strong>sociale</strong> et <strong>économique</strong> des territoires. Dans un contexte de mutations profondes (changement climatique, transformations démographiques, fractures territoriales), ces démarches doivent être pensées de manière <strong>transversale</strong>, <strong>participative</strong> et <strong>prospective</strong>, en intégrant les enjeux du <strong>développement durable</strong> et de la <strong>résilience</strong>.</p>
+
+        <h3>Projets de territoire et démarches de contractualisation</h3>
+        <p>Les projets de territoire visent à définir une vision partagée du développement, en s’appuyant sur les ressources locales, les aspirations des habitants et les spécificités du territoire. Ils permettent de construire une trajectoire commune, fondée sur l’intelligence collective et la mobilisation de tous les acteurs.</p>
+
+        <p><strong>Construire un projet collectif :</strong> L’élaboration d’un projet de territoire repose sur une démarche de concertation associant l’ensemble des parties prenantes : habitants, élus, services de l’État, acteurs économiques, associations, chercheurs, etc. L’objectif est de créer une dynamique d’adhésion, de valoriser les initiatives locales et de renforcer le sentiment d’appartenance.</p>
+
+        <p><strong>Démarches de contractualisation :</strong> Ces démarches se traduisent par des accords formalisés entre collectivités (communes, intercommunalités, départements, régions) ou avec l’État, afin de structurer les engagements financiers, les objectifs stratégiques, les indicateurs de suivi et les modalités d’évaluation. Ces contrats portent sur des thématiques prioritaires telles que le <strong>renouvellement urbain</strong>, la <strong>transition énergétique</strong>, la <strong>cohésion sociale</strong> ou la <strong>mobilité</strong> ...</p>
+
+
+        <h3>Stratégies de planification à différentes échelles</h3>
+
+        <p>La planification territoriale doit s’adapter à la diversité des échelles géographiques et des dynamiques locales. Chaque niveau doit être pensé comme complémentaire, afin de construire des politiques cohérentes et articulées.</p>
+
+        <p><strong>À l’échelle du quartier :</strong> Les projets doivent répondre aux besoins de proximité : accessibilité aux services essentiels (éducation, santé, alimentation), aménagement des espaces publics, gestion des mobilités, gestion des déchets, végétalisation… L’objectif est d’améliorer la qualité de vie, de réduire les vulnérabilités sociales et environnementales, et de favoriser la cohésion et le vivre ensemble.</p>
+
+        <p><strong>À l’échelle intercommunale :</strong> Les intercommunalités portent des projets de plus grande envergure, mutualisant les ressources et coordonnant les politiques locales dans une logique de solidarité territoriale. Cela inclut le développement de réseaux de transports en commun, l’aménagement de zones d’activités économiques, la gestion des infrastructures énergétiques ou de traitement des déchets ou la planification en matière de logements, d'équipements.</p>
+
+        <p><strong>À l’échelle du bassin de vie :</strong> afin de permettre une vision intégrée des politiques publiques en matière de planification, d'habitat, de mobilité, d'attractivité économique, touristique culturelle... L'objectif est de développer et renforcer les complémentarité territoriale dans une logique de solidarité territoriale, notamment entre l'urbain et le rural et non d'entrer dans une logique de concurrence.</p>
+
+        <h3>Intégration des enjeux de développement durable et de résilience</h3>
+
+        <p>Les stratégies territoriales doivent aujourd’hui répondre aux grands défis de demain : changement climatique, raréfaction des ressources, lutte contre les inégalités, diminution de la biodiversité. Cela implique d'apporter des réponses globales, systématiques et adaptées aux spécificités locales.</p>
+
+        <p><strong>Environnemental :</strong> Avec des projets futurs qui doivent intégrer l'adaptation aux aléas climatiques et la gestion durable des sols, de l’eau et des milieux naturels en intégrant systématiquement la question de la <strong>trame verte</strong>, <strong>bleue</strong>, <strong>brune</strong> et <strong>noire</strong> dans les projets d'aménagement. Concrètement, cela se traduit par la lutte contre les <strong>ilots de chaleurs</strong>, la <strong>perméabilisation des sols</strong>, la <strong>renaturation</strong>, la <strong>décarbonation</strong> des activités, la <strong>sobriété foncière</strong> et l’<strong>urbanisme circulaire</strong> (réutilisation des friches, densification raisonnée).</p>
+
+        <p><strong>Sociétal :</strong> Les projets doivent viser une plus grande égalité territoriale avec l'accès aux <strong>services publics</strong> (<strong>santé</strong>, <strong>éducation</strong>, <strong>culture</strong>, <strong>mobilité</strong>), la lutte contre la <strong>précarité énergétique</strong> et l’<strong>habitat indigne</strong> et la prise en compte des <strong>publics vulnérables</strong>. La <strong>participation citoyenne</strong> comme outil de co-construction des politiques publiques est un levier de légitimité, d’innovation et d’appropriation.</p>
+
+        <p><strong>Économique :</strong> Pour renforcer la <strong>résilience économique</strong> des territoires dans un monde globalisé en constante mutation, le développement et la consolidation de l’<strong>économie circulaire</strong> ainsi que de l’<strong>économie de proximité</strong> constituent des réponses pertinentes face aux défis de demain.</p>
+        </div>
+      </div>
+      <div class="page-back-row">
+        <a href="index.html" class="page-back-btn" aria-label="Retour à l’accueil InCitta">
+          <svg class="page-back-btn__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Retour à l’accueil
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Section articles related supprimée -->
+</main>
+
+<footer class="footer footer--site">
+  <div class="container">
+    <div class="footer-site-inner">
+      <img src="assets/Logo/LogoPied.png" alt="InCitta" class="footer-logo">
+      <p class="footer-site-copy">&copy; 2026 InCitta. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </div>
+</footer>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

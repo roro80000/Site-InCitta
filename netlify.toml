@@ -1,0 +1,27 @@
+# Déploiement Netlify — Site InCitta (statique, pas de build)
+[build]
+  publish = "."
+
+# Redirections
+[[redirects]]
+  from = "/actualites"
+  to = "/synergies.html"
+  status = 302
+
+[[redirects]]
+  from = "/actualites.html"
+  to = "/synergies.html"
+  status = 302
+
+# En-têtes de sécurité et cache
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"

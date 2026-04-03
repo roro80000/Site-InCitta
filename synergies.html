@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+ <title>Synergies InCitta</title>
+ <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+.logo-img{max-height:48px;width:auto;height:auto;display:block}
+
+/* Partners grid: 4 columns on desktop, responsive stack on small screens */
+.partners-grid {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.partner-block {
+  flex: 1 1 calc(25% - 1.125rem);
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #eef1ef;
+  border-radius: 18px;
+  padding: 1.25rem;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.partner-block:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 20px 52px rgba(0,0,0,0.14);
+}
+.partner-block h3 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--primary);
+}
+.partner-block h6 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.partner-block p {
+  margin: 0;
+  color: var(--text-color);
+  line-height: 1.5;
+  flex: 1 0 auto;
+}
+
+@media (max-width: 900px) {
+  .partner-block { flex: 1 1 48%; }
+}
+@media (max-width: 560px) {
+  .partners-grid { gap: 1rem; }
+  .partner-block { flex: 1 1 100%; }
+}
+</style>
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ 
+<!-- PWA Meta Tags -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#003333">
+ <!-- Standard moderne multi-plateformes -->
+ <meta name="mobile-web-app-capable" content="yes">
+ <!-- Balises spécifiques Apple pour iOS (nécessaires pour Safari) -->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="default">
+ <meta name="apple-mobile-web-app-title" content="InCitta">
+ 
+ <!-- ========================= SEO Meta Tags ========================= -->
+<meta name="description" content="Synergies : partenariats et collaborations d'InCitta pour accompagner vos projets territoriaux (concertation, AMO, AMU).">
+ <meta name="keywords" content="synergies, partenaires, InCitta, concertation, accompagnement territorial">
+<link rel="canonical" href="https://www.incitta.eu/synergies.html">
+ 
+ <!-- Open Graph / Facebook -->
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.InCitta.eu/synergies.html">
+ <meta property="og:title" content="Synergies — InCitta">
+ <meta property="og:description" content="Partenariats et collaborations pour l'accompagnement territorial (concertation, AMO, AMU).">
+ <meta property="og:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.png">
+ <meta property="og:locale" content="fr_FR">
+ <meta property="og:site_name" content="InCitta">
+ 
+ <!-- Twitter Card -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:url" content="https://www.InCitta.eu/synergies.html">
+ <meta name="twitter:title" content="Synergies InCitta">
+ <meta name="twitter:description" content="Partenariats et collaborations pour l'accompagnement territorial.">
+ <meta name="twitter:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.png">
+ 
+ <!-- Données structurées Schema.org -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "name": "Synergies - InCitta",
+  "url": "https://www.incitta.eu/synergies.html"
+ }
+ </script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar" aria-label="Navigation principale">
+<div class="nav-container">
+<div class="nav-logo">
+<a href="index.html" class="nav-brand" aria-label="InCitta">
+<img src="assets/Logo/Logo InCitta.png" alt="InCitta" class="logo-img">
+</a>
+</div>
+ <ul class="nav-menu" role="list">
+ <li class="nav-item">
+ <a href="index.html" class="nav-link">Accueil</a>
+ </li>
+ <li class="nav-item">
+ <a href="a-propos.html" class="nav-link">A propos</a>
+ </li>
+ <li class="nav-item">
+ <a href="synergies.html" class="nav-link active" aria-current="page">Synergies</a>
+ </li>
+ <li class="nav-item">
+ <a href="inconcertta.html" class="nav-link">InConcertta</a>
+ </li>
+ <li class="nav-item">
+ <a href="contact.html" class="nav-link">Contact</a>
+ </li>
+ </ul>
+<button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+
+</div>
+</nav>
+
+<section class="menu-page synergies-page">
+<div class="container">
+<!-- section header merged into hero and removed -->
+  <p class="partners-intro">Parce que chaque projet est unique, InCitta travaille en synergie avec des experts pour proposer un accompagnement adapté et pluridisciplinaire. Des synergies avec des experts permettent un accompagnement personnalisé et adapté à vos enjeux.</p>
+<div class="partners-grid">
+<section class="partner-block">
+<h3>Camille<br> DORMOY</h3>
+<h6>Docteure en sciences sociales</h6>
+<p>Camille est spécialiste des politiques publiques environnementales. Son approche croise enquête de terrain, observation des pratiques et analyse institutionnelle pour éclairer les dynamiques sociales, environnementales et politiques à l’œuvre dans les dispositifs de gestion et de traitement des déchets.</p>
+</section>
+
+<section class="partner-block">
+<h3>Laura<br> BODENEZ</h3>
+<h6>Scénographe & designer</h6>
+<p>Laura offre son esprit créatif, son expertise méthodologique et technique au service de structures culturelles, de l’aménagement d’espaces, d’objets de manipulation ludique et pédagogique ou des outils de médiation, et d’ateliers créatifs s’adaptant à tout type de public. Elle accompagne les projets par l'élaboration d'ateliers de concertation participatifs avec les différents acteurs impliqués (bailleurs sociaux, habitants, commerçants, ...) afin de co-construire les projets et d'analyser les besoins d'aménagement. Ces travaux servent à communiquer et faciliter le dialogue entre les parties et créer des échanges et un partage menant à bien les projets.</p>
+</section>
+
+<section class="partner-block">
+<h3>Lucie<br> COLIN</h3>
+<h6>Designer graphique</h6>
+<p>Lucie est designer graphique indépendante, spécialisée en conception d’identités visuelles et en éco-conception depuis 2019. Basée à Lille, elle accompagne notamment des structures engagées – collectivités, acteurs culturels, projets à impact social – dans la création de supports graphiques à la fois inclusifs, accessibles et éco-conçus.</p>
+<p>Son approche stratégique et créative s’ancre dans une volonté de rendre la communication plus accessible, éthique et efficace. Elle a notamment travaillé sur des projets de signalétique, d’expositions et outils pédagogiques pour des institutions comme le CNRS, le Forum des Sciences de Villeneuve d'Ascq ou le Musée Archéologique de l'Oise.</p>
+</section>
+
+<section class="partner-block">
+<h3>Oumaima<br> ARRAOUI</h3>
+<h6>Consultante en management & communication</h6>
+<p>Consultante en management et en stratégie de communication, Oumaima accompagne les porteurs de projets dans la structuration, le pilotage et la valorisation de leurs initiatives. Elle mobilise une approche stratégique et collaborative pour optimiser l’organisation et renforcer la communication.</p>
+</section>
+</div>
+</div>
+</section>
+
+<footer class="footer footer--site">
+  <div class="container">
+    <div class="footer-site-inner">
+      <img src="assets/Logo/LogoPied.png" alt="InCitta" class="footer-logo">
+      <p class="footer-site-copy">&copy; 2026 InCitta. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

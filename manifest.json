@@ -1,0 +1,52 @@
+{
+  "name": "InCitta – Ingénierie et études territoriales",
+  "short_name": "InCitta",
+  "description": "InCitta est un cabinet d’études et d’ingénierie territoriale spécialisé en concertation, aménagement et évaluation des politiques publiques.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#003333",
+  "orientation": "portrait-primary",
+  "scope": "./",
+  "lang": "fr",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "assets/Logo/Logo InCitta.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/Logo/Logo InCitta.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": [
+    "business",
+    "education",
+    "government"
+  ],
+  "shortcuts": [
+    {
+      "name": "Accueil",
+      "short_name": "Accueil",
+      "description": "Page d’accueil InCitta",
+      "url": "./index.html"
+    },
+    {
+      "name": "Nous contacter",
+      "short_name": "Contact",
+      "description": "Contacter InCitta",
+      "url": "./contact.html"
+    },
+    {
+      "name": "À propos",
+      "short_name": "À propos",
+      "description": "Présentation d’InCitta",
+      "url": "./a-propos.html"
+    }
+  ]
+}

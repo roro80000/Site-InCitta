@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+ <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.png">
+ 
+<!-- Preconnect pour améliorer les performances des ressources externes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Charger la police Inter (poids light utilisé sur le site) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+ <link rel="preconnect" href="https://cdn.jsdelivr.net">
+ 
+ <!-- DNS prefetch pour domaines externes utilisés plus tard -->
+<!-- DNS prefetch vers l'ancienne instance Supabase supprimé (non utilisé) -->
+ <link rel="dns-prefetch" href="https://api.ipify.org">
+ 
+ <!-- Preload des ressources critiques -->
+ <link rel="preload" href="assets/Logo/Logo InCitta.png" as="image" fetchpriority="high">
+ <!-- background images removed from preload -->
+<link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+ 
+ <!-- CSS critique inline pour le rendu initial (above-the-fold) -->
+ <style>
+ /* Reset minimal pour le rendu initial */
+ *{margin:0;padding:0;box-sizing:border-box}
+ :root{--primary-color:#003333;--secondary-color:#006666;--white:#ffffff;--dark-color:#030303}
+body{font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#000000;background:#f6f6f6;padding-top:0}
+  /* Navbar critique */
+  .navbar{position:fixed;top:0;left:0;right:0;width:100%;background:transparent;backdrop-filter:blur(10px);z-index:2000;padding:0.9rem 0;box-shadow:none}
+  /* Let styles.css control nav-container sizing; keep only flex alignment here */
+  .nav-container{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .logo-img{height:auto;max-height:47.5px;width:auto;object-fit:contain}
+  /* Hero critique */
+  .hero{position:relative;z-index:2500;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;text-align:left;overflow:visible;margin-top:0;padding-top:0}
+  .hero-background{position:absolute;inset:0;z-index:1}
+  /* Fond via pseudo-élément pour pouvoir régler l'opacité sans affecter le contenu */
+  .hero-background::before{content:'';position:absolute;inset:0;background-image:url('assets/images/fond_carteIGN_Stq_hq.webp');background-size:cover;background-position:center center;filter:brightness(0.98) contrast(1.05);opacity:0.8;z-index:1}
+  /* fallback to lighter image on small viewports for performance */
+  @media (max-width:900px){.hero-background::before{background-image:url('assets/images/fond_carteIGN_Stq_small.webp');background-size:cover}}
+  .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:none !important;display:none !important;z-index:2}
+  .hero-content{position:relative;z-index:3;width:100%;max-width:1200px;margin:0 auto;padding:0 20px;}
+  .hero-logo{max-width:420px;height:auto;display:block;margin-top:1.25rem;filter:none}
+  .hero-description{font-size:1.05rem;color:#000000;font-style:normal;margin-bottom:0.75rem;max-width:1000px;margin-left:auto;margin-right:auto;text-shadow:none}
+  /* Bloc d'accompagnement (séparé) */
+  .support-block{max-width:1100px;margin:1.5rem auto;padding:1.25rem 20px;background:#ffffff;border-left:4px solid var(--primary-color);box-shadow:0 10px 28px rgba(0,0,0,0.08);border-radius:18px;color:#000;font-size:1.05rem}
+  .support-block h3{margin:0 0 0.5rem;color:var(--primary-color);font-family:'Playfair Display',serif;font-size:1.25rem}
+  .support-block p{margin:0}
+  /* Accompagnement layout (trois colonnes) */
+  .accompagnement-section{padding:2rem 0;background:transparent;border-top:none}
+  .accompagnement-content{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;max-width:1200px;margin:0 auto;padding:0 20px}
+  .accompagnement-image{flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+  /* image droite agrandie de 20% : 12cm * 1.2 = 14.4cm */
+  .accompagnement-image img{width:14.4cm;height:14.4cm;object-fit:contain;display:block}
+  /* Grand bandeau « InCitta vous accompagne… » uniquement (pas les blocs service financement) */
+  .accompagnement-section:not(.service-block) .accompagnement-text{flex:1;text-align:center;font-size:32px;font-weight:700;color:var(--primary-color);line-height:1.05;padding:0 1rem}
+  @media (max-width:900px){
+    .accompagnement-content{flex-direction:column;align-items:center;text-align:center}
+    /* mobile: 9cm * 1.2 = 10.8cm */
+    .accompagnement-image img{width:10.8cm;height:10.8cm}
+    .accompagnement-section:not(.service-block) .accompagnement-text{font-size:22px;padding:1rem 0}
+  }
+  /* CTA pour téléchargement PDF */
+  .accompagnement-cta{margin-top:0.75rem}
+  .btn-download{background:var(--secondary-color);color:var(--white);padding:0.5rem 1rem;border-radius:6px;text-decoration:none;display:inline-block}
+  .btn-download:hover{background:var(--primary-color)}
+  /* Forcer le style des paragraphes internes pour qu'ils correspondent aux autres sections */
+  .accompagnement-section:not(.service-block) .accompagnement-text .development-paragraph {
+    font-size:18px;
+    margin:0;
+    color:#000;
+    line-height:1.5;
+    font-weight:300;
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    text-align:justify;
+    text-justify:inter-word;
+    text-align-last:right;
+  }
+  /* Section développement territorial */
+  .development-section{padding:2rem 0;background:transparent}
+  .development-content{display:flex;align-items:center;gap:1.25rem;max-width:1200px;margin:0 auto;padding:0 20px;justify-content:space-between}
+  .development-text{flex:1}
+  .development-title{margin:0 0 0.5rem}
+  .development-paragraph{font-size:18px;margin:0;color:#000;line-height:1.5;font-weight:300;font-family:'Inter',system-ui,-apple-system,sans-serif}
+  .development-image{flex:0 0 auto}
+  .development-image img{width:8cm;height:8cm;object-fit:cover;display:block}
+  @media (max-width:900px){
+    .development-content{flex-direction:column;align-items:center;text-align:center}
+    .development-image img{width:6cm;height:6cm}
+    .development-paragraph{font-size:16px;font-weight:300;font-family:'Inter',system-ui,-apple-system,sans-serif}
+  }
+  .development-text { position: relative; padding-bottom: 3.5rem; }
+  .development-cta { position: absolute; right: 0; bottom: 0; }
+  .rounded-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 44px;
+    padding: 0 .9rem;
+    border-radius: 999px;
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
+  }
+  .rounded-cta:hover { background: var(--primary-color); color: #fff; border-color: var(--primary-color); transform: translateY(-1px); }
+  /* Assurer que les boutons "Voir plus" dans l'accompagnement ont exactement le même rendu */
+  .accompagnement-cta .rounded-cta,
+  .development-cta .rounded-cta,
+  .participation-cta .rounded-cta {
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+    color: var(--secondary-color);
+    height:44px;
+    padding: 0 .9rem;
+    border-radius:999px;
+    font-size:16px;
+    font-weight:400;
+    line-height:1;
+  }
+  /* Section participation / concertation */
+  .participation-section{padding:2rem 0;background:transparent}
+  .participation-content{display:flex;align-items:center;gap:1.25rem;max-width:1200px;margin:0 auto;padding:0 20px;justify-content:space-between}
+  .participation-image{flex:0 0 auto}
+  .participation-image img{width:8cm;height:8cm;object-fit:cover;border-radius:12px;display:block}
+  .participation-text{flex:1}
+  .participation-title{margin:0 0 0.5rem}
+  .participation-paragraph{font-size:18px;margin:0;color:#000;line-height:1.5;font-weight:400;font-family:system-ui,-apple-system,sans-serif}
+  /* Forcer l'opacité du fond du hero à 80% */
+  .hero-background::before{opacity:0.8 !important}
+  @media (max-width:900px){
+    .participation-content{flex-direction:column;align-items:center;text-align:center}
+    .participation-image img{width:6cm;height:6cm}
+    .participation-paragraph{font-size:16px;font-weight:400;font-family:system-ui,-apple-system,sans-serif}
+  }
+  /* Justifier les textes et les aligner côté image */
+  .participation-text,
+  .evaluation-text,
+  .accompagnement-text,
+  .development-text {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  /* Lorsque l'image est à gauche (image + texte), aligner le texte vers la gauche (côté image) */
+  .participation-content .participation-text {
+    text-align-last: left;
+  }
+  /* Texte à gauche, image à droite (évaluation en page d'accueil) : dernière ligne vers l’image */
+  .evaluation-content .evaluation-text {
+    text-align-last: right;
+  }
+  /* Texte + image à droite (développement territorial) : dernière ligne vers l’image */
+  .development-content .development-text {
+    text-align-last: right;
+  }
+  /* Financement : image à gauche, texte à droite — dernière ligne vers la gauche (vers l’image) */
+  .service-block.accompagnement-section .accompagnement-content .accompagnement-text {
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+  }
+
+  /* Styles pour blocs de services (pas toucher au bloc d'accompagnement principal) */
+  .service-block {
+    max-width:1100px;
+    margin:0.9rem auto;
+    padding:0.9rem 1rem;
+    background:#fff;
+    border-left:none;
+    border-radius:18px;
+    box-shadow:0 12px 32px rgba(0,0,0,0.08);
+    box-sizing:border-box;
+  }
+  .service-block .development-content,
+  .service-block .participation-content,
+  .service-block .accompagnement-content,
+  .service-block .evaluation-content {
+    gap:1rem;
+    align-items:flex-start;
+    display:flex;
+    justify-content:space-between;
+  }
+  @media (max-width:900px){
+    .service-block,
+    .service-block .development-content,
+    .service-block .participation-content,
+    .service-block .accompagnement-content,
+    .service-block .evaluation-content {
+      flex-direction:column;
+      padding:0.75rem;
+      text-align:left;
+    }
+  }
+  /* espacement 1cm entre les photos et les textes dans les blocs de service */
+  .service-block .participation-image {
+    margin-right: 1cm;
+  }
+  /* Image à droite du texte */
+  .service-block .evaluation-image {
+    margin-left: 1cm;
+  }
+  .service-block .development-image {
+    margin-left: 1cm;
+  }
+  /* Image à gauche du texte (financement) */
+  .service-block .accompagnement-image {
+    margin-right: 1cm;
+    margin-left: 0;
+  }
+  /* Sur petits écrans, images empilées -> marge en bas */
+  @media (max-width:900px){
+    .service-block .participation-image,
+    .service-block .evaluation-image,
+    .service-block .development-image,
+    .service-block .accompagnement-image {
+      margin: 0 0 1rem 0;
+    }
+  }
+  /* Espacement après chaque FAQ item */
+  .faq-grid .faq-item { margin-bottom: 1cm; }
+
+  /* Values cards rounding */
+  .values-grid{gap:1rem;}
+  .value-item{border-radius:18px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,0.08);border:1px solid rgba(5,59,59,0.12);background:rgba(255,255,255,0.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:1.1rem;}
+  .value-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(2,102,102,0.14);border:1px solid rgba(5,59,59,0.14);margin-bottom:.6rem;}
+  /* Logo InConcertta : centré, proportions logo (annule 8cm×8cm du .development-image img global) */
+  .home-service-columns .inconcertta-platform-section .development-content {
+    align-items: stretch;
+  }
+  .inconcertta-platform-section .development-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .inconcertta-platform-section .development-image img {
+    object-fit: contain;
+    width: min(100%, 280px);
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .inconcertta-platform-section .development-image .inconcertta-logo-external {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: min(100%, 300px);
+    line-height: 0;
+    border-radius: 12px;
+  }
+  .inconcertta-platform-section .development-image .inconcertta-logo-external:focus-visible {
+    outline: 3px solid #BF7D40;
+    outline-offset: 3px;
+  }
+  </style>
+<style>
+/* Hero image behaviour */
+.hero .hero-full-image {
+  display: block;
+  width: 100vw;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  object-fit: contain;
+  object-position: top center;
+  position: relative;
+  z-index: 3000; /* AU-DESSUS de la navbar */
+  pointer-events: none;
+  transition: opacity .5s ease;
+}
+.hero .hero-full-image.hidden{
+  display:none !important; /* instant hide when hero section is out of view */
+}
+/* Faire passer le texte d'accompagnement au-dessus de l'image hero (bandeau seulement) */
+.accompagnement-section:not(.service-block) .accompagnement-text{
+  position:relative;
+  z-index:1200; /* supérieur à .hero-full-image (1100) */
+  background:transparent;
+}
+/* Mettre le fond du premier bloc (hero / top area) en gris clair */
+.top-logo, .hero {
+  background: #f6f6f6 !important;
+}
+/* forcer fond gris clair globalement */
+body { background: #f6f6f6 !important; }
+.hero-background::before {
+  /* supprimer toute image de fond et masquer le pseudo-élément */
+  background-image: none !important;
+  background-color: transparent !important;
+  opacity: 0 !important;
+  display: none !important;
+  pointer-events: none !important;
+}
+/* Responsive: on small screens ensure image scales and no background duplicates */
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto; /* éviter un grand vide sous l'image sur mobile */
+  }
+  .hero .hero-full-image {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: top center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    z-index: auto !important;
+    pointer-events: auto !important;
+    display: block !important;
+  }
+  /* Remove any accidental background-image on hero background */
+  .hero-background::before { background-image: none !important; }
+}
+
+/* Disable overlay behaviour on small screens */
+@media (max-width:900px){
+  .hero .hero-full-image{
+    position: static;
+    z-index: auto;
+    width:100%;
+    height:auto;
+    object-position:center;
+    pointer-events:auto;
+  }
+}
+
+/* --- Transition HERO -> contenu : supprimer les traits / séparateurs --- */
+.hero-scroll-indicator{display:none !important;}
+.hero-scroll-indicator .scroll-arrow{display:none !important;}
+.hero-scroll-indicator .scroll-arrow::before,
+.hero-scroll-indicator .scroll-arrow::after{display:none !important;content:none !important;}
+
+/* --- Rendre l'entrée dans la page plus moderne (premier bloc après le flyer) --- */
+.accompagnement-section{
+  padding-top: 2.25rem;
+  padding-bottom: 1.5rem;
+}
+
+/* On laisse la carte externe (.service-block) gérer fond / bordure comme les autres blocs.
+   Ici, on ne garde qu'un padding interne pour aligner le contenu. */
+.accompagnement-content{
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 1.35rem 1.35rem;
+}
+
+/* Titre plus "impact" + meilleure lisibilité (hors blocs service type financement) */
+.accompagnement-section:not(.service-block) .accompagnement-text{
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* CTA plus moderne */
+.accompagnement-cta .rounded-cta{
+  background: rgba(0,102,102,0.10);
+  border-color: rgba(0,102,102,0.55);
+}
+.accompagnement-cta .rounded-cta:hover{
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Mobile: garder une carte aérée */
+@media (max-width: 900px){
+  .accompagnement-content{padding: 1.05rem 1.05rem;}
+  .accompagnement-section:not(.service-block) .accompagnement-text{font-size: 22px;}
+}
+</style>
+ 
+ <!-- CSS global (chargement direct pour éviter tout souci d'affichage) -->
+<!-- Polices Google optimisées avec font-display: swap pour améliorer l'affichage -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+ <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"></noscript>
+ 
+ <!-- Font Awesome avec subset pour réduire la taille -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+ <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+ 
+ <!-- PWA Meta Tags -->
+ <link rel="manifest" href="manifest.json">
+ <meta name="theme-color" content="#003333">
+ <!-- Standard moderne multi-plateformes -->
+ <meta name="mobile-web-app-capable" content="yes">
+ <!-- Balises spécifiques Apple pour iOS (nécessaires pour Safari) -->
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="default">
+ <meta name="apple-mobile-web-app-title" content="InCitta">
+ 
+ <!-- ========================= SEO Meta Tags ========================= -->
+ <title>InCitta — Cabinet d'études en aménagement du territoire</title>
+ <meta name="description" content="InCitta : cabinet d’études en aménagement du territoire, concertation citoyenne, programmation et évaluation des politiques publiques. Accompagnement des collectivités et acteurs locaux en France.">
+ <meta name="keywords" content="aménagement du territoire, concertation, participation citoyenne, évaluation des politiques publiques, ingénierie territoriale, InCitta, AMO, AMU, programmation territoriale, démarche participative">
+ <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+ <link rel="canonical" href="https://www.incitta.eu/">
+ 
+ <!-- Open Graph / Facebook -->
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://www.incitta.eu/">
+ <meta property="og:title" content="InCitta — Cabinet d'études en aménagement du territoire">
+ <meta property="og:description" content="InCitta accompagne les collectivités et acteurs locaux en aménagement, concertation et évaluation des politiques publiques.">
+ <meta property="og:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+ <meta property="og:locale" content="fr_FR">
+ <meta property="og:site_name" content="InCitta">
+ 
+ <!-- Twitter Card -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:url" content="https://www.incitta.eu/">
+ <meta name="twitter:title" content="InCitta — Cabinet d'études">
+ <meta name="twitter:description" content="InCitta — cabinet d'études en aménagement du territoire, concertation et évaluation.">
+ <meta name="twitter:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
+ 
+ <!-- Données structurées Schema.org — site + organisation -->
+ <script type="application/ld+json">
+ {
+   "@context": "https://schema.org",
+   "@graph": [
+     {
+       "@type": "WebSite",
+       "@id": "https://www.incitta.eu/#website",
+       "url": "https://www.incitta.eu/",
+       "name": "InCitta",
+       "description": "Cabinet d'études en aménagement du territoire, concertation et évaluation des politiques publiques.",
+       "inLanguage": "fr-FR",
+       "publisher": { "@id": "https://www.incitta.eu/#organization" }
+     },
+     {
+       "@type": "ProfessionalService",
+       "@id": "https://www.incitta.eu/#organization",
+       "name": "InCitta",
+       "url": "https://www.incitta.eu/",
+       "logo": "https://www.incitta.eu/assets/Logo/Logo%20InCitta.png",
+       "image": "https://www.incitta.eu/assets/Logo/Logo%20InCitta.png",
+       "description": "Accompagnement des collectivités et acteurs locaux en aménagement du territoire, concertation et participation citoyenne, programmation territoriale et évaluation.",
+       "email": "contact@incitta.eu",
+       "address": {
+         "@type": "PostalAddress",
+         "streetAddress": "26 rue Jean-Baptiste TRANNOY",
+         "postalCode": "80000",
+         "addressLocality": "Amiens",
+         "addressCountry": "FR"
+       },
+       "areaServed": { "@type": "Country", "name": "France" }
+     }
+   ]
+ }
+ </script>
+<!-- Navigation styles handled by styles.css -->
+</head>
+<body class="home">
+  <!-- Rideau théâtre : se soulève au chargement (voir styles.css + js/hooks/curtain-reveal.js) -->
+  <div class="curtain-reveal" id="curtain-reveal" aria-hidden="true" role="presentation">
+    <div class="curtain-reveal__panel">
+      <div class="curtain-reveal__brand">
+        <img src="assets/images/incitta-curtain-logo.png" alt="" decoding="async" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+  <noscript><style>#curtain-reveal{display:none!important}</style></noscript>
+  <!-- Header / Navigation (fixed, transparent) -->
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html" class="nav-brand" aria-label="InCitta">
+          <img src="assets/Logo/Logo InCitta.png" alt="InCitta" class="logo-img">
+        </a>
+      </div>
+
+      <ul class="nav-menu" role="list">
+        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Accueil</a></li>
+        <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
+        <li class="nav-item"><a href="synergies.html" class="nav-link">Synergies</a></li>
+        <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+<!-- Flyer overlay: image fixe en plein écran au premier plan -->
+<!-- overlay removed: use existing hero image element instead -->
+<!-- header logo removed as requested -->
+<!-- Navigation (moved below hero on accueil) -->
+
+<!-- Section Hero - En-tête -->
+<section class="hero">
+<div class="hero-background">
+  <!-- background loaded via CSS pseudo-élément for reliable opacity and performance -->
+  <div class="hero-overlay"></div>
+</div>
+<div class="hero-content">
+  <div class="hero-text">
+    <div class="hero-description">
+      <img class="hero-full-image" src="assets/images/Flyer-2026%20recto.png" alt="" aria-hidden="true" loading="eager">
+    </div>
+  </div>
+
+  <!-- logo removed from hero; background image kept -->
+</div>
+<div class="hero-scroll-indicator">
+<div class="scroll-arrow">
+<i class="fas fa-chevron-down"></i>
+</div>
+</div>
+</section>
+
+<!-- Spacer supprimé : la navbar arrive juste après la hero -->
+
+<!-- Section Accompagnement -->
+
+<section class="accompagnement-section" aria-label="Accompagnement">
+  <div class="accompagnement-content">
+    <div class="accompagnement-text">
+      InCitta vous accompagne dans la réalisation de vos projets
+      <div class="accompagnement-cta">
+        <br>
+        <a href="assets/images/Flyer-2026_RV.pdf" class="rounded-cta" aria-label="Ouvrir le flyer 2026" target="_blank" rel="noopener">Voir plus</a>
+      </div>
+    </div>
+
+    <div class="accompagnement-image accompagnement-image--right" data-motfleche-distortion aria-hidden="true">
+      <img src="assets/images/motfleche.png" alt="" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- Section Développement territorial -->
+<section class="development-section service-block service-block--territoire" aria-label="Développement territorial">
+  <div class="development-content">
+    <div class="development-text">
+      <h3 class="development-title home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line">Accompagnement dans votre développement territorial</h3>
+      <p class="development-paragraph">Elaboration de projets de territoire, de démarches de contractualisation,  des stratégies de planification à différentes échelles (quartier, intercommunalité, bassin de vie, etc.) en intégrant les problématiques actuelles du développement durable pour permettre à nos territoires de s'adapter aux défis de demain.</p>
+      <div style="height:1.5rem;"></div>
+      <div class="development-cta">
+        <a href="programmation-territoriale.html" class="rounded-cta" aria-label="En savoir plus">En savoir plus</a>
+      </div>
+    </div>
+
+    <div class="development-image" aria-hidden="true">
+      <img src="assets/images/plan_.png" alt="" loading="eager">
+    </div>
+  </div>
+</section>
+ 
+ 
+<!-- Deux conteneurs (cartes service) côte à côte : concertation | InConcertta -->
+<div class="home-service-columns">
+  <section class="participation-section service-block home-service-columns__card" aria-label="Concertation et participation">
+    <div class="participation-content">
+      <div class="participation-text">
+        <h3 class="participation-title home-chapter-title home-chapter-title--bar-left">Concertation et animation de démarches participatives</h3>
+        <p class="development-paragraph">Conception et animation d'outils variés, d’ateliers citoyens favorisant l'association et le dialogue entre les habitants et les acteurs du territoire permettant une meilleure appropriation des projets.</p>
+      </div>
+      <div class="participation-cta">
+        <a href="demarche-participative.html" class="rounded-cta" aria-label="En savoir plus sur la démarche participative">En savoir plus</a>
+      </div>
+      <div class="participation-image" aria-hidden="true">
+        <img src="assets/images/concertation_pla,.jpg" alt="" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <section class="development-section service-block inconcertta-platform-section home-service-columns__card" aria-label="InConcertta">
+    <div class="development-content">
+      <div class="development-text">
+        <h3 class="development-title home-chapter-title home-chapter-title--bar-right">InConcertta — plateforme numérique de concertation</h3>
+        <p class="development-paragraph">Application web pour accompagner la concertation territoriale : cartes interactives, enquêtes et sondages, échanges, idées et analyses — au service de vos projets et du dialogue entre les habitants et les acteurs du territoire. La plateforme est <strong>modulable</strong> (accès du <strong>large public</strong> au dispositif <strong>restreint ou sur invitation</strong>, outils activés, participation ouverte ou encadrée) et peut être adaptée à des usages de <strong>démocratie participative</strong>, dont les <strong>budgets participatifs</strong> et d’autres dispositifs de consultation et de co-construction. Proposition en <strong>service (SaaS)</strong>, clé en main : formules <strong>ponctuelles</strong> par projet, <strong>cadre permanent ou récurrent</strong>, ou <strong>instance dédiée</strong> — détail sur la page InConcertta.</p>
+        <div style="height:1.5rem;"></div>
+        <div class="development-cta">
+          <a href="inconcertta.html" class="rounded-cta" aria-label="En savoir plus sur InConcertta">En savoir plus</a>
+        </div>
+      </div>
+      <div class="development-image">
+        <a href="https://presentation.inconcertta.fr/" target="_blank" rel="noopener noreferrer" class="inconcertta-logo-external" aria-label="Présentation InConcertta — presentation.inconcertta.fr (nouvel onglet)">
+          <img src="assets/images/logos/Logo InConcertta.png" alt="" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <!-- Accompagnement dans la recherche de financement (homepage) — image à gauche, texte à droite -->
+  <section class="accompagnement-section service-block service-block--financement" aria-label="Accompagnement recherche financement" style="margin-top:1.5rem;">
+    <div class="accompagnement-content">
+      <div class="accompagnement-image" aria-hidden="true">
+        <img src="assets/images/rouage.png" alt="Rouage partenaires" loading="eager" style="width:8cm;height:8cm;object-fit:cover;border-radius:16px;">
+      </div>
+      <div class="accompagnement-text service-block__body-text">
+        <h3 class="home-chapter-title home-chapter-title--bar-right home-chapter-title--financement-title">Accompagnement dans la recherche de financement</h3>
+        <p class="development-paragraph">Incluant l'identification et le conseil stratégique pour l'optimisation et l’articulation des dispositifs européens, nationaux et régionaux pour maximiser les ressources mobilisables permettant de concrétiser vos initiatives locales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Évaluation au service de la transformation des politiques publiques (homepage) — texte à gauche, image à droite -->
+  <section class="evaluation-section service-block" aria-label="Évaluation des politiques publiques" style="margin-top:1.5rem;">
+    <div class="evaluation-content" style="display:flex;gap:1.25rem;align-items:flex-start;max-width:1200px;margin:0 auto;padding:0 20px;">
+      <div class="evaluation-text" style="flex:1;">
+        <h3 class="home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line">L'évaluation au service de la transformation des politiques publiques</h3>
+        <p class="development-paragraph">En concevant des référentiels d’évaluation, en élaborant des indicateurs adaptés et en réalisant des analyses de données, des bilans qualitatifs et quantitatifs et de la prospective permettant d'accompagner la prise de décision.</p>
+      </div>
+      <div class="evaluation-image" aria-hidden="true" style="flex:0 0 auto;">
+        <img src="assets/images/audit.png" alt="Audit et évaluation" loading="eager" style="width:8cm;height:8cm;object-fit:cover;border-radius:16px;">
+      </div>
+    </div>
+  </section>
+
+<!-- Section FAQ (moved from Contact) -->
+<section class="faq-section">
+  <div class="container">
+    <div class="values-grid">
+  <div class="value-item">
+    <div class="value-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
+    <h3>Co-construction</h3>
+    <p>Approche participative centrée sur l'appropriation par les habitants et les acteurs locaux.</p>
+  </div>
+  <div class="value-item">
+    <div class="value-icon"><i class="fas fa-map" aria-hidden="true"></i></div>
+    <h3>Qualité cartographique et graphique</h3>
+    <p>Des supports clairs et esthétiques pour faciliter la compréhension et le dialogue.</p>
+  </div>
+  <div class="value-item">
+    <div class="value-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+    <h3>Évaluation & prospective</h3>
+    <p>Indicateurs et bilans pour piloter la transformation des politiques publiques.</p>
+  </div>
+  <div class="value-item">
+    <div class="value-icon"><i class="fas fa-hands-helping" aria-hidden="true"></i></div>
+    <h3>Accompagnement opérationnel</h3>
+    <p>AMO / AMU : de la définition stratégique à la mise en œuvre des actions.</p>
+  </div>
+    </div>
+  </div>
+</section>
+<div style="height:1cm;"></div>
+
+<footer class="footer footer--site">
+  <div class="container">
+    <div class="footer-site-inner">
+      <img src="assets/Logo/LogoPied.png" alt="InCitta" class="footer-logo">
+      <p class="footer-site-copy">&copy; 2026 InCitta. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </div>
+</footer>
+
+ <script type="module" src="js/main.js"></script>
+<script>
+// Fondu progressif de l'image hero quand moins de 50% visible
+document.addEventListener('DOMContentLoaded', function () {
+  const img = document.querySelector('.hero .hero-full-image');
+  if (!img || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    const e = entries[0];
+    const ratio = e.intersectionRatio;
+    if (ratio < 0.5) {
+      img.classList.add('half-faded');
+    } else {
+      img.classList.remove('half-faded');
+    }
+  }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+  io.observe(img);
+});
+</script>
+</body>
+</html>
+
+

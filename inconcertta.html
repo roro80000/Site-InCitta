@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>InConcertta — Co-construisez vos projets territoriaux avec les citoyens | InCitta</title>
+  <meta name="description" content="InConcertta : participation en temps réel, carte interactive, données exploitables. RGPD, hébergement en Union européenne (Supabase), sécurité — pour collectivités et acteurs publics. Présentation InCitta.">
+  <meta name="keywords" content="InConcertta, concertation, participation citoyenne, SaaS territoire, collectivités, RGPD, InCitta">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://www.incitta.eu/inconcertta.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.incitta.eu/inconcertta.html">
+  <meta property="og:title" content="InConcertta — Co-construisez avec les citoyens, en temps réel | InCitta">
+  <meta property="og:description" content="Carte interactive, résultats exploitables. Cadre RGPD, hébergement européen, sécurité — pensé pour les collectivités.">
+  <meta property="og:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="InCitta">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="InConcertta — plateforme de concertation">
+  <meta name="twitter:description" content="Plateforme SaaS de concertation pour collectivités — présentation InCitta.">
+  <meta name="twitter:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
+  <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .logo-img { max-height: 48px; width: auto; height: auto; display: block; }
+    .main-read {
+      width: min(100% - 40px, 1100px);
+      margin: 1.2rem auto 2rem;
+      padding: 1.6rem;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      border-radius: 18px;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(10px);
+    }
+    /* Hero — structure type présentation.inconcertta.fr, palette claire InCitta */
+    .page-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(200px, min(32vw, 280px));
+      gap: 1.5rem 2rem;
+      align-items: start;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.5rem;
+    }
+    /* Pas de séparateur global section+section au-dessus du bloc RGPD (styles.css) */
+    .main-read .why-inconcertta-section + .institution-trust-below-section {
+      border-top: none;
+    }
+    .page-hero-text { min-width: 0; }
+    .page-hero-logo { justify-self: end; align-self: center; }
+    @media (max-width: 720px) {
+      .page-hero { grid-template-columns: 1fr; }
+      .page-hero-logo {
+        justify-self: center;
+        order: -1;
+        max-width: 280px;
+      }
+    }
+    .page-hero-logo-link {
+      display: block;
+      line-height: 0;
+      border-radius: 14px;
+    }
+    .page-hero-logo-link:focus-visible {
+      outline: 3px solid #BF7D40;
+      outline-offset: 4px;
+    }
+    .page-hero-logo img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-brand-kicker {
+      margin: 0 0 0.65rem;
+      font-size: clamp(calc(1.25rem + 2pt), calc(2.65vw + 2pt), calc(1.95rem + 2pt));
+      line-height: 1.18;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: rgba(5, 59, 59, 0.55);
+    }
+    .page-hero .page-title.hero-value-headline {
+      font-size: clamp(1.25rem, 2.65vw, 1.95rem);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      max-width: min(100%, 46ch);
+    }
+    .page-hero .page-lead.hero-value-sub {
+      font-size: 1.08rem;
+      line-height: 1.65;
+      max-width: 52ch;
+      margin-top: 0.85rem !important;
+    }
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem 0.85rem;
+      margin-top: 1.15rem;
+      padding-bottom: 1.35rem;
+    }
+    .hero-cta-row a { text-decoration: none; }
+    /* CTA hero — palette marque InConcertta (#BF7D40, #B79D30) */
+    .page-hero .hero-cta-row a.btn.btn-primary {
+      border: 1px solid rgba(183, 157, 48, 0.55);
+      background: linear-gradient(135deg, #BF7D40 0%, #c9893a 42%, #B79D30 100%);
+      color: #fff !important;
+      box-shadow: 0 6px 22px rgba(191, 125, 64, 0.32);
+      filter: none;
+      font-weight: 800;
+      min-height: 48px;
+    }
+    .page-hero .hero-cta-row a.btn.btn-primary:hover {
+      filter: brightness(1.05);
+      box-shadow: 0 8px 28px rgba(191, 125, 64, 0.38);
+    }
+    .page-hero .hero-cta-row a.btn.btn-primary:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 0 0 6px rgba(191, 125, 64, 0.45);
+    }
+    .hero-cta-row .btn-hero-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-height: 48px;
+      padding: 0 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      border: 2px solid #B79D30;
+      background: rgba(255, 255, 255, 0.98);
+      color: #6b5a1f;
+      box-shadow: 0 2px 14px rgba(183, 157, 48, 0.18);
+      transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+    }
+    .hero-cta-row .btn-hero-secondary:hover {
+      transform: translateY(-1px);
+      background: rgba(183, 157, 48, 0.12);
+      border-color: #BF7D40;
+      color: #5a3d15;
+      box-shadow: 0 4px 18px rgba(191, 125, 64, 0.22);
+    }
+    .hero-cta-row .btn-hero-secondary:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 0 0 5px rgba(183, 157, 48, 0.55);
+    }
+    .hero-footnote {
+      margin-top: 1rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: rgba(7, 16, 16, 0.68);
+      max-width: 48ch;
+    }
+    .hero-footnote .inconcertta-brand .inconcertta-i {
+      color: #BF7D40 !important;
+    }
+    .hero-footnote .inconcertta-brand .inconcertta-n,
+    .hero-footnote .inconcertta-brand .inconcertta-core {
+      color: #B79D30 !important;
+    }
+    :root {
+      --why-ic-pad-x: 1.25rem;
+      --why-ic-border: 1px;
+    }
+    .why-inconcertta-section {
+      margin: 1.5rem 0 1.5rem;
+      padding: 1.35rem var(--why-ic-pad-x) 1.45rem;
+      background: rgba(5, 59, 59, 0.04);
+      border: var(--why-ic-border) solid rgba(5, 59, 59, 0.12);
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .why-inconcertta-section h2 {
+      margin-top: 0 !important;
+      margin-bottom: 1rem !important;
+    }
+    .why-inconcertta-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 540px) {
+      .why-inconcertta-list {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+      }
+    }
+    .why-inconcertta-list li {
+      position: relative;
+      padding-left: 1.65rem;
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.55;
+      color: #071010;
+      font-weight: 500;
+    }
+    .why-inconcertta-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0.12em;
+      font-weight: 800;
+      color: var(--accent-2);
+      font-size: 1.05em;
+    }
+    .institution-trust-below-section {
+      margin: 0 0 1.85rem;
+      padding: 0 calc(var(--why-ic-pad-x) + var(--why-ic-border));
+      box-sizing: border-box;
+    }
+    .institution-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    @media (max-width: 720px) {
+      .institution-trust-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+      }
+    }
+    .institution-trust-grid > li {
+      margin: 0;
+      padding: 0.95rem 1rem 1rem;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      min-height: 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .institution-trust-grid .institution-trust-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    .institution-trust-grid .institution-trust-kicker i {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    .institution-trust-grid .institution-trust-desc {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.58;
+      color: rgba(7, 16, 16, 0.78);
+      font-weight: 400;
+    }
+    .feature-icon-svg {
+      width: 1.35rem;
+      height: 1.35rem;
+      display: block;
+    }
+    /* Marque InConcertta — I (#BF7D40), n (#B79D30), Concertta dont le C (#B79D30) */
+    .inconcertta-brand {
+      font-weight: inherit;
+    }
+    .inconcertta-brand .inconcertta-i {
+      color: #BF7D40;
+    }
+    .inconcertta-brand .inconcertta-n {
+      color: #B79D30;
+    }
+    .inconcertta-brand .inconcertta-core {
+      color: #B79D30;
+    }
+    .page-title {
+      font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+      color: var(--primary);
+      margin: 0 0 0.65rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .page-lead {
+      font-size: 1.05rem;
+      line-height: 1.72;
+      color: #000;
+      margin: 0;
+      font-weight: 400;
+      text-align: left;
+    }
+    /* Chapô : nom de marque en noir (lisibilité), pas les couleurs du titre */
+    .page-lead .inconcertta-brand,
+    .page-lead .inconcertta-brand .inconcertta-i,
+    .page-lead .inconcertta-brand .inconcertta-n,
+    .page-lead .inconcertta-brand .inconcertta-core {
+      color: #000 !important;
+    }
+    /* Corps de texte (hors titres) : marque en noir */
+    .main-read section p .inconcertta-brand,
+    .main-read section p .inconcertta-brand .inconcertta-i,
+    .main-read section p .inconcertta-brand .inconcertta-n,
+    .main-read section p .inconcertta-brand .inconcertta-core {
+      color: #000 !important;
+    }
+    .main-read h2 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin: 2rem 0 0.85rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .main-read h2:first-of-type {
+      margin-top: 2rem;
+    }
+    .main-read h2#incitta-title,
+    .main-read h2#incitta-title .inconcertta-brand,
+    .main-read h2#incitta-title .inconcertta-brand .inconcertta-i,
+    .main-read h2#incitta-title .inconcertta-brand .inconcertta-n,
+    .main-read h2#incitta-title .inconcertta-brand .inconcertta-core {
+      color: #053B3B !important;
+    }
+    /* Zone de texte = largeur du bloc .main-read */
+    .main-read p {
+      text-align: left;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      color: #000;
+      line-height: 1.72;
+      margin: 0 0 0.9rem;
+      max-width: none;
+    }
+    .main-read .feature-card p {
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0.55rem;
+      font-weight: 400;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .main-read .feature-card p:last-child {
+      margin-bottom: 0;
+    }
+    .main-read ul {
+      margin: 0 0 1.1rem;
+      padding: 0;
+      padding-left: 1.2rem;
+      max-width: none;
+      color: #000;
+      line-height: 1.68;
+      font-weight: 400;
+      box-sizing: border-box;
+    }
+    .main-read ul li { margin-bottom: 0.45rem; }
+    .main-read .inconcertta-lede {
+      font-size: 1.06rem;
+      font-weight: 500;
+      color: #0d2a2a;
+      margin-bottom: 1rem;
+    }
+    .main-read .inconcertta-tight-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1rem;
+    }
+    .main-read .inconcertta-tight-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+    .main-read .inconcertta-tight-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(17, 107, 107, 0.55);
+    }
+    .page-hero-text ul.inconcertta-tight-list {
+      font-size: 1.05rem;
+      line-height: 1.72;
+    }
+    .inconcertta-offer-subtitle {
+      font-size: clamp(1.05rem, 1.85vw, 1.22rem);
+      font-weight: 700;
+      color: var(--primary);
+      margin: 1.5rem 0 0.65rem;
+      line-height: 1.35;
+    }
+    .inconcertta-offer-section .inconcertta-offer-subtitle:first-of-type {
+      margin-top: 0.85rem;
+    }
+    /* Offre : bloc intro + cibles en deux colonnes (≥680px) */
+    .inconcertta-offer-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.75rem;
+      margin: 0.35rem 0 1.25rem;
+      align-items: start;
+    }
+    .inconcertta-offer-cols__col {
+      min-width: 0;
+    }
+    .inconcertta-offer-cols__col .inconcertta-lede {
+      margin-top: 0;
+    }
+    .inconcertta-offer-cols__col .inconcertta-tight-list {
+      margin-bottom: 0;
+    }
+    .inconcertta-offer-cols__col .inconcertta-offer-subtitle {
+      margin-top: 0;
+      margin-bottom: 0.55rem;
+    }
+    .inconcertta-offer-cols__col ul:not(.inconcertta-tight-list) {
+      margin-bottom: 0.75rem;
+    }
+    @media (max-width: 680px) {
+      .inconcertta-offer-cols {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+      }
+      .inconcertta-offer-cols__col .inconcertta-offer-subtitle {
+        margin-top: 0.5rem;
+      }
+    }
+    .inconcertta-offer-divider {
+      border: none;
+      height: 1px;
+      background: rgba(5, 59, 59, 0.14);
+      margin: 1.75rem 0;
+      width: 100%;
+    }
+    .inconcertta-offer-section p.inconcertta-offer-formule-inclut {
+      margin-top: 1.35rem;
+    }
+    /* InCitta / InConcertta : phrases courtes puis listes en deux colonnes (lisibilité) */
+    .incitta-intro-section .incitta-intro-lead p {
+      margin-bottom: 0.65rem;
+      line-height: 1.65;
+      max-width: 62ch;
+    }
+    .incitta-intro-section .incitta-intro-lead p:last-child {
+      margin-bottom: 1rem;
+    }
+    .incitta-paircols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.75rem;
+      margin: 0 0 1.1rem;
+      align-items: start;
+    }
+    .incitta-paircols__col {
+      min-width: 0;
+    }
+    .incitta-paircols__col .inconcertta-tight-list {
+      margin-bottom: 0;
+    }
+    .incitta-paircols__col .inconcertta-tight-list li {
+      line-height: 1.55;
+      margin-bottom: 0.42rem;
+    }
+    .incitta-synthesis {
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+      max-width: 70ch;
+    }
+    @media (max-width: 680px) {
+      .incitta-paircols {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+      }
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0 0.5rem;
+    }
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      border-radius: 16px;
+      padding: 1.1rem 1.15rem;
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform 0.28s cubic-bezier(0.22, 0.85, 0.32, 1),
+        box-shadow 0.28s ease,
+        border-color 0.28s ease,
+        background 0.28s ease;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(2, 102, 102, 0.1), transparent 52%, rgba(2, 102, 102, 0.04));
+      opacity: 0;
+      transition: opacity 0.32s ease;
+      pointer-events: none;
+    }
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+    .feature-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 22px 56px rgba(5, 59, 59, 0.14),
+        0 0 0 1px rgba(2, 102, 102, 0.22),
+        0 8px 28px rgba(2, 102, 102, 0.1);
+      border-color: rgba(2, 102, 102, 0.38);
+      background: rgba(255, 255, 255, 0.98);
+    }
+    .feature-card .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(2, 102, 102, 0.14);
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin-bottom: 0.65rem;
+      transition:
+        transform 0.28s cubic-bezier(0.22, 0.85, 0.32, 1),
+        background 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease,
+        color 0.2s ease;
+    }
+    .feature-card:hover .icon {
+      transform: scale(1.1);
+      background: rgba(2, 102, 102, 0.22);
+      border-color: rgba(2, 102, 102, 0.32);
+      box-shadow: 0 6px 18px rgba(2, 102, 102, 0.18);
+      color: var(--primary-2);
+    }
+    @media (pointer: fine) {
+      body.is-magnetic-cursor--near .main-read .feature-card.magnetic-zoom-target {
+        transform: translateY(-5px) scale(1.035);
+        box-shadow:
+          0 20px 50px rgba(5, 59, 59, 0.12),
+          0 0 0 1px rgba(2, 102, 102, 0.2);
+      }
+      body.is-magnetic-cursor--near .main-read .feature-card.magnetic-zoom-target::before {
+        opacity: 0.65;
+      }
+      body.is-magnetic-cursor--near .main-read .feature-card.magnetic-zoom-target:hover {
+        transform: translateY(-7px) scale(1.05);
+        border-color: rgba(2, 102, 102, 0.42);
+        box-shadow:
+          0 26px 60px rgba(5, 59, 59, 0.16),
+          0 0 0 1px rgba(2, 102, 102, 0.28),
+          0 10px 32px rgba(2, 102, 102, 0.12);
+      }
+      body.is-magnetic-cursor--near .main-read .feature-card.magnetic-zoom-target:hover::before {
+        opacity: 1;
+      }
+    }
+    .feature-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--primary);
+      transition: color 0.25s ease, letter-spacing 0.25s ease;
+    }
+    .feature-card:hover h3 {
+      color: var(--primary-2);
+      letter-spacing: -0.01em;
+    }
+    .feature-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+    .feature-card--archivage-centre {
+      grid-column: 1 / -1;
+      max-width: min(100%, 560px);
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .feature-card--archivage-centre .icon {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .feature-card--archivage-centre h3,
+    .feature-card--archivage-centre p {
+      text-align: center;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 1.75rem;
+      padding-top: 1.35rem;
+      border-top: 1px solid rgba(5, 59, 59, 0.1);
+      width: 100%;
+      max-width: none;
+    }
+    .btn-primary-ic {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      background: var(--primary-2);
+      color: #fff !important;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      transition: background 0.18s ease, transform 0.12s ease;
+    }
+    .btn-primary-ic:hover {
+      background: var(--primary);
+      transform: translateY(-1px);
+    }
+    .btn-outline-ic {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      border: 2px solid var(--primary-2);
+      color: var(--primary-2) !important;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      background: transparent;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+    .btn-outline-ic:hover {
+      background: var(--primary);
+      color: #fff !important;
+      border-color: var(--primary);
+    }
+    /* CTA marque — orange InConcertta, texte blanc */
+    .btn-discover-platform {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      background: #BF7D40;
+      color: #fff !important;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+      box-shadow: 0 2px 8px rgba(191, 125, 64, 0.35);
+    }
+    .btn-discover-platform:hover {
+      background: #a66a35;
+      color: #fff !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(191, 125, 64, 0.45);
+    }
+    .btn-discover-platform:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(191, 125, 64, 0.35);
+    }
+    .content-wrap { position: relative; }
+    /* Visionneuse démo InConcertta (login → interface → captures) */
+    .inconcertta-demo-section {
+      margin: 1.75rem 0 0;
+      padding-top: 0;
+    }
+    .demo-invite {
+      font-size: 1rem;
+      line-height: 1.55;
+      color: #000;
+      font-weight: 400;
+      margin: 0 0 1rem;
+      text-align: center;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .demo-invite strong {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .demo-invite-platform {
+      margin-top: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem 0.65rem;
+    }
+    .demo-invite-platform .btn-discover-platform {
+      flex-shrink: 0;
+    }
+    .demo-frame {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: visible;
+      box-shadow: 0 8px 32px rgba(5, 59, 59, 0.15);
+      border: 1px solid rgba(5, 59, 59, 0.1);
+      background: #1a1a1a;
+    }
+    .demo-frame img.demo-bg {
+      display: block;
+      width: 100%;
+      height: auto;
+      vertical-align: top;
+      pointer-events: none;
+      user-select: none;
+      border-radius: 12px;
+    }
+    .demo-hit {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .demo-hit:hover {
+      background: rgba(191, 125, 64, 0.12);
+    }
+    .demo-hit:focus {
+      outline: none;
+    }
+    .demo-hit:focus-visible {
+      outline: 3px solid #BF7D40;
+      outline-offset: 2px;
+      background: rgba(191, 125, 64, 0.18);
+    }
+    .demo-view[hidden] {
+      display: none !important;
+    }
+    .demo-viewport-caption {
+      font-size: 0.88rem;
+      color: #000;
+      opacity: 0.85;
+      font-weight: 300;
+      margin: 0.65rem 0 0;
+    }
+    .demo-viewport-caption[hidden] {
+      display: none !important;
+    }
+    /* Galerie statique — espace admin (pas de visionneuse interactive) */
+    .inconcertta-admin-gallery-section {
+      margin: 2.25rem 0 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(5, 59, 59, 0.1);
+    }
+    .inconcertta-admin-gallery-section .inconcertta-tight-list {
+      margin: 0.75rem 0 1rem;
+    }
+    .inconcertta-admin-gallery-section > h3.inconcertta-offer-subtitle {
+      margin-top: 2rem;
+    }
+    .inconcertta-admin-gallery-section .admin-gallery-outro {
+      margin: 1.35rem 0 0;
+    }
+    /* Texte intro + liste : pleine largeur du bloc .main-read (pas de max-width ici) */
+    .inconcertta-admin-gallery-section > p,
+    .inconcertta-admin-gallery-section .inconcertta-tight-list,
+    .inconcertta-admin-gallery-section .admin-gallery-outro {
+      max-width: none;
+    }
+    .inconcertta-admin-gallery-section > h2 + p {
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+    .admin-screens-grid {
+      list-style: none;
+      margin: 1.15rem 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem 1.25rem;
+    }
+    .admin-screen-card {
+      margin: 0;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .admin-screen-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(11, 107, 107, 0.22);
+    }
+    .admin-screen-thumb {
+      aspect-ratio: 16 / 10;
+      background: #1a1a1a;
+      overflow: hidden;
+    }
+    .admin-screen-thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .admin-screen-card figcaption {
+      padding: 0.8rem 1rem 0.95rem;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: #0d2a2a;
+      font-weight: 500;
+      border-top: 1px solid rgba(5, 59, 59, 0.08);
+    }
+    .admin-screen-card figcaption span {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.86rem;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.72);
+      line-height: 1.5;
+    }
+    @media (max-width: 720px) {
+      .admin-screens-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" aria-label="Navigation principale">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="index.html" class="nav-brand" aria-label="InCitta">
+        <img src="assets/Logo/Logo InCitta.png" alt="InCitta" class="logo-img">
+      </a>
+    </div>
+    <ul class="nav-menu" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+      <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
+      <li class="nav-item"><a href="synergies.html" class="nav-link">Synergies</a></li>
+      <li class="nav-item"><a href="inconcertta.html" class="nav-link active" aria-current="page">InConcertta</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</nav>
+
+<main class="main-read">
+  <div class="content-wrap">
+    <header class="page-hero">
+      <div class="page-hero-text">
+        <p class="hero-brand-kicker">
+          <span class="inconcertta-brand"><span class="inconcertta-i">I</span><span class="inconcertta-n">n</span><span class="inconcertta-i">C</span><span class="inconcertta-core">oncertta</span></span>
+        </p>
+        <h1 class="page-title hero-value-headline">Co-construisez vos projets territoriaux avec les citoyens, en temps réel</h1>
+        <p class="page-lead hero-value-sub">
+          Faites participer citoyens, élus et experts sur une <strong>carte interactive</strong>, avec <strong>résultats exploitables</strong> immédiatement.
+        </p>
+        <div class="hero-cta-row">
+          <a href="contact.html" class="btn btn-primary">Demander des informations</a>
+          <a href="#demo-inconcertta" class="btn-hero-secondary">Voir la démo</a>
+        </div>
+        <p class="hero-footnote">
+          </span> InConcertta est une application web sans installation ; mobile, tablette et ordinateur. Vous pouvez également bénéficier des <strong>accompagnements InCitta</strong> sur l’aménagement et la participation.
+        </p>
+      </div>
+      <div class="page-hero-logo">
+        <a href="https://presentation.inconcertta.fr/" target="_blank" rel="noopener noreferrer" class="page-hero-logo-link" aria-label="Présentation InConcertta — presentation.inconcertta.fr (nouvel onglet)">
+          <img src="assets/images/logos/Logo InConcertta.png" alt="" width="280" height="120" loading="eager">
+        </a>
+      </div>
+    </header>
+
+    <section class="why-inconcertta-section" id="pourquoi-inconcertta" aria-labelledby="why-inconcertta-title">
+      <h2 id="why-inconcertta-title">Pourquoi utiliser InConcertta&nbsp;?</h2>
+      <ul class="why-inconcertta-list" role="list">
+        <li>Réduisez les oppositions à vos projets</li>
+        <li>Impliquez réellement les habitants</li>
+        <li>Générez des données exploitables</li>
+        <li>Accélérez vos décisions</li>
+      </ul>
+    </section>
+
+    <section class="institution-trust-below-section" aria-label="RGPD, hébergement et sécurité">
+      <ul class="institution-trust-grid" role="list">
+        <li>
+          <span class="institution-trust-kicker"><i class="fas fa-user-shield" aria-hidden="true"></i> RGPD</span>
+          <p class="institution-trust-desc">Traitement des données personnelles dans le respect du règlement européen : base légale, information des personnes, exercice des droits, sous-traitance encadrée et documentation adaptée aux responsables de traitement publics.</p>
+        </li>
+        <li>
+          <span class="institution-trust-kicker"><i class="fas fa-server" aria-hidden="true"></i> Hébergement</span>
+          <p class="institution-trust-desc">Données hébergées en Union européenne, sur une infrastructure reconnue (Supabase : base, authentification, fichiers) — critère souvent imposé par les marchés publics et les DSI territoriales.</p>
+        </li>
+        <li>
+          <span class="institution-trust-kicker"><i class="fas fa-lock" aria-hidden="true"></i> Sécurité</span>
+          <p class="institution-trust-desc">Architecture conçue pour la confidentialité et l’intégrité des échanges : accès authentifiés, bonnes pratiques de stockage ; le détail opérationnel et juridique complète vos documents (mentions légales, politique de confidentialité de l’application).</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="inconcertta-demo-section" id="demo-inconcertta" aria-label="Démonstration interface InConcertta">
+      <div id="view-login" class="demo-view">
+        <p class="demo-invite">Venez découvrir l’interface à destination du public&nbsp;: pour cela, cliquez sur <strong>Se connecter</strong> dans l’illustration ci-dessous.</p>
+        <p class="demo-invite" style="margin-top:0.4rem;font-size:0.95rem;opacity:0.92;">Il s’agit d’un <strong>aperçu statique</strong>, pas de l’application réelle.</p>
+        <p class="demo-invite demo-invite-platform">
+          Pour découvrir la plateforme, rendez-vous sur
+          <a href="https://inconcertta.fr/" class="btn-discover-platform" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> inconcertta.fr</a>
+        </p>
+        <div class="demo-frame">
+          <img class="demo-bg" src="assets/Inconcertta/login.png" width="2924" height="1671" alt="Écran de connexion InConcertta (illustration)">
+          <button type="button" class="demo-hit" id="hit-login"
+            style="left:37.65%; top:72.75%; width:24.75%; height:5.6%;"
+            aria-label="Se connecter (démo)"></button>
+        </div>
+      </div>
+
+      <div id="view-main" class="demo-view" hidden>
+        <div class="demo-frame" id="demo-viewport-frame">
+          <img id="demo-viewport-img" class="demo-bg" src="assets/Inconcertta/pageprincipale.png" width="1810" height="1420" alt="Interface InConcertta (démo)">
+          <button type="button" class="demo-hit" id="hit-logo"
+            style="left:0%; top:0%; width:9.6618%; height:7.389%;"
+            aria-label="Revenir à la vue carte (illustration principale)"></button>
+          <button type="button" class="demo-hit" data-tool="forum" data-label="Forum — Venez échanger"
+            style="left:9.6618%; top:0%; width:11.5942%; height:7.389%;"
+            aria-label="Afficher : forum"></button>
+          <button type="button" class="demo-hit" data-tool="sondages" data-label="Sondages"
+            style="left:21.256%; top:0%; width:11.5942%; height:7.389%;"
+            aria-label="Afficher : sondages"></button>
+          <button type="button" class="demo-hit" data-tool="idees" data-label="Boîte à idées"
+            style="left:32.8502%; top:0%; width:11.1111%; height:7.389%;"
+            aria-label="Afficher : boîte à idées"></button>
+          <button type="button" class="demo-hit" data-tool="actualites" data-label="Actualités"
+            style="left:43.9614%; top:0%; width:11.5942%; height:7.389%;"
+            aria-label="Afficher : actualités"></button>
+          <button type="button" class="demo-hit" data-tool="carte" data-label="Carte"
+            style="left:55.5556%; top:0%; width:11.5942%; height:7.389%;"
+            aria-label="Afficher : carte"></button>
+          <button type="button" class="demo-hit" data-tool="evolutions" data-label="Évolution — comparaison"
+            style="left:67.1498%; top:0%; width:11.5942%; height:7.389%;"
+            aria-label="Afficher : évolution et comparaison"></button>
+          <button type="button" class="demo-hit" data-tool="mon-compte" data-label="Mon compte"
+            style="left:78.744%; top:0%; width:11.1111%; height:7.389%;"
+            aria-label="Afficher : mon compte"></button>
+          <button type="button" class="demo-hit" data-tool="theme" data-label="Thème interface"
+            style="left:90.8203%; top:0%; width:3.3816%; height:7.389%;"
+            aria-label="Basculer entre captures réelles clair et sombre (fichiers pageprincipale et dossier captures/dark/)"></button>
+          <button type="button" class="demo-hit" id="hit-logout"
+            style="left:94.2019%; top:0%; width:7.7285%; height:7.389%;"
+            aria-label="Ouvrir la page de connexion (inconcertta.fr/login) — demande de confirmation"></button>
+        </div>
+        <p class="demo-viewport-caption" id="demo-viewport-caption" hidden aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="inconcertta-admin-gallery-section" aria-labelledby="galerie-espace-gestion">
+      <h2 id="galerie-espace-gestion">Espace de gestion pour paramétrer le projet</h2>
+      <p>
+        Réservé aux <strong>porteurs de projet</strong>, l’espace de gestion permet de régler les paramètres du projet et, notamment, l’accès au dispositif, de créer et paramétrer des cartes (fond, type, questions et sujets) et d’assembler les outils du projet&nbsp;: actualités, comparaisons d’images, partage de contenus. On y crée et analyse des sondages (y compris avec des questions prédéfinies), répond aux idées directement sur la plateforme, modère le forum et envoie des invitations. Un catalogue d’images dédié permet de tester équipements, scénarios ou propositions visuelles. Les exports aident à constituer un dossier sur la concertation. L’ensemble est modulable selon le contexte et la phase de la démarche.
+      </p>
+      <ul class="inconcertta-tight-list" role="list">
+        <li><strong>Accès</strong> — ouverture large, invitation, listes, niveaux de participation.</li>
+        <li><strong>Information</strong> — rédaction d’actualités pour en faire une revue de projet.</li>
+        <li><strong>Carte</strong> — fond, grille, questions et sujets ancrés sur le territoire.</li>
+        <li><strong>Participation</strong> — idées, forum, modération, invitations depuis l’espace de gestion.</li>
+        <li><strong>Enquêtes</strong> — conception, paramétrage et exploitation des sondages ; analyses avancées (tris croisés, redressements par pondération, tests statistiques du type khi-deux (χ²)).</li>
+        <li><strong>Images</strong> — catalogue pour comparer ou tester des propositions visuelles.</li>
+        <li><strong>Restitution</strong> — exports pour un dossier de concertation exploitable.</li>
+        <li><strong>Modularité</strong> — outils et réglages assemblés à la carte par projet.</li>
+      </ul>
+      <h3 class="inconcertta-offer-subtitle">Aperçus de l’espace de gestion</h3>
+      <ul class="admin-screens-grid" role="list">
+        <li>
+          <figure class="admin-screen-card">
+            <div class="admin-screen-thumb">
+              <img src="assets/Inconcertta/admin/galerie/01-tableau-de-bord.png" width="2934" height="1846" loading="lazy" decoding="async" alt="InConcertta — tableau de bord, espace de gestion">
+            </div>
+            <figcaption>
+              1. Tableau de bord
+              <span>Vue d’ensemble du projet et accès aux outils de gestion.</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="admin-screen-card">
+            <div class="admin-screen-thumb">
+              <img src="assets/Inconcertta/admin/galerie/02-parametres-projet.png" width="2940" height="1912" loading="lazy" decoding="async" alt="InConcertta — paramètres du projet et du dispositif">
+            </div>
+            <figcaption>
+              2. Paramètres du projet
+              <span>Réglages du dispositif, accès, outils activés et modularité.</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="admin-screen-card">
+            <div class="admin-screen-thumb">
+              <img src="assets/Inconcertta/admin/galerie/03-grille-admin.png" width="2940" height="1912" loading="lazy" decoding="async" alt="InConcertta — grille et carte, paramétrage côté administration">
+            </div>
+            <figcaption>
+              3. Grille et carte
+              <span>Fond de plan, type de grille, questions et sujets liés au territoire.</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="admin-screen-card">
+            <div class="admin-screen-thumb">
+              <img src="assets/Inconcertta/admin/galerie/04-creation-sondage.png" width="2938" height="1846" loading="lazy" decoding="async" alt="InConcertta — création et paramétrage d’un sondage">
+            </div>
+            <figcaption>
+              4. Création de sondage
+              <span>Conception d’enquêtes, dont questions prédéfinies.</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="admin-screen-card">
+            <div class="admin-screen-thumb">
+              <img src="assets/Inconcertta/admin/galerie/05-outil-analyse-sondages.png" width="2940" height="1843" loading="lazy" decoding="async" alt="InConcertta — outil d’analyse des sondages">
+            </div>
+            <figcaption>
+              5. Analyse des sondages
+              <span>Exploitation des résultats (tris croisés, pondération, tests statistiques).</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="admin-screen-card">
+            <div class="admin-screen-thumb">
+              <img src="assets/Inconcertta/admin/galerie/06-boite-a-idees.webp" width="6126" height="3857" loading="lazy" decoding="async" alt="InConcertta — boîte à idées, suivi et réponses">
+            </div>
+            <figcaption>
+              6. Boîte à idées
+              <span>Suivi des contributions et réponses depuis la plateforme.</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+      <p class="admin-gallery-outro">
+        Du passage d’information à la co-construction, la plateforme s’adapte au niveau d’ambition que vous fixez pour associer habitants et usagers à votre projet.
+      </p>
+    </section>
+
+    <section aria-labelledby="fonctions-title">
+      <h2 id="fonctions-title">Ce que permet l’application</h2>
+      <p class="inconcertta-lede">
+        Un <strong>projet</strong> = un espace dédié.
+      </p>
+      <ul class="inconcertta-tight-list">
+        <li>Déployer un dispositif <strong>adapté au contexte local</strong>, sans mélanger les publics ni les contenus.</li>
+        <li>Permettre aux <strong>porteurs de projet</strong> de présenter, expliquer et faire évoluer leurs propositions — et de <strong>répondre aux participants depuis l’interface de gestion</strong> (échanges centralisés).</li>
+        <li>Donner aux <strong>participants</strong> la possibilité de réagir, proposer et co-construire, y compris depuis un <strong>smartphone</strong> (interface web adaptée).</li>
+      </ul>
+      <p>
+        L’enjeu&nbsp;: une concertation <strong>structurée, continue et exploitable</strong>, utile à la fois pour la participation et pour l’analyse et la décision.
+      </p>
+
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M7 7v5m5-5v3m5-3v7m5-7v3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
+          <h3>Modularité : accès, outils, participation</h3>
+          <p><strong>Accès</strong> du très ouvert au fermé (invitation, liste, espace réservé). <strong>Outils</strong> activés selon les besoins.</p>
+          <p>La <strong>participation</strong> va de la consultation à la co-création sur la carte — selon concertation classique, <strong>budget participatif</strong>, information ou restitution.</p>
+          <p><strong>Mobile</strong> : même parcours sur téléphone ou tablette via le navigateur.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20l-4-2V6l4 2 6-3 4 2v12l-4-2-6 3-4-2z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
+          <h3>Carte interactive &amp; échelles</h3>
+          <p>Modélisation du projet sur une grille spatiale superposable à un <strong>fond de plan</strong>, adaptable à différentes <strong>échelles</strong> d’aménagement (îlot, quartier, ville, agglomération). Mode personnel ou <strong>collaboratif</strong> en temps réel selon la configuration.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 18h8l3 3V8a2 2 0 00-2-2H7a2 2 0 00-2 2v8a2 2 0 002 2z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
+          <h3>Questions &amp; sujets sur la carte</h3>
+          <p>Des <strong>questions</strong> et des <strong>sujets de forum</strong> peuvent être <strong>ancrés</strong> près d’éléments ou de zones du plan pour <strong>discuter</strong> d’un aménagement ciblé (espace vert, équipement, scénario localisé).</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19V5M9 19V9M14 19v-6M19 19V11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
+          <h3>Sondages &amp; analyses</h3>
+          <p>Enquêtes paramétrables (types de questions, accès, consentement) et <strong>analyses statistiques</strong> : tableaux croisés, indicateurs, méthodes documentées pour exploiter les résultats de façon rigoureuse.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 18h6M10 22h4M12 2a5 5 0 00-3 9v2h6v-2a5 5 0 00-3-9z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
+          <h3>Idées &amp; forum modéré</h3>
+          <p>Les participants peuvent <strong>déposer des idées</strong> ; l’équipe projet assure le suivi et peut <strong>répondre depuis l’interface de gestion</strong>. Le <strong>forum</strong> permet les échanges avec <strong>modération</strong> ; les contacts par <strong>courriel</strong> peuvent aussi être traités dans le même espace, pour garder un <strong>dialogue unique</strong> avec les utilisateurs.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.75"/><circle cx="8.5" cy="10.5" r="1.5" fill="currentColor"/><path d="M21 17l-5-5-4 4-2-2-4 4" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
+          <h3>Partage des créations</h3>
+          <p>Les <strong>créations cartographiques</strong> des participants peuvent être <strong>partagées</strong>, mises en avant dans une galerie et faire l’objet de <strong>votes</strong> selon les règles du projet.</p>
+        </article>
+        <article class="feature-card feature-card--archivage-centre">
+          <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8a2 2 0 012-2h4l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
+          <h3>Archivage &amp; restitution</h3>
+          <p>Exports (images, PDF, archives multi-cartes, sauvegardes de données) permettent de <strong>consigner</strong> les apports et d’<strong>alimenter un rapport global</strong> ou un bilan de concertation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="inconcertta-offer-section" aria-labelledby="offre-inconcertta-title">
+      <h2 id="offre-inconcertta-title">Offre et mise à disposition</h2>
+      <p class="inconcertta-lede">
+        L’outil est conçu pour se <strong>déployer par projet</strong> : vous ouvrez un espace dédié, vous le paramétrez et vous y ajoutez vos contenus — sans chantier informatique lourd. Vous pouvez <strong>ne demander un accompagnement que pour un seul dispositif</strong> ; lorsque le cadrage est clair, la <strong>mise en place peut être très rapide, en quelques jours</strong>, pour ouvrir la concertation sans traîner.
+      </p>
+      <div class="inconcertta-offer-cols">
+        <div class="inconcertta-offer-cols__col">
+          <p class="inconcertta-lede">
+            <strong class="inconcertta-brand"><span class="inconcertta-i">I</span><span class="inconcertta-n">n</span><span class="inconcertta-core">Concertta</span></strong> est une <strong>solution clé en main</strong>&nbsp;: plateforme numérique et <strong>expertise</strong> en aménagement et participation. Elle aide à structurer et animer la participation, et à éclairer la décision.
+          </p>
+          <p>
+            Au-delà des fonctionnalités, l’objectif est d’<strong>accompagner le projet</strong>.
+          </p>
+          <ul class="inconcertta-tight-list">
+            <li>Structurer la démarche de concertation</li>
+            <li>Mobiliser les publics concernés</li>
+            <li>Valoriser et exploiter les contributions</li>
+          </ul>
+        </div>
+        <div class="inconcertta-offer-cols__col">
+          <h3 class="inconcertta-offer-subtitle">Une offre adaptée aux acteurs publics</h3>
+          <p>La solution s’adresse notamment à&nbsp;:</p>
+          <ul>
+            <li>les <strong>collectivités</strong> (communes, intercommunalités, régions) ;</li>
+            <li>les <strong>cabinets</strong> d’urbanisme et de concertation ;</li>
+            <li>les <strong>porteurs</strong> de projets territoriaux.</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="inconcertta-offer-divider" />
+
+      <h3 class="inconcertta-offer-subtitle">Un modèle flexible et évolutif</h3>
+      <p>Plusieurs <strong>modalités commerciales</strong> sont possibles&nbsp;:</p>
+      <ul>
+        <li><strong>Service — accès à la plateforme</strong> pour vos concertations, en <strong>ponctuel</strong> (durée d’un dispositif) ou en usage <strong>récurrent</strong> sur la durée.</li>
+        <li><strong>Offre personnalisée</strong> — charte graphique, paramétrage et accompagnement au montage.</li>
+        <li><strong>Instance dédiée (white-label)</strong> — identité propre, base isolée, services associés.</li>
+      </ul>
+      <p class="inconcertta-offer-formule-inclut">Chaque formule peut inclure :</p>
+      <ul class="inconcertta-tight-list">
+        <li>le déploiement technique de la plateforme</li>
+        <li>la prise en main et la formation des équipes</li>
+        <li>l’accompagnement à l’animation des démarches</li>
+      </ul>
+    </section>
+
+    <section class="incitta-intro-section" aria-labelledby="incitta-title">
+      <h2 id="incitta-title">InCitta &amp; <span class="inconcertta-brand"><span class="inconcertta-i">I</span><span class="inconcertta-n">n</span><span class="inconcertta-core">Concertta</span></span></h2>
+      <div class="incitta-intro-lead">
+        <p>
+          <strong>InCitta</strong> accompagne les territoires sur la <strong>programmation</strong>, la <strong>concertation</strong> et la <strong>stratégie</strong> de projet.
+        </p>
+        <p>
+          <strong class="inconcertta-brand"><span class="inconcertta-i">I</span><span class="inconcertta-n">n</span><span class="inconcertta-core">Concertta</span></strong> en est le <strong>prolongement numérique</strong>.
+        </p>
+      </div>
+      <div class="incitta-paircols">
+        <div class="incitta-paircols__col">
+          <ul class="inconcertta-tight-list">
+            <li>Un <strong>support interactif</strong> pour présenter et faire évoluer les projets</li>
+            <li>Des <strong>échanges structurés</strong> entre acteurs et participants</li>
+            <li>Des <strong>analyses et restitutions</strong> directement exploitables</li>
+          </ul>
+        </div>
+        <div class="incitta-paircols__col">
+          <ul class="inconcertta-tight-list">
+            <li><strong>Mise en service</strong> selon la formule (ponctuel, récurrent ou instance dédiée)</li>
+            <li><strong>Formation</strong> et cadrage méthodologique</li>
+            <li><strong>Calibrage</strong> de la plateforme selon votre dispositif de participation</li>
+          </ul>
+        </div>
+      </div>
+      <p class="incitta-synthesis">
+        L’ensemble forme une approche cohérente combinant <strong>outil numérique</strong> et <strong>expertise terrain</strong>.
+      </p>
+    </section>
+
+    <div class="cta-row">
+      <a href="https://inconcertta.fr/" class="btn-discover-platform" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Découvrir la plateforme</a>
+      <a href="contact.html" class="btn-primary-ic"><i class="fas fa-envelope" aria-hidden="true"></i> Demander des informations</a>
+      <a href="demarche-participative.html" class="btn-outline-ic">Démarche participative</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer footer--site">
+  <div class="container">
+    <div class="footer-site-inner">
+      <img src="assets/Logo/LogoPied.png" alt="InCitta" class="footer-logo">
+      <p class="footer-site-copy">&copy; 2026 InCitta. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </div>
+</footer>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

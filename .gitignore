@@ -1,0 +1,42 @@
+# Fichiers de configuration sensibles
+.env
+.env.local
+.env.production
+*.env
+
+# Sauvegardes et archives
+_backup/
+*.tar.gz
+*.backup
+*.zip
+
+# Fichiers de développement
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dépendances
+node_modules/
+
+# Build (généré par npm run build sur Netlify)
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Source Illustrator > limite GitHub (100 Mo) — conserver en local / stockage externe
+assets/images/motsfléchés.ai
+
