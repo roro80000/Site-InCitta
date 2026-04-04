@@ -1,0 +1,27 @@
+{
+  "name": "site_incitta",
+  "version": "1.0.0",
+  "description": "Site web institutionnel d’InCitta – cabinet d’études et d’ingénierie territoriale.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve -l 3001 .",
+    "dev:open": "bash scripts/dev-local.sh",
+    "start": "serve -l 3001 .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roro80000/Site-InCitta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/roro80000/Site-InCitta/issues"
+  },
+  "homepage": "https://github.com/roro80000/Site-InCitta#readme",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}

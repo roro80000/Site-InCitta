@@ -98,11 +98,25 @@ export function initInconcerttaDemo() {
     viewMain.hidden = true;
   }
 
+  function queueDemoToolbarStagger() {
+    if (!document.body.classList.contains('page-inconcertta')) return;
+    const detail = {
+      root: viewMain,
+      selector: '#demo-viewport-frame .demo-hit',
+    };
+    const fire = () => {
+      window.dispatchEvent(new CustomEvent('inconcertta-stagger', { detail }));
+    };
+    if (window.__inconcerttaStaggerReady) fire();
+    else window.addEventListener('inconcertta-motion-ready', fire, { once: true });
+  }
+
   function showMain() {
     demoDarkMode = false;
     goMainMap();
     viewLogin.hidden = true;
     viewMain.hidden = false;
+    queueDemoToolbarStagger();
   }
 
   hitLogin.addEventListener('click', showMain);

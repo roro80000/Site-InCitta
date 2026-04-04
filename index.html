@@ -396,6 +396,8 @@ body { background: #f6f6f6 !important; }
  <!-- PWA Meta Tags -->
  <link rel="manifest" href="manifest.json">
  <meta name="theme-color" content="#003333">
+ <!-- Carte accueil : clé Mapbox optionnelle (streets-v12). Vide = tuiles OpenStreetMap + Leaflet (sans clé). -->
+ <meta name="mapbox-access-token" content="">
  <!-- Standard moderne multi-plateformes -->
  <meta name="mobile-web-app-capable" content="yes">
  <!-- Balises spécifiques Apple pour iOS (nécessaires pour Safari) -->
@@ -533,10 +535,10 @@ body { background: #f6f6f6 !important; }
 <section class="accompagnement-section" aria-label="Accompagnement">
   <div class="accompagnement-content">
     <div class="accompagnement-text">
-      InCitta vous accompagne dans la réalisation de vos projets
+      Vos projets méritent la même exigence qu’un grand service : précision, discrétion et sens du détail.
       <div class="accompagnement-cta">
         <br>
-        <a href="assets/images/Flyer-2026_RV.pdf" class="rounded-cta" aria-label="Ouvrir le flyer 2026" target="_blank" rel="noopener">Voir plus</a>
+        <a href="assets/images/Flyer-2026_RV.pdf" class="rounded-cta" aria-label="Consulter la plaquette InCitta 2026 (PDF)" target="_blank" rel="noopener">Consulter la plaquette</a>
       </div>
     </div>
 
@@ -550,11 +552,11 @@ body { background: #f6f6f6 !important; }
 <section class="development-section service-block service-block--territoire" aria-label="Développement territorial">
   <div class="development-content">
     <div class="development-text">
-      <h3 class="development-title home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line">Accompagnement dans votre développement territorial</h3>
+      <h3 class="development-title home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line">Projets de territoire : cadrer l’avenir avec méthode</h3>
       <p class="development-paragraph">Elaboration de projets de territoire, de démarches de contractualisation,  des stratégies de planification à différentes échelles (quartier, intercommunalité, bassin de vie, etc.) en intégrant les problématiques actuelles du développement durable pour permettre à nos territoires de s'adapter aux défis de demain.</p>
       <div style="height:1.5rem;"></div>
       <div class="development-cta">
-        <a href="programmation-territoriale.html" class="rounded-cta" aria-label="En savoir plus">En savoir plus</a>
+        <a href="programmation-territoriale.html" class="rounded-cta" aria-label="Approfondir la programmation territoriale">Approfondir</a>
       </div>
     </div>
 
@@ -570,11 +572,11 @@ body { background: #f6f6f6 !important; }
   <section class="participation-section service-block home-service-columns__card" aria-label="Concertation et participation">
     <div class="participation-content">
       <div class="participation-text">
-        <h3 class="participation-title home-chapter-title home-chapter-title--bar-left">Concertation et animation de démarches participatives</h3>
+        <h3 class="participation-title home-chapter-title home-chapter-title--bar-left">Concertation — donner la parole, avec élégance</h3>
         <p class="development-paragraph">Conception et animation d'outils variés, d’ateliers citoyens favorisant l'association et le dialogue entre les habitants et les acteurs du territoire permettant une meilleure appropriation des projets.</p>
       </div>
       <div class="participation-cta">
-        <a href="demarche-participative.html" class="rounded-cta" aria-label="En savoir plus sur la démarche participative">En savoir plus</a>
+        <a href="demarche-participative.html" class="rounded-cta" aria-label="Découvrir la démarche participative">Découvrir la démarche</a>
       </div>
       <div class="participation-image" aria-hidden="true">
         <img src="assets/images/concertation_pla,.jpg" alt="" loading="eager">
@@ -585,11 +587,11 @@ body { background: #f6f6f6 !important; }
   <section class="development-section service-block inconcertta-platform-section home-service-columns__card" aria-label="InConcertta">
     <div class="development-content">
       <div class="development-text">
-        <h3 class="development-title home-chapter-title home-chapter-title--bar-right">InConcertta — plateforme numérique de concertation</h3>
+        <h3 class="development-title home-chapter-title home-chapter-title--bar-right">InConcertta — le salon numérique de votre concertation</h3>
         <p class="development-paragraph">Application web pour accompagner la concertation territoriale : cartes interactives, enquêtes et sondages, échanges, idées et analyses — au service de vos projets et du dialogue entre les habitants et les acteurs du territoire. La plateforme est <strong>modulable</strong> (accès du <strong>large public</strong> au dispositif <strong>restreint ou sur invitation</strong>, outils activés, participation ouverte ou encadrée) et peut être adaptée à des usages de <strong>démocratie participative</strong>, dont les <strong>budgets participatifs</strong> et d’autres dispositifs de consultation et de co-construction. Proposition en <strong>service (SaaS)</strong>, clé en main : formules <strong>ponctuelles</strong> par projet, <strong>cadre permanent ou récurrent</strong>, ou <strong>instance dédiée</strong> — détail sur la page InConcertta.</p>
         <div style="height:1.5rem;"></div>
         <div class="development-cta">
-          <a href="inconcertta.html" class="rounded-cta" aria-label="En savoir plus sur InConcertta">En savoir plus</a>
+          <a href="inconcertta.html" class="rounded-cta" aria-label="Entrer dans l’expérience InConcertta">Entrer dans l’expérience</a>
         </div>
       </div>
       <div class="development-image">
@@ -608,7 +610,7 @@ body { background: #f6f6f6 !important; }
         <img src="assets/images/rouage.png" alt="Rouage partenaires" loading="eager" style="width:8cm;height:8cm;object-fit:cover;border-radius:16px;">
       </div>
       <div class="accompagnement-text service-block__body-text">
-        <h3 class="home-chapter-title home-chapter-title--bar-right home-chapter-title--financement-title">Accompagnement dans la recherche de financement</h3>
+        <h3 class="home-chapter-title home-chapter-title--bar-right home-chapter-title--financement-title">Financement public : pistes alignées sur vos ambitions</h3>
         <p class="development-paragraph">Incluant l'identification et le conseil stratégique pour l'optimisation et l’articulation des dispositifs européens, nationaux et régionaux pour maximiser les ressources mobilisables permettant de concrétiser vos initiatives locales.</p>
       </div>
     </div>
@@ -618,7 +620,7 @@ body { background: #f6f6f6 !important; }
   <section class="evaluation-section service-block" aria-label="Évaluation des politiques publiques" style="margin-top:1.5rem;">
     <div class="evaluation-content" style="display:flex;gap:1.25rem;align-items:flex-start;max-width:1200px;margin:0 auto;padding:0 20px;">
       <div class="evaluation-text" style="flex:1;">
-        <h3 class="home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line">L'évaluation au service de la transformation des politiques publiques</h3>
+        <h3 class="development-title home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line">Évaluer pour transformer l’action publique</h3>
         <p class="development-paragraph">En concevant des référentiels d’évaluation, en élaborant des indicateurs adaptés et en réalisant des analyses de données, des bilans qualitatifs et quantitatifs et de la prospective permettant d'accompagner la prise de décision.</p>
       </div>
       <div class="evaluation-image" aria-hidden="true" style="flex:0 0 auto;">
@@ -627,29 +629,133 @@ body { background: #f6f6f6 !important; }
     </div>
   </section>
 
+<!-- Carte territoire — désactivée. Réactiver : retirer hidden et aria-hidden sur la section. -->
+<section id="city-explore" class="city-explore" aria-labelledby="city-explore-title" hidden aria-hidden="true">
+  <div class="container city-explore__inner">
+    <h2 id="city-explore-title" class="city-explore__title">Où nous accompagnons le territoire</h2>
+    <p class="city-explore__intro">Explorez l’âme de la cité — une invitation à parcourir, sur la carte et en liste, les empreintes de nos missions.</p>
+    <div class="city-explore__grid">
+      <div
+        id="city-explore-map"
+        class="city-explore__map"
+        role="region"
+        aria-label="Carte des lieux d’intervention"
+      ></div>
+      <div class="city-explore__sidebar">
+      <h3 class="city-explore__list-heading" id="city-explore-curations-heading">Curations thématiques</h3>
+      <ul class="city-explore__list" role="list" aria-labelledby="city-explore-curations-heading">
+        <li>
+          <button
+            type="button"
+            class="city-explore-card"
+            data-place-id="amiens-siege"
+            data-lat="49.8941"
+            data-lng="2.2958"
+            data-title="Amiens — siège &amp; pilotage"
+            data-meta="26 rue Jean-Baptiste Trannoy · 80000 Amiens"
+            data-body="Point central pour cadrer vos projets et vos démarches participatives.|Accompagnement méthodologique, restitution et outils numériques (dont InConcertta selon vos besoins)."
+          >
+            <span class="city-explore-card__kicker">Repère principal</span>
+            <span class="city-explore-card__name">Amiens — siège</span>
+            <span class="city-explore-card__hint">Découvrir la fiche</span>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="city-explore-card"
+            data-place-id="saint-leu"
+            data-lat="49.9024"
+            data-lng="2.3012"
+            data-title="Saint-Leu — fabrique de projet"
+            data-meta="Quartier patrimonial · ateliers &amp; concertation"
+            data-body="Idéal pour animer la concertation sur la revitalisation urbaine et le dialogue avec les habitants.|Supports cartographiques et scénarios localisés pour rendre lisibles les enjeux."
+          >
+            <span class="city-explore-card__kicker">Quartier</span>
+            <span class="city-explore-card__name">Saint-Leu</span>
+            <span class="city-explore-card__hint">Découvrir la fiche</span>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="city-explore-card"
+            data-place-id="hortillonnages"
+            data-lat="49.9108"
+            data-lng="2.3135"
+            data-title="Les Hortillonnages — paysage &amp; usages"
+            data-meta="Trame verte · transition écologique"
+            data-body="Projets mêlant paysage, mobilités douces et adaptation : cartographie des usages et des milieux.|Évaluation et indicateurs pour suivre les effets des aménagements."
+          >
+            <span class="city-explore-card__kicker">Paysage</span>
+            <span class="city-explore-card__name">Hortillonnages</span>
+            <span class="city-explore-card__hint">Découvrir la fiche</span>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="city-explore-card"
+            data-place-id="peripherie"
+            data-lat="49.8712"
+            data-lng="2.2684"
+            data-title="Agglomération — échelle intercommunale"
+            data-meta="PLUi · SCOT · programmes pluriannuels"
+            data-body="Accompagnement à l’échelle de l’agglomération : programmation, contractualisation et évaluation des politiques publiques.|Mise en cohérence des dispositifs européens, nationaux et régionaux."
+          >
+            <span class="city-explore-card__kicker">Échelle large</span>
+            <span class="city-explore-card__name">Périphérie &amp; EPCI</span>
+            <span class="city-explore-card__hint">Découvrir la fiche</span>
+          </button>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+  <div class="city-explore-backdrop" id="city-explore-backdrop" hidden aria-hidden="true"></div>
+  <aside
+    class="city-explore-panel"
+    id="city-explore-panel"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="city-explore-panel-title"
+    aria-hidden="true"
+  >
+    <div class="city-explore-panel__header">
+      <h3 id="city-explore-panel-title" class="city-explore-panel__title"></h3>
+      <button type="button" class="city-explore-panel__close" aria-label="Fermer le panneau">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <p id="city-explore-panel-meta" class="city-explore-panel__meta" hidden></p>
+    <div id="city-explore-panel-body" class="city-explore-panel__body"></div>
+  </aside>
+</section>
+
 <!-- Section FAQ (moved from Contact) -->
 <section class="faq-section">
   <div class="container">
     <div class="values-grid">
   <div class="value-item">
     <div class="value-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
-    <h3>Co-construction</h3>
-    <p>Approche participative centrée sur l'appropriation par les habitants et les acteurs locaux.</p>
+    <h3>La co-construction, au fil du dialogue</h3>
+    <p>Une approche participative où chaque voix compte, pour une appropriation durable par les habitants et les acteurs du lieu.</p>
   </div>
   <div class="value-item">
     <div class="value-icon"><i class="fas fa-map" aria-hidden="true"></i></div>
-    <h3>Qualité cartographique et graphique</h3>
-    <p>Des supports clairs et esthétiques pour faciliter la compréhension et le dialogue.</p>
+    <h3>Des supports à la hauteur de vos enjeux</h3>
+    <p>Cartes et documents pensés comme des objets de lecture : clairs, soignés, dignes du sujet.</p>
   </div>
   <div class="value-item">
     <div class="value-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-    <h3>Évaluation & prospective</h3>
-    <p>Indicateurs et bilans pour piloter la transformation des politiques publiques.</p>
+    <h3>Évaluation et regard prospectif</h3>
+    <p>Indicateurs et bilans pour éclairer la décision et ouvrir la suite du récit public.</p>
   </div>
   <div class="value-item">
     <div class="value-icon"><i class="fas fa-hands-helping" aria-hidden="true"></i></div>
-    <h3>Accompagnement opérationnel</h3>
-    <p>AMO / AMU : de la définition stratégique à la mise en œuvre des actions.</p>
+    <h3>À vos côtés, du cadrage au terrain</h3>
+    <p>AMO / AMU : nous restons présents de la feuille de route jusqu’aux gestes concrets sur le terrain.</p>
   </div>
     </div>
   </div>

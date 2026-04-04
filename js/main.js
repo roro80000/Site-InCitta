@@ -10,6 +10,7 @@ import { initNavbarScroll } from './hooks/navbar-scroll.js';
 import { initMobileEnv } from './hooks/mobile-env.js';
 import { initNavMobile } from './hooks/nav-mobile.js';
 import { initAnchorSmoothScroll } from './hooks/anchor-smooth-scroll.js';
+import { initLenisScroll } from './hooks/lenis-scroll.js';
 import { initFormInputs } from './hooks/form-inputs.js';
 import { initLazyImages } from './hooks/lazy-images.js';
 import { initHeroParallax } from './hooks/hero-parallax.js';
@@ -19,6 +20,7 @@ import { initGoatCounter } from './goatcounter.js';
 import { initCurtainReveal } from './hooks/curtain-reveal.js';
 import { initMotflecheDistortion } from './hooks/motfleche-distortion.js';
 import { initMagneticCursor } from './hooks/magnetic-cursor.js';
+import { initCityExploreMap } from './hooks/city-explore-map.js';
 
 initGoatCounter();
 if (document.body.classList.contains('home')) {
@@ -27,16 +29,25 @@ if (document.body.classList.contains('home')) {
 initNavbarScroll();
 initMobileEnv();
 
-function boot() {
+async function boot() {
   initMagneticCursor();
   initNavMobile();
-  initAnchorSmoothScroll();
+
+  const lenisOk = await initLenisScroll();
+  if (!lenisOk) {
+    initAnchorSmoothScroll();
+  }
+
   initFormInputs();
   initLazyImages();
   initHeroParallax();
   initRevealOnScroll();
   initInconcerttaDemo();
   initMotflecheDistortion();
+  initCityExploreMap();
+  if (document.body.classList.contains('page-inconcertta')) {
+    import('./pages/inconcertta-motion.js').then((m) => m.initInconcerttaMotion());
+  }
 }
 
 if (document.readyState === 'loading') {

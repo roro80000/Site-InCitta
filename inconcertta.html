@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>InConcertta — Co-construisez vos projets territoriaux avec les citoyens | InCitta</title>
+  <title>InConcertta — Le territoire se co-construit, en temps réel | InCitta</title>
   <meta name="description" content="InConcertta : participation en temps réel, carte interactive, données exploitables. RGPD, hébergement en Union européenne (Supabase), sécurité — pour collectivités et acteurs publics. Présentation InCitta.">
   <meta name="keywords" content="InConcertta, concertation, participation citoyenne, SaaS territoire, collectivités, RGPD, InCitta">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://www.incitta.eu/inconcertta.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.incitta.eu/inconcertta.html">
-  <meta property="og:title" content="InConcertta — Co-construisez avec les citoyens, en temps réel | InCitta">
+  <meta property="og:title" content="InConcertta — Concertation d’exception, en temps réel | InCitta">
   <meta property="og:description" content="Carte interactive, résultats exploitables. Cadre RGPD, hébergement européen, sécurité — pensé pour les collectivités.">
   <meta property="og:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
   <meta property="og:locale" content="fr_FR">
@@ -20,8 +20,20 @@
   <meta name="twitter:description" content="Plateforme SaaS de concertation pour collectivités — présentation InCitta.">
   <meta name="twitter:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
   <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script>
+    (function () {
+      try {
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('ic-stagger-prime');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <style>
     .logo-img { max-height: 48px; width: auto; height: auto; display: block; }
     .main-read {
@@ -346,6 +358,17 @@
       font-size: 0.95rem;
       line-height: 1.65;
     }
+    .main-read .city-guide-bento .feature-card p {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 0.875rem;
+      line-height: 1.62;
+      color: rgba(10, 10, 10, 0.78);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+    .main-read .city-guide-bento .feature-card p:last-child {
+      margin-bottom: 0;
+    }
     .main-read .feature-card p:last-child {
       margin-bottom: 0;
     }
@@ -480,130 +503,178 @@
         gap: 0.85rem;
       }
     }
-    .features-grid {
+    /* City-guide luxe : grille Bento + cartes monochrome + grain */
+    .city-guide-bento {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-      margin: 1.25rem 0 0.5rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin: 1.35rem 0 0.5rem;
     }
-    .feature-card {
+    @media (max-width: 900px) {
+      .city-guide-bento {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 520px) {
+      .city-guide-bento {
+        grid-template-columns: 1fr;
+      }
+      .city-guide-bento .feature-card--bento-wide {
+        grid-column: auto;
+      }
+    }
+    .city-guide-bento .feature-card {
       position: relative;
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(5, 59, 59, 0.12);
-      border-radius: 16px;
-      padding: 1.1rem 1.15rem;
-      box-shadow: var(--shadow-sm);
+      background: #f5f5f5;
+      border: 1px solid rgba(10, 10, 10, 0.14);
+      border-radius: 4px;
+      padding: 1rem 1.05rem 1.05rem;
+      box-shadow: none;
       transition:
-        transform 0.28s cubic-bezier(0.22, 0.85, 0.32, 1),
-        box-shadow 0.28s ease,
-        border-color 0.28s ease,
-        background 0.28s ease;
+        transform 0.26s cubic-bezier(0.22, 0.85, 0.32, 1),
+        border-color 0.26s ease,
+        background 0.26s ease;
     }
-    .feature-card::before {
+    .city-guide-bento .feature-card--bento-wide {
+      grid-column: span 2;
+    }
+    .main-read .city-guide-bento .feature-card p.feature-card__kicker {
+      margin: 0 0 0.5rem;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(10, 10, 10, 0.45);
+      line-height: 1.3;
+    }
+    .city-guide-bento .feature-card::before {
       content: '';
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      background: linear-gradient(135deg, rgba(2, 102, 102, 0.1), transparent 52%, rgba(2, 102, 102, 0.04));
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), transparent 55%);
       opacity: 0;
-      transition: opacity 0.32s ease;
+      transition: opacity 0.28s ease;
       pointer-events: none;
-    }
-    .feature-card:hover::before {
-      opacity: 1;
-    }
-    .feature-card > * {
-      position: relative;
       z-index: 1;
     }
-    .feature-card:hover {
-      transform: translateY(-6px);
-      box-shadow:
-        0 22px 56px rgba(5, 59, 59, 0.14),
-        0 0 0 1px rgba(2, 102, 102, 0.22),
-        0 8px 28px rgba(2, 102, 102, 0.1);
-      border-color: rgba(2, 102, 102, 0.38);
-      background: rgba(255, 255, 255, 0.98);
+    .city-guide-bento .feature-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.09;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
-    .feature-card .icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: rgba(2, 102, 102, 0.14);
-      border: 1px solid rgba(5, 59, 59, 0.12);
+    .city-guide-bento .feature-card > * {
+      position: relative;
+      z-index: 3;
+    }
+    .city-guide-bento .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(10, 10, 10, 0.28);
+      background: #fafafa;
+      box-shadow: none;
+    }
+    .city-guide-bento .feature-card:hover::before {
+      opacity: 1;
+    }
+    .city-guide-bento .feature-card .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      background: rgba(10, 10, 10, 0.06);
+      border: 1px solid rgba(10, 10, 10, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary);
-      font-size: 1.1rem;
-      margin-bottom: 0.65rem;
+      color: #0a0a0a;
+      font-size: 1rem;
+      margin-bottom: 0.55rem;
       transition:
-        transform 0.28s cubic-bezier(0.22, 0.85, 0.32, 1),
-        background 0.28s ease,
-        border-color 0.28s ease,
-        box-shadow 0.28s ease,
-        color 0.2s ease;
+        transform 0.26s cubic-bezier(0.22, 0.85, 0.32, 1),
+        background 0.26s ease,
+        border-color 0.26s ease;
     }
-    .feature-card:hover .icon {
-      transform: scale(1.1);
-      background: rgba(2, 102, 102, 0.22);
-      border-color: rgba(2, 102, 102, 0.32);
-      box-shadow: 0 6px 18px rgba(2, 102, 102, 0.18);
-      color: var(--primary-2);
+    .city-guide-bento .feature-card:hover .icon {
+      transform: none;
+      background: rgba(10, 10, 10, 0.08);
+      border-color: rgba(10, 10, 10, 0.18);
+      box-shadow: none;
+      color: #0a0a0a;
     }
     @media (pointer: fine) {
-      body.is-magnetic-cursor--near .main-read .feature-card.magnetic-zoom-target {
-        transform: translateY(-5px) scale(1.035);
-        box-shadow:
-          0 20px 50px rgba(5, 59, 59, 0.12),
-          0 0 0 1px rgba(2, 102, 102, 0.2);
+      body.is-magnetic-cursor--near .main-read .city-guide-bento .feature-card.magnetic-zoom-target {
+        transform: translateY(-2px) scale(1.02);
+        border-color: rgba(10, 10, 10, 0.22);
       }
-      body.is-magnetic-cursor--near .main-read .feature-card.magnetic-zoom-target::before {
-        opacity: 0.65;
+      body.is-magnetic-cursor--near .main-read .city-guide-bento .feature-card.magnetic-zoom-target::before {
+        opacity: 0.55;
       }
-      body.is-magnetic-cursor--near .main-read .feature-card.magnetic-zoom-target:hover {
-        transform: translateY(-7px) scale(1.05);
-        border-color: rgba(2, 102, 102, 0.42);
-        box-shadow:
-          0 26px 60px rgba(5, 59, 59, 0.16),
-          0 0 0 1px rgba(2, 102, 102, 0.28),
-          0 10px 32px rgba(2, 102, 102, 0.12);
+      body.is-magnetic-cursor--near .main-read .city-guide-bento .feature-card.magnetic-zoom-target:hover {
+        transform: translateY(-4px) scale(1.03);
+        border-color: rgba(10, 10, 10, 0.32);
       }
-      body.is-magnetic-cursor--near .main-read .feature-card.magnetic-zoom-target:hover::before {
+      body.is-magnetic-cursor--near .main-read .city-guide-bento .feature-card.magnetic-zoom-target:hover::before {
         opacity: 1;
       }
     }
-    .feature-card h3 {
-      margin: 0 0 0.45rem;
-      font-size: 1.02rem;
-      font-weight: 800;
-      color: var(--primary);
-      transition: color 0.25s ease, letter-spacing 0.25s ease;
+    .city-guide-bento .feature-card h3 {
+      margin: 0 0 0.5rem;
+      font-family: 'Cormorant Garamond', 'Times New Roman', Times, serif;
+      font-size: clamp(1.2rem, 2.1vw, 1.45rem);
+      font-weight: 600;
+      font-style: normal;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      color: #0a0a0a;
+      transition: color 0.22s ease;
     }
-    .feature-card:hover h3 {
-      color: var(--primary-2);
-      letter-spacing: -0.01em;
+    .city-guide-bento .feature-card:hover h3 {
+      color: #0a0a0a;
+      letter-spacing: 0.01em;
     }
-    .feature-card p {
+    .city-guide-bento .feature-card p {
       margin: 0;
-      font-size: 0.95rem;
       text-align: left;
     }
-    .feature-card--archivage-centre {
+    .city-guide-bento .feature-card p strong {
+      font-weight: 600;
+      color: #0a0a0a;
+    }
+    .city-guide-bento .feature-card--archivage-centre {
       grid-column: 1 / -1;
-      max-width: min(100%, 560px);
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
     }
-    .feature-card--archivage-centre .icon {
-      margin-left: auto;
-      margin-right: auto;
+    .city-guide-bento .feature-card--archivage-centre .icon {
+      margin-left: 0;
+      margin-right: 0;
     }
-    .feature-card--archivage-centre h3,
-    .feature-card--archivage-centre p {
-      text-align: center;
+    .city-guide-bento .feature-card--archivage-centre h3,
+    .city-guide-bento .feature-card--archivage-centre p {
+      text-align: left;
+    }
+    .city-guide-section #fonctions-title {
+      color: #0a0a0a;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .city-guide-section .inconcertta-lede {
+      color: rgba(10, 10, 10, 0.88);
+    }
+    .city-guide-section > p:not(.inconcertta-lede) {
+      color: rgba(10, 10, 10, 0.82);
+    }
+    .city-guide-section .inconcertta-tight-list li {
+      color: rgba(10, 10, 10, 0.82);
     }
     .cta-row {
       display: flex;
@@ -847,9 +918,92 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Micro-interactions : 0,4s, léger soulèvement + ombre (page InConcertta) */
+    .page-inconcertta .admin-screen-card {
+      transition:
+        transform 0.4s cubic-bezier(0.22, 0.85, 0.32, 1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+    }
+    .page-inconcertta .admin-screen-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 12px 28px rgba(5, 59, 59, 0.14),
+        0 4px 10px rgba(5, 59, 59, 0.06);
+    }
+    .page-inconcertta .city-guide-bento .feature-card {
+      transition:
+        transform 0.4s cubic-bezier(0.22, 0.85, 0.32, 1),
+        border-color 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+    .page-inconcertta .city-guide-bento .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 10px 26px rgba(10, 10, 10, 0.08),
+        0 2px 8px rgba(10, 10, 10, 0.04);
+    }
+    .page-inconcertta .hero-cta-row .btn.btn-primary,
+    .page-inconcertta .hero-cta-row .btn-hero-secondary,
+    .page-inconcertta .btn-primary-ic,
+    .page-inconcertta .btn-outline-ic,
+    .page-inconcertta .btn-discover-platform {
+      transition:
+        transform 0.4s cubic-bezier(0.22, 0.85, 0.32, 1),
+        background 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        filter 0.4s ease;
+    }
+    .page-inconcertta .hero-cta-row .btn.btn-primary:hover {
+      transform: translateY(-2px);
+    }
+    .page-inconcertta .hero-cta-row .btn-hero-secondary:hover {
+      transform: translateY(-2px);
+    }
+    .page-inconcertta .btn-primary-ic {
+      box-shadow: 0 2px 10px rgba(11, 107, 107, 0.12);
+    }
+    .page-inconcertta .btn-primary-ic:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(11, 107, 107, 0.22);
+    }
+    .page-inconcertta .btn-outline-ic:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(11, 107, 107, 0.12);
+    }
+    .page-inconcertta .btn-discover-platform:hover {
+      transform: translateY(-2px);
+    }
+    /* Avant GSAP : pas de flash des cartes (retiré en JS après l’entrée) */
+    html.ic-stagger-prime .page-inconcertta .admin-screens-grid > li,
+    html.ic-stagger-prime .page-inconcertta .city-guide-bento .feature-card {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .page-inconcertta .admin-screen-card,
+      .page-inconcertta .city-guide-bento .feature-card,
+      .page-inconcertta .hero-cta-row .btn.btn-primary,
+      .page-inconcertta .hero-cta-row .btn-hero-secondary,
+      .page-inconcertta .btn-primary-ic,
+      .page-inconcertta .btn-outline-ic,
+      .page-inconcertta .btn-discover-platform {
+        transition-duration: 0.01ms !important;
+      }
+      .page-inconcertta .admin-screen-card:hover,
+      .page-inconcertta .city-guide-bento .feature-card:hover,
+      .page-inconcertta .btn-primary-ic:hover,
+      .page-inconcertta .btn-outline-ic:hover {
+        transform: none;
+      }
+    }
   </style>
 </head>
-<body>
+<body class="page-inconcertta">
 
 <nav class="navbar" aria-label="Navigation principale">
   <div class="nav-container">
@@ -880,16 +1034,16 @@
         <p class="hero-brand-kicker">
           <span class="inconcertta-brand"><span class="inconcertta-i">I</span><span class="inconcertta-n">n</span><span class="inconcertta-i">C</span><span class="inconcertta-core">oncertta</span></span>
         </p>
-        <h1 class="page-title hero-value-headline">Co-construisez vos projets territoriaux avec les citoyens, en temps réel</h1>
+        <h1 class="page-title hero-value-headline">Le territoire se co-construit, en temps réel</h1>
         <p class="page-lead hero-value-sub">
-          Faites participer citoyens, élus et experts sur une <strong>carte interactive</strong>, avec <strong>résultats exploitables</strong> immédiatement.
+          Invitez citoyens, élus et experts sur une <strong>carte vivante</strong> ; recueillez des <strong>résultats prêts à l’arbitrage</strong>, sans friction.
         </p>
         <div class="hero-cta-row">
-          <a href="contact.html" class="btn btn-primary">Demander des informations</a>
-          <a href="#demo-inconcertta" class="btn-hero-secondary">Voir la démo</a>
+          <a href="contact.html" class="btn btn-primary">Nous écrire</a>
+          <a href="#demo-inconcertta" class="btn-hero-secondary">Parcourir la démo</a>
         </div>
         <p class="hero-footnote">
-          </span> InConcertta est une application web sans installation ; mobile, tablette et ordinateur. Vous pouvez également bénéficier des <strong>accompagnements InCitta</strong> sur l’aménagement et la participation.
+          InConcertta est une application web sans installation — sur mobile, tablette ou bureau. Les <strong>accompagnements InCitta</strong> complètent l’outil lorsque vous souhaitez un service clé en main.
         </p>
       </div>
       <div class="page-hero-logo">
@@ -900,12 +1054,12 @@
     </header>
 
     <section class="why-inconcertta-section" id="pourquoi-inconcertta" aria-labelledby="why-inconcertta-title">
-      <h2 id="why-inconcertta-title">Pourquoi utiliser InConcertta&nbsp;?</h2>
+      <h2 id="why-inconcertta-title">Ce qu’InConcertta change pour vous</h2>
       <ul class="why-inconcertta-list" role="list">
-        <li>Réduisez les oppositions à vos projets</li>
-        <li>Impliquez réellement les habitants</li>
-        <li>Générez des données exploitables</li>
-        <li>Accélérez vos décisions</li>
+        <li>Apaiser les tensions autour du projet</li>
+        <li>Donner sa place à chaque habitant</li>
+        <li>Des données dignes de vos arbitrages</li>
+        <li>Décider avec plus de clarté et de sérénité</li>
       </ul>
     </section>
 
@@ -932,7 +1086,7 @@
         <p class="demo-invite" style="margin-top:0.4rem;font-size:0.95rem;opacity:0.92;">Il s’agit d’un <strong>aperçu statique</strong>, pas de l’application réelle.</p>
         <p class="demo-invite demo-invite-platform">
           Pour découvrir la plateforme, rendez-vous sur
-          <a href="https://inconcertta.fr/" class="btn-discover-platform" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> inconcertta.fr</a>
+          <a href="https://inconcertta.fr/" class="btn-discover-platform" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Ouvrir inconcertta.fr</a>
         </p>
         <div class="demo-frame">
           <img class="demo-bg" src="assets/Inconcertta/login.png" width="2924" height="1671" alt="Écran de connexion InConcertta (illustration)">
@@ -981,7 +1135,7 @@
     </section>
 
     <section class="inconcertta-admin-gallery-section" aria-labelledby="galerie-espace-gestion">
-      <h2 id="galerie-espace-gestion">Espace de gestion pour paramétrer le projet</h2>
+      <h2 id="galerie-espace-gestion">Un espace de gestion pour piloter chaque détail</h2>
       <p>
         Réservé aux <strong>porteurs de projet</strong>, l’espace de gestion permet de régler les paramètres du projet et, notamment, l’accès au dispositif, de créer et paramétrer des cartes (fond, type, questions et sujets) et d’assembler les outils du projet&nbsp;: actualités, comparaisons d’images, partage de contenus. On y crée et analyse des sondages (y compris avec des questions prédéfinies), répond aux idées directement sur la plateforme, modère le forum et envoie des invitations. Un catalogue d’images dédié permet de tester équipements, scénarios ou propositions visuelles. Les exports aident à constituer un dossier sur la concertation. L’ensemble est modulable selon le contexte et la phase de la démarche.
       </p>
@@ -995,7 +1149,7 @@
         <li><strong>Restitution</strong> — exports pour un dossier de concertation exploitable.</li>
         <li><strong>Modularité</strong> — outils et réglages assemblés à la carte par projet.</li>
       </ul>
-      <h3 class="inconcertta-offer-subtitle">Aperçus de l’espace de gestion</h3>
+      <h3 class="inconcertta-offer-subtitle">Quelques vues de l’espace de gestion</h3>
       <ul class="admin-screens-grid" role="list">
         <li>
           <figure class="admin-screen-card">
@@ -1069,8 +1223,8 @@
       </p>
     </section>
 
-    <section aria-labelledby="fonctions-title">
-      <h2 id="fonctions-title">Ce que permet l’application</h2>
+    <section class="city-guide-section" aria-labelledby="fonctions-title">
+      <h2 id="fonctions-title">Ce que l’application met à votre disposition</h2>
       <p class="inconcertta-lede">
         Un <strong>projet</strong> = un espace dédié.
       </p>
@@ -1083,8 +1237,9 @@
         L’enjeu&nbsp;: une concertation <strong>structurée, continue et exploitable</strong>, utile à la fois pour la participation et pour l’analyse et la décision.
       </p>
 
-      <div class="features-grid">
-        <article class="feature-card">
+      <div class="city-guide-bento">
+        <article class="feature-card feature-card--bento-wide">
+          <p class="feature-card__kicker">Coup de cœur</p>
           <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M7 7v5m5-5v3m5-3v7m5-7v3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
           <h3>Modularité : accès, outils, participation</h3>
           <p><strong>Accès</strong> du très ouvert au fermé (invitation, liste, espace réservé). <strong>Outils</strong> activés selon les besoins.</p>
@@ -1101,7 +1256,8 @@
           <h3>Questions &amp; sujets sur la carte</h3>
           <p>Des <strong>questions</strong> et des <strong>sujets de forum</strong> peuvent être <strong>ancrés</strong> près d’éléments ou de zones du plan pour <strong>discuter</strong> d’un aménagement ciblé (espace vert, équipement, scénario localisé).</p>
         </article>
-        <article class="feature-card">
+        <article class="feature-card feature-card--bento-wide">
+          <p class="feature-card__kicker">Coup de cœur</p>
           <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19V5M9 19V9M14 19v-6M19 19V11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
           <h3>Sondages &amp; analyses</h3>
           <p>Enquêtes paramétrables (types de questions, accès, consentement) et <strong>analyses statistiques</strong> : tableaux croisés, indicateurs, méthodes documentées pour exploiter les résultats de façon rigoureuse.</p>
@@ -1125,7 +1281,7 @@
     </section>
 
     <section class="inconcertta-offer-section" aria-labelledby="offre-inconcertta-title">
-      <h2 id="offre-inconcertta-title">Offre et mise à disposition</h2>
+      <h2 id="offre-inconcertta-title">Formules et mise à votre disposition</h2>
       <p class="inconcertta-lede">
         L’outil est conçu pour se <strong>déployer par projet</strong> : vous ouvrez un espace dédié, vous le paramétrez et vous y ajoutez vos contenus — sans chantier informatique lourd. Vous pouvez <strong>ne demander un accompagnement que pour un seul dispositif</strong> ; lorsque le cadrage est clair, la <strong>mise en place peut être très rapide, en quelques jours</strong>, pour ouvrir la concertation sans traîner.
       </p>
@@ -1144,7 +1300,7 @@
           </ul>
         </div>
         <div class="inconcertta-offer-cols__col">
-          <h3 class="inconcertta-offer-subtitle">Une offre adaptée aux acteurs publics</h3>
+          <h3 class="inconcertta-offer-subtitle">Pensée pour les acteurs publics</h3>
           <p>La solution s’adresse notamment à&nbsp;:</p>
           <ul>
             <li>les <strong>collectivités</strong> (communes, intercommunalités, régions) ;</li>
@@ -1156,7 +1312,7 @@
 
       <hr class="inconcertta-offer-divider" />
 
-      <h3 class="inconcertta-offer-subtitle">Un modèle flexible et évolutif</h3>
+      <h3 class="inconcertta-offer-subtitle">Un modèle qui s’ajuste à votre rythme</h3>
       <p>Plusieurs <strong>modalités commerciales</strong> sont possibles&nbsp;:</p>
       <ul>
         <li><strong>Service — accès à la plateforme</strong> pour vos concertations, en <strong>ponctuel</strong> (durée d’un dispositif) ou en usage <strong>récurrent</strong> sur la durée.</li>
@@ -1203,9 +1359,9 @@
     </section>
 
     <div class="cta-row">
-      <a href="https://inconcertta.fr/" class="btn-discover-platform" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Découvrir la plateforme</a>
-      <a href="contact.html" class="btn-primary-ic"><i class="fas fa-envelope" aria-hidden="true"></i> Demander des informations</a>
-      <a href="demarche-participative.html" class="btn-outline-ic">Démarche participative</a>
+      <a href="https://inconcertta.fr/" class="btn-discover-platform" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Accéder à la plateforme</a>
+      <a href="contact.html" class="btn-primary-ic"><i class="fas fa-envelope" aria-hidden="true"></i> Écrire au cabinet</a>
+      <a href="demarche-participative.html" class="btn-outline-ic">La démarche participative</a>
     </div>
 
   </div>

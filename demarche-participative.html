@@ -45,7 +45,6 @@
 .page-intro {
   margin-bottom: 1.25rem;
   padding-bottom: 1.15rem;
-  border-bottom: 1px solid rgba(5, 59, 59, 0.1);
 }
 .page-intro .container {
   max-width: 100%;
@@ -167,18 +166,22 @@
   .levels-grid{ grid-template-columns: 1fr; }
 }
 
+.levels-grid + p {
+  margin-top: 1.75rem;
+}
+
 .level-card{
   background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(5,59,59,0.12);
-  border-radius: 18px;
+  border: 2px solid #026666;
+  border-radius: clamp(28px, 5vw, 40px);
   padding: 1rem 1rem;
   box-shadow: var(--shadow-sm);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 .level-card:hover{
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(11,107,107,0.22);
+  border-color: #003333;
 }
 
 .level-head{
