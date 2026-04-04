@@ -623,6 +623,13 @@
       body.is-magnetic-cursor--near .main-read .city-guide-bento .feature-card.magnetic-zoom-target:hover::before {
         opacity: 1;
       }
+      /* Même palette #026666 / #003333 que les cartes page InConcertta */
+      body.is-magnetic-cursor--near.page-inconcertta .main-read .city-guide-bento .feature-card.magnetic-zoom-target {
+        border-color: #026666;
+      }
+      body.is-magnetic-cursor--near.page-inconcertta .main-read .city-guide-bento .feature-card.magnetic-zoom-target:hover {
+        border-color: #003333;
+      }
     }
     .city-guide-bento .feature-card h3 {
       margin: 0 0 0.5rem;
@@ -933,6 +940,7 @@
         0 4px 10px rgba(5, 59, 59, 0.06);
     }
     .page-inconcertta .city-guide-bento .feature-card {
+      border: 2px solid #026666;
       transition:
         transform 0.4s cubic-bezier(0.22, 0.85, 0.32, 1),
         border-color 0.4s ease,
@@ -941,9 +949,19 @@
     }
     .page-inconcertta .city-guide-bento .feature-card:hover {
       transform: translateY(-4px);
+      border-color: #003333;
       box-shadow:
-        0 10px 26px rgba(10, 10, 10, 0.08),
-        0 2px 8px rgba(10, 10, 10, 0.04);
+        0 10px 26px rgba(0, 51, 51, 0.12),
+        0 2px 8px rgba(0, 51, 51, 0.07);
+    }
+    .page-inconcertta .city-guide-bento .feature-card .icon {
+      border-color: rgba(2, 102, 102, 0.4);
+      color: #026666;
+    }
+    .page-inconcertta .city-guide-bento .feature-card:hover .icon {
+      border-color: rgba(0, 51, 51, 0.5);
+      color: #003333;
+      background: rgba(2, 102, 102, 0.1);
     }
     .page-inconcertta .hero-cta-row .btn.btn-primary,
     .page-inconcertta .hero-cta-row .btn-hero-secondary,
@@ -1041,6 +1059,7 @@
         <div class="hero-cta-row">
           <a href="contact.html" class="btn btn-primary">Nous écrire</a>
           <a href="#demo-inconcertta" class="btn-hero-secondary">Parcourir la démo</a>
+          <a href="https://presentation.inconcertta.fr/" class="btn-hero-secondary" target="_blank" rel="noopener noreferrer" aria-label="En savoir plus — site de présentation InConcertta (nouvel onglet)">En savoir plus</a>
         </div>
         <p class="hero-footnote">
           InConcertta est une application web sans installation — sur mobile, tablette ou bureau. Les <strong>accompagnements InCitta</strong> complètent l’outil lorsque vous souhaitez un service clé en main.
@@ -1239,7 +1258,6 @@
 
       <div class="city-guide-bento">
         <article class="feature-card feature-card--bento-wide">
-          <p class="feature-card__kicker">Coup de cœur</p>
           <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M7 7v5m5-5v3m5-3v7m5-7v3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
           <h3>Modularité : accès, outils, participation</h3>
           <p><strong>Accès</strong> du très ouvert au fermé (invitation, liste, espace réservé). <strong>Outils</strong> activés selon les besoins.</p>
@@ -1257,7 +1275,6 @@
           <p>Des <strong>questions</strong> et des <strong>sujets de forum</strong> peuvent être <strong>ancrés</strong> près d’éléments ou de zones du plan pour <strong>discuter</strong> d’un aménagement ciblé (espace vert, équipement, scénario localisé).</p>
         </article>
         <article class="feature-card feature-card--bento-wide">
-          <p class="feature-card__kicker">Coup de cœur</p>
           <div class="icon" aria-hidden="true"><svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19V5M9 19V9M14 19v-6M19 19V11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
           <h3>Sondages &amp; analyses</h3>
           <p>Enquêtes paramétrables (types de questions, accès, consentement) et <strong>analyses statistiques</strong> : tableaux croisés, indicateurs, méthodes documentées pour exploiter les résultats de façon rigoureuse.</p>
@@ -1360,7 +1377,7 @@
 
     <div class="cta-row">
       <a href="https://inconcertta.fr/" class="btn-discover-platform" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Accéder à la plateforme</a>
-      <a href="contact.html" class="btn-primary-ic"><i class="fas fa-envelope" aria-hidden="true"></i> Écrire au cabinet</a>
+      <a href="contact.html" class="btn-primary-ic"><i class="fas fa-envelope" aria-hidden="true"></i> Nous écrire</a>
       <a href="demarche-participative.html" class="btn-outline-ic">La démarche participative</a>
     </div>
 
