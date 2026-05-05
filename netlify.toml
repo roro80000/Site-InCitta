@@ -25,3 +25,9 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=2592000, immutable"
+
+# PDFs: éviter les effets de cache "immutable"
+[[headers]]
+  for = "/assets/**/*.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
