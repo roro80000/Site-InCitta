@@ -8,10 +8,8 @@
 <!-- Preconnect pour améliorer les performances des ressources externes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Charger la police Inter (poids light utilisé sur le site) -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
- <link rel="preconnect" href="https://cdnjs.cloudflare.com">
- <link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
  
  <!-- DNS prefetch pour domaines externes utilisés plus tard -->
 <!-- DNS prefetch vers l'ancienne instance Supabase supprimé (non utilisé) -->
@@ -515,7 +513,23 @@ body { background: #f6f6f6 !important; }
 <div class="hero-content">
   <div class="hero-text">
     <div class="hero-description">
-      <img class="hero-full-image" src="assets/images/Flyer-2026%20recto.png" alt="Plaquette InCitta 2026 — aperçu visuel" loading="eager">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="assets/images/Flyer-2026%20recto-900.webp 900w, assets/images/Flyer-2026%20recto-1600.webp 1600w"
+          sizes="100vw"
+        >
+        <img
+          class="hero-full-image"
+          src="assets/images/Flyer-2026%20recto.png"
+          alt="Plaquette InCitta 2026 — aperçu visuel"
+          width="3579"
+          height="2552"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        >
+      </picture>
     </div>
   </div>
 
