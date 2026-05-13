@@ -33,17 +33,32 @@ async function boot() {
   initMagneticCursor();
   initNavMobile();
 
-  const lenisOk = await initLenisScroll();
-  if (!lenisOk) {
-    initAnchorSmoothScroll();
-  }
+  // Ancres : activer tout de suite la version légère.
+  // Lenis/GSAP (imports réseau) est volontairement décalé pour réduire le TBT/LCP (PageSpeed).
+  initAnchorSmoothScroll();
+  const scheduleLenis = (fn) => {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => fn(), { timeout: 2500 });
+    } else {
+      window.setTimeout(fn, 1200);
+    }
+  };
+  scheduleLenis(async () => {
+    try {
+      await initLenisScroll();
+    } catch {
+      // silencieux : la version légère des ancres est déjà active
+    }
+  });
 
   initFormInputs();
   initLazyImages();
   initHeroParallax();
   initRevealOnScroll();
   initInconcerttaDemo();
-  initMotflecheDistortion();
+  if (document.querySelector('[data-motfleche-distortion]')) {
+    initMotflecheDistortion();
+  }
   initCityExploreMap();
   if (document.body.classList.contains('page-inconcertta')) {
     import('./pages/inconcertta-motion.js').then((m) => m.initInconcerttaMotion());
