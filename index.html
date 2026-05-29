@@ -12,9 +12,9 @@
  
  <!-- DNS prefetch : garder seulement les origines réellement utilisées -->
  
- <!-- Preload des ressources critiques -->
- <link rel="preload" href="assets/Logo/Logo InCitta.png" as="image" fetchpriority="high">
- <!-- background images removed from preload -->
+ <!-- Preload LCP (flyer hero WebP, pas le logo nav) -->
+ <link rel="preload" href="assets/images/Flyer-2026%20recto-600.webp" as="image" type="image/webp" fetchpriority="high" media="(max-width: 900px)">
+ <link rel="preload" href="assets/images/Flyer-2026%20recto-900.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 901px)">
 <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
  
@@ -214,6 +214,12 @@ body{font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#00000
   .service-block .development-image {
     margin-left: 1cm;
   }
+  /* Territoire / financement / évaluation : image entière (priorité sur .development-image img { cover }) */
+  .service-block--territoire .development-image img,
+  .service-block--financement .accompagnement-image img,
+  .evaluation-section.service-block .evaluation-image img {
+    object-fit: contain !important;
+  }
   /* Image à gauche du texte (financement) */
   .service-block .accompagnement-image {
     margin-right: 1cm;
@@ -394,8 +400,7 @@ body { background: #f6f6f6 !important; }
  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"></noscript>
  
- <!-- Font Awesome avec subset pour réduire la taille -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+ <!-- Font Awesome chargé en lazy (voir lazy-fontawesome.js) -->
  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
  
  <!-- PWA Meta Tags -->
@@ -435,41 +440,7 @@ body { background: #f6f6f6 !important; }
  <meta name="twitter:description" content="Cabinet d’études urbanisme : ingénierie territoriale, concertation citoyenne, évaluation et politiques publiques. Basé à Amiens, mobile partout en France.">
  <meta name="twitter:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
  
- <!-- Données structurées Schema.org — site + organisation -->
- <script type="application/ld+json">
- {
-   "@context": "https://schema.org",
-   "@graph": [
-     {
-      "@type": "WebSite",
-      "@id": "https://incitta.eu/#website",
-      "url": "https://incitta.eu/",
-       "name": "InCitta",
-      "description": "Cabinet d’études urbanisme : ingénierie territoriale, concertation citoyenne, évaluation et politiques publiques.",
-       "inLanguage": "fr-FR",
-      "publisher": { "@id": "https://incitta.eu/#organization" }
-     },
-     {
-      "@type": "ProfessionalService",
-      "@id": "https://incitta.eu/#organization",
-       "name": "InCitta",
-      "url": "https://incitta.eu/",
-       "logo": "https://www.incitta.eu/assets/Logo/Logo%20InCitta.png",
-       "image": "https://www.incitta.eu/assets/Logo/Logo%20InCitta.png",
-      "description": "Cabinet d’études urbanisme : aménagement du territoire, ingénierie territoriale, concertation citoyenne, évaluation et politiques publiques.",
-       "email": "contact@incitta.eu",
-       "address": {
-         "@type": "PostalAddress",
-         "streetAddress": "26 rue Jean-Baptiste TRANNOY",
-         "postalCode": "80000",
-         "addressLocality": "Amiens",
-         "addressCountry": "FR"
-       },
-       "areaServed": { "@type": "Country", "name": "France" }
-     }
-   ]
- }
- </script>
+ <!-- JSON-LD avancé (LocalBusiness + GovernmentService) : js/seo/schema-ld.js -->
 <!-- Navigation styles handled by styles.css -->
 </head>
 <body class="home">
@@ -477,7 +448,7 @@ body { background: #f6f6f6 !important; }
   <div class="curtain-reveal" id="curtain-reveal" aria-hidden="true" role="presentation">
     <div class="curtain-reveal__panel">
       <div class="curtain-reveal__brand">
-        <img src="assets/images/incitta-curtain-logo.png" alt="InCitta" width="1024" height="763" decoding="async" fetchpriority="high">
+        <img src="assets/images/incitta-curtain-logo.png" alt="" width="320" height="238" decoding="async" loading="lazy" fetchpriority="low">
       </div>
     </div>
   </div>
@@ -487,11 +458,11 @@ body { background: #f6f6f6 !important; }
     <div class="nav-container">
       <div class="nav-logo">
         <a href="index.html" class="nav-brand" aria-label="InCitta">
-          <img src="assets/Logo/Logo InCitta.png" alt="InCitta" class="logo-img" width="2217" height="2088">
+          <img src="assets/Logo/Logo InCitta.png" alt="InCitta" class="logo-img" width="220" height="48" decoding="async" fetchpriority="low">
         </a>
       </div>
 
-      <ul class="nav-menu" role="list">
+      <ul class="nav-menu">
         <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Accueil</a></li>
         <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
         <li class="nav-item"><a href="synergies.html" class="nav-link">Synergies</a></li>
@@ -511,6 +482,7 @@ body { background: #f6f6f6 !important; }
 <!-- header logo removed as requested -->
 <!-- Navigation (moved below hero on accueil) -->
 
+<main id="contenu-principal">
 <!-- Section Hero - En-tête -->
 <section class="hero">
 <div class="hero-background">
@@ -523,15 +495,15 @@ body { background: #f6f6f6 !important; }
       <picture>
         <source
           type="image/webp"
-          srcset="assets/images/Flyer-2026%20recto-900.webp 900w, assets/images/Flyer-2026%20recto-1600.webp 1600w"
+          srcset="assets/images/Flyer-2026%20recto-600.webp 600w, assets/images/Flyer-2026%20recto-900.webp 900w, assets/images/Flyer-2026%20recto-1600.webp 1600w"
           sizes="100vw"
         >
         <img
           class="hero-full-image"
-          src="assets/images/Flyer-2026%20recto.png"
+          src="assets/images/Flyer-2026%20recto-900.webp"
           alt="Plaquette InCitta 2026 — aperçu visuel"
-          width="3579"
-          height="2552"
+          width="900"
+          height="642"
           loading="eager"
           decoding="async"
           fetchpriority="high"
@@ -552,7 +524,7 @@ body { background: #f6f6f6 !important; }
 <section class="home-intro-below-hero" aria-labelledby="home-main-title">
   <div class="home-intro-below-hero__inner">
     <h1 id="home-main-title" class="home-intro-below-hero__title">Ingénierie territoriale &amp; concertation pour vos projets publics</h1>
-    <p class="home-intro-below-hero__lead">InCitta accompagne collectivités et porteurs de projets : programmation territoriale, participation citoyenne, outil numérique InConcertta, financements et indicateurs — pour décider et agir sereinement.</p>
+    <p class="home-intro-below-hero__lead">Basé à <strong>Amiens</strong> et actif en <strong>Hauts-de-France</strong>, InCitta accompagne collectivités et porteurs de projets : programmation territoriale, participation citoyenne, outil numérique InConcertta, financements et indicateurs — pour décider et agir sereinement.</p>
   </div>
 </section>
 
@@ -561,15 +533,18 @@ body { background: #f6f6f6 !important; }
 <section class="accompagnement-section" aria-label="Accompagnement">
   <div class="accompagnement-content">
     <div class="accompagnement-text">
-      Vos projets méritent la même exigence qu’un grand service : précision, discrétion et sens du détail.
+      Vos projets méritent l'exigence du service public : précision, discrétion et sens du détail.
       <div class="accompagnement-cta">
         <br>
         <a href="assets/images/Flyer-2026_RV.pdf" class="rounded-cta" aria-label="Consulter la plaquette InCitta 2026 (PDF)" target="_blank" rel="noopener">Consulter la plaquette</a>
       </div>
     </div>
 
-    <div class="accompagnement-image accompagnement-image--right" data-motfleche-distortion aria-hidden="true">
-      <img src="assets/images/motfleche.png" alt="Mot fléché (illustration)" width="5147" height="4068" loading="lazy" decoding="async" aria-hidden="true">
+    <div class="accompagnement-image accompagnement-image--right" data-motfleche-distortion>
+      <picture>
+        <source type="image/webp" srcset="assets/images/motfleche-400.webp 400w, assets/images/motfleche-800.webp 800w" sizes="(max-width:900px) 90vw, 14.4cm">
+        <img src="assets/images/motfleche.png" alt="Mot fléché — illustration des domaines d’intervention" width="800" height="632" loading="lazy" decoding="async">
+      </picture>
     </div>
   </div>
 </section>
@@ -578,8 +553,8 @@ body { background: #f6f6f6 !important; }
 <section class="development-section service-block service-block--territoire" aria-label="Développement territorial">
   <div class="development-content">
     <div class="development-text">
-      <h3 class="development-title home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line">Projets de territoire : cadrer l’avenir avec méthode</h3>
-      <p class="development-paragraph">Elaboration de projets de territoire, de démarches de contractualisation,  des stratégies de planification à différentes échelles (quartier, intercommunalité, bassin de vie, etc.) en intégrant les problématiques actuelles du développement durable pour permettre à nos territoires de s'adapter aux défis de demain.</p>
+      <h2 class="development-title home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line chapter-title--last-left">Projets de territoire : cadrer l’avenir avec méthode</h2>
+      <p class="development-paragraph">Depuis <strong>Amiens</strong>, nous accompagnons les collectivités des <strong>Hauts-de-France</strong> et au-delà dans l’élaboration de projets de territoire, de démarches de contractualisation et de stratégies de planification à différentes échelles (quartier, intercommunalité, bassin de vie, etc.), en intégrant les enjeux du développement durable pour permettre à nos territoires de s’adapter aux défis de demain.</p>
       <div style="height:1.5rem;"></div>
       <div class="development-cta">
         <a href="programmation-territoriale.html" class="rounded-cta" aria-label="En savoir plus sur la programmation territoriale">En savoir plus</a>
@@ -587,7 +562,10 @@ body { background: #f6f6f6 !important; }
     </div>
 
     <div class="development-image" aria-hidden="true">
-      <img src="assets/images/plan_.png" alt="Plan et documents de projet (illustration)" width="10243" height="8333" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp" srcset="assets/images/plan-400.webp 400w, assets/images/plan-800.webp 800w" sizes="(max-width:900px) 70vw, 320px">
+        <img src="assets/images/plan.png" alt="" width="800" height="651" loading="lazy" decoding="async">
+      </picture>
     </div>
   </div>
 </section>
@@ -598,14 +576,17 @@ body { background: #f6f6f6 !important; }
   <section class="participation-section service-block home-service-columns__card" aria-label="Concertation et participation">
     <div class="participation-content">
       <div class="participation-text">
-        <h3 class="participation-title home-chapter-title home-chapter-title--bar-left">Concertation — donner la parole aux habitants pour co-construire leur territoire</h3>
+        <h2 class="participation-title home-chapter-title home-chapter-title--bar-left">Concertation — donner la parole aux habitants pour co-construire leur territoire</h2>
         <p class="development-paragraph">Conception et animation d’outils variés et d’ateliers citoyens, favorisant l’association et le dialogue entre les habitants et les acteurs du territoire, pour une meilleure appropriation des projets.</p>
       </div>
       <div class="participation-cta">
         <a href="demarche-participative.html" class="rounded-cta" aria-label="Découvrir la démarche participative">Découvrir la démarche</a>
       </div>
       <div class="participation-image" aria-hidden="true">
-        <img src="assets/images/concertation_pla,.jpg" alt="Concertation citoyenne : atelier et échanges (illustration)" width="2304" height="1792" loading="lazy" decoding="async">
+        <picture>
+          <source type="image/webp" srcset="assets/images/concertation-400.webp 400w, assets/images/concertation-800.webp 800w" sizes="(max-width:900px) 85vw, 280px">
+          <img src="assets/images/concertation.png" alt="" width="800" height="622" loading="lazy" decoding="async">
+        </picture>
       </div>
     </div>
   </section>
@@ -613,7 +594,7 @@ body { background: #f6f6f6 !important; }
   <section class="development-section service-block inconcertta-platform-section home-service-columns__card" aria-label="InConcertta">
     <div class="development-content">
       <div class="development-text">
-        <h3 class="development-title home-chapter-title home-chapter-title--bar-right">InConcertta — le salon numérique de votre concertation</h3>
+        <h2 class="development-title home-chapter-title home-chapter-title--bar-right">InConcertta — le salon numérique de votre concertation</h2>
         <p class="development-paragraph">Application web pour accompagner la concertation territoriale : cartes interactives, enquêtes et sondages, échanges, idées et analyses — au service de vos projets et du dialogue entre les habitants et les acteurs du territoire. La plateforme est <strong>modulable</strong> (accès du <strong>large public</strong> au dispositif <strong>restreint ou sur invitation</strong>, outils activés, participation ouverte ou encadrée) et peut être adaptée à des usages de <strong>démocratie participative</strong>, dont les <strong>budgets participatifs</strong> et d’autres dispositifs de consultation et de co-construction.</p>
         <div style="height:1.5rem;"></div>
         <div class="development-cta">
@@ -622,7 +603,7 @@ body { background: #f6f6f6 !important; }
       </div>
       <div class="development-image">
         <a href="https://presentation.inconcertta.fr/" target="_blank" rel="noopener noreferrer" class="inconcertta-logo-external" aria-label="Présentation InConcertta — presentation.inconcertta.fr (nouvel onglet)">
-          <img src="assets/images/logos/Logo InConcertta.png" alt="Logo InConcertta" width="2217" height="2088" loading="lazy" decoding="async">
+          <img src="assets/images/logos/Logo InConcertta.png" alt="Logo InConcertta" width="200" height="188" loading="lazy" decoding="async">
         </a>
       </div>
     </div>
@@ -633,11 +614,17 @@ body { background: #f6f6f6 !important; }
   <section class="accompagnement-section service-block service-block--financement" aria-label="Accompagnement recherche financement" style="margin-top:1.5rem;">
     <div class="accompagnement-content">
       <div class="accompagnement-image" aria-hidden="true">
-        <img src="assets/images/rouage.png" alt="Rouage partenaires" width="4268" height="4267" loading="lazy" decoding="async" style="width:8cm;height:8cm;object-fit:cover;border-radius:16px;">
+        <picture>
+          <source type="image/webp" srcset="assets/images/financement-400.webp 400w, assets/images/financement-800.webp 800w" sizes="(max-width:900px) 70vw, 320px">
+          <img src="assets/images/financement.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
       </div>
-      <div class="accompagnement-text service-block__body-text">
-        <h3 class="home-chapter-title home-chapter-title--bar-right home-chapter-title--financement-title">Ingénierie financière : sécurisez le financement de vos projets</h3>
+      <div class="accompagnement-text service-block__body-text development-text">
+        <h2 class="home-chapter-title home-chapter-title--bar-right home-chapter-title--financement-title home-chapter-title--single-line chapter-title--last-right">Ingénierie financière : sécurisez le financement de vos projets</h2>
         <p class="development-paragraph">De l'identification des aides à l'optimisation des ressources mobilisables, nous vous accompagnons dans l'articulation des fonds publics. Maximisez votre capacité d'investissement pour concrétiser vos initiatives locales.</p>
+        <div class="development-cta">
+          <a href="ingenierie-financiere.html" class="rounded-cta" aria-label="En savoir plus sur l'ingénierie financière">En savoir plus</a>
+        </div>
       </div>
     </div>
   </section>
@@ -645,26 +632,25 @@ body { background: #f6f6f6 !important; }
   <!-- Évaluation au service de la transformation des politiques publiques (homepage) — texte à gauche, image à droite -->
   <section class="evaluation-section service-block" aria-label="Évaluation des politiques publiques" style="margin-top:1.5rem;">
     <div class="evaluation-content" style="display:flex;gap:1.25rem;align-items:flex-start;max-width:1200px;margin:0 auto;padding:0 20px;">
-      <div class="evaluation-text" style="flex:1;">
-        <h3 class="development-title home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line">Évaluer pour transformer l’action publique</h3>
+      <div class="evaluation-text development-text" style="flex:1;">
+        <h2 class="development-title home-chapter-title home-chapter-title--bar-left home-chapter-title--single-line chapter-title--last-left">Évaluer pour transformer l’action publique</h2>
         <p class="development-paragraph">En concevant des référentiels d’évaluation, en élaborant des indicateurs adaptés et en réalisant des analyses de données, des bilans qualitatifs et quantitatifs et de la prospective permettant d'accompagner la prise de décision.</p>
+        <div class="development-cta">
+          <a href="evaluation-politiques-publiques.html" class="rounded-cta" aria-label="En savoir plus sur l'évaluation des politiques publiques">En savoir plus</a>
+        </div>
       </div>
       <div class="evaluation-image" aria-hidden="true" style="flex:0 0 auto;">
-        <img src="assets/images/audit.png" alt="Audit et évaluation" width="612" height="468" loading="lazy" decoding="async" style="width:8cm;height:8cm;object-fit:cover;border-radius:16px;">
+        <img src="assets/images/audit.png" alt="" width="612" height="468" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
 
-<!-- Zone d’intervention (SEO + clarté commerciale) -->
+<!-- Zone d’intervention (SEO, invisible à l’écran — complète le footer maillage) -->
 <section class="support-block seo-only" aria-labelledby="zone-intervention-title">
-  <h2 id="zone-intervention-title">Zone d’intervention</h2>
-  <p>InCitta intervient selon vos besoins sur&nbsp;:</p>
-  <ul style="margin:0.65rem 0 0;padding-left:1.15rem;line-height:1.65;">
-    <li><strong>Hauts-de-France</strong></li>
-    <li><strong>Île-de-France</strong></li>
-    <li><strong>Normandie</strong></li>
-    <li><strong>Grand Est</strong></li>
-  </ul>
+  <h2 id="zone-intervention-title">Cabinet d'études et consultant territorial — zones d'intervention</h2>
+  <p>InCitta, cabinet d'études et bureau d'études à Amiens : aménagement des territoires, démocratie participative, concertation, évaluation des politiques publiques, ingénierie financière et recherche de subventions.</p>
+  <p>Régions : Hauts-de-France, Île-de-France, Normandie, Grand Est. Départements : Somme, Oise, Aisne, Nord, Pas-de-Calais, Marne, Seine-Maritime, Paris et couronne francilienne.</p>
+  <p>Concertation citoyenne numérique et e-démocratie : France entière via la plateforme InConcertta.</p>
 </section>
 
 <!-- Carte territoire — désactivée. Réactiver : retirer hidden et aria-hidden sur la section. -->
@@ -772,8 +758,9 @@ body { background: #f6f6f6 !important; }
 </section>
 
 <!-- Section FAQ (moved from Contact) -->
-<section class="faq-section">
+<section class="faq-section" aria-labelledby="faq-values-title">
   <div class="container">
+    <h2 id="faq-values-title" class="faq-section__title">Ce qui guide notre accompagnement</h2>
     <div class="values-grid">
   <div class="value-item">
     <div class="value-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
@@ -799,34 +786,19 @@ body { background: #f6f6f6 !important; }
   </div>
 </section>
 <div style="height:1cm;"></div>
+</main>
 
 <footer class="footer footer--site">
   <div class="container">
     <div class="footer-site-inner">
-      <img src="assets/Logo/LogoPied.png" alt="InCitta" class="footer-logo" width="1297" height="1193" loading="lazy" decoding="async">
+      <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo" width="1297" height="1193" loading="lazy" decoding="async">
       <p class="footer-site-copy">&copy; 2026 InCitta. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a></p>
     </div>
   </div>
 </footer>
 
  <script type="module" src="js/main.js"></script>
-<script>
-// Fondu progressif de l'image hero quand moins de 50% visible
-document.addEventListener('DOMContentLoaded', function () {
-  const img = document.querySelector('.hero .hero-full-image');
-  if (!img || !('IntersectionObserver' in window)) return;
-  const io = new IntersectionObserver((entries) => {
-    const e = entries[0];
-    const ratio = e.intersectionRatio;
-    if (ratio < 0.5) {
-      img.classList.add('half-faded');
-    } else {
-      img.classList.remove('half-faded');
-    }
-  }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
-  io.observe(img);
-});
-</script>
+ <script data-goatcounter="https://incitta.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 

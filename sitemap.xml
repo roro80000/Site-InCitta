@@ -2,64 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://www.incitta.eu/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://incitta.eu/</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.incitta.eu/a-propos.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://incitta.eu/a-propos</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.incitta.eu/synergies.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://incitta.eu/synergies</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.incitta.eu/inconcertta.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://incitta.eu/inconcertta</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://www.incitta.eu/demarche-participative.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://incitta.eu/demarche-participative</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.incitta.eu/programmation-territoriale.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://incitta.eu/programmation-territoriale</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.incitta.eu/contact.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://incitta.eu/evaluation-politiques-publiques</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://incitta.eu/ingenierie-financiere</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://incitta.eu/contact</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.incitta.eu/actualite-detail.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://incitta.eu/actualite-detail</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://www.incitta.eu/mentions-legales.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://incitta.eu/mentions-legales</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

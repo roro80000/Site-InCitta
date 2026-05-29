@@ -16,13 +16,15 @@ import { initLazyImages } from './hooks/lazy-images.js';
 import { initHeroParallax } from './hooks/hero-parallax.js';
 import { initRevealOnScroll } from './hooks/reveal-on-scroll.js';
 import { initInconcerttaDemo } from './pages/inconcertta-demo.js';
-import { initGoatCounter } from './goatcounter.js';
 import { initCurtainReveal } from './hooks/curtain-reveal.js';
 import { initMotflecheDistortion } from './hooks/motfleche-distortion.js';
 import { initMagneticCursor } from './hooks/magnetic-cursor.js';
 import { initCityExploreMap } from './hooks/city-explore-map.js';
+import { initLazyFontAwesome } from './hooks/lazy-fontawesome.js';
+import { initHeroHomeFade } from './hooks/hero-home-fade.js';
+import { isCoarsePointer, scheduleIdle } from './utils/mobile-perf.js';
+import './seo/init-seo.js';
 
-initGoatCounter();
 if (document.body.classList.contains('home')) {
   initCurtainReveal();
 }
@@ -30,36 +32,42 @@ initNavbarScroll();
 initMobileEnv();
 
 async function boot() {
-  initMagneticCursor();
   initNavMobile();
-
-  // Ancres : activer tout de suite la version légère.
-  // Lenis/GSAP (imports réseau) est volontairement décalé pour réduire le TBT/LCP (PageSpeed).
   initAnchorSmoothScroll();
-  const scheduleLenis = (fn) => {
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(() => fn(), { timeout: 2500 });
-    } else {
-      window.setTimeout(fn, 1200);
-    }
-  };
-  scheduleLenis(async () => {
-    try {
-      await initLenisScroll();
-    } catch {
-      // silencieux : la version légère des ancres est déjà active
-    }
-  });
+
+  if (document.body.classList.contains('home')) {
+    initHeroHomeFade();
+  }
 
   initFormInputs();
   initLazyImages();
   initHeroParallax();
-  initRevealOnScroll();
   initInconcerttaDemo();
-  if (document.querySelector('[data-motfleche-distortion]')) {
-    initMotflecheDistortion();
-  }
   initCityExploreMap();
+
+  /* Effets non essentiels : après idle (mobile) ou court délai (desktop) */
+  const runEnhancements = () => {
+    initRevealOnScroll();
+    initLazyFontAwesome();
+    if (!isCoarsePointer()) {
+      initMagneticCursor();
+    }
+    if (
+      document.querySelector('[data-motfleche-distortion]') &&
+      !isCoarsePointer()
+    ) {
+      initMotflecheDistortion();
+    }
+  };
+  scheduleIdle(runEnhancements, isCoarsePointer() ? 3500 : 2200);
+
+  scheduleIdle(async () => {
+    try {
+      await initLenisScroll();
+    } catch {
+      /* ancrage léger déjà actif */
+    }
+  }, 2800);
   if (document.body.classList.contains('page-inconcertta')) {
     import('./pages/inconcertta-motion.js').then((m) => m.initInconcerttaMotion());
   }

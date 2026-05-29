@@ -40,3 +40,6 @@ Thumbs.db
 # Source Illustrator > limite GitHub (100 Mo) — conserver en local / stockage externe
 assets/images/motsfléchés.ai
 
+
+# Local Netlify folder
+.netlify

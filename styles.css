@@ -7,8 +7,8 @@
 :root{
   --surface: #ffffff;
   --text: #071010;
-  --muted: rgba(7,16,16,0.68);
-  --muted-2: rgba(7,16,16,0.52);
+  --muted: rgba(7,16,16,0.78);
+  --muted-2: rgba(7,16,16,0.62);
   --surface-2: rgba(255,255,255,0.82);
   --border: rgba(0,0,0,0.10);
 
@@ -267,7 +267,7 @@ small{ color: var(--muted-2); }
   background: linear-gradient(270deg, rgba(11, 107, 107, 0.72), transparent);
 }
 
-/* Bloc financement : titre sur une ligne, aligné à droite (pas de retour à la ligne disgracieux) */
+/* Bloc financement : même taille de titre que les autres sections */
 .service-block--financement .accompagnement-text .home-chapter-title.home-chapter-title--financement-title{
   width: fit-content;
   max-width: 100%;
@@ -276,8 +276,7 @@ small{ color: var(--muted-2); }
   text-align: right;
   direction: ltr;
   unicode-bidi: isolate;
-  white-space: nowrap;
-  font-size: clamp(0.82rem, 1.55vw, 1.48rem);
+  font-size: clamp(1.32rem, 2.35vw, 1.78rem);
   padding: 0.08em 1rem 0.42em 0;
 }
 .service-block--financement .accompagnement-text .home-chapter-title.home-chapter-title--financement-title::before{
@@ -290,10 +289,39 @@ small{ color: var(--muted-2); }
   background: linear-gradient(270deg, rgba(11, 107, 107, 0.72), transparent);
 }
 
+/* Illustrations des blocs service (accueil) : image entière, sans rognage latéral */
+.service-block--territoire .development-image img,
+.service-block--financement .accompagnement-image img,
+.evaluation-section.service-block .evaluation-image img{
+  width: 5.5cm;
+  height: 5.5cm;
+  max-width: min(5.5cm, 42vw);
+  max-height: min(5.5cm, 42vw);
+  object-fit: contain;
+  object-position: center;
+  border-radius: 16px;
+  display: block;
+}
+@media (max-width: 900px){
+  .service-block--territoire .development-image img,
+  .service-block--financement .accompagnement-image img,
+  .evaluation-section.service-block .evaluation-image img{
+    width: min(5.25cm, 78vw);
+    height: min(5.25cm, 78vw);
+    max-width: min(5.25cm, 78vw);
+    max-height: min(5.25cm, 78vw);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* Une seule ligne sur grands écrans (titres longs : territorial, financement, évaluation) */
 @media (min-width: 1280px){
   .home-chapter-title--single-line{
     white-space: nowrap;
+    font-size: clamp(1.12rem, 1.5vw, 1.58rem);
+  }
+  .service-block--financement .accompagnement-text .home-chapter-title.home-chapter-title--financement-title.home-chapter-title--single-line{
     font-size: clamp(1.12rem, 1.5vw, 1.58rem);
   }
 }
@@ -424,24 +452,26 @@ small{ color: var(--muted-2); }
     margin-left: auto;
     margin-right: auto;
   }
-  /* Financement : même taille et même logique que les autres .home-chapter-title (ex. évaluation) */
+  /* Financement : même taille et alignement que territoire / évaluation */
   .service-block--financement .accompagnement-text .home-chapter-title.home-chapter-title--financement-title{
-    width: 100%;
+    width: fit-content;
     max-width: 100%;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
-    text-align: center;
-    padding-left: 0;
+    text-align: left !important;
+    padding-left: 1rem;
     padding-right: 0;
     padding-top: 0.12em;
     white-space: normal;
     font-size: clamp(1.32rem, 2.35vw, 1.78rem);
   }
   .service-block--financement .accompagnement-text .home-chapter-title.home-chapter-title--financement-title::before{
-    display: none;
+    display: block;
+    left: 0;
+    right: auto;
   }
   .service-block--financement .accompagnement-text .home-chapter-title.home-chapter-title--financement-title::after{
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
     width: min(10rem, 42%);
   }
@@ -706,6 +736,10 @@ section.home-service-columns__card{
 .hero{ padding:0; }
 .hero-scroll-indicator{ display:none; } /* keep clean */
 .hero .hero-full-image{ border-bottom: none; }
+.hero .hero-full-image.half-faded{
+  opacity: 0.35;
+  transition: opacity 0.45s ease;
+}
 
 /* Accueil : titre + accroche sous le flyer — même fond que la suite (transparent), sans séparation */
 .home-intro-below-hero{
@@ -955,6 +989,238 @@ textarea{ min-height: 140px; resize: vertical; }
 .footer--site .footer-site-admin a:hover{
   opacity: 0.55;
   text-decoration: underline;
+}
+
+/* Footer — maillage sémantique local (discret, replié par défaut) */
+.footer--site .container{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.footer-semantic{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.85rem 1rem 0.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: rgba(220, 220, 220, 0.88);
+}
+.footer-semantic__title{
+  margin: 0 0 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+.footer-semantic__subtitle{
+  margin: 0 0 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+.footer-semantic__block--national{
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.footer-semantic__regions{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem 0.75rem;
+}
+@media (max-width: 720px){
+  .footer-semantic__regions{
+    grid-template-columns: 1fr;
+  }
+}
+.footer-semantic__region,
+.footer-semantic__dept{
+  border-radius: 6px;
+}
+.footer-semantic__region > summary,
+.footer-semantic__dept > summary{
+  cursor: pointer;
+  list-style: none;
+  padding: 0.28rem 0.4rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.62);
+  user-select: none;
+}
+.footer-semantic__region > summary::-webkit-details-marker,
+.footer-semantic__dept > summary::-webkit-details-marker{
+  display: none;
+}
+.footer-semantic__region > summary::before,
+.footer-semantic__dept > summary::before{
+  content: '▸ ';
+  opacity: 0.65;
+}
+.footer-semantic__region[open] > summary::before,
+.footer-semantic__dept[open] > summary::before{
+  content: '▾ ';
+}
+.footer-semantic__depts{
+  padding: 0 0 0.25rem 0.35rem;
+}
+.footer-semantic__links{
+  margin: 0.15rem 0 0.35rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.55rem;
+}
+.footer-semantic__links a{
+  color: rgba(200, 230, 228, 0.72);
+  text-decoration: none;
+  font-weight: 400;
+}
+.footer-semantic__links a:hover{
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-semantic__services-hint{
+  margin: 0.55rem 0 0;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.68rem;
+  color: rgba(220, 220, 220, 0.55);
+}
+.footer-semantic__services-hint a{
+  color: rgba(200, 230, 228, 0.75);
+}
+
+/* Maillage soft — une ligne de liens prestations (toutes les pages sauf annexe complète) */
+.footer-semantic--soft{
+  padding: 0.45rem 1rem 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 100%;
+}
+.footer-semantic-soft__links{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.5rem;
+  font-size: 0.68rem;
+  line-height: 1.4;
+}
+.footer-semantic-soft__links a{
+  color: rgba(200, 230, 228, 0.52);
+  text-decoration: none;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.footer-semantic-soft__links a:hover{
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: underline;
+}
+.footer-semantic-soft__links a[href*='mentions-legales']{
+  color: rgba(200, 230, 228, 0.42);
+}
+.footer-semantic-soft__sep{
+  color: rgba(255, 255, 255, 0.22);
+  font-weight: 400;
+  padding: 0 0.05rem;
+  list-style: none;
+}
+
+/* Maillage sémantique : page mentions légales uniquement (contenu principal + pied de page) */
+.mentions-zones-intro{
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+  text-align: center;
+}
+.footer--mentions-legales .container{
+  align-items: center;
+}
+.footer--mentions-legales .footer-semantic{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 22rem;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  text-align: center;
+}
+.footer--mentions-legales .footer-semantic__title{
+  text-align: center;
+  width: 100%;
+  align-self: center;
+}
+.footer--mentions-legales .footer-semantic__block--national,
+.footer--mentions-legales .footer-semantic__subtitle{
+  text-align: center;
+  width: 100%;
+}
+.footer--mentions-legales .footer-semantic__block--national{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+}
+.footer--mentions-legales .footer-semantic__block--national .footer-semantic__links{
+  justify-content: center;
+  max-width: 28rem;
+}
+/* 4 régions = 4 colonnes (Hauts-de-France, Normandie, Grand Est, Île-de-France) */
+.footer--mentions-legales .footer-semantic__regions{
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem 0.65rem;
+  justify-items: stretch;
+}
+@media (max-width: 900px){
+  .footer--mentions-legales .footer-semantic__regions{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px){
+  .footer--mentions-legales .footer-semantic__regions{
+    grid-template-columns: 1fr;
+  }
+}
+.footer--mentions-legales .footer-semantic__region{
+  width: 100%;
+  max-width: none;
+}
+.footer--mentions-legales .footer-semantic__dept{
+  width: 100%;
+  max-width: none;
+}
+.footer--mentions-legales .footer-semantic__region > summary,
+.footer--mentions-legales .footer-semantic__dept > summary{
+  text-align: center;
+}
+.footer--mentions-legales .footer-semantic__depts{
+  padding-left: 0;
+  padding-right: 0;
+}
+.footer--mentions-legales .footer-semantic__links{
+  justify-content: center;
+}
+.footer--mentions-legales .footer-semantic__services-hint{
+  width: 100%;
 }
 
 /* Synergies – phrase d'introduction mise en avant */
@@ -1483,4 +1749,68 @@ body.city-explore-panel-open{
 
 @media (max-width: 420px){
   .container{ width: min(100% - 32px, var(--container)); }
+}
+
+/* ---------- Accessibilité mobile (Lighthouse) ---------- */
+.faq-section__title{
+  text-align: center;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 901px){
+  .home-chapter-title.chapter-title--last-left,
+  .home-chapter-title.chapter-title--last-right{
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  .home-chapter-title.chapter-title--last-left{
+    text-align-last: left;
+  }
+  .home-chapter-title.chapter-title--last-right{
+    text-align-last: right;
+  }
+  .home-chapter-title.chapter-title--last-right::after{
+    margin-left: auto;
+    margin-right: 0;
+    background: linear-gradient(270deg, rgba(11, 107, 107, 0.72), transparent);
+  }
+}
+
+/* Zones tactiles ≥ 44px (WCAG 2.5.5) */
+.rounded-cta,
+.btn,
+.btn-primary,
+.btn-large{
+  min-height: 44px;
+  min-width: 44px;
+  padding-inline: 1rem;
+}
+.hamburger{
+  min-width: 44px;
+  min-height: 44px;
+}
+@media (max-width: 900px){
+  .nav-link{
+    min-height: 44px;
+    padding: 0.65rem 0.9rem;
+  }
+}
+
+.footer--site .footer-site-copy,
+.footer--site .footer-site-copy a{
+  color: #f2f8f7;
+}
+.footer--site .footer-site-copy a{
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* h2 chapitres : même échelle que l’ancien h3 */
+h2.home-chapter-title{
+  font-size: clamp(1.32rem, 2.35vw, 1.78rem);
 }

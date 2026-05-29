@@ -7,6 +7,8 @@
     "dev": "serve -l 3001 .",
     "dev:open": "bash scripts/dev-local.sh",
     "start": "serve -l 3001 .",
+    "build": "bash scripts/build-for-netlify.sh",
+    "deploy:netlify": "npm run build && npx netlify deploy --prod --dir=dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/roro80000/Site-InCitta#readme",
   "devDependencies": {
+    "netlify-cli": "^23.12.3",
     "serve": "^14.2.6"
   }
 }

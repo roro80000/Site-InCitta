@@ -6,7 +6,13 @@ export function initCurtainReveal() {
   const el = document.getElementById('curtain-reveal');
   if (!el) return;
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  /* Mobile : pas de rideau (LCP + TBT) — contenu visible tout de suite */
+  const reduceMotion =
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+    window.matchMedia('(max-width: 768px)').matches ||
+    window.matchMedia('(pointer: coarse)').matches;
+
+  if (reduceMotion) {
     el.remove();
     return;
   }
