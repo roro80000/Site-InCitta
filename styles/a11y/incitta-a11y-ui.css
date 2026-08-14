@@ -1,0 +1,365 @@
+/* Bouton languette + volet accessibilité — site InCitta */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Variables panneau alignées sur la charte InCitta */
+body.incitta-site .display-settings-panel {
+  --dsp-bg: var(--surface, #ffffff);
+  --dsp-bg-section: rgba(255, 255, 255, 0.94);
+  --dsp-bg-input: var(--surface-2, rgba(255, 255, 255, 0.82));
+  --dsp-text: var(--text, #071010);
+  --dsp-muted: var(--muted, rgba(7, 16, 16, 0.78));
+  --dsp-border: rgba(5, 59, 59, 0.16);
+  --dsp-primary: var(--primary-2, #0b6b6b);
+  --dsp-on-primary: #ffffff;
+  --dsp-input-bg: var(--surface-2, rgba(255, 255, 255, 0.82));
+  --dsp-switch-off: rgba(5, 59, 59, 0.22);
+  --dsp-radius: 14px;
+  --dsp-shadow: var(--shadow-sm, 0 10px 24px rgba(0, 0, 0, 0.08));
+  --dsp-top-offset: 0;
+}
+
+body.incitta-site .display-settings-panel__reset {
+  background-color: var(--dsp-primary) !important;
+  border-color: var(--dsp-primary) !important;
+  color: var(--dsp-on-primary) !important;
+}
+
+/* Tiroir : languette + volet collés, ancrés à droite */
+.incitta-a11y-drawer {
+  position: fixed;
+  right: 0;
+  z-index: 29100;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* Fermé : seule la languette au centre droit */
+.incitta-a11y-drawer:not(.incitta-a11y-drawer--open) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Ouvert : volet pleine hauteur, languette à gauche du volet */
+.incitta-a11y-drawer--open {
+  top: 0;
+  bottom: 0;
+  height: 100dvh;
+  max-height: 100dvh;
+  transform: none;
+  align-items: stretch;
+}
+
+/* Languette demi-cercle */
+.incitta-a11y-trigger {
+  position: relative;
+  flex-shrink: 0;
+  width: 52px;
+  height: 104px;
+  padding: 0 6px 0 10px;
+  border: 1px solid rgba(5, 59, 59, 0.18);
+  border-right: none;
+  border-radius: 104px 0 0 104px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  color: var(--primary, #053b3b);
+  box-shadow: -8px 0 28px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.incitta-a11y-trigger:hover {
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--primary-2, #0b6b6b);
+  box-shadow: -10px 0 32px rgba(11, 107, 107, 0.18);
+}
+
+.incitta-a11y-trigger:focus-visible {
+  outline: 3px solid rgba(11, 107, 107, 0.45);
+  outline-offset: 2px;
+}
+
+/* Ouvert : languette collée aux cartes de réglages */
+.incitta-a11y-drawer--open {
+  gap: 0;
+}
+
+.incitta-a11y-drawer--open .incitta-a11y-trigger {
+  position: relative;
+  z-index: 2;
+  margin-right: -1px;
+}
+
+.incitta-a11y-drawer--open .incitta-a11y-trigger,
+.incitta-a11y-trigger--active {
+  background: var(--primary-2, #0b6b6b);
+  color: #ffffff;
+  border-color: rgba(11, 107, 107, 0.55);
+  box-shadow: none;
+}
+
+.incitta-a11y-drawer--open .incitta-a11y-trigger .incitta-a11y-trigger__pupil,
+.incitta-a11y-trigger--active .incitta-a11y-trigger__pupil {
+  fill: #ffffff;
+}
+
+.incitta-a11y-trigger__badge {
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-2, #4de3c1);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.95);
+  pointer-events: none;
+}
+
+.incitta-a11y-drawer--open .incitta-a11y-trigger__badge,
+.incitta-a11y-trigger--active .incitta-a11y-trigger__badge {
+  box-shadow: 0 0 0 2px var(--primary-2, #0b6b6b);
+}
+
+body.incitta-site .incitta-a11y-drawer .incitta-a11y-trigger {
+  align-self: center;
+}
+
+/* Volet latéral — coque et body 100 % transparents ; seules les sections restent visibles */
+body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel.display-settings-panel__shell {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  flex: 1 1 auto;
+  align-self: stretch;
+  width: min(380px, 92vw);
+  min-width: 0;
+  height: 100%;
+  max-height: 100dvh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0;
+  pointer-events: auto;
+  border: none;
+  border-radius: 0;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: incitta-a11y-panel-in 0.22s ease;
+}
+
+@keyframes incitta-a11y-panel-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+body.incitta-site .display-settings-panel__backdrop {
+  z-index: 29000;
+}
+
+/* Priorité sur display-settings-panel.css (flex + gap du player) */
+body.incitta-site .display-settings-panel__body {
+  flex: 1 1 auto !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  display: block !important;
+  gap: 0 !important;
+}
+
+body.incitta-site .display-settings-panel__shell {
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
+body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel .display-settings-panel__body {
+  flex: 1 1 auto;
+  height: 0;
+  min-height: 0;
+  max-height: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  padding: 16px 16px 18px 0;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  touch-action: pan-y;
+}
+
+body.incitta-site .incitta-a11y-drawer--open .display-settings-panel__section {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel .display-settings-panel__body > .display-settings-panel__section + .display-settings-panel__section {
+  margin-top: 12px;
+}
+
+/* Défilement par drag : scrollbar masquée, curseur système (pas le magnétique du site) */
+body.incitta-site .display-settings-panel__body.scroll-drag-only {
+  scrollbar-width: none;
+}
+
+body.incitta-site .display-settings-panel__body.scroll-drag-only::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+body.incitta-site .display-settings-panel__body.scroll-drag-only button,
+body.incitta-site .display-settings-panel__body.scroll-drag-only select,
+body.incitta-site .display-settings-panel__body.scroll-drag-only label,
+body.incitta-site .display-settings-panel__body.scroll-drag-only a {
+  cursor: pointer;
+}
+
+body.is-magnetic-cursor.is-magnetic-cursor--near .incitta-a11y-root,
+body.is-magnetic-cursor.is-magnetic-cursor--near .incitta-a11y-root * {
+  cursor: auto !important;
+}
+
+body.is-magnetic-cursor.is-magnetic-cursor--near .incitta-a11y-root .display-settings-panel__body,
+body.is-magnetic-cursor.is-magnetic-cursor--near .incitta-a11y-root .display-settings-panel__section-title,
+body.is-magnetic-cursor.is-magnetic-cursor--near .incitta-a11y-root .display-settings-panel__row-text,
+body.is-magnetic-cursor.is-magnetic-cursor--near .incitta-a11y-root .display-settings-panel__label,
+body.is-magnetic-cursor.is-magnetic-cursor--near .incitta-a11y-root .display-settings-panel__row-desc {
+  cursor: grab !important;
+}
+
+body.incitta-site .display-settings-panel__body--drag-scroll {
+  cursor: grab;
+}
+
+body.incitta-site .display-settings-panel__body--drag-scroll.display-settings-panel__body--dragging {
+  cursor: grabbing;
+}
+
+body.incitta-site .display-settings-panel__body--drag-scroll .display-settings-panel__section-title,
+body.incitta-site .display-settings-panel__body--drag-scroll .display-settings-panel__row-text,
+body.incitta-site .display-settings-panel__body--drag-scroll .display-settings-panel__label,
+body.incitta-site .display-settings-panel__body--drag-scroll .display-settings-panel__row-desc {
+  cursor: grab;
+}
+
+body.incitta-site .display-settings-panel__body--drag-scroll.display-settings-panel__body--dragging
+  .display-settings-panel__section-title,
+body.incitta-site .display-settings-panel__body--drag-scroll.display-settings-panel__body--dragging
+  .display-settings-panel__row-text,
+body.incitta-site .display-settings-panel__body--drag-scroll.display-settings-panel__body--dragging
+  .display-settings-panel__label,
+body.incitta-site .display-settings-panel__body--drag-scroll.display-settings-panel__body--dragging
+  .display-settings-panel__row-desc {
+  cursor: grabbing;
+}
+
+body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel .display-settings-panel__footer {
+  flex-shrink: 0;
+  margin: 0 16px 16px 0;
+  padding: 0;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body.incitta-a11y-panel-open {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  body.nav-mobile-open .incitta-a11y-root {
+    visibility: hidden;
+    pointer-events: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body.incitta-site .incitta-a11y-drawer {
+    --incitta-a11y-tab-width: 38px;
+  }
+
+  .incitta-a11y-trigger {
+    width: var(--incitta-a11y-tab-width);
+    height: 76px;
+    padding: 0 4px 0 7px;
+    border-radius: 76px 0 0 76px;
+  }
+
+  .incitta-a11y-trigger svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .incitta-a11y-trigger__badge {
+    top: 14px;
+    left: 7px;
+    width: 7px;
+    height: 7px;
+  }
+
+  body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel.display-settings-panel__shell {
+    width: calc(100vw - var(--incitta-a11y-tab-width));
+    max-width: none;
+  }
+
+  body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel .display-settings-panel__body {
+    padding: 10px 6px 14px 0;
+  }
+
+  body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel .display-settings-panel__footer {
+    margin: 0 6px 12px 0;
+  }
+
+  body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel .display-settings-panel__body > .display-settings-panel__section + .display-settings-panel__section {
+    margin-top: 10px;
+  }
+
+  body.incitta-site .display-settings-panel__section {
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel.display-settings-panel__shell {
+    animation: none;
+  }
+}

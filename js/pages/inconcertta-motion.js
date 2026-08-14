@@ -13,6 +13,10 @@ function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+function isMobileLayout() {
+  return window.matchMedia('(max-width: 900px)').matches;
+}
+
 function runStagger(gsap, options = {}) {
   const root = options.root || document;
   const selector = options.selector || STAGGER_DEFAULT_SELECTOR;
@@ -37,7 +41,10 @@ function runStagger(gsap, options = {}) {
 }
 
 export async function initInconcerttaMotion() {
-  if (prefersReducedMotion()) return;
+  if (prefersReducedMotion() || isMobileLayout()) {
+    document.documentElement.classList.remove('ic-stagger-prime');
+    return;
+  }
 
   let gsap;
   try {

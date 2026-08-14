@@ -11,7 +11,7 @@ if ! command -v cwebp >/dev/null; then
 fi
 
 for w in 400 800; do
-  for f in plan.png concertation.png financement.png motfleche.png; do
+  for f in plan.png concertation.png financement.png audit.png motfleche.png; do
     base="${f%.png}"
     cwebp -quiet -resize "$w" 0 -q 82 "$f" -o "${base}-${w}.webp"
   done

@@ -1,0 +1,149 @@
+/* Effets accessibilité — site vitrine InCitta (body.a11y-scope) */
+
+body.a11y-scope.a11y-font-large {
+  --a11y-font-scale: 1.25;
+}
+
+body.a11y-scope.a11y-font-xlarge {
+  --a11y-font-scale: 1.5;
+}
+
+body.a11y-scope.a11y-contrast {
+  --text: #000000;
+  --muted: #1a1a1a;
+  --surface: #ffffff;
+  --surface-2: #ffffff;
+  --border: #000000;
+  --primary: #053b3b;
+  --primary-2: #0b6b6b;
+}
+
+body.a11y-scope.a11y-contrast .service-block,
+body.a11y-scope.a11y-contrast .navbar,
+body.a11y-scope.a11y-contrast .btn,
+body.a11y-scope.a11y-contrast .nav-link,
+body.a11y-scope.a11y-contrast .display-settings-panel__section {
+  border-color: var(--border);
+  border-width: 2px;
+}
+
+body.a11y-scope.a11y-links a,
+body.a11y-scope.a11y-links [role='link'] {
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+body.a11y-scope.a11y-cursor,
+body.a11y-scope.a11y-cursor * {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23000' stroke='%23fff' stroke-width='1' d='M4 2v24l6-4 4 8 4-2-4-8h8z'/%3E%3C/svg%3E")
+      2 2,
+    auto !important;
+}
+
+/* OpenDyslexic — auto-hébergée (assets/fonts/) */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../../assets/fonts/opendyslexic-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../../assets/fonts/opendyslexic-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../../assets/fonts/opendyslexic-latin-400-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../../assets/fonts/opendyslexic-latin-700-italic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+body.a11y-scope.a11y-dyslexia {
+  --a11y-dyslexia-font: 'OpenDyslexic', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--a11y-dyslexia-font) !important;
+  letter-spacing: 0.05em;
+  line-height: 1.65;
+  word-spacing: 0.12em;
+}
+
+/* Tout texte visible : contenu, formulaires, panneau a11y, titres serif, styles inline */
+body.a11y-scope.a11y-dyslexia *:not(svg):not(svg *):not(.fa):not(.fas):not(.far):not(.fab):not(.fal):not(.fad):not([class*=' fa-']) {
+  font-family: var(--a11y-dyslexia-font) !important;
+}
+
+body.a11y-scope.a11y-dyslexia ::placeholder {
+  font-family: var(--a11y-dyslexia-font) !important;
+}
+
+body.a11y-scope.a11y-dyslexia input::placeholder,
+body.a11y-scope.a11y-dyslexia textarea::placeholder {
+  font-family: var(--a11y-dyslexia-font) !important;
+}
+
+body.a11y-scope.a11y-smart-invert img,
+body.a11y-scope.a11y-smart-invert video,
+body.a11y-scope.a11y-smart-invert canvas,
+body.a11y-scope.a11y-smart-invert picture,
+body.a11y-scope.a11y-smart-invert svg image,
+body.a11y-scope.a11y-smart-invert [style*='background-image'],
+body.a11y-scope.a11y-smart-invert .a11y-no-invert {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+body.a11y-scope.a11y-safe-motion *,
+body.a11y-scope.a11y-safe-motion *::before,
+body.a11y-scope.a11y-safe-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+body.a11y-scope.a11y-motor .btn,
+body.a11y-scope.a11y-motor .btn-primary,
+body.a11y-scope.a11y-motor .rounded-cta,
+body.a11y-scope.a11y-motor .nav-link,
+body.a11y-scope.a11y-motor .hamburger,
+body.a11y-scope.a11y-motor .display-settings-panel button,
+body.a11y-scope.a11y-motor .display-settings-panel select,
+body.a11y-scope.a11y-motor .display-settings-panel .display-settings-panel__segment,
+body.a11y-scope.a11y-motor .incitta-a11y-trigger {
+  min-height: 48px;
+  min-width: 48px;
+  outline: 2px solid var(--primary-2);
+  outline-offset: 2px;
+}
+
+body.a11y-scope.a11y-focus-mode [aria-hidden='true']:not(.incitta-a11y-trigger svg):not(.display-settings-panel *) {
+  opacity: 0.35;
+}
+
+body.a11y-scope.a11y-focus-mode .hero-scroll-indicator,
+body.a11y-scope.a11y-focus-mode .curtain-reveal {
+  display: none !important;
+}
+
+body.a11y-scope.a11y-focus-mode main,
+body.a11y-scope.a11y-focus-mode .service-block,
+body.a11y-scope.a11y-focus-mode section {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}

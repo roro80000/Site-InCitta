@@ -98,7 +98,13 @@ export function initMotflecheDistortion() {
   const canvas = document.createElement('canvas');
   canvas.className = 'motfleche-distortion__canvas';
   canvas.setAttribute('aria-hidden', 'true');
-  wrap.insertBefore(canvas, img);
+  // L’img peut être dans <picture> : insertBefore(img) échoue si img n’est pas enfant direct de wrap.
+  const insertRef = img.closest('picture') || img;
+  if (insertRef.parentNode === wrap) {
+    wrap.insertBefore(canvas, insertRef);
+  } else {
+    wrap.prepend(canvas);
+  }
 
   const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false, antialias: true });
   if (!gl) {

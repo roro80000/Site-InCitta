@@ -23,7 +23,7 @@ Site_InCitta/
 │   ├── js/utils/                      # Utilitaires (perf, device…)
 │   ├── js/hooks/                      # Comportements DOM (nav, scroll, formulaires…)
 │   └── js/pages/                      # Scripts par page (ex. démo InConcertta)
-├── 🔨 build.sh                        # PurgeCSS, min CSS, bundle JS (esbuild → dist/script.min.js)
+├── scripts/build-for-netlify.sh       # Build dist/ pour Netlify (`npm run build`)
 ├── 🎨 Styles
 │   └── styles.css                     # Styles globaux (design "glass", layout)
 ├── 🧩 SEO

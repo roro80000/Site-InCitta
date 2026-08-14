@@ -24,7 +24,10 @@
   },
   "homepage": "https://github.com/roro80000/Site-InCitta#readme",
   "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "html-minifier-terser": "^7.2.0",
     "netlify-cli": "^23.12.3",
-    "serve": "^14.2.6"
+    "serve": "^14.2.6",
+    "terser": "^5.50.0"
   }
 }

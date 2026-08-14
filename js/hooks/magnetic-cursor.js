@@ -57,6 +57,10 @@ function findMagnetic(startEl) {
   if (!startEl || startEl.nodeType !== 1) return null;
   if (startEl.closest('.magnetic-cursor')) return null;
   if (startEl.closest('#curtain-reveal')) return null;
+  if (startEl.closest('.incitta-a11y-root, .incitta-a11y-drawer, .display-settings-panel')) return null;
+  if (startEl.closest('#contactForm')) return null;
+  if (startEl.closest('#demo-live, #inconcertta-live-embed')) return null;
+  if (document.body.classList.contains('demo-embed-fullscreen')) return null;
 
   for (const { sel, variant } of MAGNETIC_RULES) {
     const hit = startEl.closest(sel);
@@ -167,6 +171,15 @@ export function initMagneticCursor() {
     'pointermove',
     (e) => {
       if (e.pointerType !== 'mouse') return;
+      if (document.body.classList.contains('demo-embed-fullscreen')) {
+        clearMagneticZoom();
+        root.classList.remove('is-visible', 'is-near');
+        document.body.classList.remove('is-magnetic-cursor--near');
+        root.removeAttribute('data-magnetic');
+        visible = false;
+        magneticState = null;
+        return;
+      }
       mouseX = e.clientX;
       mouseY = e.clientY;
       const el = document.elementFromPoint(e.clientX, e.clientY);

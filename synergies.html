@@ -4,9 +4,8 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
  <title>Synergies InCitta</title>
- <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.png">
+ <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
 <link rel="stylesheet" href="styles.css">
-<script data-goatcounter="https://incitta.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
 .logo-img{max-height:48px;width:auto;height:auto;display:block}
 
@@ -22,24 +21,26 @@
 .partner-block {
   flex: 1 1 calc(25% - 1.125rem);
   box-sizing: border-box;
-  background: #ffffff;
-  border: 1px solid #eef1ef;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(5,59,59,0.12);
   border-radius: 18px;
   padding: 1.25rem;
   min-width: 220px;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.10);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .partner-block:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 20px 52px rgba(0,0,0,0.14);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 .partner-block h3 {
   margin: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Outfit', 'Playfair Display', sans-serif !important;
   font-size: 1.15rem;
   color: var(--primary);
 }
@@ -64,7 +65,7 @@
   .partner-block { flex: 1 1 100%; }
 }
 </style>
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  
 <!-- PWA Meta Tags -->
@@ -87,7 +88,7 @@
  <meta property="og:url" content="https://www.InCitta.eu/synergies.html">
  <meta property="og:title" content="Synergies — InCitta">
  <meta property="og:description" content="Partenariats et collaborations pour l'accompagnement territorial (concertation, AMO, AMU).">
- <meta property="og:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.png">
+ <meta property="og:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
  <meta property="og:locale" content="fr_FR">
  <meta property="og:site_name" content="InCitta">
  
@@ -96,7 +97,7 @@
  <meta name="twitter:url" content="https://www.InCitta.eu/synergies.html">
  <meta name="twitter:title" content="Synergies InCitta">
  <meta name="twitter:description" content="Partenariats et collaborations pour l'accompagnement territorial.">
- <meta name="twitter:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.png">
+ <meta name="twitter:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
  
  <!-- Données structurées Schema.org -->
  <script type="application/ld+json">
@@ -114,7 +115,7 @@
 <div class="nav-container">
 <div class="nav-logo">
 <a href="index.html" class="nav-brand" aria-label="InCitta">
-<img src="assets/Logo/Logo InCitta.png" alt="InCitta" class="logo-img">
+<img src="assets/Logo/Logo InCitta.webp" alt="InCitta" class="logo-img">
 </a>
 </div>
  <ul class="nav-menu" role="list">
@@ -179,8 +180,8 @@
 <footer class="footer footer--site">
   <div class="container">
     <div class="footer-site-inner">
-      <img src="assets/Logo/LogoPied.png" alt="InCitta" class="footer-logo">
-      <p class="footer-site-copy">&copy; 2026 InCitta. Tous droits réservés. | <a href="mentions-legales.html">Mentions légales</a></p>
+      <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo">
+      <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> | <a href="mentions-legales.html">Mentions légales</a></p>
     </div>
   </div>
 </footer>
