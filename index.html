@@ -79,7 +79,7 @@
   <meta name="twitter:url" content="https://incitta.eu/">
   <meta name="twitter:title" content="InCitta | Ingénierie territoriale &amp; concertation">
   <meta name="twitter:description"
-    content="Cabinet d’études urbanisme : ingénierie territoriale, concertation citoyenne, évaluation et politiques publiques. Basé à Amiens, mobile partout en France.">
+    content="Cabinet d’études urbanisme : ingénierie territoriale, concertation citoyenne, évaluation et politiques publiques. Situé à Amiens et mobile partout en France.">
   <meta name="twitter:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
 
   <!-- JSON-LD avancé (LocalBusiness + GovernmentService) : js/seo/schema-ld.js -->
@@ -87,77 +87,52 @@
 </head>
 
 <body class="home">
-  <!-- Théâtre : fond blanc + logo, volets teal par-dessus puis glissière -->
-  <div class="curtain-reveal" id="curtain-reveal" aria-hidden="true" role="presentation">
-    <div class="curtain-reveal__backdrop" aria-hidden="true"></div>
-    <div class="curtain-reveal__doors" aria-hidden="true">
-      <div class="curtain-reveal__door curtain-reveal__door--left"></div>
-      <div class="curtain-reveal__door curtain-reveal__door--right"></div>
-    </div>
-    <div class="curtain-reveal__logo">
-      <img src="assets/Logo/Logo_entreewebp_logo%20grand.webp" alt="" width="420" height="420" decoding="async"
-        fetchpriority="high">
-    </div>
-  </div>
-  <noscript>
-    <style>
-      #curtain-reveal {
-        display: none !important
-      }
-    </style>
-  </noscript>
-  <!-- Header / Navigation (fixed, transparent) -->
+  <!-- Header / Navigation (fixed, transparent glass) -->
   <nav class="navbar" aria-label="Navigation principale">
     <div class="nav-container">
       <div class="nav-logo">
         <a href="index.html" class="nav-brand" aria-label="InCitta">
-          <img src="assets/Logo/Logo InCitta.webp" alt="InCitta" class="logo-img" width="220" height="48"
-            decoding="async" fetchpriority="low">
+          <img src="assets/Logo/Logo InCitta.webp" alt="InCitta — Ingénierie territoriale et concertation"
+            title="InCitta — Ingénierie territoriale et concertation" class="logo-img" width="240" height="56"
+            decoding="async" fetchpriority="high">
         </a>
       </div>
 
       <ul class="nav-menu">
         <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Accueil</a></li>
-        <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
-        <li class="nav-item"><a href="synergies.html" class="nav-link">Synergies</a></li>
+        <li class="nav-item"><a href="#expertises" class="nav-link">Expertises</a></li>
         <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
       </ul>
 
-      <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta-btn">Prendre contact</a>
+        <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
     </div>
   </nav>
-  <!-- Flyer overlay: image fixe en plein écran au premier plan -->
-  <!-- overlay removed: use existing hero image element instead -->
-  <!-- header logo removed as requested -->
-  <!-- Navigation (moved below hero on accueil) -->
 
   <main id="contenu-principal">
-    <!-- Section Hero - En-tête -->
-    <section class="hero">
+    <!-- Section Hero - En-tête Pleine Hauteur -->
+    <section class="hero" aria-labelledby="home-main-title">
       <div class="hero-background">
         <!-- background loaded via CSS pseudo-élément for reliable opacity and performance -->
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
-        <div class="hero-description" style="width: 100%; display: flex; justify-content: center; padding-top: 1rem;">
-          <svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 899.15 193.47"
-            style="width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto;"
-            aria-label="Logo animé InCitta">
+        <div class="hero-animated-logo"
+          style="width: 100%; max-width: 520px; margin: 0 auto 1.5rem auto; display: flex; justify-content: center;">
+          <svg id="hero_logo_svg" data-name="Logo InCitta" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 899.15 193.47" style="width: 100%; height: auto; display: block;" aria-label="InCitta">
             <defs>
               <style>
                 .cls-1 {
                   fill: #bf7d3f;
                   stroke: #bf7d3f;
-                }
-
-                .cls-1,
-                .cls-2,
-                .cls-3 {
                   stroke-miterlimit: 2;
                 }
 
@@ -165,114 +140,101 @@
                   fill: #026666;
                   stroke: #026666;
                   stroke-width: 1.5px;
+                  stroke-miterlimit: 2;
                 }
 
                 .cls-3 {
                   stroke: #013333;
                   stroke-width: 3px;
+                  fill: #013333;
+                  stroke-miterlimit: 2;
                 }
 
-                .cls-3,
                 .cls-4 {
                   fill: #013333;
+                  stroke-width: 0px;
                 }
 
                 .cls-5 {
                   fill: #276666;
-                }
-
-                .cls-5,
-                .cls-6,
-                .cls-4 {
                   stroke-width: 0px;
                 }
 
                 .cls-6 {
                   fill: #036666;
+                  stroke-width: 0px;
                 }
 
-                #feuille-1,
-                #feuille-2,
-                #petale-1,
-                #petale-2,
-                #petale-3,
-                #petale-4 {
+                .hero-anim-petal {
                   opacity: 0;
                   transform-origin: center center;
                   transform-box: fill-box;
-                  animation: popIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+                  animation: heroPopIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
                 }
 
-                #feuille-1 {
-                  animation-delay: 2.1s;
+                #hl-feuille-1 {
+                  animation-delay: 0.05s;
                 }
 
-                #feuille-2 {
-                  animation-delay: 2.25s;
+                #hl-feuille-2 {
+                  animation-delay: 0.15s;
                 }
 
-                #petale-1 {
-                  animation-delay: 2.4s;
+                #hl-petale-1 {
+                  animation-delay: 0.25s;
                 }
 
-                #petale-2 {
-                  animation-delay: 2.55s;
+                #hl-petale-2 {
+                  animation-delay: 0.35s;
                 }
 
-                #petale-3 {
-                  animation-delay: 2.7s;
+                #hl-petale-3 {
+                  animation-delay: 0.45s;
                 }
 
-                #petale-4 {
-                  animation-delay: 2.85s;
+                #hl-petale-4 {
+                  animation-delay: 0.55s;
                 }
 
-                #lettre-I,
-                #lettre-N,
-                #lettre-C,
-                #lettre-i2,
-                #lettre-t1,
-                #lettre-t2,
-                #lettre-t3,
-                #lettre-A {
+                .hero-anim-letter {
                   opacity: 0;
                   transform-box: fill-box;
-                  animation: slideInLetter 0.5s ease-out both;
+                  animation: heroSlideLetter 0.45s ease-out both;
                 }
 
-                #lettre-I {
-                  animation-delay: 2.2s;
+                #hl-lettre-I {
+                  animation-delay: 0.15s;
                 }
 
-                #lettre-N {
-                  animation-delay: 2.35s;
+                #hl-lettre-N {
+                  animation-delay: 0.25s;
                 }
 
-                #lettre-C {
-                  animation-delay: 2.5s;
+                #hl-lettre-C {
+                  animation-delay: 0.35s;
                 }
 
-                #lettre-i2 {
-                  animation-delay: 2.65s;
+                #hl-lettre-i2 {
+                  animation-delay: 0.45s;
                 }
 
-                #lettre-t1 {
-                  animation-delay: 2.8s;
+                #hl-lettre-t1 {
+                  animation-delay: 0.55s;
                 }
 
-                #lettre-t2 {
-                  animation-delay: 2.95s;
+                #hl-lettre-t2 {
+                  animation-delay: 0.65s;
                 }
 
-                #lettre-t3 {
-                  animation-delay: 3.1s;
+                #hl-lettre-t3 {
+                  animation-delay: 0.72s;
                 }
 
-                #lettre-A {
-                  animation-delay: 3.25s;
+                #hl-lettre-A {
+                  animation-delay: 0.80s;
                 }
 
-                @keyframes popIn {
+                @keyframes heroPopIn {
                   0% {
                     opacity: 0;
                     transform: scale(0.6);
@@ -284,10 +246,10 @@
                   }
                 }
 
-                @keyframes slideInLetter {
+                @keyframes heroSlideLetter {
                   0% {
                     opacity: 0;
-                    transform: translateX(-15px);
+                    transform: translateX(-12px);
                   }
 
                   100% {
@@ -297,54 +259,60 @@
                 }
               </style>
             </defs>
-            <path id="lettre-A" class="cls-2"
+            <path id="hl-lettre-A" class="cls-2 hero-anim-letter"
               d="M845.77,56.6c14.8,0,26.57,3.54,35.32,10.63,8.75,7.09,13.12,18.24,13.12,33.47v61.16c0,4.03-.84,7.13-2.5,9.32-1.67,2.19-3.94,4.24-6.8,6.17-4.14,2.62-9.47,4.9-15.99,6.83-6.53,1.92-14.08,2.89-22.67,2.89-15.43,0-27.48-3.33-36.15-9.97-8.67-6.65-13.01-16.45-13.01-29.4,0-11.55,3.38-20.38,10.14-26.51,6.76-6.12,16.5-9.89,29.23-11.29l33.17-3.68v-5.77c0-7.7-2.27-13.3-6.8-16.8-4.53-3.5-10.86-5.25-18.97-5.25-6.36,0-12.49.96-18.37,2.89-5.89,1.93-11.14,4.11-15.75,6.56-1.59-1.4-2.94-3.11-4.06-5.12-1.12-2.01-1.67-4.24-1.67-6.69,0-2.97.67-5.42,2.03-7.35,1.35-1.92,3.46-3.58,6.32-4.99,4.45-2.45,9.54-4.24,15.27-5.38,5.73-1.14,11.77-1.71,18.14-1.71ZM846.25,165.53c5.57,0,10.42-.61,14.56-1.84,4.14-1.22,7.08-2.53,8.83-3.94v-33.34l-26.01,2.89c-7.32.88-12.81,2.67-16.46,5.38-3.66,2.72-5.49,6.87-5.49,12.47s1.99,10.28,5.97,13.52c3.98,3.24,10.18,4.86,18.61,4.86Z" />
-            <path id="lettre-t2" class="cls-2"
+            <path id="hl-lettre-t2" class="cls-2 hero-anim-letter"
               d="M755.42,84.69v62.47c0,6.3,1.67,10.76,5.01,13.39,3.34,2.62,8.03,3.94,14.08,3.94,2.7,0,5.57-.44,8.59-1.31,3.02-.87,5.64-1.92,7.87-3.15,1.11,1.4,2.11,2.98,2.98,4.72.87,1.75,1.31,3.85,1.31,6.3,0,4.55-2.11,8.31-6.32,11.29-4.22,2.97-10.62,4.46-19.21,4.46-11.93,0-21.44-2.93-28.52-8.79-7.08-5.86-10.62-15.53-10.62-29.01V29.78c1.11-.35,2.7-.79,4.77-1.31,2.06-.52,4.29-.79,6.68-.79,4.61,0,7.99.96,10.14,2.89,2.15,1.93,3.22,5.16,3.22,9.71v44.41Z" />
-            <path id="lettre-t1" class="cls-2"
+            <path id="hl-lettre-t1" class="cls-2 hero-anim-letter"
               d="M685.84,84.69v62.47c0,6.3,1.67,10.76,5.01,13.39,3.34,2.62,8.03,3.94,14.08,3.94,2.7,0,5.57-.43,8.59-1.31,3.02-.87,5.64-1.92,7.87-3.15,1.11,1.4,2.11,2.98,2.98,4.72.87,1.75,1.31,3.85,1.31,6.3,0,4.55-2.11,8.31-6.32,11.29-4.22,2.97-10.62,4.46-19.21,4.46-11.93,0-21.44-2.93-28.52-8.79-7.08-5.86-10.62-15.53-10.62-29.01V29.78c1.11-.35,2.7-.79,4.77-1.31,2.06-.52,4.29-.79,6.68-.79,4.61,0,7.99.96,10.14,2.89,2.15,1.93,3.22,5.16,3.22,9.71v44.41Z" />
-            <path id="lettre-i2" class="cls-2"
+            <path id="hl-lettre-i2" class="cls-2 hero-anim-letter"
               d="M620.02,40.99c0-4.55,1.43-8.35,4.29-11.42,2.86-3.06,6.52-4.59,10.98-4.59s8.03,1.53,10.74,4.59c2.7,3.06,4.06,6.87,4.06,11.42s-1.35,8.36-4.06,11.42c-2.71,3.06-6.29,4.59-10.74,4.59s-8.11-1.53-10.98-4.59c-2.86-3.06-4.29-6.87-4.29-11.42ZM647.7,182.6c-1.12.52-2.67,1-4.65,1.44-1.99.44-4.26.66-6.8.66-4.62,0-8.04-.96-10.26-2.89-2.23-1.92-3.34-5.16-3.34-9.71v-107.67c1.27-.35,2.9-.79,4.89-1.31,1.99-.52,4.26-.79,6.8-.79,4.61,0,7.99.96,10.14,2.89,2.15,1.93,3.22,5.25,3.22,9.97v107.41Z" />
-            <path id="lettre-t3" class="cls-4"
+            <path id="hl-lettre-t3" class="cls-4 hero-anim-letter"
               d="M660.08,87.97v-23.57s11.55.06,16.73.05l117.81-.12c.58,1.04,1.1,2.49,1.59,4.35.48,1.86.72,3.98.73,6.35,0,4.31-1.05,7.51-3.16,9.59-2.11,2.09-5.66,3.13-10.65,3.13l-121.36.22" />
-            <path id="lettre-C" class="cls-3"
+            <path id="hl-lettre-C" class="cls-3 hero-anim-letter"
               d="M610.29,42.69c0,2.98-.76,5.6-2.27,7.87-1.51,2.28-3.3,3.94-5.37,4.99-4.14-2.97-8.87-5.78-14.2-8.4-5.33-2.63-12.05-3.94-20.16-3.94-7,0-13.4,1.31-19.21,3.94-5.81,2.62-10.82,6.48-15.03,11.55-4.22,5.08-7.52,11.38-9.9,18.9-2.39,7.53-3.58,16.19-3.58,25.99,0,19.78,4.45,34.74,13.36,44.89,8.91,10.15,20.68,15.23,35.32,15.23,7.79,0,14.56-1.22,20.28-3.68,5.73-2.45,10.66-5.25,14.79-8.4,1.75,1.23,3.38,2.98,4.89,5.25,1.51,2.28,2.27,4.9,2.27,7.87,0,2.45-.6,4.72-1.79,6.82s-3.14,4.03-5.85,5.78c-3.5,2.45-8.27,4.64-14.32,6.56-6.05,1.92-13.69,2.89-22.91,2.89-10.18,0-19.65-1.71-28.4-5.12-8.75-3.41-16.39-8.57-22.91-15.49-6.53-6.91-11.66-15.57-15.39-25.99-3.74-10.41-5.61-22.61-5.61-36.62s1.91-25.72,5.73-36.22c3.82-10.5,8.95-19.25,15.39-26.25,6.44-7,13.96-12.29,22.55-15.88,8.59-3.58,17.74-5.38,27.44-5.38,6.84,0,13.01.66,18.49,1.97,5.49,1.31,10.18,3.02,14.08,5.12,3.9,2.1,6.92,4.55,9.07,7.35,2.15,2.8,3.22,5.6,3.22,8.4Z" />
-            <path id="lettre-N" class="cls-2"
+            <path id="hl-lettre-N" class="cls-2 hero-anim-letter"
               d="M453.13,84.69c-4.38-4.02-10.3-6.04-17.78-6.04-5.57,0-10.54.79-14.91,2.36-4.38,1.58-8.15,3.33-11.34,5.25v96.33c-1.12.52-2.67,1-4.65,1.44-1.99.44-4.18.66-6.56.66-4.62,0-8.03-.96-10.26-2.89-2.23-1.92-3.34-5.16-3.34-9.71v-86.62c0-4.02.72-7.26,2.15-9.71,1.43-2.45,3.82-4.9,7.16-7.35,4.45-2.97,10.26-5.68,17.42-8.14,7.16-2.45,15.27-3.68,24.34-3.68,15.43,0,27.52,3.81,36.27,11.42,8.75,7.61,13.13,19.12,13.13,34.52v80.06c-1.12.52-2.71,1-4.77,1.44-2.07.44-4.3.66-6.68.66-4.62,0-8.04-.96-10.26-2.89-2.23-1.92-3.34-5.16-3.34-9.71v-68.51c0-8.57-2.19-14.87-6.56-18.9Z" />
-            <path id="lettre-I" class="cls-3"
+            <path id="hl-lettre-I" class="cls-3 hero-anim-letter"
               d="M367.29,184.04c-2.15.44-4.41.66-6.8.66-4.93,0-8.47-1.01-10.62-3.02-2.15-2.01-3.22-5.38-3.22-10.11V17.05c1.27-.35,2.98-.74,5.13-1.18,2.15-.44,4.41-.66,6.8-.66,4.61,0,8.03.96,10.26,2.89,2.23,1.93,3.34,5.34,3.34,10.24v154.25c-1.11.52-2.74,1-4.89,1.44Z" />
-            <path id="petale-4" class="cls-1"
+            <path id="hl-petale-4" class="cls-1 hero-anim-petal"
               d="M251.64,14.66c-.23.26-.49.56-.76.83-5.38,5.5-10.82,10.93-16.12,16.51-7.24,7.63-14.79,14.97-22.16,22.47-1.15,1.17-2.23,2.4-3.32,3.62-.62.69-1.07.74-1.76-.02-4.46-4.95-8.97-9.86-13.48-14.76-1.99-2.16-4.04-4.27-6.05-6.41-1.53-1.63-1.61-2.22-.27-4.27,2.51-3.83,5.08-7.6,8.51-10.72,7.22-6.57,15.59-10.64,25.3-12.03,9.56-1.37,18.76,0,27.73,3.32.63.23,1.23.55,1.85.82.26.11.52.22.54.64Z" />
-            <path id="petale-3" class="cls-4"
+            <path id="hl-petale-3" class="cls-4 hero-anim-petal"
               d="M281.57,66.26c.08,9.24-1.85,19.39-6.32,29.05-3.27,7.06-7.54,13.43-12.55,19.35-.84.99-1.29,1.29-2.38.11-14.15-15.33-28.35-30.6-42.59-45.84-.91-.98-.86-1.49.03-2.43,13.94-14.54,27.83-29.11,41.74-43.67,2.06-2.16,2.08-2.15,4.25,0,5.62,5.56,9.87,12.04,13,19.28,3.14,7.28,4.54,14.92,4.83,24.16Z" />
-            <path id="petale-2" class="cls-4"
+            <path id="hl-petale-2" class="cls-4 hero-anim-petal"
               d="M164.76,156.59c-28.23-2.28-53.15-12.46-74.47-31.23-1.87-1.64-3.56-3.47-5.4-5.16-.81-.75-.7-1.17.15-1.8,3.85-2.85,7.67-5.76,11.48-8.66,8.47-6.43,16.94-12.87,25.41-19.31,10.9-8.28,21.87-16.47,32.67-24.88,4.41-3.43,8.92-6.71,13.26-10.23.78-.63,1.62-1.18,2.4-1.79.74-.58,1.19-.33,1.83.3,6.94,6.87,13.95,13.68,20.89,20.55,13.79,13.65,27.56,27.31,41.32,40.99,4.82,4.79,9.57,9.66,14.42,14.43.83.82.79,1.2-.08,1.9-4.79,3.84-9.87,7.23-15.26,10.18-16.37,8.94-33.94,13.6-52.5,14.77-5.38.34-10.74.31-16.12-.07Z" />
-            <path id="petale-1" class="cls-4"
+            <path id="hl-petale-1" class="cls-4 hero-anim-petal"
               d="M55.26,74.58c-.72-4.3-.4-8.66-.28-12.97.11-3.84.86-7.64,1.84-11.4,1.11-4.25,2.62-8.34,4.54-12.26,1.98-4.05,4.6-7.7,7.47-11.21,4.09-5.02,9.13-8.73,14.76-11.79,6.26-3.41,12.98-4.94,20.04-5.38,8.54-.52,16.65,1.06,24.28,4.9,8.62,4.34,15.33,10.72,19.89,19.29.53,1,.65,1.71-.23,2.63-2.41,2.53-4.69,5.18-7.03,7.77-5.68,6.28-11.35,12.58-17.07,18.84-13.66,14.96-27.33,29.9-41,44.86-2.1,2.3-4.21,4.59-6.25,6.93-.7.81-1.23,1.04-2.02.14-3.14-3.57-6.01-7.34-8.42-11.45-2.84-4.84-5.37-9.81-7.17-15.14-1.43-4.23-2.41-8.58-3.33-12.94-.06-.27,0-.56,0-.84Z" />
-            <path id="feuille-2" class="cls-6"
+            <path id="hl-feuille-2" class="cls-6 hero-anim-petal"
               d="M178.59,161.23c7.37-1.56,14.37-3.06,21.37-4.52,10.16-2.12,20.32-4.27,30.49-6.32,7.46-1.51,14.89-3.26,22.47-4.13,13.68-1.58,26.72.58,38.75,7.47,12.75,7.31,21.69,17.89,26.39,31.91.16.48.36.95.45,1.44.07.37.11.74-.59.61-4.2-.79-8.47-1.28-12.61-2.3-7.63-1.88-15.37-3.11-23.08-4.51-5.33-.97-10.67-1.93-16-2.93-9-1.7-17.94-3.72-26.97-5.26-6.05-1.03-12.09-2.1-18.1-3.28-10.08-1.99-20.14-4.09-30.25-5.93-3.55-.65-7.12-1.22-10.68-1.83-.43-.07-.85-.22-1.63-.42Z" />
-            <path id="feuille-1" class="cls-5"
+            <path id="hl-feuille-1" class="cls-5 hero-anim-petal"
               d="M151.28,161.31c-5.99,1.14-11.98,2.29-17.97,3.41-14.27,2.68-28.53,5.34-42.8,8.01-7.3,1.37-14.59,2.76-21.89,4.11-11.86,2.2-23.75,4.26-35.58,6.63-6.26,1.26-12.63,1.99-18.81,3.63-.37.1-.79,0-1.18.04-2.82.26-2.86.25-1.92-2.56,2.52-7.51,6.36-14.18,11.85-20.01,4.54-4.82,9.9-8.39,15.48-11.78,1.98-1.2,4.12-2.47,6.17-3.04,4.53-1.26,9.05-2.67,13.76-3.35,9.2-1.34,18.28-.57,27.3,1.24,14.4,2.89,28.77,5.86,43.16,8.79,7.09,1.44,14.17,2.88,21.26,4.32.38.08.75.2,1.13.31l.05.24Z" />
           </svg>
         </div>
-      </div>
-
-      <!-- logo removed from hero; background image kept -->
-      </div>
-      <div class="hero-scroll-indicator">
-        <div class="scroll-arrow">
-          <i class="fas fa-chevron-down"></i>
+        <h1 id="home-main-title" class="hero-title">
+          <span style="color: #013333 !important;">Ingénierie</span> <span
+            style="color: #026666 !important;">territoriale &amp;</span><br><span
+            style="color: #013333 !important;">Concertation</span> <span style="color: #026666 !important;">pour vos
+            projets</span>
+        </h1>
+        <p class="hero-subtitle">
+          De l’émergence à l’évaluation des politiques publiques, InCitta conseille et accompagne les acteurs publics dans leurs projets territoriaux : assistance à maîtrise d'ouvrage, démarches participatives et déploiement de l'outil InConcertta pour recueillir la parole citoyenne et mesurer l'impact de votre action publique.
+        </p>
+        <div class="hero-cta-group">
+          <a href="https://presentation.inconcertta.fr/" class="btn-hero-primary" target="_blank" rel="noopener">
+            <i class="fas fa-layer-group" style="margin-right: 0.55rem;"></i>
+            Découvrir l'outil InConcertta
+          </a>
+          <a href="#expertises" class="btn-hero-secondary">
+            Nos expertises
+          </a>
         </div>
       </div>
-    </section>
 
-    <section class="home-intro-below-hero" aria-labelledby="home-main-title">
-      <div class="home-intro-below-hero__inner">
-        <h1 id="home-main-title" class="home-intro-below-hero__title">Ingénierie territoriale &amp; concertation pour
-          vos projets publics</h1>
-        <p class="home-intro-below-hero__lead">Basé et actif en <strong>Hauts-de-France</strong>, InCitta accompagne
-          collectivités et porteurs de projets : programmation territoriale, participation citoyenne, outil numérique
-          InConcertta, financements et indicateurs — pour décider et agir sereinement.</p>
+      <div class="hero-scroll-indicator">
+        <a href="#accompagnement" class="scroll-arrow" aria-label="Faire défiler vers la suite">
+          <i class="fas fa-chevron-down"></i>
+        </a>
       </div>
     </section>
 
@@ -376,7 +344,8 @@
     </section>
 
     <!-- Section Développement territorial -->
-    <section class="development-section service-block service-block--territoire" aria-label="Développement territorial">
+    <section id="expertises" class="development-section service-block service-block--territoire"
+      aria-label="Développement territorial">
       <div class="development-content">
         <div class="development-text">
           <h2
@@ -386,7 +355,8 @@
             <strong>Hauts-de-France</strong> et au-delà dans l’élaboration de projets de territoire, de démarches de
             contractualisation et de stratégies de planification à différentes échelles (quartier, intercommunalité,
             bassin de vie, etc.), en intégrant les enjeux du développement durable pour permettre à nos territoires de
-            s’adapter aux défis de demain.</p>
+            s’adapter aux défis de demain.
+          </p>
           <div style="height:1.5rem;"></div>
           <div class="development-cta">
             <a href="programmation-territoriale.html" class="rounded-cta"
@@ -394,11 +364,12 @@
           </div>
         </div>
 
-        <div class="development-image" aria-hidden="true">
+        <div class="development-image">
           <picture>
             <source type="image/webp" srcset="assets/images/plan-400.webp 400w, assets/images/plan-800.webp 800w"
               sizes="(max-width:900px) 92vw, 320px">
-            <img src="assets/images/plan-800.webp" alt="" width="800" height="622" loading="lazy" decoding="async">
+            <img src="assets/images/plan-800.webp" alt="Projets de territoire : cadrer l’avenir avec méthode"
+              title="Projets de territoire et planification durable — InCitta" width="800" height="622" loading="lazy" decoding="async">
           </picture>
         </div>
       </div>
@@ -421,12 +392,14 @@
             <a href="demarche-participative.html" class="rounded-cta"
               aria-label="Découvrir la démarche participative">Découvrir la démarche</a>
           </div>
-          <div class="participation-image" aria-hidden="true">
+          <div class="participation-image">
             <picture>
               <source type="image/webp"
                 srcset="assets/images/concertation-400.webp 400w, assets/images/concertation-800.webp 800w"
                 sizes="(max-width:900px) 85vw, 280px">
-              <img src="assets/images/concertation-800.webp" alt="" width="800" height="622" loading="lazy"
+              <img src="assets/images/concertation-800.webp"
+                alt="Concertation — donner la parole aux habitants pour co-construire leur territoire"
+                title="Concertation et ateliers participatifs — InCitta" width="800" height="622" loading="lazy"
                 decoding="async">
             </picture>
           </div>
@@ -445,7 +418,8 @@
               <strong>large public</strong> au dispositif <strong>restreint ou sur invitation</strong>, outils activés,
               participation ouverte ou encadrée) et peut être adaptée à des usages de <strong>démocratie
                 participative</strong>, dont les <strong>budgets participatifs</strong> et d’autres dispositifs de
-              consultation et de co-construction.</p>
+              consultation et de co-construction.
+            </p>
             <div style="height:1.5rem;"></div>
             <div class="development-cta development-cta--duo">
               <a href="inconcertta-presentation.html" class="rounded-cta home-cta-presentation" target="_blank"
@@ -459,7 +433,9 @@
             <a href="https://presentation.inconcertta.fr/" target="_blank" rel="noopener noreferrer"
               class="inconcertta-logo-external"
               aria-label="Présentation InConcertta — presentation.inconcertta.fr (nouvel onglet)">
-              <img src="assets/images/logos/Logo InConcertta.webp" alt="Logo InConcertta" width="250" height="235"
+              <img src="assets/images/logos/Logo InConcertta.webp"
+                alt="InConcertta — le salon numérique de votre concertation"
+                title="Plateforme civique et démocratie participative InConcertta" width="250" height="235"
                 loading="lazy" decoding="async">
             </a>
           </div>
@@ -471,12 +447,14 @@
     <section class="accompagnement-section service-block service-block--financement"
       aria-label="Accompagnement recherche financement" style="margin-top:1.5rem;">
       <div class="accompagnement-content">
-        <div class="accompagnement-image" aria-hidden="true">
+        <div class="accompagnement-image">
           <picture>
             <source type="image/webp"
               srcset="assets/images/financement-400.webp 400w, assets/images/financement-800.webp 800w"
               sizes="(max-width:900px) 92vw, 320px">
-            <img src="assets/images/financement-800.webp" alt="" width="800" height="622" loading="lazy"
+            <img src="assets/images/financement-800.webp"
+              alt="Ingénierie financière : sécurisez le financement de vos projets"
+              title="Ingénierie financière et subventions territoriales — InCitta" width="800" height="622" loading="lazy"
               decoding="async">
           </picture>
         </div>
@@ -512,11 +490,13 @@
               aria-label="En savoir plus sur l'évaluation des politiques publiques">En savoir plus</a>
           </div>
         </div>
-        <div class="evaluation-image" aria-hidden="true" style="flex:0 0 auto;">
+        <div class="evaluation-image" style="flex:0 0 auto;">
           <picture>
             <source type="image/webp" srcset="assets/images/audit-400.webp 400w, assets/images/audit-800.webp 800w"
               sizes="(max-width:900px) 92vw, 320px">
-            <img src="assets/images/audit-800.webp" alt="" width="800" height="622" loading="lazy" decoding="async">
+            <img src="assets/images/audit-800.webp"
+              alt="Évaluer pour transformer l’action publique"
+              title="Évaluation des politiques publiques et analyse d'impact — InCitta" width="800" height="622" loading="lazy" decoding="async">
           </picture>
         </div>
       </div>
@@ -637,10 +617,12 @@
   <footer class="footer footer--site">
     <div class="container">
       <div class="footer-site-inner">
-        <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo" width="1297" height="1193" loading="lazy"
+        <img src="assets/Logo/LogoPied.webp" alt="InCitta — Cabinet de conseil en ingénierie territoriale"
+          title="InCitta — Cabinet de conseil et concertation" class="footer-logo" width="1297" height="1193" loading="lazy"
           decoding="async">
         <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> |
-          <a href="mentions-legales.html">Mentions légales</a></p>
+          <a href="mentions-legales.html">Mentions légales</a>
+        </p>
       </div>
     </div>
   </footer>

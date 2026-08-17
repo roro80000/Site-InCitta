@@ -16,15 +16,17 @@ function prefersReducedMotion() {
 }
 
 function bindAnchorClicks(lenis) {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  document.querySelectorAll('a[href^="#"], a[href^="index.html#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
       if (!href || href === '#') return;
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
       let id;
       try {
-        id = decodeURIComponent(href.slice(1));
+        id = decodeURIComponent(href.substring(hashIndex + 1));
       } catch {
-        id = href.slice(1);
+        id = href.substring(hashIndex + 1);
       }
       if (!id) return;
       const target = document.getElementById(id);
@@ -32,9 +34,9 @@ function bindAnchorClicks(lenis) {
       e.preventDefault();
       lenis.scrollTo(target, {
         offset: -ANCHOR_OFFSET,
-        duration: 1.45,
-        easing: ANCHOR_EASING,
+        immediate: true,
       });
+      history.pushState(null, '', '#' + id);
     });
   });
 }
@@ -50,12 +52,9 @@ function scrollToHash(lenis) {
   }
   const target = document.getElementById(id);
   if (!target) return;
-  requestAnimationFrame(() => {
-    lenis.scrollTo(target, {
-      offset: -ANCHOR_OFFSET,
-      duration: 1.2,
-      easing: ANCHOR_EASING,
-    });
+  lenis.scrollTo(target, {
+    offset: -ANCHOR_OFFSET,
+    immediate: true,
   });
 }
 
@@ -87,12 +86,9 @@ export async function initLenisScroll() {
   gsap.registerPlugin(ScrollTrigger);
 
   const lenis = new LenisCtor({
-    smoothWheel: true,
-    syncTouch: true,
-    lerp: 0.038,
-    wheelMultiplier: 0.82,
-    touchMultiplier: 1.65,
-    syncTouchLerp: 0.075,
+    smoothWheel: false,
+    lerp: 0.1,
+    wheelMultiplier: 1,
   });
 
   lenis.on('scroll', ScrollTrigger.update);
@@ -101,8 +97,6 @@ export async function initLenisScroll() {
     lenis.raf(time * 1000);
   });
   gsap.ticker.lagSmoothing(0);
-
-  bindAnchorClicks(lenis);
 
   window.addEventListener('hashchange', () => scrollToHash(lenis), { passive: true });
 

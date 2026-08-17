@@ -9,16 +9,16 @@ export const HOME = msg({
   ),
 
   'home.intro.title': tr(
-    'Ingénierie territoriale & concertation pour vos projets publics',
-    'Territorial engineering & consultation for your public projects',
-    'Ingeniería territorial y concertación para sus proyectos públicos',
-    'Ingegneria territoriale e concertazione per i vostri progetti pubblici',
+    '<span style="color: #013333 !important;">Ingénierie</span> <span style="color: #026666 !important;">territoriale &amp;</span><br><span style="color: #013333 !important;">Concertation</span> <span style="color: #026666 !important;">pour vos projets</span>',
+    '<span style="color: #013333 !important;">Territorial engineering &amp;</span><br><span style="color: #013333 !important;">Consultation</span> <span style="color: #026666 !important;">for your projects</span>',
+    '<span style="color: #013333 !important;">Ingeniería territorial &amp;</span><br><span style="color: #013333 !important;">Concertación</span> <span style="color: #026666 !important;">para sus proyectos</span>',
+    '<span style="color: #013333 !important;">Ingegneria territoriale &amp;</span><br><span style="color: #013333 !important;">Concertazione</span> <span style="color: #026666 !important;">per i vostri progetti</span>',
   ),
   'home.intro.lead': tr(
-    'Basé à <strong>Amiens</strong> et actif en <strong>Hauts-de-France</strong>, InCitta accompagne collectivités et porteurs de projets : programmation territoriale, participation citoyenne, outil numérique InConcertta, financements et indicateurs — pour décider et agir sereinement.',
-    'Based in <strong>Amiens</strong> and active throughout <strong>Hauts-de-France</strong>, InCitta supports local authorities and project leaders with territorial programming, citizen participation, the InConcertta digital tool, funding and indicators - so you can decide and act with confidence.',
-    'Con base en <strong>Amiens</strong> y activa en <strong>Hauts-de-France</strong>, InCitta acompaña a las administraciones y promotores de proyectos en programación territorial, participación ciudadana, la herramienta digital InConcertta, financiación e indicadores, para decidir y actuar con serenidad.',
-    'Con sede ad <strong>Amiens</strong> e attiva in <strong>Hauts-de-France</strong>, InCitta accompagna enti locali e promotori di progetti: programmazione territoriale, partecipazione dei cittadini, strumento digitale InConcertta, finanziamenti e indicatori, per decidere e agire con serenità.',
+    "De l’émergence à l’évaluation des politiques publiques, InCitta conseille et accompagne les acteurs publics dans leurs projets territoriaux : assistance à maîtrise d'ouvrage, démarches participatives et déploiement de l'outil InConcertta pour recueillir la parole citoyenne et mesurer l'impact de votre action publique.",
+    "From emergence to the evaluation of public policies, InCitta advises and supports public actors in their territorial projects: project management assistance, participatory approaches, and the deployment of the InConcertta tool to gather citizens' voices and measure the impact of your public action.",
+    "Desde el surgimiento hasta la evaluación de políticas públicas, InCitta asesora y acompaña a los actores públicos en sus proyectos territoriales: asistencia a la dirección de obra, enfoques participativos y despliegue de la herramienta InConcertta para recoger la voz ciudadana y medir el impacto de su acción pública.",
+    "Dall'emergere alla valutazione delle politiche pubbliche, InCitta consiglia e accompagna gli attori pubblici nei loro progetti territoriali: assistenza alla direzione dei lavori, percorsi partecipativi e implementazione dello strumento InConcertta per raccogliere la voce dei cittadini e misurare l'impatto della vostra azione pubblica."
   ),
   'home.accompagnement.text': tr(
     "Vos projets méritent l'exigence du service public : précision, discrétion et sens du détail.",

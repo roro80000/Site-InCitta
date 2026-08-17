@@ -42,7 +42,7 @@
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
 }
-.page-intro { margin-bottom: 1.25rem; padding-bottom: 1.15rem; border-bottom: 1px solid rgba(5, 59, 59, 0.1); }
+.page-intro { margin-bottom: 1.25rem; padding-bottom: 1.15rem; }
 .page-intro .container { max-width: 100%; padding: 0; }
 .page-back-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem 1rem; margin-bottom: 1rem; }
 .page-back-bar__link { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.9rem; font-weight: 600; color: var(--primary-2); text-decoration: none; padding: 0.35rem 0.15rem 0.35rem 0; border-radius: 8px; transition: color 0.18s ease, transform 0.15s ease; }
@@ -76,19 +76,21 @@
   <div class="nav-container">
     <div class="nav-logo">
       <a href="index.html" class="nav-brand" aria-label="InCitta">
-        <img src="assets/Logo/Logo InCitta.webp" alt="InCitta" class="logo-img">
+        <img src="assets/Logo/Logo InCitta.webp" alt="InCitta" class="logo-img" width="240" height="56">
       </a>
     </div>
     <ul class="nav-menu" role="list">
       <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-      <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
-      <li class="nav-item"><a href="synergies.html" class="nav-link">Synergies</a></li>
+      <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
       <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
-      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
     </ul>
-    <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
+    <div class="nav-actions">
+      <a href="contact.html" class="nav-cta-btn">Prendre contact</a>
+      <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
   </div>
 </nav>
 

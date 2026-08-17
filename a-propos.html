@@ -1,150 +1,227 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
- <title>À Propos de nous InCitta</title>
- <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
-<link rel="stylesheet" href="styles.css">
-<style>
-.logo-img{max-height:48px;width:auto;height:auto;display:block}
-/* Zone de lecture centrée (largeur A4) hors en-tête et pied de page */
-.main-read {
-  max-width:210mm;
-  margin:2rem auto;
-  padding:1.5rem;
-  box-sizing:border-box;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(5, 59, 59, 0.12);
-  border-radius: 18px;
-  box-shadow: var(--shadow-sm);
-}
-/* Mise en page de la section À propos :
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>À Propos de nous InCitta</title>
+  <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .logo-img {
+      max-height: 48px;
+      width: auto;
+      height: auto;
+      display: block
+    }
+
+    /* Zone de lecture centrée (largeur A4) hors en-tête et pied de page */
+    .main-read {
+      max-width: 210mm;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      border-radius: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Mise en page de la section À propos :
    - texte justifié
    - portrait flottant à droite avec léger enveloppement du texte
    - CV centré et taille A4
 */
-.about-content{display:block;overflow:hidden;}
-.about-main{color:#033333;}
-.about-main .about-text{ text-align:justify; text-justify:inter-word; line-height:1.6; }
-.about-portrait{float:right;width:260px;margin:0 0 1rem 1.25rem;}
-.about-portrait img{width:100%;height:auto;border-radius:4px;display:block;object-fit:cover;}
-/* Utiliser shape-outside pour un léger enveloppement (si supporté) */
-.about-portrait img{shape-outside:circle(50%);-webkit-shape-outside:circle(50%);}
-.about-more-cta{
-  display:flex;
-  justify-content:flex-end;
-  margin:0.5rem 0 1.25rem;
-  clear:both;
-}
-.about-cv{ text-align:center; margin-top:1rem; margin-bottom:0; }
-.about-cv img{
-  max-width:210mm;
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  display:inline-block;
-  border-radius: 14px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
-}
-/* Responsive : sur petits écrans, retirer le float et empiler */
-@media (max-width:800px){
-  .about-portrait{float:none;width:100%;margin:0 0 1rem 0;}
-  .about-cv img{width:100%;height:auto;}
-}
-.footer{
-  /* Forcer uniquement l'image en fond et neutraliser toute couleur héritée */
-  background: transparent !important;
-  background-image: url('assets/images/skyline_pied.png') !important;
-  background-repeat: no-repeat !important;
-  background-position: center bottom !important;
-  background-size: cover !important;
-  border-top: none !important;
-  position: relative;
-  color: #fff;
-}
-/* S'assurer que les blocs internes n'appliquent pas de fond couleur */
-.footer, .footer .footer-content, .footer .footer-bottom, .footer .footer-section {
-  background: transparent !important;
-}
-/* Si besoin d'une superposition sombre pour lisibilité, décommenter : */
-/* .footer::after { content: ''; position:absolute; left:0; right:0; top:0; bottom:0; background: rgba(0,0,0,0.25); pointer-events:none; } */
+    .about-content {
+      display: block;
+      overflow: hidden;
+    }
 
-/* Raccourcis : afficher les listes de liens en ligne (horizontale) */
-.footer .footer-section ul {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  flex-wrap: wrap;
-}
-.footer .footer-section ul li {
-  display: inline-block;
-  margin: 0;
-}
-.footer .footer-section ul li a {
-  display: inline-block;
-  padding: 0;
-}
+    .about-main {
+      color: #033333;
+    }
 
-/* Badge de statut (optionnel) dans le footer */
-.footer .footer-section ul li a {
-  display: inline-block;
-  padding: 0;
-}
-/* Forcer aucune marge sous l'image du CV */
-.about-cv img{display:block;margin-bottom:0;}
-</style>
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
- <style>
-   /* Footer spécifique pour la page À propos */
-   footer.footer {
-     background: #133333 !important;
-     color: #ffffff !important;
-   }
-   footer.footer a { color: #dcdcdc !important; }
-   footer.footer .footer-section, footer.footer .footer-bottom { background: transparent !important; }
- </style>
- 
- <!-- PWA Meta Tags -->
- <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#003333">
- <!-- Standard moderne multi-plateformes -->
- <meta name="mobile-web-app-capable" content="yes">
- <!-- Balises spécifiques Apple pour iOS (nécessaires pour Safari) -->
- <meta name="apple-mobile-web-app-capable" content="yes">
- <meta name="apple-mobile-web-app-status-bar-style" content="default">
- <meta name="apple-mobile-web-app-title" content="InCitta">
- 
- <!-- ========================= SEO Meta Tags ========================= -->
-<meta name="description" content="InCitta est un cabinet d'études en aménagement du territoire, concertation et évaluation. Nous accompagnons collectivités et partenaires locaux dans la définition et l'évaluation de leurs projets territoriaux.">
-<meta name="keywords" content="InCitta, aménagement du territoire, évaluation, concertation, AMO, AMU">
-<link rel="canonical" href="https://www.InCitta.eu/a-propos.html">
- 
- <!-- Open Graph / Facebook -->
- <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.InCitta.eu/a-propos.html">
-<meta property="og:title" content="À propos — InCitta (cabinet d'études)">
-<meta property="og:description" content="InCitta accompagne les projets territoriaux par des missions d'AMO/AMU, concertation et évaluation.">
-<meta property="og:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
- <meta property="og:locale" content="fr_FR">
- <meta property="og:site_name" content="InCitta">
- 
- <!-- Twitter Card -->
- <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://www.InCitta.eu/a-propos.html">
- <meta name="twitter:title" content="À Propos InCitta">
-<meta name="twitter:description" content="Découvrez InCitta, cabinet d'études en aménagement du territoire : méthodologie, références et équipe.">
-<meta name="twitter:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
- 
- <!-- Données structurées Schema.org -->
- <script type="application/ld+json">
+    .about-main .about-text {
+      text-align: justify;
+      text-justify: inter-word;
+      line-height: 1.6;
+    }
+
+    .about-portrait {
+      float: right;
+      width: 260px;
+      margin: 0 0 1rem 1.25rem;
+    }
+
+    .about-portrait img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Utiliser shape-outside pour un léger enveloppement (si supporté) */
+    .about-portrait img {
+      shape-outside: circle(50%);
+      -webkit-shape-outside: circle(50%);
+    }
+
+    .about-more-cta {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin: 0.5rem 0 1.25rem;
+      clear: both;
+      flex-wrap: wrap;
+    }
+
+    .about-cv {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+
+    .about-cv img {
+      max-width: 210mm;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: inline-block;
+      border-radius: 14px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive : sur petits écrans, retirer le float et empiler */
+    @media (max-width:800px) {
+      .about-portrait {
+        float: none;
+        width: 100%;
+        margin: 0 0 1rem 0;
+      }
+
+      .about-cv img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .footer {
+      /* Forcer uniquement l'image en fond et neutraliser toute couleur héritée */
+      background: transparent !important;
+      background-image: url('assets/images/skyline_pied.png') !important;
+      background-repeat: no-repeat !important;
+      background-position: center bottom !important;
+      background-size: cover !important;
+      border-top: none !important;
+      position: relative;
+      color: #fff;
+    }
+
+    /* S'assurer que les blocs internes n'appliquent pas de fond couleur */
+    .footer,
+    .footer .footer-content,
+    .footer .footer-bottom,
+    .footer .footer-section {
+      background: transparent !important;
+    }
+
+    /* Si besoin d'une superposition sombre pour lisibilité, décommenter : */
+    /* .footer::after { content: ''; position:absolute; left:0; right:0; top:0; bottom:0; background: rgba(0,0,0,0.25); pointer-events:none; } */
+
+    /* Raccourcis : afficher les listes de liens en ligne (horizontale) */
+    .footer .footer-section ul {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer .footer-section ul li {
+      display: inline-block;
+      margin: 0;
+    }
+
+    .footer .footer-section ul li a {
+      display: inline-block;
+      padding: 0;
+    }
+
+    /* Badge de statut (optionnel) dans le footer */
+    .footer .footer-section ul li a {
+      display: inline-block;
+      padding: 0;
+    }
+
+    /* Forcer aucune marge sous l'image du CV */
+    .about-cv img {
+      display: block;
+      margin-bottom: 0;
+    }
+  </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Footer spécifique pour la page À propos */
+    footer.footer {
+      background: #133333 !important;
+      color: #ffffff !important;
+    }
+
+    footer.footer a {
+      color: #dcdcdc !important;
+    }
+
+    footer.footer .footer-section,
+    footer.footer .footer-bottom {
+      background: transparent !important;
+    }
+  </style>
+
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003333">
+  <!-- Standard moderne multi-plateformes -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- Balises spécifiques Apple pour iOS (nécessaires pour Safari) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="InCitta">
+
+  <!-- ========================= SEO Meta Tags ========================= -->
+  <meta name="description"
+    content="InCitta est un cabinet d'études en aménagement du territoire, concertation et évaluation. Nous accompagnons collectivités et partenaires locaux dans la définition et l'évaluation de leurs projets territoriaux.">
+  <meta name="keywords" content="InCitta, aménagement du territoire, évaluation, concertation, AMO, AMU">
+  <link rel="canonical" href="https://www.InCitta.eu/a-propos.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.InCitta.eu/a-propos.html">
+  <meta property="og:title" content="À propos — InCitta (cabinet d'études)">
+  <meta property="og:description"
+    content="InCitta accompagne les projets territoriaux par des missions d'AMO/AMU, concertation et évaluation.">
+  <meta property="og:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="InCitta">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.InCitta.eu/a-propos.html">
+  <meta name="twitter:title" content="À Propos InCitta">
+  <meta name="twitter:description"
+    content="Découvrez InCitta, cabinet d'études en aménagement du territoire : méthodologie, références et équipe.">
+  <meta name="twitter:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
+
+  <!-- Données structurées Schema.org -->
+  <script type="application/ld+json">
  {
  "@context": "https://schema.org",
   "@type": "Organization",
@@ -153,8 +230,8 @@
   "logo": "https://www.incitta.eu/assets/Logo/Logo InCitta.webp"
  }
  </script>
- 
- <script type="application/ld+json">
+
+  <script type="application/ld+json">
  {
  "@context": "https://schema.org",
  "@type": "BreadcrumbList",
@@ -172,90 +249,116 @@
  }
  </script>
 </head>
+
 <body>
- <!-- Navigation -->
- <nav class="navbar" aria-label="Navigation principale">
- <div class="nav-container">
- <div class="nav-logo">
-<a href="index.html" class="nav-brand" aria-label="InCitta">
-<img src="assets/Logo/Logo InCitta.webp" alt="InCitta" class="logo-img">
- </a>
- </div>
-  <ul class="nav-menu" role="list">
-  <li class="nav-item">
-  <a href="index.html" class="nav-link">Accueil</a>
-  </li>
-  <li class="nav-item">
-  <a href="a-propos.html" class="nav-link active" aria-current="page">A propos</a>
-  </li>
-  <li class="nav-item">
-  <a href="synergies.html" class="nav-link">Synergies</a>
-  </li>
-  <li class="nav-item">
-  <a href="inconcertta.html" class="nav-link">InConcertta</a>
-  </li>
-  <li class="nav-item">
-  <a href="contact.html" class="nav-link">Contact</a>
-  </li>
-  </ul>
- <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-</button>
-</div>
-</nav>
-
-<main class="main-read">
-  <section class="about-story">
-    <div class="container">
-      <div class="about-content">
-        <div class="about-main">
-          <div class="about-portrait" aria-hidden="true">
-            <img src="assets/images/portrait ronan.webp" alt="Portrait Ronan Ottini">
-          </div>
-          <div class="about-text" style="color:#033333;">
-<h2>À propos d'InCitta</h2>
-            <p><strong>InCitta est une société créée en 2025 par Ronan OTTINI</strong></p>
-
-            <p><strong>Consultant en aménagement du territoire et développement local</strong>, j’accompagne les <strong>collectivités publiques</strong>, les <strong>entreprises</strong> et les <strong>partenaires locaux</strong> dans la définition, la mise en œuvre et l’évaluation de leurs projets territoriaux. Mon approche est à la fois <strong>stratégique</strong>, <strong>opérationnelle</strong> et <strong>participative</strong>, avec un objectif clair&nbsp;: produire des projets <strong>lisibles</strong>, <strong>appropriables</strong> et <strong>ancrés dans les réalités locales</strong>.</p>
-
-            <p>Fort de plus de <strong>huit ans d’expérience</strong> au sein de la fonction publique territoriale — notamment à la <strong>Région Hauts-de-France</strong>, où j’ai piloté le suivi des contractualisations entre la Région, les communes et les intercommunalités dans le domaine pluridisciplinaire de la <strong>politique de la ville</strong> et du <strong>renouvellement urbain</strong> — j’ai développé une connaissance approfondie des dynamiques territoriales, des enjeux de gouvernance multi-niveaux et des outils d’ingénierie de projet.</p>
-
-            <p>Mes précédentes expériences m'ont permis d'aborder les thématiques de la <strong>mobilité</strong>, de la <strong>planification</strong> et de la <strong>maîtrise d'ouvrage</strong>.</p>
-
-            <p>Titulaire de <strong>deux masters complémentaires</strong> — l’un en <strong>stratégie d’aménagement des villes</strong>, l’autre en <strong>science politique : évaluation des politiques publiques</strong> — je mobilise une expertise transversale.</p>
-
-            <p>Mon parcours m’a également permis d’acquérir une solide maîtrise des <strong>méthodes d’enquête qualitative et quantitative</strong>, de la <strong>prospective territoriale</strong>, ainsi que des outils de représentation cartographique et de communication graphique (<strong>Suite Adobe, ArcGIS, Illustrator</strong>). J’ai toujours veillé à articuler <strong>rigueur méthodologique</strong>, <strong>écoute active</strong> et <strong>capacité à faire dialoguer les échelles et les acteurs</strong>.</p>
-
-            <p>Aujourd’hui, en tant qu’<strong>entrepreneur individuel</strong>, j’interviens à toutes les étapes du cycle de projet territorial, dans une posture d’<strong>assistance à maîtrise d’ouvrage (AMO)</strong> et d’<strong>assistance à maîtrise d’usage (AMU)</strong>, en plaçant la <strong>co-construction</strong>, la <strong>clarté des outils</strong> et l’<strong>appropriation locale</strong> au cœur de ma démarche.</p>
-
-            <div class="about-more-cta">
-              <a href="https://ronanottini.fr" class="rounded-cta" target="_blank" rel="noopener noreferrer" aria-label="Voir plus sur ronanottini.fr">Voir plus</a>
-            </div>
-
-            <div class="about-cv">
-              <img src="assets/images/CV Ronan Ottini sans photo.webp" alt="CV Ronan Ottini">
-            </div>
-         </div>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html" class="nav-brand" aria-label="InCitta">
+          <img src="assets/Logo/Logo InCitta.webp" alt="InCitta" class="logo-img" width="240" height="56">
+        </a>
+      </div>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
+        <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+        <li class="nav-item"><a href="a-propos.html" class="nav-link active" aria-current="page">À propos</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta-btn">Prendre contact</a>
+        <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
       </div>
     </div>
-  </section>
- </main>
+  </nav>
 
-<!-- Sections 'Notre Équipe' et 'Notre Engagement' supprimées -->
-<!-- Espacement forcé de 1cm entre le CV et le footer -->
-<div style="height:1cm;"></div>
-<footer class="footer footer--site">
-<div class="container">
-  <div class="footer-site-inner">
-    <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo">
-    <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> | <a href="mentions-legales.html">Mentions légales</a></p>
-  </div>
-</div>
-</footer>
+  <main class="main-read">
+    <section class="about-story">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-main">
+            <div class="about-portrait" aria-hidden="true">
+              <img src="assets/images/portrait ronan.webp" alt="Portrait Ronan Ottini">
+            </div>
+            <div class="about-text" style="color:#033333;">
+              <h1>À propos d'InCitta</h1>
+              <p><strong>InCitta est une société créée en 2025 par Ronan OTTINI</strong></p>
 
-<script type="module" src="js/main.js"></script>
+              <p><strong>Consultant en aménagement du territoire et développement local</strong>, j’accompagne les
+                <strong>collectivités publiques</strong>, les <strong>entreprises</strong> et les <strong>partenaires
+                  locaux</strong> dans la définition, la mise en œuvre et l’évaluation de leurs projets territoriaux.
+                Mon approche est à la fois <strong>stratégique</strong>, <strong>opérationnelle</strong> et
+                <strong>participative</strong>, avec un objectif clair&nbsp;: produire des projets
+                <strong>lisibles</strong>, <strong>appropriables</strong> et <strong>ancrés dans les réalités
+                  locales</strong>.
+              </p>
+
+              <p>Fort de plus de <strong>huit ans d’expérience</strong> au sein de la fonction publique territoriale —
+                notamment à la <strong>Région Hauts-de-France</strong>, où j’ai piloté le suivi des contractualisations
+                entre la Région, les communes et les intercommunalités dans le domaine pluridisciplinaire de la
+                <strong>politique de la ville</strong> et du <strong>renouvellement urbain</strong> — j’ai développé une
+                connaissance approfondie des dynamiques territoriales, des enjeux de gouvernance multi-niveaux et des
+                outils d’ingénierie de projet.
+              </p>
+
+              <p>Mes précédentes expériences m'ont permis d'aborder les thématiques de la <strong>mobilité</strong>, de
+                la <strong>planification</strong> et de la <strong>maîtrise d'ouvrage</strong>.</p>
+
+              <p>Titulaire de <strong>deux masters complémentaires</strong> — l’un en <strong>stratégie d’aménagement
+                  des villes</strong>, l’autre en <strong>science politique : évaluation des politiques
+                  publiques</strong> — je mobilise une expertise transversale.</p>
+
+              <p>Mon parcours m’a également permis d’acquérir une solide maîtrise des <strong>méthodes d’enquête
+                  qualitative et quantitative</strong>, de la <strong>prospective territoriale</strong>, ainsi que des
+                outils de représentation cartographique et de communication graphique (<strong>Suite Adobe, ArcGIS,
+                  Illustrator</strong>). J’ai toujours veillé à articuler <strong>rigueur méthodologique</strong>,
+                <strong>écoute active</strong> et <strong>capacité à faire dialoguer les échelles et les
+                  acteurs</strong>.
+              </p>
+
+              <p>Aujourd’hui, en tant qu’<strong>entrepreneur individuel</strong>, j’interviens à toutes les étapes du
+                cycle de projet territorial, dans une posture d’<strong>assistance à maîtrise d’ouvrage (AMO)</strong>
+                et d’<strong>assistance à maîtrise d’usage (AMU)</strong>, en plaçant la
+                <strong>co-construction</strong>, la <strong>clarté des outils</strong> et l’<strong>appropriation
+                  locale</strong> au cœur de ma démarche.
+              </p>
+
+              <div class="about-more-cta">
+                <a href="synergies.html" class="rounded-cta"
+                  aria-label="Découvrir les synergies InCitta">Synergies</a>
+                <a href="https://ronanottini.fr" class="rounded-cta" target="_blank" rel="noopener noreferrer"
+                  aria-label="Voir plus sur ronanottini.fr">Voir plus</a>
+              </div>
+
+              <div class="about-cv">
+                <img src="assets/images/CV Ronan Ottini sans photo.webp" alt="CV Ronan Ottini">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sections 'Notre Équipe' et 'Notre Engagement' supprimées -->
+  <!-- Espacement forcé de 1cm entre le CV et le footer -->
+  <div style="height:1cm;"></div>
+  <footer class="footer footer--site">
+    <div class="container">
+      <div class="footer-site-inner">
+        <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo">
+        <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> |
+          <a href="mentions-legales.html">Mentions légales</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

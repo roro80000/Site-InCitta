@@ -32,9 +32,7 @@ import './seo/init-seo.js';
 initCookieBanner();
 initAccessibility();
 
-if (document.body.classList.contains('home')) {
-  initCurtainReveal();
-}
+// initCurtainReveal removed
 initNavbarScroll();
 initMobileEnv();
 

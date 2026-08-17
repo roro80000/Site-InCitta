@@ -223,6 +223,9 @@ export function initMotflecheDistortion() {
   });
   ro.observe(wrap);
 
+  img.removeAttribute('loading');
+  img.loading = 'eager';
+
   if (img.complete) {
     uploadIfReady();
   } else {

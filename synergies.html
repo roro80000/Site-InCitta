@@ -7,7 +7,12 @@
  <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
 <link rel="stylesheet" href="styles.css">
 <style>
-.logo-img{max-height:48px;width:auto;height:auto;display:block}
+.synergies-page {
+  padding-top: calc(clamp(1.6rem, 2.2vw, 2.6rem) - 0.5cm);
+}
+.partners-intro {
+  margin-top: calc(1.5rem - 0.5cm);
+}
 
 /* Partners grid: 4 columns on desktop, responsive stack on small screens */
 .partners-grid {
@@ -112,41 +117,33 @@
 <body>
 <!-- Navigation -->
 <nav class="navbar" aria-label="Navigation principale">
-<div class="nav-container">
-<div class="nav-logo">
-<a href="index.html" class="nav-brand" aria-label="InCitta">
-<img src="assets/Logo/Logo InCitta.webp" alt="InCitta" class="logo-img">
-</a>
-</div>
- <ul class="nav-menu" role="list">
- <li class="nav-item">
- <a href="index.html" class="nav-link">Accueil</a>
- </li>
- <li class="nav-item">
- <a href="a-propos.html" class="nav-link">A propos</a>
- </li>
- <li class="nav-item">
- <a href="synergies.html" class="nav-link active" aria-current="page">Synergies</a>
- </li>
- <li class="nav-item">
- <a href="inconcertta.html" class="nav-link">InConcertta</a>
- </li>
- <li class="nav-item">
- <a href="contact.html" class="nav-link">Contact</a>
- </li>
- </ul>
-<button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-</button>
-
-</div>
+ <div class="nav-container">
+  <div class="nav-logo">
+   <a href="index.html" class="nav-brand" aria-label="InCitta">
+    <img src="assets/Logo/Logo InCitta.webp" alt="InCitta" class="logo-img" width="240" height="56">
+   </a>
+  </div>
+  <ul class="nav-menu" role="list">
+   <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+   <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
+   <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+   <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
+  </ul>
+  <div class="nav-actions">
+   <a href="contact.html" class="nav-cta-btn">Prendre contact</a>
+   <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+   </button>
+  </div>
+ </div>
 </nav>
 
 <section class="menu-page synergies-page">
 <div class="container">
 <!-- section header merged into hero and removed -->
+  <h1 class="visually-hidden">Synergies et Partenaires — InCitta</h1>
   <p class="partners-intro">Parce que chaque projet est unique, InCitta travaille en synergie avec des experts pour proposer un accompagnement adapté et pluridisciplinaire. Des synergies avec des experts permettent un accompagnement personnalisé et adapté à vos enjeux.</p>
 <div class="partners-grid">
 <section class="partner-block">

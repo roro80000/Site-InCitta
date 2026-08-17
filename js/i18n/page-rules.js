@@ -3,7 +3,7 @@
 /** @type {Record<string, Array<import('./site-i18n.js').PageRule>>} */
 export const PAGE_RULES = {
   home: [
-    { selector: '#home-main-title', key: 'home.intro.title' },
+    { selector: '#home-main-title', key: 'home.intro.title', html: true },
     { selector: '.home-intro-below-hero__lead', key: 'home.intro.lead', html: true },
     { selector: '.hero-full-image', key: 'home.hero.alt', attr: 'alt' },
     { selector: '.service-block--territoire .development-title', key: 'home.territory.title' },
