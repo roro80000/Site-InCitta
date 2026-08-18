@@ -124,10 +124,10 @@ export const FOOTER_ANCHOR_TEMPLATES = [
 ];
 
 export const NATIONAL_FOOTER_LINKS = [
-  { href: SERVICES.numerique.path, label: 'Concertation citoyenne numérique France' },
-  { href: SERVICES.numerique.path, label: 'Plateforme e-démocratie nationale' },
+  { href: SERVICES.numerique.path, label: 'Concertation citoyenne numérique' },
+  { href: SERVICES.numerique.path, label: 'Plateforme e-démocratie' },
   { href: SERVICES.concertation.path, label: 'Démocratie participative sur tout le territoire' },
-  { href: SERVICES.numerique.path, label: 'Consultation citoyenne en ligne France' },
+  { href: SERVICES.numerique.path, label: 'Consultation citoyenne en ligne' },
 ];
 
 export function serviceUrl(path) {

@@ -1,216 +1,258 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
- <title>Contactez-nous InCitta</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Contactez-nous InCitta</title>
 
- <!-- ✅ Favicon : attention, ton chemin actuel pointe vers ../Site_InCitta/... (souvent casse en prod) -->
- <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
+  <!-- ✅ Favicon : attention, ton chemin actuel pointe vers ../Site_InCitta/... (souvent casse en prod) -->
+  <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
 
- <link rel="stylesheet" href="styles.css">
- <style>
-.logo-img{max-height:48px;width:auto;height:auto;display:block}
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .logo-img {
+      max-height: 48px;
+      width: auto;
+      height: auto;
+      display: block
+    }
 
-/* Réduire les espaces au-dessus du bloc formulaire tout en évitant que la navbar ne cache l'entête */
-.contact-page{margin-top: calc(var(--header-h, 80px) + 2rem - 1cm);}
-.contact-grid{margin-top:0;padding-top:0;}
-.contact-block.form-block{margin-top:0;padding-top:3mm;padding-left:1rem;padding-right:1rem;padding-bottom:1rem;}
-/* Add comfortable block-content padding */
-.block-content{
-  padding: 1rem 0.25rem 0.25rem;
-}
+    /* Réduire les espaces au-dessus du bloc formulaire tout en évitant que la navbar ne cache l'entête */
+    .contact-page {
+      margin-top: calc(var(--header-h, 80px) + 0.5rem - 2.5cm);
+    }
 
-#contactForm{
-  margin-top: 1rem;
-}
-.block-header{margin-top:0;padding-top:0;}
+    .contact-grid {
+      margin-top: 0;
+      padding-top: 0;
+    }
 
-/* Centrer verticalement le texte d'introduction */
-.block-intro{padding:1.5rem 0; display:flex; align-items:center;}
+    .contact-block.form-block {
+      margin-top: 0;
+      padding-top: 3mm;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+    }
 
-/* FAQ (contact) : conteneur parent */
-.faq-section .container {
-  background: linear-gradient(135deg, rgba(210, 154, 5, 0.05), rgba(124, 42, 0, 0.05));
-  padding: 1rem;
-  border-radius: 12px;
-}
+    /* Add comfortable block-content padding */
+    .block-content {
+      padding: 1rem 0.25rem 0.25rem;
+    }
 
-.faq-grid .faq-item {
-  border-radius: 35px;
-  overflow: hidden;
-  padding: 1.1rem;
-  background: #ffffff;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  margin-bottom: 1rem;
-}
+    #contactForm {
+      margin-top: 1rem;
+    }
 
-/* =========================
+    .block-header {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    /* Centrer verticalement le texte d'introduction */
+    .block-intro {
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+
+    /* FAQ (contact) : conteneur parent */
+    .faq-section .container {
+      background: linear-gradient(135deg, rgba(210, 154, 5, 0.05), rgba(124, 42, 0, 0.05));
+      padding: 1rem;
+      border-radius: 12px;
+    }
+
+    .faq-grid .faq-item {
+      border-radius: 35px;
+      overflow: hidden;
+      padding: 1.1rem;
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      margin-bottom: 1rem;
+    }
+
+    /* =========================
    Contact – harmonisation design
    ========================= */
-.contact-block.form-block{
-  border-radius: 18px;
-}
+    .contact-block.form-block {
+      border-radius: 18px;
+    }
 
-.block-header{
-  border-radius: 18px !important;
-  background: linear-gradient(90deg, var(--primary-2), var(--accent)) !important;
-  box-shadow: 0 16px 46px rgba(11,107,107,0.18);
-}
+    .block-header {
+      border-radius: 18px !important;
+      background: linear-gradient(90deg, var(--primary-2), var(--accent)) !important;
+      box-shadow: 0 16px 46px rgba(11, 107, 107, 0.18);
+    }
 
-.block-header h3{
-  letter-spacing: -0.01em;
-}
+    .block-header h3 {
+      letter-spacing: -0.01em;
+    }
 
-.block-intro{
-  background: rgba(255,255,255,0.78);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(5,59,59,0.14);
-  border-radius: 16px;
-  padding: 1rem 1rem;
-  box-shadow: var(--shadow-sm);
-}
+    .block-intro {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(5, 59, 59, 0.14);
+      border-radius: 16px;
+      padding: 1rem 1rem;
+      box-shadow: var(--shadow-sm);
+    }
 
-.block-intro a{
-  color: var(--primary);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 2px;
-}
+    .block-intro a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+    }
 
-#submitBtn{ margin-top: 0; }
+    #submitBtn {
+      margin-top: 0;
+    }
 
-.contact-block.form-block:hover{
-  transform: none !important;
-  box-shadow: var(--shadow-sm);
-}
+    .contact-block.form-block:hover {
+      transform: none !important;
+      box-shadow: var(--shadow-sm);
+    }
 
-#contactForm input,
-#contactForm textarea,
-#contactForm select,
-#contactForm .form-consent-label,
-#contactForm label[for]{
-  transform: none !important;
-  transition: border-color .15s ease, box-shadow .15s ease;
-}
+    #contactForm input,
+    #contactForm textarea,
+    #contactForm select,
+    #contactForm .form-consent-label,
+    #contactForm label[for] {
+      transform: none !important;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
 
-.form-submit-row{
-  display: flex;
-  justify-content: flex-end;
-  margin-top: .35rem;
-}
+    .form-submit-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: .35rem;
+    }
 
-#submitBtn.is-incomplete,
-#submitBtn:disabled{
-  opacity: 0.4;
-  cursor: not-allowed;
-  pointer-events: none;
-}
+    #submitBtn.is-incomplete,
+    #submitBtn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
 
-#contactForm .btn:hover,
-#contactForm .btn-primary:hover{
-  transform: none !important;
-}
+    #contactForm .btn:hover,
+    #contactForm .btn-primary:hover {
+      transform: none !important;
+    }
 
-.form-group--consent{ margin-top: .15rem; }
-.form-consent-label{
-  display: flex;
-  align-items: flex-start;
-  gap: .65rem;
-  cursor: pointer;
-  font-size: .92rem;
-  line-height: 1.45;
-  color: var(--text);
-}
-.form-consent-label input[type="checkbox"]{
-  width: auto;
-  min-width: 1.1rem;
-  height: 1.1rem;
-  margin-top: .15rem;
-  flex-shrink: 0;
-  accent-color: var(--primary-2);
-  cursor: pointer;
-}
-.form-consent-label input[type="checkbox"].error{
-  outline: 2px solid #c0392b;
-  outline-offset: 2px;
-}
+    .form-group--consent {
+      margin-top: .15rem;
+    }
 
-/* FAQ – grille premium */
-.faq-section .container{
-  background: rgba(255,255,255,0.70);
-  border: 1px solid rgba(5,59,59,0.12);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-radius: 18px;
-  padding: 1rem;
-}
+    .form-consent-label {
+      display: flex;
+      align-items: flex-start;
+      gap: .65rem;
+      cursor: pointer;
+      font-size: .92rem;
+      line-height: 1.45;
+      color: var(--text);
+    }
 
-.faq-grid{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
+    .form-consent-label input[type="checkbox"] {
+      width: auto;
+      min-width: 1.1rem;
+      height: 1.1rem;
+      margin-top: .15rem;
+      flex-shrink: 0;
+      accent-color: var(--primary-2);
+      cursor: pointer;
+    }
 
-@media (max-width: 800px){
-  .faq-grid{ grid-template-columns: 1fr; }
-}
+    .form-consent-label input[type="checkbox"].error {
+      outline: 2px solid #c0392b;
+      outline-offset: 2px;
+    }
 
-.faq-grid .faq-item{
-  border-radius: 18px;
-  border: 1px solid rgba(5,59,59,0.12);
-  box-shadow: var(--shadow-sm);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  margin-bottom: 0;
-}
+    /* FAQ – grille premium */
+    .faq-section .container {
+      background: rgba(255, 255, 255, 0.70);
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 18px;
+      padding: 1rem;
+    }
 
-.faq-grid .faq-item:hover{
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(11,107,107,0.22);
-}
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
 
-.faq-grid .faq-item h3{
-  margin-top: 0;
-  color: var(--primary);
-}
- </style>
+    @media (max-width: 800px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    .faq-grid .faq-item {
+      border-radius: 18px;
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      box-shadow: var(--shadow-sm);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      margin-bottom: 0;
+    }
 
- <!-- PWA Meta Tags -->
- <link rel="manifest" href="manifest.json">
- <meta name="theme-color" content="#003333">
- <meta name="mobile-web-app-capable" content="yes">
- <meta name="apple-mobile-web-app-capable" content="yes">
- <meta name="apple-mobile-web-app-status-bar-style" content="default">
- <meta name="apple-mobile-web-app-title" content="InCitta">
+    .faq-grid .faq-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(11, 107, 107, 0.22);
+    }
 
- <!-- SEO Meta Tags -->
- <meta name="description" content="Contactez InCitta — cabinet d'études en aménagement du territoire pour demandes de missions, concertation et évaluation.">
- <meta name="keywords" content="contact, InCitta, aménagement du territoire, concertation, évaluation">
- <link rel="canonical" href="https://www.incitta.eu/contact.html">
+    .faq-grid .faq-item h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+  </style>
 
- <!-- Open Graph -->
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://www.InCitta.eu/contact.html">
- <meta property="og:title" content="Contact — InCitta (cabinet d'études)">
- <meta property="og:description" content="Contactez InCitta pour des missions en aménagement, concertation et évaluation.">
- <meta property="og:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
- <meta property="og:locale" content="fr_FR">
- <meta property="og:site_name" content="InCitta">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
- <!-- Twitter Card -->
- <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:url" content="https://www.InCitta.eu/contact.html">
- <meta name="twitter:title" content="Contact InCitta">
- <meta name="twitter:description" content="Contactez InCitta pour des demandes de mission, concertation, AMO/AMU et évaluation.">
- <meta name="twitter:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003333">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="InCitta">
 
- <!-- Données structurées Schema.org -->
- <script type="application/ld+json">
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Contactez InCitta — cabinet d'études en aménagement du territoire pour demandes de missions, concertation et évaluation.">
+  <meta name="keywords" content="contact, InCitta, aménagement du territoire, concertation, évaluation">
+  <link rel="canonical" href="https://www.incitta.eu/contact.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.InCitta.eu/contact.html">
+  <meta property="og:title" content="Contact — InCitta (cabinet d'études)">
+  <meta property="og:description"
+    content="Contactez InCitta pour des missions en aménagement, concertation et évaluation.">
+  <meta property="og:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="InCitta">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.InCitta.eu/contact.html">
+  <meta name="twitter:title" content="Contact InCitta">
+  <meta name="twitter:description"
+    content="Contactez InCitta pour des demandes de mission, concertation, AMO/AMU et évaluation.">
+  <meta name="twitter:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
+
+  <!-- Données structurées Schema.org -->
+  <script type="application/ld+json">
  {
  "@context": "https://schema.org",
  "@type": "Organization",
@@ -221,7 +263,7 @@
  }
  </script>
 
- <script type="application/ld+json">
+  <script type="application/ld+json">
  {
  "@context": "https://schema.org",
  "@type": "BreadcrumbList",
@@ -241,195 +283,207 @@
 </head>
 
 <body>
- <!-- Navigation -->
- <nav class="navbar" aria-label="Navigation principale">
-  <div class="nav-container">
-   <div class="nav-logo">
-    <a href="index.html" class="nav-brand" aria-label="InCitta">
-     <img src="assets/Logo/Logo InCitta.webp" alt="Logo InCitta" class="logo-img" width="240" height="56">
-    </a>
-   </div>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html" class="nav-brand" aria-label="InCitta">
+          <img src="assets/Logo/Logo InCitta.webp" alt="Logo InCitta" class="logo-img" width="240" height="56">
+        </a>
+      </div>
 
-   <ul class="nav-menu">
-    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-    <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
-    <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
-    <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
-   </ul>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
+        <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+        <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
+      </ul>
 
-   <div class="nav-actions">
-    <a href="contact.html" class="nav-cta-btn active" aria-current="page">Prendre contact</a>
-    <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-     <span class="bar"></span>
-     <span class="bar"></span>
-     <span class="bar"></span>
-    </button>
-   </div>
-  </div>
- </nav>
-
- <!-- Section Contact -->
- <section class="contact-page">
-  <div class="container">
-   <div class="contact-grid" style="display:block;">
-
-    <div class="contact-block form-block">
-     <div class="block-header" style="padding:2.5rem 1.5rem;display:flex;align-items:center;justify-content:center;text-align:center;">
-      <h1 style="color:#ffffff;margin:0;font-size:1.9rem;font-weight:700;">
-       Un projet ? Une question ? Parlons-en.
-      </h1>
-     </div>
-
-     <div class="block-intro" style="margin:1rem 0 1rem 0;">
-      <p style="margin:0;font-size:calc(1rem + 2pt);">
-       Vous pouvez nous contacter via le formulaire ci-dessous ou directement par email :
-       <a href="mailto:contact@incitta.eu">contact@incitta.eu</a>
-      </p>
-     </div>
-
-     <div class="block-content">
-      <div class="form-inner" style="padding: 0.75rem 0.75rem 0;">
-       <form id="contactForm" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
-       <div style="display: none;">
-        <label>Ne remplissez pas ce champ : <input name="bot-field"></label>
-       </div>
-       <input type="hidden" name="form-name" value="contact">
-
-       <div class="form-row">
-        <div class="form-group">
-         <label for="firstName">Prénom *</label>
-         <input type="text" id="firstName" name="firstName" required>
-        </div>
-        <div class="form-group">
-         <label for="lastName">Nom *</label>
-         <input type="text" id="lastName" name="lastName" required>
-        </div>
-       </div>
-
-       <div class="form-row">
-        <div class="form-group">
-         <label for="email">Email *</label>
-         <input type="email" id="email" name="email" required>
-        </div>
-       </div>
-
-       <div class="form-group">
-        <label for="subject">Sujet *</label>
-        <select id="subject" name="subject" required>
-         <option value="">Choisir un sujet</option>
-         <option value="mission">Demande d'accompagnement / mission</option>
-         <option value="concertation">Concertation / ateliers</option>
-         <option value="evaluation">Évaluation / suivi</option>
-         <option value="cartographie">Cartographie / supports</option>
-         <option value="other">Autre</option>
-        </select>
-       </div>
-
-       <div class="form-group">
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" rows="6" placeholder="Décrivez votre demande (objectifs, périmètre, échéances, contexte)..." required></textarea>
-       </div>
-
-       <div class="form-group form-group--consent">
-        <label class="form-consent-label" for="privacyConsent">
-         <input type="checkbox" id="privacyConsent" name="privacyConsent" value="oui" required aria-required="true">
-         <span>En soumettant ce formulaire, vous acceptez que les informations saisies soient collectées et traitées exclusivement pour répondre à votre demande et dans un cadre professionnelle.</span>
-        </label>
-       </div>
-
-       <div id="formSuccess" class="form-message success" style="display: none;">
-        <i class="fas fa-check-circle"></i>
-        <span>Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.</span>
-       </div>
-
-       <div id="formError" class="form-message error" style="display: none;">
-        <i class="fas fa-exclamation-circle"></i>
-        <span>Une erreur s'est produite. Veuillez réessayer plus tard ou nous contacter par email.</span>
-       </div>
-
-       <div class="form-submit-row">
-        <button type="submit" class="btn btn-primary btn-large is-incomplete" id="submitBtn" disabled aria-disabled="true">
-         <i class="fas fa-paper-plane"></i>
-         Transmettre votre demande
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta-btn active" aria-current="page">Prendre contact</a>
+        <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </button>
-       </div>
-      </form>
-     </div>
+      </div>
     </div>
-    </div>
-   </div>
-  </div>
- </section>
+  </nav>
 
- <!-- Flyer en pleine largeur -->
- <section style="width: 100vw; max-width: 100%; overflow: hidden; display: flex; justify-content: center; background: #f6f6f6; padding: 2rem 0;">
-  <picture style="width: 100%; display: flex; justify-content: center;">
-    <source
-      type="image/webp"
-      srcset="assets/images/Flyer-2026%20recto-600.webp 600w, assets/images/Flyer-2026%20recto-900.webp 900w, assets/images/Flyer-2026%20recto-1600.webp 1600w"
-      sizes="100vw"
-    >
-    <img
-      src="assets/images/Flyer-2026%20recto-900.webp"
-      alt="Plaquette InCitta 2026 — aperçu visuel"
-      style="width: 100%; height: auto; max-width: 1600px; object-fit: contain;"
-      loading="lazy"
-      decoding="async"
-    >
-  </picture>
- </section>
+  <!-- Section Contact -->
+  <section class="contact-page">
+    <div class="container">
+      <div class="contact-grid" style="display:block;">
 
- <!-- Section FAQ -->
- <section class="faq-section">
-  <div class="container">
-   <div class="faq-grid">
-    <div class="faq-item">
-     <h3>Quels types de missions proposez-vous ?</h3>
-     <p>AMO/AMU, concertation (ateliers, réunions), diagnostics territoriaux, cartographie, évaluation et appui au pilotage de projets.</p>
-    </div>
-    <div class="faq-item">
-     <h3>Travaillez-vous avec les collectivités ?</h3>
-     <p>Oui : communes, intercommunalités, syndicats, bailleurs, associations et partenaires locaux. L’intervention s’adapte à votre gouvernance et vos contraintes.</p>
-    </div>
-    <div class="faq-item">
-     <h3>Intervenez-vous partout en France ?</h3>
-     <p>Oui. Les échanges amont peuvent se faire à distance, puis des temps en présentiel sont planifiés selon les besoins (ateliers, réunions, visites de terrain).</p>
-    </div>
-    <div class="faq-item">
-     <h3>Quels livrables puis-je attendre ?</h3>
-     <p>Note de cadrage, diagnostic, cartographies, supports de restitution, plan d’actions, indicateurs de suivi, bilans et recommandations opérationnelles.</p>
-    </div>
-    <div class="faq-item">
-     <h3>Quels sont vos délais habituels ?</h3>
-     <p>Après un premier échange, vous recevez une proposition (périmètre, méthode, calendrier, budget) rapidement. Les délais dépendent de la taille du territoire et du nombre de temps participatifs.</p>
-    </div>
-    <div class="faq-item">
-     <h3>Comment obtenir un devis ?</h3>
-     <p>Décrivez votre besoin via le formulaire (objectifs, périmètre, échéances). Vous pouvez aussi nous écrire directement : <a href="mailto:contact@incitta.eu">contact@incitta.eu</a>.</p>
-    </div>
-    <div class="faq-item">
-     <h3>Proposez-vous des restitutions publiques ?</h3>
-     <p>Oui : ateliers, réunions publiques, comités techniques/pilotage, restitutions avec supports clairs et pédagogiques (carto, infographies, synthèses).</p>
-    </div>
-    <div class="faq-item">
-     <h3>Confidentialité et traitement des données</h3>
-     <p>Les informations transmises servent uniquement au traitement de votre demande. Aucun usage commercial ni diffusion à des tiers.</p>
-    </div>
-   </div>
+        <div class="contact-block form-block">
+          <div class="block-header"
+            style="padding:2.5rem 1.5rem;display:flex;align-items:center;justify-content:center;text-align:center;">
+            <h1 style="color:#ffffff;margin:0;font-size:1.65rem;font-weight:700;">
+              Un projet ? Une question ? Parlons-en.
+            </h1>
+          </div>
 
-   <div style="height:1cm;"></div>
-  </div>
- </section>
+          <div class="block-intro" style="margin:1rem 0 1rem 0;">
+            <p style="margin:0;font-size:calc(1rem + 2pt);">
+              Vous pouvez nous contacter via le formulaire ci-dessous ou directement par email :
+              <a href="mailto:contact@incitta.eu">contact@incitta.eu</a>
+            </p>
+          </div>
 
-<footer class="footer footer--site">
-  <div class="container">
-    <div class="footer-site-inner">
-      <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo">
-      <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> | <a href="mentions-legales.html">Mentions légales</a></p>
+          <div class="block-content">
+            <div class="form-inner" style="padding: 0.75rem 0.75rem 0;">
+              <form id="contactForm" name="contact" method="POST" action="/" data-netlify="true"
+                netlify-honeypot="bot-field">
+                <div style="display: none;">
+                  <label>Ne remplissez pas ce champ : <input name="bot-field"></label>
+                </div>
+                <input type="hidden" name="form-name" value="contact">
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">Prénom *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Nom *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Sujet *</label>
+                  <select id="subject" name="subject" required>
+                    <option value="">Choisir un sujet</option>
+                    <option value="mission">Demande d'accompagnement / mission</option>
+                    <option value="concertation">Concertation / ateliers</option>
+                    <option value="evaluation">Évaluation / suivi</option>
+                    <option value="cartographie">Cartographie / supports</option>
+                    <option value="other">Autre</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" rows="6"
+                    placeholder="Décrivez votre demande (objectifs, périmètre, échéances, contexte)..."
+                    required></textarea>
+                </div>
+
+                <div class="form-group form-group--consent">
+                  <label class="form-consent-label" for="privacyConsent">
+                    <input type="checkbox" id="privacyConsent" name="privacyConsent" value="oui" required
+                      aria-required="true">
+                    <span>En soumettant ce formulaire, vous acceptez que les informations saisies soient collectées et
+                      traitées exclusivement pour répondre à votre demande et dans un cadre professionnelle.</span>
+                  </label>
+                </div>
+
+                <div id="formSuccess" class="form-message success" style="display: none;">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.</span>
+                </div>
+
+                <div id="formError" class="form-message error" style="display: none;">
+                  <i class="fas fa-exclamation-circle"></i>
+                  <span>Une erreur s'est produite. Veuillez réessayer plus tard ou nous contacter par email.</span>
+                </div>
+
+                <div class="form-submit-row">
+                  <button type="submit" class="btn btn-primary btn-large is-incomplete" id="submitBtn" disabled
+                    aria-disabled="true">
+                    <i class="fas fa-paper-plane"></i>
+                    Transmettre votre demande
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script type="module" src="js/main.js"></script>
+  <!-- Flyer en pleine largeur -->
+  <section
+    style="width: 100vw; max-width: 100%; overflow: hidden; display: flex; justify-content: center; background: #f6f6f6; padding: 2rem 0;">
+    <picture style="width: 100%; display: flex; justify-content: center;">
+      <source type="image/webp"
+        srcset="assets/images/Flyer-2026%20recto-600.webp 600w, assets/images/Flyer-2026%20recto-900.webp 900w, assets/images/Flyer-2026%20recto-1600.webp 1600w"
+        sizes="100vw">
+      <img src="assets/images/Flyer-2026%20recto-900.webp" alt="Plaquette InCitta 2026 — aperçu visuel"
+        style="width: 100%; height: auto; max-width: 1600px; object-fit: contain;" loading="lazy" decoding="async">
+    </picture>
+  </section>
+
+  <!-- Section FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Quels types de missions proposez-vous ?</h3>
+          <p>AMO/AMU, concertation (ateliers, réunions), diagnostics territoriaux, cartographie, évaluation et appui au
+            pilotage de projets.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Travaillez-vous avec les collectivités ?</h3>
+          <p>Oui : communes, intercommunalités, syndicats, bailleurs, associations et partenaires locaux. L’intervention
+            s’adapte à votre gouvernance et vos contraintes.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Intervenez-vous partout en France ?</h3>
+          <p>Oui. Les échanges amont peuvent se faire à distance, puis des temps en présentiel sont planifiés selon les
+            besoins (ateliers, réunions, visites de terrain).</p>
+        </div>
+        <div class="faq-item">
+          <h3>Quels livrables puis-je attendre ?</h3>
+          <p>Note de cadrage, diagnostic, cartographies, supports de restitution, plan d’actions, indicateurs de suivi,
+            bilans et recommandations opérationnelles.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Quels sont vos délais habituels ?</h3>
+          <p>Après un premier échange, vous recevez une proposition (périmètre, méthode, calendrier, budget) rapidement.
+            Les délais dépendent de la taille du territoire et du nombre de temps participatifs.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Comment obtenir un devis ?</h3>
+          <p>Décrivez votre besoin via le formulaire (objectifs, périmètre, échéances). Vous pouvez aussi nous écrire
+            directement : <a href="mailto:contact@incitta.eu">contact@incitta.eu</a>.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Proposez-vous des restitutions publiques ?</h3>
+          <p>Oui : ateliers, réunions publiques, comités techniques/pilotage, restitutions avec supports clairs et
+            pédagogiques (carto, infographies, synthèses).</p>
+        </div>
+        <div class="faq-item">
+          <h3>Confidentialité et traitement des données</h3>
+          <p>Les informations transmises servent uniquement au traitement de votre demande. Aucun usage commercial ni
+            diffusion à des tiers.</p>
+        </div>
+      </div>
+
+      <div style="height:1cm;"></div>
+    </div>
+  </section>
+
+  <footer class="footer footer--site">
+    <div class="container">
+      <div class="footer-site-inner">
+        <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo">
+        <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> |
+          <a href="mentions-legales.html">Mentions légales</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

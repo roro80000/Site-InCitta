@@ -1,197 +1,627 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
- <title>Mentions Légales InCitta</title>
- <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
-<link rel="stylesheet" href="styles.css">
-<style>
-.logo-img{max-height:48px;width:auto;height:auto;display:block}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Mentions Légales &amp; Confidentialité — InCitta</title>
+  <meta name="description"
+    content="Mentions légales, éditeur, hébergement et politique de confidentialité du cabinet d'études InCitta.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.incitta.eu/mentions-legales.html">
 
-/* Mentions légales – harmonisation design */
-.legal-section{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
 
-.legal-section .container{
-  width: min(100% - 40px, 1100px);
-  margin-left: auto;
-  margin-right: auto;
-}
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.incitta.eu/mentions-legales.html">
+  <meta property="og:title" content="Mentions Légales &amp; Confidentialité — InCitta">
+  <meta property="og:description"
+    content="Informations légales, hébergement et protection des données personnelles du site InCitta.">
+  <meta property="og:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="InCitta">
 
-.legal-content{
-  background: rgba(255,255,255,0.78);
-  border: 1px solid rgba(5,59,59,0.12);
-  border-radius: 18px;
-  padding: 1.6rem;
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(10px);
-  box-sizing: border-box;
-}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mentions Légales — InCitta">
+  <meta name="twitter:description"
+    content="Informations légales, éditeur, hébergeur et politique de confidentialité — InCitta.">
+  <meta name="twitter:image" content="https://www.incitta.eu/assets/Logo/Logo%20InCitta.png">
 
-.legal-main-title{
-  font-size: clamp(1.6rem, 2.6vw, 2rem);
-  color: var(--primary);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  margin-bottom: .25rem;
-  text-align: center;
-}
+  <!-- Données structurées Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://www.incitta.eu/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Mentions Légales",
+        "item": "https://www.incitta.eu/mentions-legales.html"
+      }
+    ]
+  }
+  </script>
 
-.legal-subtitle{
-  color: var(--muted);
-  margin-bottom: 1.25rem;
-  text-align: center;
-  max-width: none;
-}
+  <!-- Polices & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 
-.legal-item{
-  margin-top: 1.1rem;
-}
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003333">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="InCitta">
 
-.legal-item h2{
-  font-size: 1.05rem;
-  color: var(--primary);
-  margin-bottom: .35rem;
-  text-align: center;
-}
+  <style>
+    .logo-img {
+      max-height: 48px;
+      width: auto;
+      height: auto;
+      display: block;
+    }
 
-/* Paragraphes : pleine largeur du bloc + justification (surcharge .container p de styles.css) */
-.legal-content .legal-item p{
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  max-width: none;
-}
-</style>
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
- 
- <!-- PWA Meta Tags -->
- <link rel="manifest" href="manifest.json">
- <meta name="theme-color" content="#003333">
- <meta name="description" content="Mentions légales — InCitta, cabinet d'études en aménagement du territoire.">
- <meta name="robots" content="index, follow">
- <meta name="mobile-web-app-capable" content="yes">
- <meta name="apple-mobile-web-app-capable" content="yes">
- <meta name="apple-mobile-web-app-status-bar-style" content="default">
- <meta name="apple-mobile-web-app-title" content="InCitta">
+    /* Page Mentions Légales — Alignement Design System InCitta */
+    .legal-page-section {
+      width: 100%;
+      padding: 0 0 2.5rem 0;
+      margin-top: calc(var(--header-h, 80px) + 0.5rem - 1.5cm);
+    }
+
+    .legal-container {
+      width: min(100% - 36px, 1120px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Breadcrumbs / Back Bar */
+    .page-back-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .page-back-bar__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary-2);
+      text-decoration: none;
+      padding: 0.35rem 0.15rem;
+      border-radius: 8px;
+      transition: color 0.18s ease, transform 0.15s ease;
+    }
+
+    .page-back-bar__link:hover {
+      color: var(--primary);
+      transform: translateX(-2px);
+    }
+
+    .page-back-bar__link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .page-back-bar__sep {
+      color: rgba(5, 59, 59, 0.35);
+      font-weight: 600;
+      user-select: none;
+    }
+
+    .page-back-bar__here {
+      font-size: 0.92rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Hero Header Banner */
+    .legal-hero-banner {
+      background: linear-gradient(90deg, var(--primary-2), var(--accent));
+      border-radius: 18px;
+      padding: 2.2rem 1.8rem;
+      color: #ffffff;
+      text-align: center;
+      box-shadow: 0 16px 46px rgba(11, 107, 107, 0.18);
+      margin-bottom: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .legal-hero-banner::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+      pointer-events: none;
+    }
+
+    .legal-hero-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    .legal-hero-title {
+      font-family: 'Outfit', 'Playfair Display', sans-serif;
+      font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.45rem 0;
+      color: #ffffff !important;
+      line-height: 1.2;
+    }
+
+    .legal-hero-desc {
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 auto;
+      max-width: 650px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* Grille de cartes structurées */
+    .legal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 850px) {
+      .legal-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .legal-card {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      border-radius: 18px;
+      padding: 1.5rem 1.6rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .legal-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(11, 107, 107, 0.24);
+    }
+
+    .legal-card--full {
+      grid-column: 1 / -1;
+    }
+
+    .legal-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(5, 59, 59, 0.08);
+    }
+
+    .legal-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(2, 102, 102, 0.10);
+      border: 1px solid rgba(5, 59, 59, 0.14);
+      color: var(--primary);
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .legal-card-title-group {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .legal-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .legal-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-2);
+      background: rgba(11, 107, 107, 0.08);
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .legal-card-body {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .legal-card-body p {
+      margin-top: 0;
+      margin-bottom: 0.85rem;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    .legal-card-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-card-body a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 2px;
+      transition: color 0.15s ease;
+    }
+
+    .legal-card-body a:hover {
+      color: var(--primary-2);
+    }
+
+    /* Liste d'informations identité */
+    .legal-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .legal-info-list li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.35rem 0.65rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .legal-info-list strong {
+      color: var(--primary);
+      font-weight: 600;
+      min-width: 140px;
+    }
+
+    /* Bouton retour en bas */
+    .legal-footer-nav {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .page-back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 46px;
+      padding: 0 1.5rem;
+      border-radius: 999px;
+      border: 2px solid var(--primary-2);
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--primary-2) !important;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(5, 59, 59, 0.08);
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .page-back-btn:hover {
+      background: var(--primary);
+      color: #ffffff !important;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(5, 59, 59, 0.14);
+    }
+  </style>
 </head>
+
 <body>
- <!-- Navigation -->
- <nav class="navbar" aria-label="Navigation principale">
-  <div class="nav-container">
-   <div class="nav-logo">
-    <a href="index.html" class="nav-brand" aria-label="InCitta">
-     <img src="assets/Logo/Logo InCitta.webp" alt="Logo InCitta" class="logo-img" width="240" height="56">
-    </a>
-   </div>
-   <ul class="nav-menu">
-    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-    <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
-    <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
-    <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
-   </ul>
-   <div class="nav-actions">
-    <a href="contact.html" class="nav-cta-btn">Prendre contact</a>
-    <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-     <span class="bar"></span>
-     <span class="bar"></span>
-     <span class="bar"></span>
-    </button>
-   </div>
-  </div>
- </nav>
-
-<!-- Title moved above legal content -->
- <section class="legal-section">
- <div class="container">
- <div class="legal-content">
-      <h1 class="legal-main-title">Mentions Légales</h1>
-      <p class="legal-subtitle">Informations légales et politique de confidentialité</p>
-      <!-- Contenu des mentions légales -->
- <div class="legal-item">
-  <h2>Conditions d'utilisation</h2>
-  <p>L’utilisation du présent site implique l’acceptation pleine et entière des conditions générales d’utilisation décrites ci-après. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment.</p>
- </div>
-
- <div class="legal-item">
-  <h2>Informations</h2>
-  <p>Les informations et documents du site sont présentés à titre indicatif, sans caractère exhaustif, et ne peuvent engager la responsabilité du propriétaire du site. Le propriétaire du site ne peut être tenu responsable des dommages directs et indirects consécutifs à l’accès au site.</p>
- </div>
-
- <div class="legal-item">
-  <h2>Interactivité</h2>
-  <p>Les utilisateurs du site peuvent y déposer du contenu, apparaissant sur le site dans des espaces dédiés (notamment via les commentaires). Le contenu déposé reste sous la responsabilité de leurs auteurs, qui en assument pleinement l’entière responsabilité juridique. Le propriétaire du site se réserve néanmoins le droit de retirer sans préavis et sans justification tout contenu déposé par les utilisateurs qui ne satisferait pas à la charte déontologique du site ou à la législation en vigueur.</p>
- </div>
-
- <div class="legal-item">
- <h2>Propriété intellectuelle</h2>
-  <p>Sauf mention contraire, tous les éléments accessibles sur le site (textes, images, graphismes, logo, icônes, sons, logiciels, etc.) restent la propriété exclusive de leurs auteurs, en ce qui concerne les droits de propriété intellectuelle ou les droits d’usage.</p>
-  <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de l’auteur.</p>
-  <p>Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient est considérée comme constitutive d’une contrefaçon et passible de poursuites. Les marques et logos reproduits sur le site sont déposés par les sociétés qui en sont propriétaires.</p>
- </div>
-
- <div class="legal-item">
-  <h2>Liens</h2>
-  <p><strong>Liens sortants :</strong> Le propriétaire du site décline toute responsabilité et n’est pas engagé par le référencement via des liens hypertextes, de ressources tierces présentes sur le réseau Internet, tant en ce qui concerne leur contenu que leur pertinence.</p>
-  <p><strong>Liens entrants :</strong> Le propriétaire du site autorise les liens hypertextes vers l’une des pages de ce site, à condition que ceux-ci ouvrent une nouvelle fenêtre et soient présentés de manière non-équivoque afin d’éviter tout risque de confusion entre le site citant et le propriétaire du site ainsi que toute présentation tendancieuse, ou contraire aux lois en vigueur.</p>
-  <p>Le propriétaire du site se réserve le droit de demander la suppression d’un lien s’il estime que le site source ne respecte pas les règles ainsi définies.</p>
- </div>
-
- <div class="legal-item" id="confidentialite">
-  <h2>Confidentialité</h2>
-  <p>Le site ne recueille pas d’informations personnelles hormis les informations transmises par vos soins dans la partie contact. Le site n’est pas assujetti à déclaration à la CNIL.</p>
-  <p>Pour des statistiques de fréquentation <strong>agrégées</strong>, le site peut s’appuyer sur des outils de mesure d’audience (notamment <strong>GoatCounter</strong>, données hébergées dans l’Union européenne, et le cas échéant Google Analytics). Ces outils ne sont activés qu’après votre consentement via la bannière cookies. Vous pouvez refuser ou personnaliser ce choix à tout moment. Pour en savoir plus : <a href="https://www.goatcounter.com/help/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité GoatCounter</a>.</p>
-  <p>Tout utilisateur dispose d’un droit d’accès, de rectification et d’opposition aux données personnelles le concernant, en effectuant sa demande écrite et signée, accompagnée d’une preuve d’identité.</p>
- </div>
-
- <div class="legal-item">
-  <h2>Hébergement</h2>
-  <p>
-    Le site est hébergé par <strong>Netlify, Inc.</strong>
-  </p>
-  <p>
-    <strong>Netlify, Inc.</strong><br>
-    101 2nd Street<br>
-    San Francisco, CA 94105<br>
-    États-Unis
-  </p>
-  <p>
-    <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">netlify.com</a> — <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>
-  </p>
- </div>
-
- <div class="legal-item">
-  <h2>Informations légales</h2>
-  <p><strong>Nom de la société :</strong> InCitta (société par actions simplifiée unipersonnelle)</p>
-  <p><strong>Siège social :</strong> 26 rue Jean-Baptiste TRANNOY - 80 000 AMIENS</p>
-  <p><strong>Coordonnées :</strong> <a href="mailto:contact@incitta.eu">contact@incitta.eu</a></p>
-  <p><strong>Numéro d'identification de l'entreprise :</strong> 944 636 638</p>
-  <p><strong>Autorité de régulation :</strong> R.C.S. Amiens</p>
-
-  <h2 id="zones-intervention-annexe">Annexe — zones d'intervention et expertises</h2>
-  <p class="mentions-zones-intro">Index des principales zones géographiques et formulations d'expertise associées aux prestations InCitta. Le détail des liens est repris en bas de cette page.</p>
- </div>
- </div>
- </div>
- </section>
-
-<footer class="footer footer--site footer--mentions-legales">
-  <div class="container">
-    <div class="footer-site-inner">
-      <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo">
-      <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> | <a href="mentions-legales.html">Mentions légales</a></p>
-      <p class="footer-site-admin"><a href="admin/auth-page.html">Me connecter</a></p>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html" class="nav-brand" aria-label="InCitta">
+          <img src="assets/Logo/Logo InCitta.webp" alt="Logo InCitta" class="logo-img" width="240" height="56">
+        </a>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
+        <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+        <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta-btn">Prendre contact</a>
+        <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
     </div>
-  </div>
-</footer>
+  </nav>
+
+  <main id="contenu-principal">
+    <section class="legal-page-section">
+      <div class="legal-container">
+
+        <!-- Fil d'Ariane -->
+        <div class="page-back-bar" aria-label="Fil d'Ariane">
+          <a href="index.html" class="page-back-bar__link">
+            <i class="fas fa-arrow-left page-back-bar__icon" aria-hidden="true"></i>
+            <span>Retour à l'accueil</span>
+          </a>
+          <span class="page-back-bar__sep" aria-hidden="true">/</span>
+          <span class="page-back-bar__here" aria-current="page">Mentions légales</span>
+        </div>
+
+        <!-- En-tête Hero Banner -->
+        <header class="legal-hero-banner">
+          <h1 class="legal-hero-title">Mentions Légales</h1>
+          <p class="legal-hero-desc">Informations légales, conditions générales d'utilisation et politique de
+            confidentialité du site InCitta.</p>
+        </header>
+
+        <!-- Grille des mentions légales -->
+        <div class="legal-grid">
+
+          <!-- 1. Informations légales -->
+          <article class="legal-card" id="informations-legales">
+            <div class="legal-card-header">
+              <div class="legal-card-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+              <div class="legal-card-title-group">
+                <h2 class="legal-card-title">Informations légales</h2>
+              </div>
+            </div>
+            <div class="legal-card-body">
+              <p><strong>Nom de la société :</strong> InCitta (société par actions simplifiée unipersonnelle)</p>
+              <p><strong>Siège social :</strong> 26 rue Jean-Baptiste TRANNOY - 80 000 AMIENS</p>
+              <p><strong>Coordonnées :</strong> <a href="mailto:contact@incitta.eu">contact@incitta.eu</a></p>
+              <p><strong>Numéro d'identification de l'entreprise :</strong> 944 636 638</p>
+              <p><strong>Autorité de régulation :</strong> R.C.S. Amiens</p>
+            </div>
+          </article>
+
+          <!-- 2. Hébergement -->
+          <article class="legal-card" id="hebergement">
+            <div class="legal-card-header">
+              <div class="legal-card-icon"><i class="fas fa-server" aria-hidden="true"></i></div>
+              <div class="legal-card-title-group">
+                <h2 class="legal-card-title">Hébergement</h2>
+              </div>
+            </div>
+            <div class="legal-card-body">
+              <p>
+                Le site est hébergé par <strong>Netlify, Inc.</strong>
+              </p>
+              <p>
+                <strong>Netlify, Inc.</strong><br>
+                101 2nd Street<br>
+                San Francisco, CA 94105<br>
+                États-Unis
+              </p>
+              <p>
+                <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">netlify.com</a> — <a
+                  href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">Politique de
+                  confidentialité</a>
+              </p>
+            </div>
+          </article>
+
+          <!-- 3. Conditions d'utilisation -->
+          <article class="legal-card" id="conditions">
+            <div class="legal-card-header">
+              <div class="legal-card-icon"><i class="fas fa-file-contract" aria-hidden="true"></i></div>
+              <div class="legal-card-title-group">
+                <h2 class="legal-card-title">Conditions d'utilisation</h2>
+              </div>
+            </div>
+            <div class="legal-card-body">
+              <p>L’utilisation du présent site implique l’acceptation pleine et entière des conditions générales
+                d’utilisation décrites ci-après. Ces conditions d’utilisation sont susceptibles d’être modifiées ou
+                complétées à tout moment.</p>
+            </div>
+          </article>
+
+          <!-- 4. Informations -->
+          <article class="legal-card" id="informations">
+            <div class="legal-card-header">
+              <div class="legal-card-icon"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
+              <div class="legal-card-title-group">
+                <h2 class="legal-card-title">Informations</h2>
+              </div>
+            </div>
+            <div class="legal-card-body">
+              <p>Les informations et documents du site sont présentés à titre indicatif, sans caractère exhaustif, et ne
+                peuvent engager la responsabilité du propriétaire du site. Le propriétaire du site ne peut être tenu
+                responsable des dommages directs et indirects consécutifs à l’accès au site.</p>
+            </div>
+          </article>
+
+          <!-- 5. Propriété intellectuelle -->
+          <article class="legal-card legal-card--full" id="propriete">
+            <div class="legal-card-header">
+              <div class="legal-card-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+              <div class="legal-card-title-group">
+                <h2 class="legal-card-title">Propriété intellectuelle</h2>
+              </div>
+            </div>
+            <div class="legal-card-body">
+              <p>Sauf mention contraire, tous les éléments accessibles sur le site (textes, images, graphismes, logo,
+                icônes, sons, logiciels, etc.) restent la propriété exclusive de leurs auteurs, en ce qui concerne les
+                droits de propriété intellectuelle ou les droits d’usage.</p>
+              <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des
+                éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite
+                préalable de l’auteur.</p>
+              <p>Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient est
+                considérée comme constitutive d’une contrefaçon et passible de poursuites. Les marques et logos
+                reproduits sur le site sont déposés par les sociétés qui en sont propriétaires.</p>
+            </div>
+          </article>
+
+          <!-- 6. Confidentialité -->
+          <article class="legal-card legal-card--full" id="confidentialite">
+            <div class="legal-card-header">
+              <div class="legal-card-icon"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+              <div class="legal-card-title-group">
+                <h2 class="legal-card-title">Confidentialité</h2>
+              </div>
+            </div>
+            <div class="legal-card-body">
+              <p>Le site ne recueille pas d’informations personnelles hormis les informations transmises par vos soins
+                dans la partie contact. Le site n’est pas assujetti à déclaration à la CNIL.</p>
+              <p>Pour des statistiques de fréquentation <strong>agrégées</strong>, le site peut s’appuyer sur des outils
+                de mesure d’audience et le cas échéant de Google Analytics.
+                Ces outils ne sont activés qu’après votre consentement via la bannière cookies. Vous pouvez refuser ou
+                personnaliser ce choix à tout moment.
+              <p>Tout utilisateur dispose d’un droit d’accès, de rectification et d’opposition aux données personnelles
+                le concernant, en effectuant sa demande écrite et signée, accompagnée d’une preuve d’identité.</p>
+            </div>
+          </article>
+
+          <!-- 7. Interactivité -->
+          <article class="legal-card" id="interactivite">
+            <div class="legal-card-header">
+              <div class="legal-card-icon"><i class="fas fa-comments" aria-hidden="true"></i></div>
+              <div class="legal-card-title-group">
+                <h2 class="legal-card-title">Interactivité</h2>
+              </div>
+            </div>
+            <div class="legal-card-body">
+              <p>Les utilisateurs du site peuvent y déposer du contenu, apparaissant sur le site dans des espaces dédiés
+                (notamment via les commentaires). Le contenu déposé reste sous la responsabilité de leurs auteurs, qui
+                en assument pleinement l’entière responsabilité juridique. Le propriétaire du site se réserve néanmoins
+                le droit de retirer sans préavis et sans justification tout contenu déposé par les utilisateurs qui ne
+                satisferait pas à la charte déontologique du site ou à la législation en vigueur.</p>
+            </div>
+          </article>
+
+          <!-- 8. Liens -->
+          <article class="legal-card" id="liens">
+            <div class="legal-card-header">
+              <div class="legal-card-icon"><i class="fas fa-link" aria-hidden="true"></i></div>
+              <div class="legal-card-title-group">
+                <h2 class="legal-card-title">Liens</h2>
+              </div>
+            </div>
+            <div class="legal-card-body">
+              <p><strong>Liens sortants :</strong> Le propriétaire du site décline toute responsabilité et n’est pas
+                engagé par le référencement via des liens hypertextes, de ressources tierces présentes sur le réseau
+                Internet, tant en ce qui concerne leur contenu que leur pertinence.</p>
+              <p><strong>Liens entrants :</strong> Le propriétaire du site autorise les liens hypertextes vers l’une des
+                pages de ce site, à condition que ceux-ci ouvrent une nouvelle fenêtre et soient présentés de manière
+                non-équivoque afin d’éviter tout risque de confusion entre le site citant et le propriétaire du site
+                ainsi que toute présentation tendancieuse, ou contraire aux lois en vigueur.</p>
+              <p>Le propriétaire du site se réserve le droit de demander la suppression d’un lien s’il estime que le
+                site source ne respecte pas les règles ainsi définies.</p>
+            </div>
+          </article>
+
+          <!-- 9. Annexe — zones d'intervention et expertises -->
+          <article class="legal-card legal-card--full" id="zones-intervention-annexe">
+            <div class="legal-card-header">
+              <div class="legal-card-icon"><i class="fas fa-map-marked-alt" aria-hidden="true"></i></div>
+              <div class="legal-card-title-group">
+                <h2 class="legal-card-title">Annexe — zones d'intervention et expertises</h2>
+              </div>
+            </div>
+            <div class="legal-card-body">
+              <p class="mentions-zones-intro">Index des principales zones géographiques et formulations d'expertise
+                associées aux prestations InCitta. Le détail des liens est repris en bas de cette page.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Bouton retour -->
+        <div class="legal-footer-nav">
+          <a href="index.html" class="page-back-btn">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            <span>Retour à l'accueil</span>
+          </a>
+          <a href="contact.html" class="page-back-btn"
+            style="background: var(--primary); color: #fff !important; border-color: var(--primary);">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>Nous contacter</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer footer--site footer--mentions-legales">
+    <div class="container">
+      <div class="footer-site-inner">
+        <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo" width="1297" height="1193" loading="lazy"
+          decoding="async">
+        <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> |
+          <a href="mentions-legales.html">Mentions légales</a>
+        </p>
+        <p class="footer-site-admin"><a href="admin/auth-page.html">Me connecter</a></p>
+      </div>
+    </div>
+  </footer>
 
   <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

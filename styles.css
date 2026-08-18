@@ -1089,6 +1089,10 @@ section.home-service-columns__card {
     margin-left: clamp(-10px, -1.5vw, -4px);
   }
 
+  .nav-actions {
+    margin-right: calc(40px + 0.65rem);
+  }
+
   /* Hamburger fixé en haut à droite */
   .hamburger {
     width: 40px;
