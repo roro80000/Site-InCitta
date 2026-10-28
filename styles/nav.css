@@ -1,0 +1,318 @@
+/* Navigation */
+
+/* Navbar – fixed glass effect */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2000;
+
+  background: linear-gradient(180deg, var(--glass) 0%, rgba(255, 255, 255, 0.40) 100%);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+  border-bottom: 1px solid rgba(5, 59, 59, 0.14);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.10);
+
+  padding: .9rem 0;
+}
+
+.navbar .nav-container {
+  width: min(100% - 40px, var(--container));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.navbar .nav-logo {
+  margin-left: clamp(-18px, -2.5vw, -8px);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: .85rem;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: .45rem .7rem;
+  border-radius: 999px;
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(5, 59, 59, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background .15s ease, color .15s ease, transform .12s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .18s ease;
+  opacity: .9;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after,
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active,
+.nav-link[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.80);
+  color: var(--primary);
+  font-weight: 700;
+  border-color: rgba(11, 107, 107, 0.30);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #026666;
+  color: #ffffff !important;
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(2, 102, 102, 0.22);
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nav-cta-btn:hover {
+  background-color: #013333;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(2, 102, 102, 0.32);
+  color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .nav-cta-btn {
+    font-size: 0.84rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 46px;
+    max-height: 48px;
+  }
+
+  .nav-cta-btn {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+.hamburger {
+  display: none;
+  /* visible uniquement en dessous des breakpoints */
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  flex-direction: column;
+  /* empile les traits verticalement */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 3px 0;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+
+  /* Tablette : on garde les boutons pages (pas de hamburger) */
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: .55rem;
+  }
+
+  .nav-link {
+    padding: .4rem .6rem;
+  }
+}
+
+/* Mobile refinements (navbar + hero + cards) */
+@media (max-width: 600px) {
+
+  /* Sur mobile, on évite les traits de séparation visibles sous le flyer */
+  .hero .hero-full-image {
+    border-bottom: none;
+  }
+
+  /* Sections un peu plus respirantes */
+  section {
+    padding: 1.35rem 0;
+  }
+
+  /* Cartes : un peu plus arrondies + padding réduit */
+  .service-block,
+  .contact-block,
+  .form-block,
+  .value-item,
+  .actualites-grid>* {
+    border-radius: 18px;
+  }
+
+  .value-item {
+    padding: .9rem;
+  }
+
+  /* CTA / boutons : confort tactile */
+  .btn,
+  .rounded-cta,
+  .btn-large,
+  .btn-primary {
+    height: 48px;
+  }
+
+  /* Spacing header — barre transparente : seuls logo + hamburger restent visibles */
+  body {
+    padding-top: var(--header-h-mobile);
+  }
+
+  .navbar,
+  .navbar.scrolled {
+    padding: .65rem 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+    box-shadow: none;
+  }
+
+  .navbar .nav-container {
+    width: min(100% - (var(--container-mobile-pad) * 2), var(--container));
+  }
+
+  .navbar .nav-logo {
+    margin-left: clamp(-10px, -1.5vw, -4px);
+  }
+
+  .nav-actions {
+    margin-right: calc(40px + 0.65rem);
+  }
+
+  /* Hamburger fixé en haut à droite */
+  .hamburger {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    position: fixed;
+    top: 10px;
+    right: var(--container-mobile-pad);
+    z-index: 2605;
+    /* au-dessus de la navbar (2000) */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+    display: flex;
+    flex-direction: column;
+    /* empile les traits verticalement */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Menu mobile : boutons flottants empilés à droite, sans panneau de fond */
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 62px;
+    right: var(--container-mobile-pad);
+    z-index: 2600;
+    width: auto;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu .nav-item {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Liens : même taille, alignés à droite, effet flottant (comme le hamburger) */
+  .nav-link {
+    width: 148px;
+    min-height: 44px;
+    height: 44px;
+    padding: 0 .85rem;
+    justify-content: flex-end;
+    text-align: right;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  .nav-link::after {
+    left: auto;
+    right: 14px;
+    width: 42%;
+    transform-origin: right;
+  }
+}

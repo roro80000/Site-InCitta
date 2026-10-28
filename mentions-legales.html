@@ -8,13 +8,13 @@
   <meta name="description"
     content="Mentions légales, éditeur, hébergement et politique de confidentialité du cabinet d'études InCitta.">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://www.incitta.eu/mentions-legales.html">
+  <link rel="canonical" href="https://incitta.eu/mentions-legales">
 
   <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.incitta.eu/mentions-legales.html">
+  <meta property="og:url" content="https://incitta.eu/mentions-legales">
   <meta property="og:title" content="Mentions Légales &amp; Confidentialité — InCitta">
   <meta property="og:description"
     content="Informations légales, hébergement et protection des données personnelles du site InCitta.">
@@ -45,7 +45,7 @@
         "@type": "ListItem",
         "position": 2,
         "name": "Mentions Légales",
-        "item": "https://www.incitta.eu/mentions-legales.html"
+        "item": "https://incitta.eu/mentions-legales"
       }
     ]
   }
@@ -59,6 +59,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/pages/mentions-legales.css">
 
   <!-- PWA Meta Tags -->
   <link rel="manifest" href="manifest.json">
@@ -67,310 +68,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="InCitta">
-
-  <style>
-    .logo-img {
-      max-height: 48px;
-      width: auto;
-      height: auto;
-      display: block;
-    }
-
-    /* Page Mentions Légales — Alignement Design System InCitta */
-    .legal-page-section {
-      width: 100%;
-      padding: 0 0 2.5rem 0;
-      margin-top: calc(var(--header-h, 80px) + 0.5rem - 1.5cm);
-    }
-
-    .legal-container {
-      width: min(100% - 36px, 1120px);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Breadcrumbs / Back Bar */
-    .page-back-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.65rem 1rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .page-back-bar__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--primary-2);
-      text-decoration: none;
-      padding: 0.35rem 0.15rem;
-      border-radius: 8px;
-      transition: color 0.18s ease, transform 0.15s ease;
-    }
-
-    .page-back-bar__link:hover {
-      color: var(--primary);
-      transform: translateX(-2px);
-    }
-
-    .page-back-bar__link:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    .page-back-bar__sep {
-      color: rgba(5, 59, 59, 0.35);
-      font-weight: 600;
-      user-select: none;
-    }
-
-    .page-back-bar__here {
-      font-size: 0.92rem;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    /* Hero Header Banner */
-    .legal-hero-banner {
-      background: linear-gradient(90deg, var(--primary-2), var(--accent));
-      border-radius: 18px;
-      padding: 2.2rem 1.8rem;
-      color: #ffffff;
-      text-align: center;
-      box-shadow: 0 16px 46px rgba(11, 107, 107, 0.18);
-      margin-bottom: 1.75rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .legal-hero-banner::after {
-      content: "";
-      position: absolute;
-      top: -40%;
-      right: -10%;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
-      pointer-events: none;
-    }
-
-    .legal-hero-tag {
-      display: inline-block;
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 0.3rem 0.85rem;
-      border-radius: 999px;
-      margin-bottom: 0.75rem;
-    }
-
-    .legal-hero-title {
-      font-family: 'Outfit', 'Playfair Display', sans-serif;
-      font-size: clamp(1.75rem, 3.2vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin: 0 0 0.45rem 0;
-      color: #ffffff !important;
-      line-height: 1.2;
-    }
-
-    .legal-hero-desc {
-      font-size: 1.02rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin: 0 auto;
-      max-width: 650px;
-      line-height: 1.5;
-      font-weight: 400;
-    }
-
-    /* Grille de cartes structurées */
-    .legal-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-
-    @media (max-width: 850px) {
-      .legal-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-    }
-
-    .legal-card {
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      border: 1px solid rgba(5, 59, 59, 0.12);
-      border-radius: 18px;
-      padding: 1.5rem 1.6rem;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .legal-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(11, 107, 107, 0.24);
-    }
-
-    .legal-card--full {
-      grid-column: 1 / -1;
-    }
-
-    .legal-card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid rgba(5, 59, 59, 0.08);
-    }
-
-    .legal-card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(2, 102, 102, 0.10);
-      border: 1px solid rgba(5, 59, 59, 0.14);
-      color: var(--primary);
-      font-size: 1.15rem;
-      flex-shrink: 0;
-    }
-
-    .legal-card-title-group {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .legal-card-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0;
-      letter-spacing: -0.01em;
-      line-height: 1.25;
-    }
-
-    .legal-badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--primary-2);
-      background: rgba(11, 107, 107, 0.08);
-      padding: 0.15rem 0.55rem;
-      border-radius: 6px;
-      margin-top: 0.2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .legal-card-body {
-      font-size: 0.95rem;
-      line-height: 1.65;
-      color: var(--text);
-      flex: 1;
-    }
-
-    .legal-card-body p {
-      margin-top: 0;
-      margin-bottom: 0.85rem;
-      text-align: justify;
-      text-justify: inter-word;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-    }
-
-    .legal-card-body p:last-child {
-      margin-bottom: 0;
-    }
-
-    .legal-card-body a {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: underline;
-      text-decoration-thickness: 1.5px;
-      text-underline-offset: 2px;
-      transition: color 0.15s ease;
-    }
-
-    .legal-card-body a:hover {
-      color: var(--primary-2);
-    }
-
-    /* Liste d'informations identité */
-    .legal-info-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .legal-info-list li {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 0.35rem 0.65rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .legal-info-list strong {
-      color: var(--primary);
-      font-weight: 600;
-      min-width: 140px;
-    }
-
-    /* Bouton retour en bas */
-    .legal-footer-nav {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .page-back-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.55rem;
-      min-height: 46px;
-      padding: 0 1.5rem;
-      border-radius: 999px;
-      border: 2px solid var(--primary-2);
-      background: rgba(255, 255, 255, 0.95);
-      color: var(--primary-2) !important;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 4px 18px rgba(5, 59, 59, 0.08);
-      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-    }
-
-    .page-back-btn:hover {
-      background: var(--primary);
-      color: #ffffff !important;
-      border-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(5, 59, 59, 0.14);
-    }
-  </style>
 </head>
 
 <body>
@@ -385,7 +82,8 @@
       <ul class="nav-menu">
         <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
         <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
-        <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+        <li class="nav-item"><a href="observatoire-des-territoires.html" class="nav-link">Observatoire</a></li>
+      <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
         <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
       </ul>
       <div class="nav-actions">

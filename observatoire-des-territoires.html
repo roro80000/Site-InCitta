@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>Observatoire des Territoires : Données &amp; Diagnostic en 48h | Incitta</title>
+  <meta name="description"
+    content="+ de 150 sources officielles, +700 indicateurs locaux et cartographies SIG. Obtenez votre rapport territorial de 60 pages sous 48h pour votre collectivité.">
+  <meta name="keywords"
+    content="observatoire des territoires, données territoriales, indicateurs, diagnostic territorial rapide, statistiques publiques, cartographie, diagnostic flash, InCitta, aide à la décision, bureaux d’études, communes, intercommunalités">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://incitta.eu/observatoire-des-territoires">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://incitta.eu/observatoire-des-territoires">
+  <meta property="og:title" content="Observatoire des Territoires : Données &amp; Diagnostic en 48h | Incitta">
+  <meta property="og:description"
+    content="+ de150 sources officielles, +700 indicateurs locaux et cartographies SIG. Obtenez votre rapport territorial de 60 pages sous 48h pour votre collectivité.">
+  <meta property="og:image" content="https://incitta.eu/assets/Logo/Logo_observatoire.webp">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="InCitta">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Observatoire des Territoires : Données &amp; Diagnostic en 48h | Incitta">
+  <meta name="twitter:description"
+    content="+ de 150 sources officielles, +700 indicateurs locaux et cartographies SIG. Obtenez votre rapport territorial de 60 pages sous 48h pour votre collectivité.">
+  <meta name="twitter:image" content="https://incitta.eu/assets/Logo/Logo_observatoire.webp">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://incitta.eu/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Observatoire des territoires",
+            "item": "https://incitta.eu/observatoire-des-territoires"
+          }
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://incitta.eu/#organization",
+        "name": "Incitta",
+        "url": "https://incitta.eu/",
+        "logo": "https://incitta.eu/assets/Logo/logo-incitta.webp",
+        "image": "https://incitta.eu/assets/Logo/Logo_observatoire.webp",
+        "description": "Cabinet de conseil en aménagement, ingénierie territoriale et concertation citoyenne.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Amiens",
+          "addressRegion": "Hauts-de-France",
+          "addressCountry": "FR"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Hauts-de-France"
+          },
+          {
+            "@type": "Country",
+            "name": "France"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Observatoire des Territoires & Diagnostic Flash",
+        "serviceType": "Diagnostic et aménagement du territoire",
+        "provider": {
+          "@type": "Organization",
+          "name": "Incitta",
+          "url": "https://incitta.eu"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "France"
+        },
+        "description": "Production de diagnostics territoriaux automatisés croisant plus de 150 sources officielles et plus de 700 indicateurs avec cartographie complète en 48 heures."
+      },
+      {
+        "@type": "Dataset",
+        "name": "Indicateurs et Données de l'Observatoire des Territoires Incitta",
+        "description": "Base de données territoriales consolidant 150 sources officielles publiques (statistiques nationales, données ministérielles, fiscales et géographiques certifiées) et plus de 700 indicateurs socio-économiques, fonciers, démographiques et écologiques.",
+        "creator": {
+          "@type": "Organization",
+          "name": "Incitta",
+          "url": "https://incitta.eu"
+        },
+        "spatialCoverage": {
+          "@type": "Place",
+          "name": "France (Communes, EPCI, Régions)"
+        },
+        "keywords": [
+          "observatoire des territoires",
+          "diagnostic territorial",
+          "indicateurs locaux",
+          "données territoriales",
+          "open data public",
+          "cartographie SIG"
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/pages/observatoire.css">
+</head>
+
+<body class="page-observatoire">
+
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html" class="nav-brand" aria-label="InCitta">
+          <img src="assets/Logo/Logo InCitta.webp" alt="InCitta — Ingénierie territoriale et concertation"
+            class="logo-img" width="240" height="56" decoding="async">
+        </a>
+      </div>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
+        <li class="nav-item"><a href="observatoire-des-territoires.html" class="nav-link active"
+            aria-current="page">Observatoire des territoires</a></li>
+        <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+        <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta-btn">Prendre contact</a>
+        <button class="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-read">
+
+    <nav class="page-back-bar" aria-label="Fil d'Ariane">
+      <a href="index.html" class="page-back-bar__link">
+        <svg class="page-back-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+        Accueil
+      </a>
+      <span class="page-back-bar__sep" aria-hidden="true">/</span>
+      <span class="page-back-bar__here">Observatoire</span>
+    </nav>
+
+    <header class="obs-hero">
+      <h1 class="obs-hero-title">
+        Observatoire des territoires : <span>diagnostics et indicateurs locaux</span>
+      </h1>
+      <p class="obs-hero-lead">
+        <strong>La puissance d'un moteur d'analyse croisant plus de 150 sources officielles et plus de 700 indicateurs
+          pour vos communes
+          &amp; intercommunalités.</strong>
+      </p>
+      <p class="obs-hero-lead">
+        Grâce à un moteur d’analyse développé sous Python, sans Intelligence Artificielle (IA) et 100&nbsp;% conforme
+        RGPD, l'Observatoire d'InCitta consolide les données publiques officielles, calcule des indicateurs comparables
+        et produit des rapports complets et atlas cartographiques documentés, livrés rapidement.
+        Connecté à InConcertta, l'Observatoire permet également de prolonger l'étude par l'analyse croisée des
+        consultations citoyennes.
+      </p>
+
+      <div class="obs-hero-actions">
+        <a href="#demande-cadrage" class="page-cta-primary">Cadrer mon besoin</a>
+        <a href="#domaines" class="page-cta-secondary">Découvrir les domaines d’intervention</a>
+      </div>
+
+      <div class="obs-stats-grid" aria-label="Chiffres clés de l’Observatoire">
+        <div class="obs-stat-card">
+          <span class="obs-stat-val">150+</span>
+          <span class="obs-stat-label">Sources officielles</span>
+          <span class="obs-stat-sub">Statistiques publiques, ministères, données fiscales &amp; registres
+            officiels</span>
+        </div>
+        <div class="obs-stat-card">
+          <span class="obs-stat-val">+700</span>
+          <span class="obs-stat-label">Indicateurs calculés</span>
+          <span class="obs-stat-sub">Démographie, fiscalité locale, transition écologique, foncier, mobilités</span>
+        </div>
+        <div class="obs-stat-card">
+          <span class="obs-stat-val">48h</span>
+          <span class="obs-stat-label">Livrables rapidement</span>
+          <span class="obs-stat-sub">Rapport complet, cartes haute résolution et synthèse</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1. Prestations concrètes -->
+    <section class="obs-section" id="offres" aria-labelledby="sec-offers-title">
+      <div class="obs-section-header">
+        <h2 id="sec-offers-title" class="obs-section-title">Trois prestations lisibles, adaptées à votre besoin</h2>
+        <p class="obs-section-desc">Des niveaux d’analyse adaptés à la décision
+          De la photographie d’un territoire à l’objectivation d’un enjeu public, chaque niveau d’analyse répond à un
+          usage précis : état des lieux, diagnostic thématique, ou base quantitative pour vos propres études.</p>
+      </div>
+
+      <div class="offers-grid">
+        <article class="offer-card">
+          <span class="offer-kicker">Offre 1</span>
+          <h3 class="offer-title">Portrait territorial</h3>
+          <p class="offer-pitch">Comprendre les caractéristiques et les évolutions d’un territoire.</p>
+          <ul class="offer-list">
+            <li>Indicateurs démographiques, sociaux et économiques</li>
+            <li>Habitat, offre de services et équipements publics</li>
+            <li>Comparaisons avec des territoires de référence</li>
+            <li>Rapport de synthèse et tableaux de données</li>
+            <li>Sources, millésimes et limites méthodologiques</li>
+          </ul>
+        </article>
+
+        <article class="offer-card">
+          <span class="offer-kicker">Offre 2</span>
+          <h3 class="offer-title">Diagnostic thématique</h3>
+          <p class="offer-pitch">Objectiver une problématique publique précise.</p>
+          <ul class="offer-list">
+            <li>Pauvreté et fragilités sociales</li>
+            <li>Habitat et vacance résidentielle</li>
+            <li>Vieillissement et offre de services</li>
+            <li>Mobilités et dépendance automobile</li>
+            <li>Environnement, foncier, quartiers prioritaires (QPV) et attractivité</li>
+          </ul>
+        </article>
+
+        <article class="offer-card">
+          <span class="offer-kicker">Offre 3</span>
+          <h3 class="offer-title">Production quantitative</h3>
+          <p class="offer-pitch">Renforcer vos diagnostics avec une base quantitative documentée.</p>
+          <ul class="offer-list">
+            <li>Collecte et consolidation des données</li>
+            <li>Construction d’indicateurs et comparaisons territoriales</li>
+            <li>Tableaux, graphiques et cartographies</li>
+            <li>Fichiers exploitables et sources documentées</li>
+            <li>Complément de votre expertise qualitative — sans la remplacer</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2. Méthode / Pourquoi choisir l'observatoire InCitta -->
+    <section class="obs-section" aria-labelledby="sec-why-title">
+      <div class="obs-section-header">
+        <h2 id="sec-why-title" class="obs-section-title">Pourquoi choisir l'observatoire InCitta&nbsp;?</h2>
+        <p class="obs-section-desc">Un traitement automatisé en local (garantie d'étanchéité et souveraineté des
+          données, 0&nbsp;% fuite RGPD), une actualisation immédiate des indicateurs et un rapport complet de diagnostic
+          territorial prêt à l'emploi livré rapidement pour vos comités et arbitrages.</p>
+      </div>
+
+      <div class="method-steps">
+        <article class="method-step">
+          <h3>Collecter &amp; documenter</h3>
+          <p>Sources institutionnelles pertinentes, millésimes et licences associés à chaque série.</p>
+        </article>
+        <article class="method-step">
+          <h3>Calculer &amp; comparer</h3>
+          <p>Indicateurs consolidés à plusieurs échelles : commune, EPCI, strate départementale et repères nationaux.
+          </p>
+        </article>
+        <article class="method-step">
+          <h3>Repérer les écarts</h3>
+          <p>Évolutions et écarts qui méritent une lecture approfondie — pas une «&nbsp;alerte&nbsp;» automatique
+            présentée comme vérité.</p>
+        </article>
+        <article class="method-step">
+          <h3>Produire les livrables</h3>
+          <p>Rapports, tableaux et cartes adaptés au besoin du commanditaire.</p>
+        </article>
+        <article class="method-step">
+          <h3>Vérifier &amp; contextualiser</h3>
+          <p>Relecture métier avant utilisation dans les arbitrages publics ou dans un dossier d’étude.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Capacités techniques -->
+    <section class="obs-section" aria-labelledby="sec-pillars-title">
+      <div class="obs-section-header">
+        <h2 id="sec-pillars-title" class="obs-section-title">Données publiques officielles, indicateurs reproductibles
+        </h2>
+        <p class="obs-section-desc">InCitta s’appuie sur des données publiques officielles. Chaque série est associée à
+          son producteur, à son millésime et à ses limites d’interprétation. Les indicateurs sont calculés selon des
+          méthodes documentées : à données et paramètres identiques, on retrouve les mêmes résultats. Les choix
+          méthodologiques (périmètre, comparateurs, seuils) sont explicités pour pouvoir être discutés.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <article class="pillar-card">
+          <div class="pillar-card-head">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+            <h3 class="pillar-title">1. Sources documentées</h3>
+          </div>
+          <p class="pillar-text">
+            Catalogue de plus de 150 sources officielles de données (statistiques nationales, données ministérielles,
+            fiscales et agences d’État),
+            structurées pour
+            le diagnostic territorial et l’aide à la décision opérationnelle.
+          </p>
+          <ul class="pillar-features">
+            <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg> Revenus &amp; précarité : commune, IRIS et carroyage fin 200&nbsp;m</li>
+            <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg> Logement, vacance, parc social, marchés fonciers &amp; performance énergétique</li>
+            <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg> Quartiers prioritaires (politique de la ville) et référentiels géographiques certifiés</li>
+          </ul>
+        </article>
+
+        <article class="pillar-card">
+          <div class="pillar-card-head">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+            </div>
+            <h3 class="pillar-title">2. Indicateurs &amp; comparaisons</h3>
+          </div>
+          <p class="pillar-text">
+            Plus de 700 indicateurs territoriaux mobilisables. Les comparaisons (EPCI, département, strate de référence,
+            repères nationaux) objectivent immédiatement vos forces et vulnérabilités.
+          </p>
+          <ul class="pillar-features">
+            <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg> Benchmarks et écarts documentés</li>
+            <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg> Croisements thématiques et analyses multidimensionnelles</li>
+            <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg> Indices synthétiques : variables, méthode et limites explicitées</li>
+          </ul>
+        </article>
+
+        <article class="pillar-card">
+          <div class="pillar-card-head">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <h3 class="pillar-title">3. Livrables exploitables</h3>
+          </div>
+          <p class="pillar-text">
+            Des livrables structurés pour alimenter vos réunions et arbitrages : une base quantitative solide prête à
+            intégrer directement vos documents réglementaires et stratégiques (PLU/PLUi, ABS, contrat de ville ou projet
+            de territoire).
+          </p>
+          <ul class="pillar-features">
+            <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg> Rapports Word (.docx) sourcés</li>
+            <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg> Cartes haute définition</li>
+            <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg> Tableaux Excel d’indicateurs consolidés</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="obs-ecosystem-banner" aria-labelledby="obs-ecosystem-title">
+        <h3 id="obs-ecosystem-title" class="obs-ecosystem-banner__title">L’écosystème InCitta</h3>
+        <p class="obs-ecosystem-banner__text">
+          Les enquêtes menées sur <a href="inconcertta.html">InConcertta</a> peuvent être croisées avec les indicateurs
+          de l’Observatoire, pour une analyse ciblée qui relie données publiques et expression des habitants.
+        </p>
+      </aside>
+    </section>
+
+    <!-- 4. Domaines -->
+    <section class="obs-section" id="domaines" aria-labelledby="sec-themes-title">
+      <div class="obs-section-header">
+        <h2 id="sec-themes-title" class="obs-section-title">Plusieurs domaines d’analyse territoriale</h2>
+        <p class="obs-section-desc">Les thèmes se choisissent avec vous, selon vos enjeux locaux et les données
+          disponibles. Chacun applique la même méthode : sources officielles, comparaisons et limites explicites.</p>
+      </div>
+
+      <div class="themes-clusters">
+        <article class="theme-cluster-card">
+          <div class="cluster-head">
+            <div class="cluster-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="cluster-name">Cohésion sociale &amp; précarité</h3>
+          </div>
+          <p class="cluster-desc">Revenus médians, taux de pauvreté, allocataires sociaux, monoparentalité, isolement et
+            analyse spatiale fine au carreau 200&nbsp;m.</p>
+          <div class="cluster-tags">
+            <span class="cluster-tag">Revenus médians</span>
+            <span class="cluster-tag">Pauvreté &amp; précarité</span>
+            <span class="cluster-tag">Minima sociaux</span>
+          </div>
+        </article>
+
+        <article class="theme-cluster-card">
+          <div class="cluster-head">
+            <div class="cluster-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <h3 class="cluster-name">Habitat, logement &amp; foncier</h3>
+          </div>
+          <p class="cluster-desc">Parc, vacance, logement social, transactions, permis,
+            performance énergétique.</p>
+          <div class="cluster-tags">
+            <span class="cluster-tag">Vacance du parc</span>
+            <span class="cluster-tag">Parc social</span>
+            <span class="cluster-tag">Prix au m²</span>
+            <span class="cluster-tag">Rénovation &amp; DPE</span>
+          </div>
+        </article>
+
+        <article class="theme-cluster-card">
+          <div class="cluster-head">
+            <div class="cluster-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+            </div>
+            <h3 class="cluster-name">Mobilités &amp; déplacements</h3>
+          </div>
+          <p class="cluster-desc">Parts modales, flux domicile-travail, accessibilité, pistes cyclables et
+            bornes de recharge électrique.</p>
+          <div class="cluster-tags">
+            <span class="cluster-tag">Flux de navettes</span>
+            <span class="cluster-tag">Dépendance auto</span>
+            <span class="cluster-tag">Bornes de recharge</span>
+          </div>
+        </article>
+
+        <article class="theme-cluster-card">
+          <div class="cluster-head">
+            <div class="cluster-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <h3 class="cluster-name">Santé, petite enfance &amp; grand âge</h3>
+          </div>
+          <p class="cluster-desc">Accès aux soins, offre d’accueil du jeune enfant, vieillissement et autonomie — à
+            partir des sources publiques et recensement.</p>
+          <div class="cluster-tags">
+            <span class="cluster-tag">Déserts médicaux</span>
+            <span class="cluster-tag">Petite enfance</span>
+            <span class="cluster-tag">Vieillissement</span>
+          </div>
+        </article>
+
+        <article class="theme-cluster-card">
+          <div class="cluster-head">
+            <div class="cluster-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3 class="cluster-name">Environnement &amp; risques</h3>
+          </div>
+          <p class="cluster-desc">Zonages écologiques, trajectoire de sobriété foncière,
+            trame verte et exposition aux risques naturels.</p>
+          <div class="cluster-tags">
+            <span class="cluster-tag">Biodiversité</span>
+            <span class="cluster-tag">Trajectoire ZAN</span>
+            <span class="cluster-tag">Consommation d’espaces</span>
+          </div>
+        </article>
+
+        <article class="theme-cluster-card">
+          <div class="cluster-head">
+            <div class="cluster-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+            </div>
+            <h3 class="cluster-name">QPV, patrimoine &amp; finances locales</h3>
+          </div>
+          <p class="cluster-desc">Quartiers prioritaires, patrimoine protégé, indicateurs de finances locales à partir
+            des données publiques.</p>
+          <div class="cluster-tags">
+            <span class="cluster-tag">Quartiers prioritaires</span>
+            <span class="cluster-tag">Finances locales</span>
+            <span class="cluster-tag">Tissu économique</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Formats & Visuels -->
+    <section class="obs-section" aria-labelledby="sec-deliverables-title">
+      <div class="obs-section-header">
+        <h2 id="sec-deliverables-title" class="obs-section-title">Des cartographies et livrables prêts pour la décision
+          publique</h2>
+        <p class="obs-section-desc">Rapports, cartes et tableaux sont conçus pour servir directement : présentés en
+          comité de pilotage, partagés en réunion ou intégrés à vos propres dossiers. Chaque livrable indique ses
+          sources, ses millésimes et ses limites, dans des formats modifiables et haute définition.</p>
+      </div>
+
+      <!-- Galerie Visuelle : Mockups & Cartes -->
+      <div class="obs-gallery-grid" aria-label="Aperçu des cartographies et livrables">
+        <!-- 1. Atlas cartographique haute résolution avec cartes réelles -->
+        <article class="obs-gallery-card">
+          <figure class="obs-gallery-figure obs-gallery-figure--map">
+            <img id="obsMapCurrentImg" src="assets/Ex_observatoire/carte_taux_pauvrete.webp"
+              alt="Cartographie du taux de pauvreté par commune et carroyage fin 200 m — InCitta"
+              class="obs-gallery-img" width="1200" height="740" loading="lazy" decoding="async">
+            <button type="button" class="obs-map-nav-btn obs-map-nav-btn--prev" id="obsMapPrev"
+              aria-label="Carte précédente">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="obs-map-nav-btn obs-map-nav-btn--next" id="obsMapNext"
+              aria-label="Carte suivante">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" id="obsMapZoomLink" class="obs-map-zoom-btn" title="Ouvrir la carte en plein écran">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+              </svg>
+              <span>Plein écran</span>
+            </button>
+          </figure>
+
+          <!-- Sélecteur de cartes / vignettes -->
+          <div class="obs-map-thumbs" role="tablist" aria-label="Sélectionner une carte thématique">
+            <button type="button" class="obs-map-thumb is-active" data-index="0" role="tab" aria-selected="true"
+              aria-label="Carte 1 : Taux de pauvreté">
+              <img src="assets/Ex_observatoire/carte_taux_pauvrete.webp" alt="Vignette Taux de pauvreté" width="58"
+                height="36" loading="lazy">
+              <span class="obs-map-thumb__label">Pauvreté</span>
+            </button>
+            <button type="button" class="obs-map-thumb" data-index="1" role="tab" aria-selected="false"
+              aria-label="Carte 2 : Logements post-1990">
+              <img src="assets/Ex_observatoire/carte_part_log_ap90.webp" alt="Vignette Logements récents" width="58"
+                height="36" loading="lazy">
+              <span class="obs-map-thumb__label">Log. récents</span>
+            </button>
+            <button type="button" class="obs-map-thumb" data-index="2" role="tab" aria-selected="false"
+              aria-label="Carte 3 : Nombre de pièces">
+              <img src="assets/Ex_observatoire/carte_nb_pieces_moyen_rp.webp" alt="Vignette Nombre de pièces" width="58"
+                height="36" loading="lazy">
+              <span class="obs-map-thumb__label">Typologie</span>
+            </button>
+            <button type="button" class="obs-map-thumb" data-index="3" role="tab" aria-selected="false"
+              aria-label="Carte 4 : Établissements employeurs">
+              <img src="assets/Ex_observatoire/carte_employeurs_services.webp" alt="Vignette Employeurs et services"
+                width="58" height="36" loading="lazy">
+              <span class="obs-map-thumb__label">Emplois</span>
+            </button>
+            <button type="button" class="obs-map-thumb" data-index="4" role="tab" aria-selected="false"
+              aria-label="Carte 5 : Armature scolaire">
+              <img src="assets/Ex_observatoire/carte_armature_scolaire.webp" alt="Vignette Armature scolaire" width="58"
+                height="36" loading="lazy">
+              <span class="obs-map-thumb__label">Scolaire</span>
+            </button>
+          </div>
+
+          <div class="obs-gallery-content">
+            <h3 class="obs-gallery-title">Atlas cartographique haute résolution</h3>
+            <p class="obs-gallery-desc" id="obsMapDesc">
+              Taux de pauvreté : analyse fine des disparités de revenus et poches de vulnérabilité au
+              maillage communal et carroyé fin 200&nbsp;m. <em>(1/5)</em>
+            </p>
+          </div>
+        </article>
+
+        <!-- 2. Rapport d'analyse & synthèse décisionnelle en mode feuille -->
+        <article class="obs-gallery-card obs-gallery-card--report">
+          <figure class="obs-gallery-figure obs-gallery-figure--pdf">
+            <button type="button" id="obsPdfViewerLink" class="obs-pdf-sheet-wrapper"
+              title="Agrandir cette feuille en plein écran">
+              <img id="obsPdfCurrentImg" src="assets/Ex_observatoire/rapport_pages/page-01.webp"
+                alt="Page 1 du rapport territorial : Diagnostic Logement InCitta"
+                class="obs-gallery-img obs-gallery-img--sheet" width="900" height="1274" loading="lazy"
+                decoding="async">
+              <span class="obs-pdf-overlay-hover">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                </svg>
+                <span>Plein écran</span>
+              </span>
+            </button>
+            <button type="button" class="obs-map-nav-btn obs-map-nav-btn--prev" id="obsPdfPrev"
+              aria-label="Feuille précédente">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="obs-map-nav-btn obs-map-nav-btn--next" id="obsPdfNext"
+              aria-label="Feuille suivante">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" id="obsPdfZoomLink" class="obs-map-zoom-btn"
+              title="Agrandir cette feuille en plein écran">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+              </svg>
+              <span>Plein écran</span>
+            </button>
+          </figure>
+
+          <!-- Sélecteur de feuilles / vignettes du rapport -->
+          <div class="obs-map-thumbs obs-pdf-thumbs" id="obsPdfThumbsContainer" role="tablist"
+            aria-label="Sélectionner une feuille du diagnostic">
+            <button type="button" class="obs-map-thumb obs-pdf-thumb is-active" data-index="0" role="tab"
+              aria-selected="true" aria-label="Feuille 1 : Couverture">
+              <img src="assets/Ex_observatoire/rapport_pages/page-01.webp" alt="Vignette P.1" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">1. Titre</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="1" role="tab" aria-selected="false"
+              aria-label="Feuille 2 : Sommaire">
+              <img src="assets/Ex_observatoire/rapport_pages/page-02.webp" alt="Vignette P.2" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">2. Sommaire</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="2" role="tab" aria-selected="false"
+              aria-label="Feuille 3 : Synthèse">
+              <img src="assets/Ex_observatoire/rapport_pages/page-03.webp" alt="Vignette P.3" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">3. Synthèse</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="3" role="tab" aria-selected="false"
+              aria-label="Feuille 4 : Cadrage">
+              <img src="assets/Ex_observatoire/rapport_pages/page-04.webp" alt="Vignette P.4" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">4. Cadrage</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="4" role="tab" aria-selected="false"
+              aria-label="Feuille 5 : Parc & SIG">
+              <img src="assets/Ex_observatoire/rapport_pages/page-05.webp" alt="Vignette P.5" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">5. Parc SIG</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="5" role="tab" aria-selected="false"
+              aria-label="Feuille 6 : Ancienneté">
+              <img src="assets/Ex_observatoire/rapport_pages/page-06.webp" alt="Vignette P.6" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">6. Âge bâti</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="6" role="tab" aria-selected="false"
+              aria-label="Feuille 7 : Logement social">
+              <img src="assets/Ex_observatoire/rapport_pages/page-07.webp" alt="Vignette P.7" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">7. Social</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="7" role="tab" aria-selected="false"
+              aria-label="Feuille 8 : Vacance">
+              <img src="assets/Ex_observatoire/rapport_pages/page-08.webp" alt="Vignette P.8" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">8. Vacance</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="8" role="tab" aria-selected="false"
+              aria-label="Feuille 9 : Époques de construction">
+              <img src="assets/Ex_observatoire/rapport_pages/page-09.webp" alt="Vignette P.9" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">9. Époques</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="9" role="tab" aria-selected="false"
+              aria-label="Feuille 10 : Marché immobilier">
+              <img src="assets/Ex_observatoire/rapport_pages/page-10.webp" alt="Vignette P.10" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">10. Immo</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="10" role="tab" aria-selected="false"
+              aria-label="Feuille 11 : Vulnérabilité énergétique">
+              <img src="assets/Ex_observatoire/rapport_pages/page-11.webp" alt="Vignette P.11" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">11. Énergie</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="11" role="tab" aria-selected="false"
+              aria-label="Feuille 12 : Orientations stratégiques">
+              <img src="assets/Ex_observatoire/rapport_pages/page-12.webp" alt="Vignette P.12" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">12. Stratégie</span>
+            </button>
+            <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="12" role="tab" aria-selected="false"
+              aria-label="Feuille 13 : InCitta">
+              <img src="assets/Ex_observatoire/rapport_pages/page-13.webp" alt="Vignette P.13" width="28" height="40"
+                loading="lazy">
+              <span class="obs-map-thumb__label">13. InCitta</span>
+            </button>
+          </div>
+
+          <div class="obs-gallery-content">
+            <h3 class="obs-gallery-title">Rapport d'analyse &amp; synthèse décisionnelle</h3>
+            <p class="obs-gallery-desc" id="obsPdfDesc">
+              Titre &amp; Cadrage institutionnel : Diagnostic Territorial Logement &amp; Habitat pour une commune
+              croisant les données publiques de l'habitat, de la fiscalité et des marchés
+              fonciers. <em>(1/13)</em>
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="deliverables-grid" style="margin-top: 1.75rem;">
+        <article class="deliverable-card">
+          <span class="deliverable-badge badge-docx">Rapport DOCX</span>
+          <h3 class="deliverable-title">Rapports &amp; synthèses rédigés</h3>
+          <p class="deliverable-text">
+            Études structurées : synthèse, constats, comparaisons, limites méthodologiques et pistes de lecture. Volume
+            adapté à l’usage — la longueur n’est jamais présentée comme preuve de qualité.
+          </p>
+          <div class="deliverable-preview-tags">
+            <span class="deliverable-preview-tag">Synthèse, constats &amp; comparaisons</span>
+            <span class="deliverable-preview-tag">Limites méthodologiques &amp; pistes de lecture</span>
+            <span class="deliverable-preview-tag">Volume calibré à l’usage</span>
+          </div>
+        </article>
+
+        <article class="deliverable-card">
+          <span class="deliverable-badge badge-carto">Atlas cartographique</span>
+          <h3 class="deliverable-title">Cartes multi-échelles</h3>
+          <p class="deliverable-text">
+            Cartes thématiques aux maillages commune, IRIS, EPCI et carroyage fin 200&nbsp;m.
+          </p>
+          <div class="deliverable-preview-tags">
+            <span class="deliverable-preview-tag">Maillages commune, IRIS, EPCI &amp; carreau 200&nbsp;m</span>
+            <span class="deliverable-preview-tag">Lecture thématique multi-échelles</span>
+            <span class="deliverable-preview-tag">Exports PNG &amp; SVG haute définition</span>
+          </div>
+        </article>
+
+        <article class="deliverable-card">
+          <span class="deliverable-badge badge-xlsx">Classeur Excel</span>
+          <h3 class="deliverable-title">Indicateurs consolidés</h3>
+          <p class="deliverable-text">
+            Séries documentées : valeurs, comparaisons, millésimes et identifiants de source. Destinées à l’exploitation
+            et à l’audit — pas une simple copie des fichiers bruts des producteurs.
+          </p>
+          <div class="deliverable-preview-tags">
+            <span class="deliverable-preview-tag">Valeurs, comparaisons &amp; millésimes</span>
+            <span class="deliverable-preview-tag">Identifiants de source documentés</span>
+            <span class="deliverable-preview-tag">Exploitation &amp; audit — pas du brut producteur</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. Cas d'usage -->
+    <section class="obs-section" aria-labelledby="sec-usecases-title">
+      <div class="obs-section-header">
+        <h2 id="sec-usecases-title" class="obs-section-title">Dans quelles situations mobiliser l’Observatoire ?</h2>
+        <p class="obs-section-desc">Une base quantitative documentée pour connaitre votre territroire, alimenter vos
+          démarches stratégiques, objectiver vos diagnostics et préparer vos concertations citoyennes.</p>
+      </div>
+
+      <div class="use-cases-grid">
+        <div class="use-case-item">
+          <h4>PLU / PLUi</h4>
+          <p>Alimenter le rapport de présentation et l’état des lieux quantitatif (démographie, habitat, environnement)
+            avant intégration au dossier réglementaire.</p>
+        </div>
+        <div class="use-case-item">
+          <h4>Analyse des besoins sociaux (ABS)</h4>
+          <p>Base chiffrée pour CCAS / CIAS : pauvreté, familles, isolement — à articuler avec la mobilisation des
+            acteurs et l’analyse des besoins.</p>
+        </div>
+        <div class="use-case-item">
+          <h4>Convention territoriale globale (CTG)</h4>
+          <p>Indicateurs familles / petite enfance pour préparer le diagnostic territorial partagé.</p>
+        </div>
+        <div class="use-case-item">
+          <h4>Politique de la ville &amp; NPNRU</h4>
+          <p>Lecture QPV / hors-QPV, écarts socio-économiques et suivi d’indicateurs de contexte.</p>
+        </div>
+        <div class="use-case-item">
+          <h4>Petites Villes de Demain &amp; Action cœur de ville</h4>
+          <p>Vacance, marché immobilier, centralité et attractivité — pour objectiver le diagnostic de centre-bourg.</p>
+        </div>
+        <div class="use-case-item">
+          <h4>Bilan de mi-mandat &amp; projet de territoire</h4>
+          <p>Photographier les évolutions démographiques, sociales et économiques pour ajuster la feuille de route.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Confiance & Cadre méthodologique -->
+    <section class="obs-section trust-banner" aria-labelledby="sec-trust-title">
+      <h3 id="sec-trust-title">Rigueur, traçabilité et respect des règles de diffusion</h3>
+      <p>
+        L’Observatoire s’appuie sur les standards de la statistique publique : sources officielles, millésimes
+        explicites, reproductibilité des calculs. Les règles de confidentialité propres à chaque producteur (dont les
+        seuils légaux sur le carroyage) sont respectées sur les jeux concernés.
+      </p>
+      <div class="trust-points">
+        <div class="trust-point">
+          <strong>1. Traçabilité</strong>
+          <span>Chaque chiffre est rattaché à son producteur et à son millésime.</span>
+        </div>
+        <div class="trust-point">
+          <strong>2. Confidentialité</strong>
+          <span>Application des règles de diffusion de la statistique publique (notamment carroyage fin 200 m).</span>
+        </div>
+        <div class="trust-point">
+          <strong>3. Échelon adapté</strong>
+          <span>Lecture calibrée au territoire : un bourg n’est pas analysé comme une métropole.</span>
+        </div>
+      </div>
+
+      <!-- Encadré Limites & Cadre Méthodologique -->
+      <aside class="obs-limits-box" aria-labelledby="limits-box-title">
+        <div class="obs-limits-header">
+          <svg class="obs-limits-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <h3 id="limits-box-title">Cadre méthodologique &amp; limites de diffusion</h3>
+        </div>
+        <p class="obs-limits-intro">
+          Pour garantir la rigueur scientifique de nos livrables, l'ensemble des limites techniques et règles de
+          diffusion sont regroupées ici :
+        </p>
+        <ul class="obs-limits-list">
+          <li><strong>Secret statistique :</strong> sur le carroyage fin 200&nbsp;m, les mailles
+            comptant moins de 11 ménages sont soumises aux seuils légaux d’anonymisation afin de préserver la vie privée
+            des résidents.</li>
+          <li><strong>Calendriers des millésimes :</strong> chaque producteur officiel (statistique publique,
+            ministères,
+            agences de l'État) diffuse selon ses échéances propres (recensement à N-2 ou N-3, données fiscales et
+            foncières semestrielles). Nous exploitons
+            systématiquement le millésime officiel le plus récent publié.</li>
+          <li><strong>Complémentarité qualitative :</strong> les données statistiques objectivent les tendances et les
+            écarts. Elles sont conçues pour être enrichies par la concertation citoyenne et l'expertise locale des élus
+            et techniciens.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- 9. CTA avec court formulaire de qualification -->
+    <section class="obs-section cta-highlight-box" id="demande-cadrage" aria-labelledby="sec-cta-title">
+      <h2 id="sec-cta-title" class="cta-highlight-title">Cadrer votre besoin territorial</h2>
+      <p class="cta-highlight-desc">
+        Quatre critères pour un cadrage méthodologique sur mesure — réponse personnalisée à votre adresse
+        professionnelle.
+      </p>
+
+      <form id="obsQualifForm" name="observatoire-qualif" class="obs-qualif-form" method="POST"
+        action="/observatoire-des-territoires.html?obs-qualif=sent#demande-cadrage" data-netlify="true"
+        netlify-honeypot="obs-bot-field">
+        <div hidden aria-hidden="true">
+          <label>Ne pas remplir : <input name="obs-bot-field" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <input type="hidden" name="form-name" value="observatoire-qualif">
+        <input type="hidden" name="source" value="observatoire-des-territoires">
+        <input type="hidden" name="message" id="qualif-message" value="">
+
+        <div id="obsQualifSuccess" class="obs-qualif-feedback obs-qualif-feedback--success" role="status">
+          Demande transmise — nous vous répondrons à l’adresse indiquée dans les plus brefs délais.
+        </div>
+        <div id="obsQualifError" class="obs-qualif-feedback obs-qualif-feedback--error" role="alert">
+          Envoi impossible pour le moment. Utilisez <a href="contact.html">le formulaire contact</a> ou écrivez à
+          <a href="mailto:contact@incitta.eu">contact@incitta.eu</a>.
+        </div>
+
+        <div class="obs-form-grid">
+          <div class="obs-form-field obs-form-field--span-2">
+            <label for="qualif-territoire">Territoire concerné <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="qualif-territoire" name="territoire" placeholder="Commune, EPCI, département…"
+              required autocomplete="organization">
+          </div>
+
+          <div class="obs-form-field obs-form-field--span-2">
+            <label for="qualif-theme">Thème prioritaire <span class="req" aria-hidden="true">*</span></label>
+            <select id="qualif-theme" name="theme" required>
+              <option value="" disabled selected>Sélectionner un thème</option>
+              <option value="portrait-global">Portrait territorial global (démographie, habitat, économie)</option>
+              <option value="social-precarite">Cohésion sociale &amp; précarité (revenus, allocations, minima)</option>
+              <option value="habitat-foncier">Habitat, vacance &amp; foncier (parc social, prix, bâti)</option>
+              <option value="mobilites">Mobilités &amp; déplacements (navettes, mobilités, bornes)</option>
+              <option value="sante-age">Santé, petite enfance &amp; grand âge</option>
+              <option value="appui-bureaux-etudes">Production quantitative pour bureau d’études</option>
+            </select>
+          </div>
+
+          <div class="obs-form-field">
+            <label for="qualif-delai">Échéance <span class="req" aria-hidden="true">*</span></label>
+            <select id="qualif-delai" name="delai" required>
+              <option value="" disabled selected>Délai souhaité</option>
+              <option value="urgent-15j">Urgent (moins de 15 jours)</option>
+              <option value="1-mois">Sous 1 mois</option>
+              <option value="2-3-mois">2 à 3 mois</option>
+              <option value="anticipation">En amont d’un projet ou marché</option>
+            </select>
+          </div>
+
+          <div class="obs-form-field">
+            <label for="qualif-usage">Usage / finalité <span class="req" aria-hidden="true">*</span></label>
+            <select id="qualif-usage" name="usage" required>
+              <option value="" disabled selected>Finalité du diagnostic</option>
+              <option value="arbitrage-elus">Aide à la décision / élus &amp; direction</option>
+              <option value="plu-plui">Dossier réglementaire (PLU / PLUi)</option>
+              <option value="abs-ccas">Analyse des besoins sociaux (ABS / CCAS)</option>
+              <option value="concertation">Préparation d’une concertation</option>
+              <option value="mission-etude">Complément quantitatif (mission d’étude)</option>
+            </select>
+          </div>
+
+          <div class="obs-form-field obs-form-field--span-2">
+            <label for="qualif-email">Email professionnel <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="qualif-email" name="email" placeholder="contact@collectivite.fr" required
+              autocomplete="email">
+          </div>
+        </div>
+
+        <label class="obs-form-consent" for="qualif-consent">
+          <input type="checkbox" id="qualif-consent" name="privacyConsent" value="oui" required>
+          <span>J’accepte que ces informations soient utilisées uniquement pour répondre à ma demande, dans un cadre
+            professionnel.</span>
+        </label>
+
+        <div class="obs-form-actions">
+          <button type="submit" class="page-cta-primary">Transmettre ma demande</button>
+          <a href="contact.html" class="page-cta-secondary">Prendre contact directement</a>
+        </div>
+
+        <p class="obs-form-note">Aucun usage commercial des données.</p>
+      </form>
+    </section>
+
+    <div class="page-back-row">
+      <a href="index.html" class="page-back-btn" aria-label="Retour à l’accueil InCitta">
+        <svg class="page-back-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        Retour à l’accueil InCitta
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer footer--site">
+    <div class="container">
+      <div class="footer-site-inner">
+        <img src="assets/Logo/LogoPied.webp" alt="InCitta" class="footer-logo">
+        <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> |
+          <a href="mentions-legales.html">Mentions légales</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Plein Écran (Lightbox unifiée sans conteneurs séparés) -->
+  <div class="obs-lightbox" id="obsLightbox" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="obs-lightbox__backdrop" id="obsLightboxBackdrop" title="Fermer le plein écran"></div>
+    <div class="obs-lightbox__container" role="document">
+      <!-- Barre d'outils flottante intégrée -->
+      <div class="obs-lightbox__toolbar">
+        <div class="obs-lightbox__meta">
+          <span class="obs-lightbox__counter" id="obsLightboxCounter">1 / 5</span>
+        </div>
+        <div class="obs-lightbox__controls">
+          <button type="button" class="obs-lightbox__ctrl-btn" id="obsLightboxZoomBtn" aria-label="Agrandir l'image"
+            title="Zoomer / Dézoomer (Touche Z)">
+            <svg class="obs-icon-zoom-in" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            <svg class="obs-icon-zoom-out" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            <span class="obs-lightbox__ctrl-text" id="obsLightboxZoomText">Zoom</span>
+          </button>
+          <button type="button" class="obs-lightbox__ctrl-btn obs-lightbox__ctrl-btn--close" id="obsLightboxClose"
+            aria-label="Fermer le plein écran" title="Fermer (Échap)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Corps du visualiseur (Image & Navigation fluide) -->
+      <div class="obs-lightbox__body">
+        <button type="button" class="obs-lightbox__nav obs-lightbox__nav--prev" id="obsLightboxPrev"
+          aria-label="Élément précédent" title="Précédent (Flèche gauche)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="obs-lightbox__media" id="obsLightboxMedia">
+          <img id="obsLightboxImg" src="" alt="Aperçu plein écran" class="obs-lightbox__img">
+        </div>
+
+        <button type="button" class="obs-lightbox__nav obs-lightbox__nav--next" id="obsLightboxNext"
+          aria-label="Élément suivant" title="Suivant (Flèche droite)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('obs-qualif') === 'sent') {
+        const ok = document.getElementById('obsQualifSuccess');
+        const form = document.getElementById('obsQualifForm');
+        if (ok) ok.classList.add('is-visible');
+        if (form) form.hidden = true;
+        document.getElementById('demande-cadrage')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Switcher de cartes réelles pour l'Atlas cartographique
+      const obsMaps = [
+        {
+          webp: 'assets/Ex_observatoire/carte_taux_pauvrete.webp',
+          png: 'assets/Ex_observatoire/carte_taux_pauvrete.png',
+          title: 'Taux de pauvreté',
+          badge: 'Taux de pauvreté (1/5)',
+          alt: 'Cartographie du taux de pauvreté par commune et carroyage fin 200 m — InCitta',
+          desc: 'Taux de pauvreté : analyse fine des disparités de revenus et poches de vulnérabilité au maillage communal et carroyé fin 200&nbsp;m.',
+          res: '3360 × 2070'
+        },
+        {
+          webp: 'assets/Ex_observatoire/carte_part_log_ap90.webp',
+          png: 'assets/Ex_observatoire/carte_part_log_ap90.png',
+          title: 'Logements récents (post-1990)',
+          badge: 'Logements récents (2/5)',
+          alt: 'Cartographie de la part des logements achevés après 1990 — InCitta',
+          desc: 'Dynamique résidentielle : part des logements achevés après 1990, illustrant les secteurs d\'extension urbaine et de renouvellement.',
+          res: '3360 × 2070'
+        },
+        {
+          webp: 'assets/Ex_observatoire/carte_nb_pieces_moyen_rp.webp',
+          png: 'assets/Ex_observatoire/carte_nb_pieces_moyen_rp.png',
+          title: 'Typologie des résidences',
+          badge: 'Nombre de pièces (3/5)',
+          alt: 'Cartographie du nombre moyen de pièces par résidence principale — InCitta',
+          desc: 'Morphologie du parc : nombre moyen de pièces par résidence principale, repérant les zones de petits logements locatifs vs pavillonnaire familial.',
+          res: '3360 × 2070'
+        },
+        {
+          webp: 'assets/Ex_observatoire/carte_employeurs_services.webp',
+          png: 'assets/Ex_observatoire/carte_employeurs_services.png',
+          title: 'Établissements & services',
+          badge: 'Emplois & Services (4/5)',
+          alt: 'Cartographie des établissements employeurs et équipements de services — InCitta',
+          desc: 'Économie et centralités : densité des établissements employeurs et maillage des services de proximité.',
+          res: '1792 × 1104'
+        },
+        {
+          webp: 'assets/Ex_observatoire/carte_armature_scolaire.webp',
+          png: 'assets/Ex_observatoire/carte_armature_scolaire.png',
+          title: 'Armature scolaire',
+          badge: 'Offre scolaire (5/5)',
+          alt: 'Cartographie de l\'armature scolaire et répartition des écoles — InCitta',
+          desc: 'Équipements éducatifs : localisation des écoles primaires, collèges et lycées pour analyser les bassins de vie et temps d\'accès pour les familles.',
+          res: '1568 × 966'
+        }
+      ];
+
+      let currentMapIndex = 0;
+      const mapImg = document.getElementById('obsMapCurrentImg');
+      const mapDesc = document.getElementById('obsMapDesc');
+      const thumbs = document.querySelectorAll('.obs-map-thumb');
+      const prevBtn = document.getElementById('obsMapPrev');
+      const nextBtn = document.getElementById('obsMapNext');
+
+      function setMap(idx) {
+        if (idx < 0) idx = obsMaps.length - 1;
+        if (idx >= obsMaps.length) idx = 0;
+        currentMapIndex = idx;
+        const data = obsMaps[idx];
+
+        if (mapImg) {
+          mapImg.style.opacity = '0.35';
+          setTimeout(() => {
+            mapImg.src = data.webp;
+            mapImg.alt = data.alt;
+            mapImg.style.opacity = '1';
+          }, 100);
+        }
+        if (mapDesc) mapDesc.innerHTML = `${data.desc} <em>(${idx + 1}/5)</em>`;
+
+        thumbs.forEach((thumb, i) => {
+          const isActive = (i === idx);
+          thumb.classList.toggle('is-active', isActive);
+          thumb.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          if (isActive) {
+            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        });
+
+        if (typeof updateLightbox === 'function' && lightboxModal && lightboxModal.classList.contains('is-open') && lightboxMode === 'map') {
+          updateLightbox();
+        }
+      }
+
+      thumbs.forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+          const idx = parseInt(thumb.getAttribute('data-index'), 10);
+          if (!isNaN(idx)) setMap(idx);
+        });
+      });
+
+      if (prevBtn) prevBtn.addEventListener('click', () => setMap(currentMapIndex - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => setMap(currentMapIndex + 1));
+
+      // --- Switcher Feuilles du Rapport PDF ---
+      const obsPdfPages = [
+        {
+          num: 1,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-01.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-01.png',
+          title: 'Couverture & Cadrage',
+          badge: 'Feuille 1/13 : Couverture',
+          alt: 'Couverture du diagnostic territorial Logement — InCitta',
+          desc: 'Titre & cadrage institutionnel : Diagnostic Territorial Logement & Habitat pour une commune croisant les données publiques de l\'habitat, de la fiscalité et des marchés fonciers.'
+        },
+        {
+          num: 2,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-02.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-02.png',
+          title: 'Sommaire du rapport',
+          badge: 'Feuille 2/13 : Sommaire',
+          alt: 'Sommaire du diagnostic territorial en 10 chapitres — InCitta',
+          desc: 'Sommaire structuré en 10 chapitres : cadrage, statuts d\'occupation, parc social, vacance résidentielle, dynamique des prix immobiliers, vulnérabilité énergétique et orientations.'
+        },
+        {
+          num: 3,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-03.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-03.png',
+          title: 'Synthèse exécutive',
+          badge: 'Feuille 3/13 : Synthèse',
+          alt: 'Synthèse exécutive et repères territoriaux — InCitta',
+          desc: 'Repères territoriaux : profil d\'armature, populations de référence, enjeux prioritaires et comparaisons chiffrées.'
+        },
+        {
+          num: 4,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-04.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-04.png',
+          title: 'Cadrage méthodologique',
+          badge: 'Feuille 4/13 : Cadrage',
+          alt: 'Cadrage méthodologique et périmètre d\'observation — InCitta',
+          desc: 'Méthodologie & périmètre : explicitation des sources souveraines certifiées, effectifs du carroyage statistique fin et règles de neutralité d\'observation.'
+        },
+        {
+          num: 5,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-05.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-05.png',
+          title: 'Parc & Carto 200 m',
+          badge: 'Feuille 5/13 : Parc & SIG',
+          alt: 'Parc de logements et carroyage statistique 200 m — InCitta',
+          desc: 'Structure du parc et statuts d\'occupation : cartographie statistique au carreau 200 m, typologie pavillonnaire et part de résidences principales.'
+        },
+        {
+          num: 6,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-06.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-06.png',
+          title: 'Ancienneté du bâti',
+          badge: 'Feuille 6/13 : Ancienneté',
+          alt: 'Ancienneté et époques de construction du bâti — InCitta',
+          desc: 'Époques de construction du bâti : quantification des logements construits avant 1945, 1946-1970, 1971-1990 et après 1990 pour le ciblage de la rénovation.'
+        },
+        {
+          num: 7,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-07.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-07.png',
+          title: 'Logement social',
+          badge: 'Feuille 7/13 : Log. social',
+          alt: 'Logement social et équilibres de peuplement — InCitta',
+          desc: 'Parc locatif social : 21,1 % des résidences principales, cartographie SIG carroyée 200 m de la répartition sociale et analyse de la tension d\'attribution.'
+        },
+        {
+          num: 8,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-08.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-08.png',
+          title: 'Vacance résidentielle',
+          badge: 'Feuille 8/13 : Vacance',
+          alt: 'Vacance résidentielle et analyse du parc — InCitta',
+          desc: 'Vacance du parc : analyse différenciée de la vacance de courte durée et de longue durée (> 2 ans) issue du croisement des données fiscales certifiées.'
+        },
+        {
+          num: 9,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-09.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-09.png',
+          title: 'Cartographie époques',
+          badge: 'Feuille 9/13 : Époques',
+          alt: 'Cartographie comparée bâti récent vs bâti ancien — InCitta',
+          desc: 'Cartographie comparée : confrontation spatiale des logements récents post-1990 et du bâti ancien d\'avant 1945 à la maille 200 m.'
+        },
+        {
+          num: 10,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-10.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-10.png',
+          title: 'Marché immobilier',
+          badge: 'Feuille 10/13 : Marché immobilier',
+          alt: 'Marché immobilier et prix au m² — InCitta',
+          desc: 'Marché immobilier résidentiel : prix médian au m² (maisons et appartements), historique des mutations foncières et attractivité du territoire.'
+        },
+        {
+          num: 11,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-11.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-11.png',
+          title: 'Performance & DPE',
+          badge: 'Feuille 11/13 : Énergie',
+          alt: 'Performance énergétique et vulnérabilité du bâti — InCitta',
+          desc: 'Diagnostic énergétique & précarité : part des passoires thermiques (classes F-G), vulnérabilité financière des ménages face aux coûts énergétiques.'
+        },
+        {
+          num: 12,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-12.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-12.png',
+          title: 'Orientations stratégiques',
+          badge: 'Feuille 12/13 : Stratégie',
+          alt: 'Orientations stratégiques et programmation de l\'habitat — InCitta',
+          desc: 'Feuille de route stratégique : 4 orientations opérationnelles prioritaires directement adossées aux constats chiffrés pour éclairer les arbitrages d\'élus.'
+        },
+        {
+          num: 13,
+          webp: 'assets/Ex_observatoire/rapport_pages/page-13.webp',
+          png: 'assets/Ex_observatoire/rapport_pages/page-13.png',
+          title: 'Méthode InCitta',
+          badge: 'Feuille 13/13 : InCitta',
+          alt: 'Présentation de l\'Observatoire Territorial InCitta',
+          desc: 'À propos de l\'Observatoire InCitta : intégration automatisée de 150 sources officielles et production instantanée de diagnostics de précision sous 48h.'
+        }
+      ];
+
+      let currentPdfIndex = 0;
+      const pdfImg = document.getElementById('obsPdfCurrentImg');
+      const pdfDesc = document.getElementById('obsPdfDesc');
+      const pdfThumbs = document.querySelectorAll('.obs-pdf-thumb');
+      const pdfPrevBtn = document.getElementById('obsPdfPrev');
+      const pdfNextBtn = document.getElementById('obsPdfNext');
+      const pdfThumbsContainer = document.getElementById('obsPdfThumbsContainer');
+
+      function setPdfPage(idx) {
+        if (idx < 0) idx = obsPdfPages.length - 1;
+        if (idx >= obsPdfPages.length) idx = 0;
+        currentPdfIndex = idx;
+        const data = obsPdfPages[idx];
+
+        if (pdfImg) {
+          pdfImg.style.opacity = '0.35';
+          setTimeout(() => {
+            pdfImg.src = data.webp;
+            pdfImg.alt = data.alt;
+            pdfImg.style.opacity = '1';
+          }, 100);
+        }
+        if (pdfDesc) pdfDesc.innerHTML = `${data.desc} <em>(${idx + 1}/13)</em>`;
+
+        pdfThumbs.forEach((thumb, i) => {
+          const isActive = (i === idx);
+          thumb.classList.toggle('is-active', isActive);
+          thumb.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          if (isActive && pdfThumbsContainer) {
+            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        });
+
+        if (typeof updateLightbox === 'function' && lightboxModal && lightboxModal.classList.contains('is-open') && lightboxMode === 'pdf') {
+          updateLightbox();
+        }
+      }
+
+      pdfThumbs.forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+          const idx = parseInt(thumb.getAttribute('data-index'), 10);
+          if (!isNaN(idx)) setPdfPage(idx);
+        });
+      });
+
+      if (pdfPrevBtn) pdfPrevBtn.addEventListener('click', () => setPdfPage(currentPdfIndex - 1));
+      if (pdfNextBtn) pdfNextBtn.addEventListener('click', () => setPdfPage(currentPdfIndex + 1));
+
+      // --- Contrôleur Lightbox Plein Écran (Overlay Unifié avec Zoom Haute Résolution) ---
+      let lightboxMode = 'map';
+      let isZoomed = false;
+      let isPanning = false;
+      let startX = 0, startY = 0;
+      let scrollLeft = 0, scrollTop = 0;
+
+      const lightboxModal = document.getElementById('obsLightbox');
+      const lightboxBackdrop = document.getElementById('obsLightboxBackdrop');
+      const lightboxClose = document.getElementById('obsLightboxClose');
+      const lightboxPrev = document.getElementById('obsLightboxPrev');
+      const lightboxNext = document.getElementById('obsLightboxNext');
+      const lightboxImg = document.getElementById('obsLightboxImg');
+      const lightboxMedia = document.getElementById('obsLightboxMedia');
+      const lightboxCounter = document.getElementById('obsLightboxCounter');
+      const lightboxZoomBtn = document.getElementById('obsLightboxZoomBtn');
+      const lightboxZoomText = document.getElementById('obsLightboxZoomText');
+      const zoomInIcon = lightboxZoomBtn ? lightboxZoomBtn.querySelector('.obs-icon-zoom-in') : null;
+      const zoomOutIcon = lightboxZoomBtn ? lightboxZoomBtn.querySelector('.obs-icon-zoom-out') : null;
+
+      function resetZoom() {
+        isZoomed = false;
+        if (lightboxMedia) {
+          lightboxMedia.classList.remove('is-zoomed', 'is-panning');
+          lightboxMedia.scrollLeft = 0;
+          lightboxMedia.scrollTop = 0;
+        }
+        if (lightboxZoomText) lightboxZoomText.textContent = 'Zoom';
+        if (lightboxZoomBtn) {
+          lightboxZoomBtn.classList.remove('is-active');
+          lightboxZoomBtn.title = 'Zoomer (Touche Z)';
+        }
+        if (zoomInIcon) zoomInIcon.style.display = 'inline-block';
+        if (zoomOutIcon) zoomOutIcon.style.display = 'none';
+      }
+
+      function toggleZoom() {
+        isZoomed = !isZoomed;
+        if (lightboxMedia) {
+          if (isZoomed) {
+            lightboxMedia.classList.add('is-zoomed');
+            setTimeout(() => {
+              const maxScrollX = lightboxMedia.scrollWidth - lightboxMedia.clientWidth;
+              const maxScrollY = lightboxMedia.scrollHeight - lightboxMedia.clientHeight;
+              if (maxScrollX > 0) lightboxMedia.scrollLeft = maxScrollX / 2;
+              if (maxScrollY > 0) lightboxMedia.scrollTop = maxScrollY / 2;
+            }, 40);
+          } else {
+            lightboxMedia.classList.remove('is-zoomed', 'is-panning');
+          }
+        }
+        if (lightboxZoomText) lightboxZoomText.textContent = isZoomed ? 'Dézoomer' : 'Zoom';
+        if (lightboxZoomBtn) {
+          lightboxZoomBtn.classList.toggle('is-active', isZoomed);
+          lightboxZoomBtn.title = isZoomed ? 'Dézoomer (Touche Z)' : 'Zoomer (Touche Z)';
+        }
+        if (zoomInIcon) zoomInIcon.style.display = isZoomed ? 'none' : 'inline-block';
+        if (zoomOutIcon) zoomOutIcon.style.display = isZoomed ? 'inline-block' : 'none';
+      }
+
+      if (lightboxZoomBtn) lightboxZoomBtn.addEventListener('click', toggleZoom);
+      if (lightboxImg) {
+        lightboxImg.addEventListener('click', () => {
+          toggleZoom();
+        });
+      }
+
+      // Déplacement panoramique à la souris lors du zoom
+      if (lightboxMedia) {
+        lightboxMedia.addEventListener('mousedown', (e) => {
+          if (!isZoomed) return;
+          isPanning = true;
+          lightboxMedia.classList.add('is-panning');
+          startX = e.pageX - lightboxMedia.offsetLeft;
+          startY = e.pageY - lightboxMedia.offsetTop;
+          scrollLeft = lightboxMedia.scrollLeft;
+          scrollTop = lightboxMedia.scrollTop;
+        });
+
+        window.addEventListener('mouseup', () => {
+          if (isPanning) {
+            isPanning = false;
+            if (lightboxMedia) lightboxMedia.classList.remove('is-panning');
+          }
+        });
+
+        lightboxMedia.addEventListener('mousemove', (e) => {
+          if (!isPanning || !isZoomed) return;
+          e.preventDefault();
+          const x = e.pageX - lightboxMedia.offsetLeft;
+          const y = e.pageY - lightboxMedia.offsetTop;
+          lightboxMedia.scrollLeft = scrollLeft - (x - startX);
+          lightboxMedia.scrollTop = scrollTop - (y - startY);
+        });
+      }
+
+      function updateLightbox() {
+        if (!lightboxModal || !lightboxImg) return;
+        resetZoom();
+        if (lightboxMode === 'map') {
+          const data = obsMaps[currentMapIndex];
+          if (lightboxCounter) lightboxCounter.textContent = `Carte ${currentMapIndex + 1} / ${obsMaps.length}`;
+          lightboxImg.src = data.png;
+          lightboxImg.alt = data.alt;
+        } else {
+          const data = obsPdfPages[currentPdfIndex];
+          if (lightboxCounter) lightboxCounter.textContent = `Feuille ${data.num} / ${obsPdfPages.length}`;
+          lightboxImg.src = data.png;
+          lightboxImg.alt = data.alt;
+        }
+      }
+
+      function openLightbox(mode) {
+        lightboxMode = mode;
+        updateLightbox();
+        if (lightboxModal) {
+          lightboxModal.style.display = 'flex';
+          void lightboxModal.offsetWidth;
+          lightboxModal.classList.add('is-open');
+          lightboxModal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('lightbox-open');
+        }
+      }
+
+      function closeLightbox() {
+        if (!lightboxModal) return;
+        resetZoom();
+        lightboxModal.classList.remove('is-open');
+        lightboxModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lightbox-open');
+        setTimeout(() => {
+          if (!lightboxModal.classList.contains('is-open')) {
+            lightboxModal.style.display = 'none';
+          }
+        }, 220);
+      }
+
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightboxModal || !lightboxModal.classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'z' || e.key === 'Z') toggleZoom();
+        if (e.key === 'ArrowLeft') {
+          if (lightboxMode === 'map') {
+            setMap(currentMapIndex - 1);
+          } else {
+            setPdfPage(currentPdfIndex - 1);
+          }
+        }
+        if (e.key === 'ArrowRight') {
+          if (lightboxMode === 'map') {
+            setMap(currentMapIndex + 1);
+          } else {
+            setPdfPage(currentPdfIndex + 1);
+          }
+        }
+      });
+
+      if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', () => {
+          if (lightboxMode === 'map') {
+            setMap(currentMapIndex - 1);
+          } else {
+            setPdfPage(currentPdfIndex - 1);
+          }
+        });
+      }
+
+      if (lightboxNext) {
+        lightboxNext.addEventListener('click', () => {
+          if (lightboxMode === 'map') {
+            setMap(currentMapIndex + 1);
+          } else {
+            setPdfPage(currentPdfIndex + 1);
+          }
+        });
+      }
+
+      // Triggers d'ouverture plein écran pour la carte
+      const mapZoomBtn = document.getElementById('obsMapZoomLink');
+      if (mapZoomBtn) {
+        mapZoomBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openLightbox('map');
+        });
+      }
+      if (mapImg) {
+        mapImg.style.cursor = 'zoom-in';
+        mapImg.addEventListener('click', () => openLightbox('map'));
+      }
+
+      // Triggers d'ouverture plein écran pour le PDF
+      const pdfZoomBtn = document.getElementById('obsPdfZoomLink');
+      const pdfViewerWrapper = document.getElementById('obsPdfViewerLink');
+      if (pdfZoomBtn) {
+        pdfZoomBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openLightbox('pdf');
+        });
+      }
+      if (pdfViewerWrapper) {
+        pdfViewerWrapper.addEventListener('click', (e) => {
+          e.preventDefault();
+          openLightbox('pdf');
+        });
+      }
+
+      const qForm = document.getElementById('obsQualifForm');
+      if (!qForm) return;
+
+      qForm.addEventListener('submit', () => {
+        const territoire = document.getElementById('qualif-territoire')?.value.trim() || '';
+        const themeSelect = document.getElementById('qualif-theme');
+        const theme = themeSelect?.options[themeSelect.selectedIndex]?.text || '';
+        const delaiSelect = document.getElementById('qualif-delai');
+        const delai = delaiSelect?.options[delaiSelect.selectedIndex]?.text || '';
+        const usageSelect = document.getElementById('qualif-usage');
+        const usage = usageSelect?.options[usageSelect.selectedIndex]?.text || '';
+        const email = document.getElementById('qualif-email')?.value.trim() || '';
+        const msg = document.getElementById('qualif-message');
+        if (msg) {
+          msg.value = [
+            '[Observatoire — cadrage territorial]',
+            `Territoire : ${territoire}`,
+            `Thème : ${theme}`,
+            `Échéance : ${delai}`,
+            `Usage : ${usage}`,
+            `Email : ${email}`,
+          ].join('\n');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

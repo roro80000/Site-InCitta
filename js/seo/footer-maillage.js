@@ -86,6 +86,7 @@ export function buildFooterMaillageSoft() {
     { href: SERVICES.territoire.path, label: 'Aménagement des territoires' },
     { href: SERVICES.concertation.path, label: 'Concertation' },
     { href: SERVICES.evaluation.path, label: 'Évaluation' },
+    { href: SERVICES.observatoire.path, label: 'Observatoire' },
     { href: SERVICES.financement.path, label: 'Ingénierie financière' },
     { href: SERVICES.numerique.path, label: 'InConcertta' },
     {
@@ -145,6 +146,8 @@ export function buildFooterMaillage() {
     '">concertation</a> · <a href="' +
     SERVICES.evaluation.path +
     '">évaluation</a> · <a href="' +
+    SERVICES.observatoire.path +
+    '">observatoire des territoires</a> · <a href="' +
     SERVICES.financement.path +
     '">ingénierie financière</a> · <a href="' +
     SERVICES.numerique.path +

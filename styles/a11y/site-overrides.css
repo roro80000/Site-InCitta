@@ -1,0 +1,293 @@
+/* Overrides a11y site (ex-styles.css) */
+
+/* ── Accessibilité : tiroir languette + volet ── */
+.incitta-a11y-drawer {
+  position: fixed;
+  right: 0;
+  z-index: 29100;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  pointer-events: none;
+}
+
+.incitta-a11y-drawer:not(.incitta-a11y-drawer--open) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.incitta-a11y-drawer--open {
+  top: 0;
+  bottom: 0;
+  transform: none;
+}
+
+.incitta-a11y-trigger {
+  position: relative;
+  flex-shrink: 0;
+  width: 52px;
+  height: 104px;
+  border-radius: 104px 0 0 104px;
+  border: 1px solid rgba(5, 59, 59, 0.22);
+  border-right: none;
+  background: rgba(255, 255, 255, 0.94);
+  color: #053b3b;
+  box-shadow: -8px 0 28px rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.incitta-a11y-drawer--open .incitta-a11y-trigger,
+.incitta-a11y-trigger--active {
+  background: #0b6b6b;
+  color: #fff;
+  border-color: rgba(11, 107, 107, 0.55);
+  box-shadow: none;
+}
+
+body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel.display-settings-panel__shell {
+  position: relative !important;
+  flex: 1 1 auto;
+  align-self: stretch;
+  width: min(380px, 92vw);
+  min-width: 0;
+  height: 100%;
+  max-height: 100dvh;
+  min-height: 0;
+  border-left: none;
+  border-radius: 0;
+}
+
+body.incitta-site .display-settings-panel__backdrop {
+  position: fixed !important;
+  inset: 0;
+  z-index: 29000 !important;
+  background: rgba(0, 0, 0, 0.48);
+}
+
+body.incitta-site .incitta-a11y-panel.display-settings-panel__shell {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.incitta-site .incitta-a11y-panel .display-settings-panel__body {
+  flex: 1 1 auto;
+  height: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  padding: 14px 16px 18px 0;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  touch-action: pan-y;
+}
+
+body.incitta-site .incitta-a11y-panel .display-settings-panel__body>.display-settings-panel__section+.display-settings-panel__section {
+  margin-top: 12px;
+}
+
+body.incitta-site .incitta-a11y-panel .display-settings-panel__footer {
+  flex-shrink: 0;
+}
+
+body.incitta-site .display-settings-panel__option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+body.incitta-site .display-settings-panel__option-leading {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+body.incitta-site .locale-flag svg {
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(5, 59, 59, 0.12);
+}
+
+body.incitta-site .display-settings-panel__section {
+  background: #fff;
+  border: 1px solid rgba(5, 59, 59, 0.16);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  color: #071010;
+}
+
+body.incitta-site .display-settings-panel__section-title {
+  margin: 0 0 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(7, 16, 16, 0.78);
+}
+
+body.incitta-site .display-settings-panel__segment {
+  min-height: 44px;
+  padding: 10px 8px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid rgba(5, 59, 59, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #071010;
+  cursor: pointer;
+}
+
+body.incitta-site .display-settings-panel__segment--active {
+  background: #0b6b6b !important;
+  border-color: #0b6b6b !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+body.incitta-site .display-settings-panel__segmented {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+body.incitta-site .display-settings-panel__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(5, 59, 59, 0.12);
+}
+
+body.incitta-site .display-settings-panel__row:last-child {
+  border-bottom: none;
+}
+
+body.incitta-site .display-settings-panel__row-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #071010;
+}
+
+body.incitta-site .display-settings-panel__switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(5, 59, 59, 0.22);
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+body.incitta-site .display-settings-panel__switch[aria-checked='true'] {
+  background: #0b6b6b;
+}
+
+body.incitta-site .display-settings-panel__switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+
+body.incitta-site .display-settings-panel__switch[aria-checked='true'] .display-settings-panel__switch-thumb {
+  transform: translateX(20px);
+}
+
+body.incitta-site .display-settings-panel__option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+body.incitta-site .display-settings-panel__option {
+  width: 100%;
+  text-align: left;
+}
+
+body.incitta-site .display-settings-panel__select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid rgba(5, 59, 59, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #071010;
+}
+
+body.incitta-site .display-settings-panel__footer {
+  padding: 0;
+  margin: 0 16px 16px 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body.incitta-site .display-settings-panel__reset {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid #0b6b6b;
+  background: #0b6b6b;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  body.nav-mobile-open .incitta-a11y-root {
+    visibility: hidden;
+    pointer-events: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .incitta-a11y-trigger {
+    width: 38px;
+    height: 76px;
+    border-radius: 76px 0 0 76px;
+  }
+
+  body.incitta-site .incitta-a11y-drawer .incitta-a11y-panel.display-settings-panel__shell {
+    width: calc(100vw - 38px);
+  }
+
+  body.incitta-site .incitta-a11y-panel .display-settings-panel__body {
+    padding: 10px 6px 14px 0;
+  }
+
+  body.incitta-site .incitta-a11y-panel .display-settings-panel__body>.display-settings-panel__section+.display-settings-panel__section {
+    margin-top: 10px;
+  }
+
+  body.incitta-site .display-settings-panel__section {
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+
+  body.incitta-site .display-settings-panel__footer {
+    margin: 0 6px 12px 0;
+  }
+}

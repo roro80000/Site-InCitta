@@ -57,6 +57,20 @@ export const SERVICES = {
     short: 'évaluation des politiques publiques',
     national: false,
   },
+  observatoire: {
+    key: 'observatoire',
+    path: 'observatoire-des-territoires.html',
+    name: 'Observatoire des territoires',
+    serviceTypes: [
+      'Observatoire territorial',
+      'Diagnostic territorial open data',
+      'Cartographie territoriale',
+      'Indicateurs territoriaux',
+      'Analyse de données territoriales',
+    ],
+    short: 'observatoire des territoires',
+    national: false,
+  },
   financement: {
     key: 'financement',
     path: 'ingenierie-financiere.html',
@@ -113,7 +127,7 @@ export const DEPARTMENTS = [
   { name: "Val-d'Oise", code: '95', region: 'Île-de-France', cities: ['Cergy', 'Argenteuil', 'Sarcelles'] },
 ];
 
-const REGIONAL_SERVICE_KEYS = ['territoire', 'concertation', 'evaluation', 'financement'];
+const REGIONAL_SERVICE_KEYS = ['territoire', 'concertation', 'evaluation', 'observatoire', 'financement'];
 
 /** Ancres footer : modèles croisant métier × lieu. */
 export const FOOTER_ANCHOR_TEMPLATES = [

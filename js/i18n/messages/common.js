@@ -4,6 +4,7 @@ export const COMMON = msg({
   'nav.home': tr('Accueil', 'Home', 'Inicio', 'Home'),
   'nav.about': tr('A propos', 'About', 'Acerca de', 'Chi siamo'),
   'nav.synergies': tr('Synergies', 'Synergies', 'Sinergias', 'Sinergie'),
+  'nav.observatoire': tr('Observatoire', 'Observatory', 'Observatorio', 'Osservatorio'),
   'nav.inconcertta': tr('InConcertta', 'InConcertta', 'InConcertta', 'InConcertta'),
   'nav.contact': tr('Contact', 'Contact', 'Contacto', 'Contatti'),
   'nav.menuOpen': tr('Ouvrir le menu', 'Open menu', 'Abrir menú', 'Apri menu'),
@@ -34,6 +35,12 @@ export const COMMON = msg({
     'Public policy evaluation',
     'Evaluación de políticas públicas',
     'Valutazione delle politiche pubbliche',
+  ),
+  'footer.service.observatoire': tr(
+    'Observatoire',
+    'Observatory',
+    'Observatorio',
+    'Osservatorio',
   ),
   'footer.service.finance': tr(
     'Ingénierie financière',

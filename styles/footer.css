@@ -1,0 +1,387 @@
+/* Footer & maillage sémantique */
+
+/* Footer */
+.footer {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Pied de page site — logo et copyright centrés */
+.footer--site {
+  position: relative;
+  background: #133333;
+  color: #fff;
+}
+
+.footer--site .footer-site-inner {
+  position: relative;
+  padding: 1.25rem 1rem 1.1rem;
+  text-align: center;
+}
+
+.footer--site .footer-linkedin {
+  position: absolute;
+  right: 4.5mm;
+  bottom: 4.5mm;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  text-decoration: none;
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
+}
+
+.footer--site .footer-linkedin:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.footer--site .footer-linkedin:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.footer--site .footer-linkedin__icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .footer--site .footer-linkedin {
+    width: 54px;
+    height: 54px;
+  }
+
+  .footer--site .footer-linkedin__icon {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.footer--site .footer-logo {
+  height: 120px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.footer--site .footer-site-copy {
+  margin: 0.85rem auto 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #dcdcdc;
+  text-align: center;
+  /* Annule .container p { max-width: 70ch } qui décale le bloc à gauche */
+  max-width: none;
+  width: 100%;
+}
+
+.footer--site .footer-site-copy a {
+  color: #dcdcdc;
+}
+
+.footer--site .footer-site-admin {
+  margin: 0.35rem auto 0;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  max-width: none;
+  width: 100%;
+}
+
+.footer--site .footer-site-admin a {
+  color: #fff;
+  opacity: 0.35;
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.footer--site .footer-site-admin a:hover {
+  opacity: 0.55;
+  text-decoration: underline;
+}
+
+/* Footer — maillage sémantique local (discret, replié par défaut) */
+.footer--site .container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.footer-semantic {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.85rem 1rem 0.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: rgba(220, 220, 220, 0.88);
+}
+
+.footer-semantic__title {
+  margin: 0 0 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+
+.footer-semantic__subtitle {
+  margin: 0 0 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-semantic__block--national {
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-semantic__regions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .footer-semantic__regions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-semantic__region,
+.footer-semantic__dept {
+  border-radius: 6px;
+}
+
+.footer-semantic__region>summary,
+.footer-semantic__dept>summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.28rem 0.4rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.62);
+  user-select: none;
+}
+
+.footer-semantic__region>summary::-webkit-details-marker,
+.footer-semantic__dept>summary::-webkit-details-marker {
+  display: none;
+}
+
+.footer-semantic__region>summary::before,
+.footer-semantic__dept>summary::before {
+  content: '▸ ';
+  opacity: 0.65;
+}
+
+.footer-semantic__region[open]>summary::before,
+.footer-semantic__dept[open]>summary::before {
+  content: '▾ ';
+}
+
+.footer-semantic__depts {
+  padding: 0 0 0.25rem 0.35rem;
+}
+
+.footer-semantic__links {
+  margin: 0.15rem 0 0.35rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.55rem;
+}
+
+.footer-semantic__links a {
+  color: rgba(200, 230, 228, 0.72);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.footer-semantic__links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-semantic__services-hint {
+  margin: 0.55rem 0 0;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.68rem;
+  color: rgba(220, 220, 220, 0.55);
+}
+
+.footer-semantic__services-hint a {
+  color: rgba(200, 230, 228, 0.75);
+}
+
+/* Maillage soft — une ligne de liens prestations (toutes les pages sauf annexe complète) */
+.footer-semantic--soft {
+  padding: 0.45rem 1rem 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 100%;
+}
+
+.footer-semantic-soft__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.5rem;
+  font-size: 0.68rem;
+  line-height: 1.4;
+}
+
+.footer-semantic-soft__links a {
+  color: rgba(200, 230, 228, 0.52);
+  text-decoration: none;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.footer-semantic-soft__links a:hover {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: underline;
+}
+
+.footer-semantic-soft__links a[href*='mentions-legales'] {
+  color: rgba(200, 230, 228, 0.42);
+}
+
+.footer-semantic-soft__sep {
+  color: rgba(255, 255, 255, 0.22);
+  font-weight: 400;
+  padding: 0 0.05rem;
+  list-style: none;
+}
+
+/* Maillage sémantique : page mentions légales uniquement (contenu principal + pied de page) */
+.mentions-zones-intro {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+  text-align: center;
+}
+
+.footer--mentions-legales .container {
+  align-items: center;
+}
+
+.footer--mentions-legales .footer-semantic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 22rem;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  text-align: center;
+}
+
+.footer--mentions-legales .footer-semantic__title {
+  text-align: center;
+  width: 100%;
+  align-self: center;
+}
+
+.footer--mentions-legales .footer-semantic__block--national,
+.footer--mentions-legales .footer-semantic__subtitle {
+  text-align: center;
+  width: 100%;
+}
+
+.footer--mentions-legales .footer-semantic__block--national {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+}
+
+.footer--mentions-legales .footer-semantic__block--national .footer-semantic__links {
+  justify-content: center;
+  max-width: 28rem;
+}
+
+/* 4 régions = 4 colonnes (Hauts-de-France, Normandie, Grand Est, Île-de-France) */
+.footer--mentions-legales .footer-semantic__regions {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem 0.65rem;
+  justify-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .footer--mentions-legales .footer-semantic__regions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .footer--mentions-legales .footer-semantic__regions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer--mentions-legales .footer-semantic__region {
+  width: 100%;
+  max-width: none;
+}
+
+.footer--mentions-legales .footer-semantic__dept {
+  width: 100%;
+  max-width: none;
+}
+
+.footer--mentions-legales .footer-semantic__region>summary,
+.footer--mentions-legales .footer-semantic__dept>summary {
+  text-align: center;
+}
+
+.footer--mentions-legales .footer-semantic__depts {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer--mentions-legales .footer-semantic__links {
+  justify-content: center;
+}
+
+.footer--mentions-legales .footer-semantic__services-hint {
+  width: 100%;
+}

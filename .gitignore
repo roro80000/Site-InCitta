@@ -26,9 +26,6 @@ yarn-error.log*
 # Dépendances
 node_modules/
 
-# Build (généré par npm run build sur Netlify)
-dist/
-
 # OS
 .DS_Store
 Thumbs.db

@@ -1,0 +1,7 @@
+# Fichiers dev / meta — non servis au public (équivalent de l’ancien build dist ciblé)
+scripts/
+readme.md
+package.json
+package-lock.json
+SEO_TEMPLATE.html
+node_modules/

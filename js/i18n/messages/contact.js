@@ -28,6 +28,12 @@ export const CONTACT = msg({
   'contact.form.subjectMission': tr("Demande d'accompagnement / mission", 'Support request / assignment', 'Solicitud de acompañamiento / misión', 'Richiesta di accompagnamento / incarico'),
   'contact.form.subjectConcertation': tr('Concertation / ateliers', 'Consultation / workshops', 'Concertación / talleres', 'Concertazione / laboratori'),
   'contact.form.subjectEvaluation': tr('Évaluation / suivi', 'Evaluation / monitoring', 'Evaluación / seguimiento', 'Valutazione / monitoraggio'),
+  'contact.form.subjectObservatoire': tr(
+    'Observatoire / données / cartes',
+    'Observatory / data / maps',
+    'Observatorio / datos / mapas',
+    'Osservatorio / dati / mappe',
+  ),
   'contact.form.subjectCartography': tr('Cartographie / supports', 'Mapping / materials', 'Cartografía / soportes', 'Cartografia / materiali'),
   'contact.form.subjectOther': tr('Autre', 'Other', 'Otro', 'Altro'),
   'contact.form.success': tr(

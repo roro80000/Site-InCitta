@@ -4,11 +4,10 @@
   "description": "Site web institutionnel d’InCitta – cabinet d’études et d’ingénierie territoriale.",
   "main": "index.js",
   "scripts": {
-    "dev": "serve -l 3001 .",
+    "dev": "serve -l tcp://127.0.0.1:3001 .",
     "dev:open": "bash scripts/dev-local.sh",
-    "start": "serve -l 3001 .",
-    "build": "bash scripts/build-for-netlify.sh",
-    "deploy:netlify": "npm run build && npx netlify deploy --prod --dir=dist",
+    "start": "serve -l tcp://127.0.0.1:3001 .",
+    "deploy:netlify": "npx netlify deploy --prod --dir=.",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

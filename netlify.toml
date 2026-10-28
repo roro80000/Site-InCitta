@@ -1,18 +1,82 @@
-# Déploiement Netlify — Site InCitta (statique, pas de build)
+# Déploiement Netlify — Site InCitta (statique, source = racine du repo)
 [build]
-  publish = "dist"
-  command = "npm run build"
+  publish = "."
 
-# Redirections
+[build.processing.html]
+  pretty_urls = true
+
+# Redirections 301 permanentes (.html vers URL propre sans extension)
 [[redirects]]
   from = "/actualites"
-  to = "/synergies.html"
-  status = 302
+  to = "/synergies"
+  status = 301
 
 [[redirects]]
   from = "/actualites.html"
-  to = "/synergies.html"
-  status = 302
+  to = "/synergies"
+  status = 301
+
+[[redirects]]
+  from = "/observatoire-des-territoires.html"
+  to = "/observatoire-des-territoires"
+  status = 301
+
+[[redirects]]
+  from = "/inconcertta.html"
+  to = "/inconcertta"
+  status = 301
+
+[[redirects]]
+  from = "/demarche-participative.html"
+  to = "/demarche-participative"
+  status = 301
+
+[[redirects]]
+  from = "/programmation-territoriale.html"
+  to = "/programmation-territoriale"
+  status = 301
+
+[[redirects]]
+  from = "/evaluation-politiques-publiques.html"
+  to = "/evaluation-politiques-publiques"
+  status = 301
+
+[[redirects]]
+  from = "/ingenierie-financiere.html"
+  to = "/ingenierie-financiere"
+  status = 301
+
+[[redirects]]
+  from = "/a-propos.html"
+  to = "/a-propos"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/synergies.html"
+  to = "/synergies"
+  status = 301
+
+[[redirects]]
+  from = "/mentions-legales.html"
+  to = "/mentions-legales"
+  status = 301
+
+[[redirects]]
+  from = "/actualite-detail.html"
+  to = "/actualite-detail"
+  status = 301
+
+[[redirects]]
+  from = "/inconcertta-presentation.html"
+  to = "/inconcertta-presentation"
+  status = 301
+
+
 
 # En-têtes de sécurité et cache
 [[headers]]

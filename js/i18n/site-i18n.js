@@ -13,6 +13,7 @@ const PAGE_ID_MAP = {
   'programmation-territoriale.html': 'territory',
   'ingenierie-financiere.html': 'finance',
   'evaluation-politiques-publiques.html': 'evaluation',
+  'observatoire-des-territoires.html': 'observatoire',
   'mentions-legales.html': 'legal',
   'actualites.html': 'news',
   'actualite-detail.html': 'newsDetail',
@@ -125,12 +126,16 @@ function syncInconcerttaExpandButton(locale) {
 export function applySiteI18n(locale = getLocale()) {
   document.documentElement.lang = locale === 'en' ? 'en' : locale;
 
-  applyDataI18nElements(locale);
-  GLOBAL_RULES.forEach((rule) => applyRule(rule, locale));
-
   const pageId = getPageId();
-  (PAGE_RULES[pageId] || []).forEach((rule) => applyRule(rule, locale));
+  const useHtmlAsSource = locale === 'fr';
+
+  /* FR : le HTML est la source (édition visible en local). EN/ES/IT : messages i18n. */
+  if (!useHtmlAsSource) {
+    applyDataI18nElements(locale);
+    GLOBAL_RULES.forEach((rule) => applyRule(rule, locale));
+    (PAGE_RULES[pageId] || []).forEach((rule) => applyRule(rule, locale));
+    applyPageMeta(pageId, locale);
+  }
 
   syncInconcerttaExpandButton(locale);
-  applyPageMeta(pageId, locale);
 }

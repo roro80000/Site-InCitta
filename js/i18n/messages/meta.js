@@ -111,6 +111,20 @@ export const PAGE_META = {
       it: 'Valutazione delle politiche pubbliche e misurazione dell’impatto territoriale: indicatori, bilanci e supporto decisionale per gli enti locali. InCitta, Hauts-de-France.',
     },
   },
+  observatoire: {
+    title: {
+      fr: 'Observatoire des territoires | InCitta',
+      en: 'Territorial observatory | InCitta',
+      es: 'Observatorio de territorios | InCitta',
+      it: 'Osservatorio dei territori | InCitta',
+    },
+    description: {
+      fr: 'InCitta transforme les données publiques en indicateurs territoriaux, analyses comparatives et cartographies pour collectivités et bureaux d’études. Sources documentées, livrables exploitables.',
+      en: 'InCitta turns public data into territorial indicators, comparative analyses and maps for local authorities and consultancies. Documented sources, usable deliverables.',
+      es: 'InCitta transforma datos públicos en indicadores territoriales, análisis comparativos y cartografía para administraciones y gabinetes de estudios. Fuentes documentadas, entregables utilizables.',
+      it: 'InCitta trasforma i dati pubblici in indicatori territoriali, analisi comparative e cartografie per enti locali e studi di consulenza. Fonti documentate, deliverable utilizzabili.',
+    },
+  },
   inconcertta: {
     title: {
       fr: 'InConcertta — Pilotez vos concertations et accélérez la décision | InCitta',

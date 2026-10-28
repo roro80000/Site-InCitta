@@ -1,0 +1,1310 @@
+/* Accueil — titres, services, hero, carte, blocs */
+
+section.home-service-columns__card {
+  padding: clamp(1rem, 1.8vw, 1.35rem) clamp(0.9rem, 1.6vw, 1.15rem);
+}
+
+/* Titres de chapitres (accueil) */
+.home-chapter-title {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  font-size: clamp(1.32rem, 2.35vw, 1.78rem);
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  line-height: 1.18;
+  margin-bottom: 0.65rem;
+  padding: 0.08em 0 0.42em 1rem;
+  color: var(--primary);
+  direction: ltr;
+  unicode-bidi: isolate;
+  overflow-wrap: anywhere;
+}
+
+h2.home-chapter-title {
+  font-size: clamp(1.32rem, 2.35vw, 1.78rem);
+}
+
+.home-chapter-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  bottom: 0.25em;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--primary-2) 48%, var(--primary) 100%);
+  box-shadow: 0 0 14px rgba(11, 107, 107, 0.22);
+  pointer-events: none;
+}
+
+.home-chapter-title::after {
+  content: '';
+  display: block;
+  width: min(10rem, 42%);
+  height: 1px;
+  margin-top: 0.35em;
+  background: linear-gradient(90deg, rgba(11, 107, 107, 0.72), transparent);
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.home-chapter-title--bar-left {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+  text-align-last: left;
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+.home-chapter-title--bar-left::before {
+  left: 0;
+  right: auto;
+}
+
+.home-chapter-title--bar-left::after {
+  margin-left: 0;
+  margin-right: auto;
+  background: linear-gradient(90deg, rgba(11, 107, 107, 0.72), transparent);
+}
+
+.home-chapter-title--bar-right {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+  text-align-last: right;
+  padding: 0.08em 1rem 0.42em 0;
+}
+
+.home-chapter-title--bar-right::before {
+  left: auto;
+  right: 0;
+}
+
+.home-chapter-title--bar-right::after {
+  margin-left: auto;
+  margin-right: 0;
+  background: linear-gradient(270deg, rgba(11, 107, 107, 0.72), transparent);
+}
+
+@media (min-width: 1280px) {
+  .home-chapter-title--single-line {
+    font-size: clamp(1.12rem, 1.5vw, 1.58rem);
+    white-space: nowrap;
+  }
+
+  /* Titre long : même taille que les autres, mais autorisé à passer à la ligne */
+  .service-block--financement .home-chapter-title--single-line {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 901px) {
+  .home-chapter-title.chapter-title--last-left,
+  .home-chapter-title.chapter-title--last-right {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  .home-chapter-title.chapter-title--last-left {
+    text-align-last: left;
+  }
+
+  .home-chapter-title.chapter-title--last-right {
+    text-align-last: right;
+  }
+
+  .home-chapter-title.chapter-title--last-right::after {
+    margin-left: auto;
+    margin-right: 0;
+    background: linear-gradient(270deg, rgba(11, 107, 107, 0.72), transparent);
+  }
+}
+
+@media (max-width: 900px) {
+  .home-chapter-title {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0.12em;
+  }
+
+  .home-chapter-title::before {
+    display: none;
+  }
+
+  .home-chapter-title::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-chapter-title--single-line {
+    white-space: normal;
+  }
+
+  /* Restaurer l’ancrage gauche / droite voulu */
+  .home-chapter-title--bar-left {
+    text-align: left !important;
+    text-align-last: left;
+    padding-left: 1rem;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .home-chapter-title--bar-left::before {
+    display: block;
+    left: 0;
+    right: auto;
+  }
+
+  .home-chapter-title--bar-left::after {
+    margin-left: 0;
+    margin-right: auto;
+    width: min(10rem, 42%);
+    background: linear-gradient(90deg, rgba(11, 107, 107, 0.72), transparent);
+  }
+
+  .home-chapter-title--bar-right {
+    text-align: right !important;
+    text-align-last: right;
+    padding-left: 0;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .home-chapter-title--bar-right::before {
+    display: block;
+    left: auto;
+    right: 0;
+  }
+
+  .home-chapter-title--bar-right::after {
+    margin-left: auto;
+    margin-right: 0;
+    width: min(10rem, 42%);
+    background: linear-gradient(270deg, rgba(11, 107, 107, 0.72), transparent);
+  }
+}
+
+/* Illustrations des blocs service (accueil) : image entière avec fondu sur les bords pour insertion fluide */
+.service-block--territoire .development-image img,
+.service-block--financement .accompagnement-image img,
+.evaluation-section.service-block .evaluation-image img {
+  width: min(100%, 420px);
+  height: auto;
+  max-width: 45vw;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 16px;
+  display: block;
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 90%);
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 90%);
+}
+
+@media (max-width: 900px) {
+
+  /* Conteneurs : centrer l’illustration sur l’écran (hors concertation, déjà OK) */
+  .service-block--territoire .development-image,
+  .service-block--financement .accompagnement-image,
+  .evaluation-section.service-block .evaluation-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .service-block--territoire .development-image img,
+  .service-block--financement .accompagnement-image img,
+  .evaluation-section.service-block .evaluation-image img {
+    width: min(92vw, 480px);
+    height: auto;
+    max-width: min(92vw, 480px);
+    max-height: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Deux cartes service distinctes, alignées sur une grille 2 colonnes */
+.home-service-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 2.2vw, 1.5rem);
+  width: min(100% - 40px, var(--container));
+  max-width: 1100px;
+  margin: 0.9rem auto;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.home-service-columns__card.service-block {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Pas de trait de séparation « section suivante » entre les deux cartes sœurs */
+.home-service-columns>.home-service-columns__card+.home-service-columns__card {
+  border-top: none;
+}
+
+/* Dans chaque demi-largeur : mise en page plus lisible (image + texte en colonne) */
+.home-service-columns .participation-content,
+.home-service-columns .development-content {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.home-service-columns .participation-section .participation-image,
+.home-service-columns .inconcertta-platform-section .development-image {
+  margin: 0;
+  /* annule le 1cm des .service-block pleine largeur (index inline) */
+}
+
+/* Concertation : bouton au-dessus de l’image (flux normal, pas absolute) */
+.home-service-columns .participation-section .participation-cta {
+  position: static;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.25rem 0 0;
+}
+
+.home-service-columns .participation-section .participation-text {
+  padding-bottom: 0;
+  position: static;
+}
+
+.home-service-columns .participation-section .participation-image {
+  align-self: center;
+  margin: 0.35rem auto 0;
+  max-width: 100%;
+}
+
+.home-service-columns .inconcertta-platform-section .development-image {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-service-columns .participation-image img {
+  width: 150%;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-left: -25%;
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 90%);
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 90%);
+}
+
+.home-service-columns .inconcertta-platform-section .development-image img {
+  width: min(100%, 240px);
+  height: auto;
+  object-fit: contain;
+}
+
+.home-service-columns .development-text {
+  position: relative;
+  padding-bottom: 3.5rem;
+}
+
+.home-service-columns .development-cta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .home-service-columns {
+    grid-template-columns: 1fr;
+    width: min(100% - 32px, var(--container));
+    gap: 1rem;
+  }
+}
+
+/* Hero helpers */
+.hero-scroll-indicator {
+  display: none;
+}
+
+/* keep clean */
+.hero .hero-full-image {
+  border-bottom: none;
+}
+
+.hero .hero-full-image.half-faded {
+  opacity: 0.35;
+  transition: opacity 0.45s ease;
+}
+
+/* Accueil : titre + accroche sous le flyer — même fond que la suite (transparent), sans séparation */
+.home-intro-below-hero__lead {
+  margin: 0 auto;
+  max-width: 52rem;
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ----------------------------------------------------------
+   Accueil — carte « objet de design » + liste + panneau latéral
+   ---------------------------------------------------------- */
+.city-explore {
+  padding: 2.5rem 0 2.75rem;
+  position: relative;
+}
+
+.city-explore__inner {
+  max-width: var(--container);
+}
+
+.city-explore__title {
+  margin: 0 0 0.5rem;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.55rem, 3.2vw, 2rem);
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.city-explore__intro {
+  margin: 0 0 1.35rem;
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.city-explore__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  gap: 1rem 1.25rem;
+  align-items: stretch;
+}
+
+.city-explore__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.city-explore__list-heading {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.02rem, 2vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .city-explore__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.city-explore__map {
+  position: relative;
+  isolation: isolate;
+  min-height: 520px;
+  height: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  box-shadow: var(--shadow-sm);
+  background: #c8c8c8;
+}
+
+/* OSM : tuiles déjà très denses — léger renfort sans les écraser */
+.city-explore__map .leaflet-tile-pane img {
+  opacity: 1 !important;
+  image-rendering: auto;
+}
+
+.city-explore-tile-pane {
+  filter: contrast(1.32) saturate(1.28);
+  opacity: 1;
+}
+
+.city-explore-map-fallback {
+  margin: 0;
+  padding: 1.5rem;
+  color: rgba(10, 10, 10, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.city-explore-marker-wrap {
+  background: none !important;
+  border: none !important;
+}
+
+.city-explore-marker {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 28px;
+  height: 36px;
+  pointer-events: none;
+}
+
+.city-explore-marker__dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #6a6a6a;
+  border: 2px solid #0a0a0a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 0.85, 0.32, 1),
+    background 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.city-explore-marker.is-highlighted .city-explore-marker__dot {
+  transform: scale(1.5);
+  background: #0a0a0a;
+  border-color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.city-explore__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.city-explore-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.city-explore-card:hover,
+.city-explore-card:focus-visible {
+  border-color: rgba(11, 107, 107, 0.35);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.city-explore-card:focus-visible {
+  box-shadow: var(--shadow-md), var(--ring);
+}
+
+.city-explore-card__kicker {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.city-explore-card__name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.city-explore-card__hint {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.city-explore-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2600;
+  background: rgba(5, 20, 20, 0.38);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.city-explore-backdrop.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.city-explore-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2620;
+  width: min(100% - 1.25rem, 420px);
+  max-width: 100%;
+  height: 100%;
+  height: 100dvh;
+  background: rgba(255, 255, 255, 0.94);
+  border-left: 1px solid var(--border);
+  box-shadow: -12px 0 48px rgba(0, 0, 0, 0.12);
+  transform: translateX(100%);
+  transition: transform 0.38s cubic-bezier(0.22, 0.85, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.35rem 1.5rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.city-explore-panel.is-open {
+  transform: translateX(0);
+}
+
+body.city-explore-panel-open {
+  overflow: hidden;
+}
+
+.city-explore-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.city-explore-panel__title {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+  flex: 1;
+}
+
+.city-explore-panel__close {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  margin: -0.25rem -0.35rem 0 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.city-explore-panel__close:hover,
+.city-explore-panel__close:focus-visible {
+  background: rgba(2, 102, 102, 0.08);
+  border-color: rgba(11, 107, 107, 0.35);
+  outline: none;
+}
+
+.city-explore-panel__meta {
+  margin: 0 0 1rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.city-explore-panel__body {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.city-explore-panel__body p {
+  margin: 0 0 0.75rem;
+}
+
+.city-explore-panel__body p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Styles spécifiques accueil (Hero & blocs de présentation) --- */
+/* SEO : contenu présent mais non affiché (utile pour le référencement). */
+.seo-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.logo-img {
+  height: 56px;
+  max-height: 60px;
+  width: auto;
+  object-fit: contain
+}
+
+/* Hero — 1cm sous la topbar */
+.hero {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 1cm;
+  padding-bottom: 3.5rem;
+  box-sizing: border-box;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1
+}
+
+/* Fond via pseudo-élément pour pouvoir régler l'opacité sans affecter le contenu */
+.hero-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/images/fond_carteIGN_Stq_hq.webp');
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(0.98) contrast(1.05);
+  opacity: 0.8;
+  z-index: 1
+}
+
+/* fallback to lighter image on small viewports for performance */
+@media (max-width:900px) {
+  .hero-background::before {
+    background-image: url('assets/images/fond_carteIGN_Stq_small.webp');
+    background-size: cover
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none !important;
+  display: none !important;
+  z-index: 2
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2.2rem, 4.8vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #026666;
+  margin: 0 0 1.25rem 0;
+  text-wrap: balance;
+}
+
+.hero-subtitle {
+  max-width: 650px;
+  margin: 0 auto 2.25rem auto;
+  font-size: clamp(1.05rem, 1.35vw, 1.18rem);
+  line-height: 1.65;
+  color: #334155;
+  font-weight: 400;
+}
+
+.hero-subtitle strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #026666;
+  color: #ffffff !important;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(2, 102, 102, 0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  text-decoration: none;
+}
+
+.btn-hero-primary:hover {
+  background-color: #013333;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(2, 102, 102, 0.35);
+  color: #ffffff !important;
+}
+
+.hero .btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #026666 !important;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 999px;
+  border: 2px solid #026666;
+  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+  text-decoration: none;
+}
+
+.hero .btn-hero-secondary:hover {
+  background-color: #026666;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 102, 102, 0.2);
+}
+
+/* Bloc d'accompagnement (séparé) */
+.support-block {
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  padding: 1.25rem 20px;
+  background: #ffffff;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  color: #000;
+  font-size: 1.05rem
+}
+
+.support-block h3 {
+  margin: 0 0 0.5rem;
+  color: var(--primary-color);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem
+}
+
+.support-block p {
+  margin: 0
+}
+
+/* Accompagnement layout (trois colonnes) */
+.accompagnement-section {
+  padding: 2rem 0;
+  background: transparent;
+  border-top: none
+}
+
+.accompagnement-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px
+}
+
+.accompagnement-image {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+/* image droite agrandie de 20% : 12cm * 1.2 = 14.4cm */
+.accompagnement-image img {
+  width: 14.4cm;
+  height: 14.4cm;
+  object-fit: contain;
+  display: block
+}
+
+/* Grand bandeau « InCitta vous accompagne… » uniquement (pas les blocs service financement) */
+.accompagnement-section:not(.service-block) .accompagnement-text {
+  flex: 1;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.05;
+  padding: 0 1rem
+}
+
+@media (max-width:900px) {
+  .accompagnement-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center
+  }
+
+  /* mobile: 9cm * 1.2 = 10.8cm */
+  .accompagnement-image img {
+    width: 10.8cm;
+    height: 10.8cm
+  }
+
+  .accompagnement-section:not(.service-block) .accompagnement-text {
+    font-size: 22px;
+    padding: 1rem 0
+  }
+}
+
+/* CTA pour téléchargement PDF */
+.accompagnement-cta {
+  margin-top: 0.75rem
+}
+
+/* Forcer le style des paragraphes internes pour qu'ils correspondent aux autres sections */
+.accompagnement-section:not(.service-block) .accompagnement-text .development-paragraph {
+  font-size: 18px;
+  margin: 0;
+  color: #000;
+  line-height: 1.5;
+  font-weight: 300;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: right;
+}
+
+/* Sections développement / participation (accueil) */
+.development-section,
+.participation-section {
+  padding: 2rem 0;
+  background: transparent;
+}
+
+.development-content,
+.participation-content {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+.development-text,
+.participation-text {
+  flex: 1;
+  position: relative;
+  padding-bottom: 3.5rem;
+}
+
+.development-title,
+.participation-title {
+  margin: 0 0 0.5rem;
+}
+
+.development-paragraph {
+  font-size: 18px;
+  margin: 0;
+  color: #000;
+  line-height: 1.5;
+  font-weight: 300;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.development-image,
+.participation-image {
+  flex: 0 0 auto;
+}
+
+.development-image img,
+.participation-image img {
+  width: 8cm;
+  height: 8cm;
+  object-fit: cover;
+  display: block;
+}
+
+.participation-image img {
+  border-radius: 12px;
+}
+
+.development-cta,
+.participation-cta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.development-cta--duo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: flex-end;
+}
+
+.inconcertta-platform-section .development-text {
+  padding-bottom: 4.5rem;
+}
+
+@media (max-width: 900px) {
+  .development-content,
+  .participation-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .development-image img,
+  .participation-image img {
+    width: 6cm;
+    height: 6cm;
+  }
+
+  .development-paragraph {
+    font-size: 16px;
+  }
+
+  .development-cta--duo {
+    justify-content: center;
+  }
+
+  .inconcertta-platform-section .development-text {
+    padding-bottom: 5.5rem;
+  }
+}
+
+/* Justifier les textes et les aligner côté image */
+.participation-text,
+.evaluation-text,
+.accompagnement-text,
+.development-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Lorsque l'image est à gauche (image + texte), aligner le texte vers la gauche (côté image) */
+.participation-content .participation-text {
+  text-align-last: left;
+}
+
+/* Texte à gauche, image à droite (évaluation en page d'accueil) : dernière ligne vers l’image */
+.evaluation-content .evaluation-text {
+  text-align-last: right;
+}
+
+/* Texte + image à droite (développement territorial) : dernière ligne vers l’image */
+.development-content .development-text {
+  text-align-last: right;
+}
+
+/* Financement : image à gauche, texte à droite — dernière ligne vers la gauche (vers l’image) */
+.service-block.accompagnement-section .accompagnement-content .accompagnement-text {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+}
+
+/* Styles pour blocs de services (pas toucher au bloc d'accompagnement principal) */
+.service-block {
+  max-width: 1100px;
+  margin: 0.9rem auto;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border-left: none;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.service-block .development-content,
+.service-block .participation-content,
+.service-block .accompagnement-content,
+.service-block .evaluation-content {
+  gap: 1rem;
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Empêche le titre / texte de forcer la carte hors de sa largeur (flex min-content) */
+.service-block .development-text,
+.service-block .participation-text,
+.service-block .accompagnement-text,
+.service-block .evaluation-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width:900px) {
+
+  .service-block,
+  .service-block .development-content,
+  .service-block .participation-content,
+  .service-block .accompagnement-content,
+  .service-block .evaluation-content {
+    flex-direction: column;
+    padding: 0.75rem;
+    text-align: left;
+  }
+}
+
+/* Espacement image ↔ texte dans les blocs service */
+.service-block .participation-image,
+.service-block .accompagnement-image,
+.service-block .evaluation-image,
+.service-block .development-image {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: min(420px, 42%);
+}
+
+.service-block .participation-image,
+.service-block .accompagnement-image {
+  margin-right: 1cm;
+  margin-left: 0;
+}
+
+.service-block .evaluation-image,
+.service-block .development-image {
+  margin-left: 1cm;
+}
+
+.service-block--territoire .development-image img,
+.service-block--financement .accompagnement-image img,
+.evaluation-section.service-block .evaluation-image img {
+  object-fit: contain !important;
+}
+
+/* Sur petits écrans, images empilées et centrées horizontalement */
+@media (max-width:900px) {
+
+  .service-block .participation-image,
+  .service-block .evaluation-image,
+  .service-block .development-image,
+  .service-block .accompagnement-image {
+    margin: 0 auto 1rem auto;
+  }
+}
+
+/* Espacement après chaque FAQ item */
+.faq-grid .faq-item {
+  margin-bottom: 1cm;
+}
+
+/* Logo InConcertta : centré, proportions logo (annule 8cm×8cm du .development-image img global) */
+.home-service-columns .inconcertta-platform-section .development-content {
+  align-items: stretch;
+}
+
+.inconcertta-platform-section .development-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.inconcertta-platform-section .development-image img {
+  object-fit: contain;
+  width: min(100%, 350px);
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.inconcertta-platform-section .development-image .inconcertta-logo-external {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: min(100%, 375px);
+  line-height: 0;
+  border-radius: 12px;
+}
+
+.inconcertta-platform-section .development-image .inconcertta-logo-external:focus-visible {
+  outline: 3px solid #BF7D40;
+  outline-offset: 3px;
+}
+
+/* Hero image behaviour */
+.hero .hero-full-image {
+  display: block;
+  width: 100vw;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  object-fit: contain;
+  object-position: top center;
+  position: relative;
+  z-index: 3000;
+  /* AU-DESSUS de la navbar */
+  pointer-events: none;
+  transition: opacity .5s ease;
+}
+
+.hero .hero-full-image.hidden {
+  display: none !important;
+  /* instant hide when hero section is out of view */
+}
+
+/* Faire passer le texte d'accompagnement au-dessus de l'image hero (bandeau seulement) */
+.accompagnement-section:not(.service-block) .accompagnement-text {
+  position: relative;
+  z-index: 1200;
+  /* supérieur à .hero-full-image (1100) */
+  background: transparent;
+}
+
+.hero {
+  background: #f6f6f6;
+}
+
+.hero-background::before {
+  /* supprimer toute image de fond et masquer le pseudo-élément */
+  background-image: none !important;
+  background-color: transparent !important;
+  opacity: 0 !important;
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Responsive: on small screens ensure image scales and no background duplicates */
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    /* éviter un grand vide sous l'image sur mobile */
+  }
+
+  .hero .hero-full-image {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: top center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    z-index: auto !important;
+    pointer-events: auto !important;
+    display: block !important;
+  }
+
+  /* Remove any accidental background-image on hero background */
+  .hero-background::before {
+    background-image: none !important;
+  }
+}
+
+/* Hero scroll indicator désactivé */
+.hero-scroll-indicator { display: none !important; }
+
+/* --- Rendre l'entrée dans la page plus moderne (premier bloc après le flyer) --- */
+.accompagnement-section {
+  padding-top: 2.25rem;
+  padding-bottom: 1.5rem;
+}
+
+/* On laisse la carte externe (.service-block) gérer fond / bordure comme les autres blocs.
+   Ici, on ne garde qu'un padding interne pour aligner le contenu. */
+.accompagnement-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 1.35rem 1.35rem;
+}
+
+/* Titre plus "impact" + meilleure lisibilité (hors blocs service type financement) */
+.accompagnement-section:not(.service-block) .accompagnement-text {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* CTA plus moderne */
+.accompagnement-cta .rounded-cta {
+  background: rgba(0, 102, 102, 0.10);
+  border-color: rgba(0, 102, 102, 0.55);
+}
+
+.accompagnement-cta .rounded-cta:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Mobile: garder une carte aérée */
+@media (max-width: 900px) {
+  .accompagnement-content {
+    padding: 1.05rem 1.05rem;
+  }
+
+  .accompagnement-section:not(.service-block) .accompagnement-text {
+    font-size: 22px;
+  }
+}

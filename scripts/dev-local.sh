@@ -23,8 +23,8 @@ echo ""
 
 SERVE_BIN="$ROOT/node_modules/.bin/serve"
 if [ -x "$SERVE_BIN" ]; then
-  exec "$SERVE_BIN" -l "$PORT" .
+  exec "$SERVE_BIN" -l "tcp://127.0.0.1:${PORT}" .
 else
   echo "  Installe les dépendances : npm install"
-  exec npx serve -l "$PORT" .
+  exec npx serve -l "tcp://127.0.0.1:${PORT}" .
 fi

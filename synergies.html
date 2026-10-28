@@ -6,70 +6,7 @@
  <title>Synergies InCitta</title>
  <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
 <link rel="stylesheet" href="styles.css">
-<style>
-.synergies-page {
-  padding-top: calc(clamp(1.6rem, 2.2vw, 2.6rem) - 0.5cm);
-}
-.partners-intro {
-  margin-top: calc(1.5rem - 0.5cm);
-}
-
-/* Partners grid: 4 columns on desktop, responsive stack on small screens */
-.partners-grid {
-  display: flex;
-  gap: 1.5rem;
-  align-items: stretch;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-.partner-block {
-  flex: 1 1 calc(25% - 1.125rem);
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(5,59,59,0.12);
-  border-radius: 18px;
-  padding: 1.25rem;
-  min-width: 220px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  box-shadow: var(--shadow-sm);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-.partner-block:hover{
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-}
-.partner-block h3 {
-  margin: 0;
-  font-family: 'Outfit', 'Playfair Display', sans-serif !important;
-  font-size: 1.15rem;
-  color: var(--primary);
-}
-.partner-block h6 {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--muted);
-  font-weight: 600;
-}
-.partner-block p {
-  margin: 0;
-  color: var(--text-color);
-  line-height: 1.5;
-  flex: 1 0 auto;
-}
-
-@media (max-width: 900px) {
-  .partner-block { flex: 1 1 48%; }
-}
-@media (max-width: 560px) {
-  .partners-grid { gap: 1rem; }
-  .partner-block { flex: 1 1 100%; }
-}
-</style>
+  <link rel="stylesheet" href="styles/pages/synergies.css">
  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  
@@ -86,11 +23,11 @@
  <!-- ========================= SEO Meta Tags ========================= -->
 <meta name="description" content="Synergies : partenariats et collaborations d'InCitta pour accompagner vos projets territoriaux (concertation, AMO, AMU).">
  <meta name="keywords" content="synergies, partenaires, InCitta, concertation, accompagnement territorial">
-<link rel="canonical" href="https://www.incitta.eu/synergies.html">
+<link rel="canonical" href="https://incitta.eu/synergies">
  
  <!-- Open Graph / Facebook -->
  <meta property="og:type" content="website">
- <meta property="og:url" content="https://www.InCitta.eu/synergies.html">
+ <meta property="og:url" content="https://incitta.eu/synergies">
  <meta property="og:title" content="Synergies — InCitta">
  <meta property="og:description" content="Partenariats et collaborations pour l'accompagnement territorial (concertation, AMO, AMU).">
  <meta property="og:image" content="https://www.InCitta.eu/assets/Logo/Logo InCitta.webp">
@@ -126,7 +63,8 @@
   <ul class="nav-menu" role="list">
    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
    <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
-   <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+   <li class="nav-item"><a href="observatoire-des-territoires.html" class="nav-link">Observatoire</a></li>
+      <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
    <li class="nav-item"><a href="a-propos.html" class="nav-link">À propos</a></li>
   </ul>
   <div class="nav-actions">

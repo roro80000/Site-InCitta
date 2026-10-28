@@ -1,0 +1,203 @@
+/* Page Contact */
+
+.logo-img {
+  max-height: 48px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+/* Réduire les espaces au-dessus du bloc formulaire tout en évitant que la navbar ne cache l'entête */
+    .contact-page {
+      margin-top: calc(var(--header-h, 80px) + 0.5rem - 2.5cm);
+    }
+
+    .contact-grid {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .contact-block.form-block {
+      margin-top: 0;
+      padding-top: 3mm;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    /* Add comfortable block-content padding */
+    .block-content {
+      padding: 1rem 0.25rem 0.25rem;
+    }
+
+    #contactForm {
+      margin-top: 1rem;
+    }
+
+    .block-header {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    /* Centrer verticalement le texte d'introduction */
+    .block-intro {
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+
+    /* FAQ (contact) : conteneur parent */
+    .faq-section .container {
+      background: linear-gradient(135deg, rgba(210, 154, 5, 0.05), rgba(124, 42, 0, 0.05));
+      padding: 1rem;
+      border-radius: 12px;
+    }
+
+    .faq-grid .faq-item {
+      border-radius: 35px;
+      overflow: hidden;
+      padding: 1.1rem;
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      margin-bottom: 1rem;
+    }
+
+    /* =========================
+   Contact – harmonisation design
+   ========================= */
+    .contact-block.form-block {
+      border-radius: 18px;
+    }
+
+    .block-header {
+      border-radius: 18px !important;
+      background: linear-gradient(90deg, var(--primary-2), var(--accent)) !important;
+      box-shadow: 0 16px 46px rgba(11, 107, 107, 0.18);
+    }
+
+    .block-header h3 {
+      letter-spacing: -0.01em;
+    }
+
+    .block-intro {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(5, 59, 59, 0.14);
+      border-radius: 16px;
+      padding: 1rem 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .block-intro a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+    }
+
+    #submitBtn {
+      margin-top: 0;
+    }
+
+    .contact-block.form-block:hover {
+      transform: none !important;
+      box-shadow: var(--shadow-sm);
+    }
+
+    #contactForm input,
+    #contactForm textarea,
+    #contactForm select,
+    #contactForm .form-consent-label,
+    #contactForm label[for] {
+      transform: none !important;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .form-submit-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: .35rem;
+    }
+
+    #submitBtn.is-incomplete,
+    #submitBtn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    #contactForm .btn:hover,
+    #contactForm .btn-primary:hover {
+      transform: none !important;
+    }
+
+    .form-group--consent {
+      margin-top: .15rem;
+    }
+
+    .form-consent-label {
+      display: flex;
+      align-items: flex-start;
+      gap: .65rem;
+      cursor: pointer;
+      font-size: .92rem;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    .form-consent-label input[type="checkbox"] {
+      width: auto;
+      min-width: 1.1rem;
+      height: 1.1rem;
+      margin-top: .15rem;
+      flex-shrink: 0;
+      accent-color: var(--primary-2);
+      cursor: pointer;
+    }
+
+    .form-consent-label input[type="checkbox"].error {
+      outline: 2px solid #c0392b;
+      outline-offset: 2px;
+    }
+
+    /* FAQ – grille premium */
+    .faq-section .container {
+      background: rgba(255, 255, 255, 0.70);
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 800px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .faq-grid .faq-item {
+      border-radius: 18px;
+      border: 1px solid rgba(5, 59, 59, 0.12);
+      box-shadow: var(--shadow-sm);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      margin-bottom: 0;
+    }
+
+    .faq-grid .faq-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(11, 107, 107, 0.22);
+    }
+
+    .faq-grid .faq-item h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }

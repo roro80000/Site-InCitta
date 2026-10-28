@@ -12,6 +12,7 @@ Site_InCitta/
 │   ├── synergies.html                 # Partenaires et synergies
 │   ├── demarche-participative.html    # Démarche participative
 │   ├── programmation-territoriale.html# Programmation territoriale
+│   ├── observatoire-des-territoires.html # Observatoire des territoires
 │   ├── actualites.html                # Liste des actualités
 │   ├── actualite-detail.html          # Détail d’une actualité
 │   ├── contact.html                   # Contact
@@ -23,9 +24,15 @@ Site_InCitta/
 │   ├── js/utils/                      # Utilitaires (perf, device…)
 │   ├── js/hooks/                      # Comportements DOM (nav, scroll, formulaires…)
 │   └── js/pages/                      # Scripts par page (ex. démo InConcertta)
-├── scripts/build-for-netlify.sh       # Build dist/ pour Netlify (`npm run build`)
+├── scripts/dev-local.sh               # Dev local + ouverture navigateur (`npm run dev:open`)
 ├── 🎨 Styles
-│   └── styles.css                     # Styles globaux (design "glass", layout)
+│   ├── styles.css                     # Point d’entrée (@import des modules)
+│   └── styles/
+│       ├── base.css, layout.css, nav.css, components.css…
+│       ├── footer.css, utilities.css, home.css (accueil uniquement)
+│       ├── a11y/                      # Accessibilité (+ site-overrides)
+│       ├── cookie-banner.css
+│       └── pages/                     # CSS par page (editorial, observatoire…)
 ├── 🧩 SEO
 │   ├── sitemap.xml                    # Sitemap InCitta
 │   ├── robots.txt                     # Robots
@@ -57,14 +64,15 @@ Site_InCitta/
 ## 🔧 Configuration
 
 - Site statique (HTML / CSS / JS)
-- Hébergement : Netlify (ou équivalent)
+- Hébergement : Netlify — publication directe depuis la racine (`publish = "."`, pas de dossier `dist/`)
 - SEO géré manuellement (balises, sitemap, robots)
 
 ## 🎯 Utilisation
 
-- Modifier les contenus directement dans les fichiers HTML
-- Utiliser `SEO_TEMPLATE.html` pour les nouvelles pages
-- Lancer `update-html-production.sh` avant mise en ligne
+- **Français** : modifier directement les fichiers **HTML** (et `styles.css` / `styles/pages/` / `js/` si besoin).
+- **Preview local** : `npm run dev` puis **http://127.0.0.1:3001/** (un seul serveur sur le port 3001).
+- **EN / ES / IT** : textes dans `js/i18n/messages/` (le JS ne remplace le HTML qu’hors langue FR).
+- Nouvelles pages : partir de `SEO_TEMPLATE.html` (fichier dev, non déployé).
 
 ## 📝 Notes importantes
 

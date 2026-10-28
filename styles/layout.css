@@ -1,0 +1,80 @@
+/* Layout — helpers, sections, cartes */
+
+/* Layout helpers */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  color: var(--primary);
+  line-height: 1.15;
+  margin: 0 0 .6rem 0;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+}
+
+p {
+  margin: 0 0 1rem 0;
+  color: var(--muted);
+}
+
+small {
+  color: var(--muted-2);
+}
+
+/* Global sections */
+section {
+  padding: clamp(1.6rem, 2.2vw, 2.6rem) 0;
+}
+
+section+section {
+  border-top: 1px solid rgba(5, 59, 59, 0.07);
+}
+
+.service-block,
+.contact-block,
+.form-block {
+  background: var(--surface-2);
+  border: 1px solid rgba(5, 59, 59, 0.12);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.service-block:hover,
+.contact-block:hover,
+.form-block:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(11, 107, 107, 0.22);
+}

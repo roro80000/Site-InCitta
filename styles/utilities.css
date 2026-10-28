@@ -1,0 +1,103 @@
+/* Utilities — reduced motion, a11y touch, FAQ titre */
+
+/* Reduce heavy animations for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .service-block:hover,
+  .contact-block:hover,
+  .form-block:hover,
+  .value-item:hover,
+  .actualites-grid>*:hover,
+  .btn:hover,
+  .btn-primary:hover,
+  .feature-card:hover {
+    transform: none !important;
+  }
+
+  html::after {
+    opacity: 0.02;
+  }
+}
+
+/* ----------------------------------------------------------
+   Legacy compatibility:
+   some pages relied on a dist build that isn't shipped here.
+   Keep this file as the single source of truth.
+   ---------------------------------------------------------- */
+
+@media (max-width: 420px) {
+  .container {
+    width: min(100% - 32px, var(--container));
+  }
+}
+
+/* ---------- Accessibilité mobile (Lighthouse) ---------- */
+.faq-section__title {
+  text-align: center;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 901px) {
+
+  .home-chapter-title.chapter-title--last-left,
+  .home-chapter-title.chapter-title--last-right {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  .home-chapter-title.chapter-title--last-left {
+    text-align-last: left;
+  }
+
+  .home-chapter-title.chapter-title--last-right {
+    text-align-last: right;
+  }
+
+  .home-chapter-title.chapter-title--last-right::after {
+    margin-left: auto;
+    margin-right: 0;
+    background: linear-gradient(270deg, rgba(11, 107, 107, 0.72), transparent);
+  }
+}
+
+/* Zones tactiles ≥ 44px (WCAG 2.5.5) */
+.rounded-cta,
+.btn,
+.btn-primary,
+.btn-large {
+  min-height: 44px;
+  min-width: 44px;
+  padding-inline: 1rem;
+}
+
+.hamburger {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+  .nav-link {
+    min-height: 44px;
+    padding: 0.65rem 0.9rem;
+  }
+}
+
+.footer--site .footer-site-copy,
+.footer--site .footer-site-copy a {
+  color: #f2f8f7;
+}
+
+.footer--site .footer-site-copy a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}

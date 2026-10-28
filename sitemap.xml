@@ -30,7 +30,7 @@
   </url>
 
   <url>
-    <loc>https://incitta.eu/inconcertta-presentation.html</loc>
+    <loc>https://incitta.eu/inconcertta-presentation</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -55,6 +55,13 @@
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://incitta.eu/observatoire-des-territoires</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <url>

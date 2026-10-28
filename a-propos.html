@@ -7,184 +7,11 @@
   <title>À Propos de nous InCitta</title>
   <link rel="icon" type="image/webp" href="assets/Logo/Logo InCitta.webp">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .logo-img {
-      max-height: 48px;
-      width: auto;
-      height: auto;
-      display: block
-    }
-
-    /* Zone de lecture centrée (largeur A4) hors en-tête et pied de page */
-    .main-read {
-      max-width: 210mm;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      box-sizing: border-box;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      border: 1px solid rgba(5, 59, 59, 0.12);
-      border-radius: 18px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* Mise en page de la section À propos :
-   - texte justifié
-   - portrait flottant à droite avec léger enveloppement du texte
-   - CV centré et taille A4
-*/
-    .about-content {
-      display: block;
-      overflow: hidden;
-    }
-
-    .about-main {
-      color: #033333;
-    }
-
-    .about-main .about-text {
-      text-align: justify;
-      text-justify: inter-word;
-      line-height: 1.6;
-    }
-
-    .about-portrait {
-      float: right;
-      width: 260px;
-      margin: 0 0 1rem 1.25rem;
-    }
-
-    .about-portrait img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      display: block;
-      object-fit: cover;
-    }
-
-    /* Utiliser shape-outside pour un léger enveloppement (si supporté) */
-    .about-portrait img {
-      shape-outside: circle(50%);
-      -webkit-shape-outside: circle(50%);
-    }
-
-    .about-more-cta {
-      display: flex;
-      justify-content: flex-end;
-      gap: 0.75rem;
-      margin: 0.5rem 0 1.25rem;
-      clear: both;
-      flex-wrap: wrap;
-    }
-
-    .about-cv {
-      text-align: center;
-      margin-top: 1rem;
-      margin-bottom: 0;
-    }
-
-    .about-cv img {
-      max-width: 210mm;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      display: inline-block;
-      border-radius: 14px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Responsive : sur petits écrans, retirer le float et empiler */
-    @media (max-width:800px) {
-      .about-portrait {
-        float: none;
-        width: 100%;
-        margin: 0 0 1rem 0;
-      }
-
-      .about-cv img {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    .footer {
-      /* Forcer uniquement l'image en fond et neutraliser toute couleur héritée */
-      background: transparent !important;
-      background-image: url('assets/images/skyline_pied.png') !important;
-      background-repeat: no-repeat !important;
-      background-position: center bottom !important;
-      background-size: cover !important;
-      border-top: none !important;
-      position: relative;
-      color: #fff;
-    }
-
-    /* S'assurer que les blocs internes n'appliquent pas de fond couleur */
-    .footer,
-    .footer .footer-content,
-    .footer .footer-bottom,
-    .footer .footer-section {
-      background: transparent !important;
-    }
-
-    /* Si besoin d'une superposition sombre pour lisibilité, décommenter : */
-    /* .footer::after { content: ''; position:absolute; left:0; right:0; top:0; bottom:0; background: rgba(0,0,0,0.25); pointer-events:none; } */
-
-    /* Raccourcis : afficher les listes de liens en ligne (horizontale) */
-    .footer .footer-section ul {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-
-    .footer .footer-section ul li {
-      display: inline-block;
-      margin: 0;
-    }
-
-    .footer .footer-section ul li a {
-      display: inline-block;
-      padding: 0;
-    }
-
-    /* Badge de statut (optionnel) dans le footer */
-    .footer .footer-section ul li a {
-      display: inline-block;
-      padding: 0;
-    }
-
-    /* Forcer aucune marge sous l'image du CV */
-    .about-cv img {
-      display: block;
-      margin-bottom: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/pages/a-propos.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Outfit:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    /* Footer spécifique pour la page À propos */
-    footer.footer {
-      background: #133333 !important;
-      color: #ffffff !important;
-    }
-
-    footer.footer a {
-      color: #dcdcdc !important;
-    }
-
-    footer.footer .footer-section,
-    footer.footer .footer-bottom {
-      background: transparent !important;
-    }
-  </style>
 
   <!-- PWA Meta Tags -->
   <link rel="manifest" href="manifest.json">
@@ -200,11 +27,11 @@
   <meta name="description"
     content="InCitta est un cabinet d'études en aménagement du territoire, concertation et évaluation. Nous accompagnons collectivités et partenaires locaux dans la définition et l'évaluation de leurs projets territoriaux.">
   <meta name="keywords" content="InCitta, aménagement du territoire, évaluation, concertation, AMO, AMU">
-  <link rel="canonical" href="https://www.InCitta.eu/a-propos.html">
+  <link rel="canonical" href="https://incitta.eu/a-propos">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.InCitta.eu/a-propos.html">
+  <meta property="og:url" content="https://incitta.eu/a-propos">
   <meta property="og:title" content="À propos — InCitta (cabinet d'études)">
   <meta property="og:description"
     content="InCitta accompagne les projets territoriaux par des missions d'AMO/AMU, concertation et évaluation.">
@@ -244,7 +71,7 @@
 "@type": "ListItem",
 "position": 2,
 "name": "À propos",
-"item": "https://www.incitta.eu/a-propos.html"
+"item": "https://incitta.eu/a-propos"
  }]
  }
  </script>
@@ -262,7 +89,8 @@
       <ul class="nav-menu" role="list">
         <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
         <li class="nav-item"><a href="index.html#expertises" class="nav-link">Expertises</a></li>
-        <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
+        <li class="nav-item"><a href="observatoire-des-territoires.html" class="nav-link">Observatoire</a></li>
+      <li class="nav-item"><a href="inconcertta.html" class="nav-link">InConcertta</a></li>
         <li class="nav-item"><a href="a-propos.html" class="nav-link active" aria-current="page">À propos</a></li>
       </ul>
       <div class="nav-actions">

@@ -29,6 +29,7 @@ export function buildSchemaGraph(pageUrl) {
     SERVICES.territoire,
     SERVICES.concertation,
     SERVICES.evaluation,
+    SERVICES.observatoire,
     SERVICES.financement,
   ].map((svc) =>
     governmentService(
@@ -53,7 +54,7 @@ export function buildSchemaGraph(pageUrl) {
         url: SITE_ORIGIN + '/',
         name: ORG.name,
         description:
-          'Cabinet d\'études : aménagement des territoires, concertation, évaluation des politiques publiques, ingénierie financière. Hauts-de-France, Normandie, Grand Est, Île-de-France.',
+          'Cabinet d\'études : aménagement des territoires, concertation, observatoire des territoires, évaluation des politiques publiques, ingénierie financière. Hauts-de-France, Normandie, Grand Est, Île-de-France.',
         inLanguage: 'fr-FR',
         publisher: { '@id': ORG.id },
       },
