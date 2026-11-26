@@ -647,7 +647,7 @@ body.city-explore-panel-open {
   object-fit: contain
 }
 
-/* Hero — 1cm sous la topbar */
+/* Hero — espacement resserré pour garder les 2 CTA dans le viewport */
 .hero {
   position: relative;
   z-index: 10;
@@ -728,10 +728,10 @@ body.city-explore-panel-open {
 
 .hero-subtitle {
   max-width: 720px;
-  margin: 0 auto 2.5rem auto;
+  margin: 0 auto 2.35rem auto;
   font-family: var(--font-heading);
   font-size: clamp(1.08rem, 1.5vw, 1.32rem);
-  line-height: 1.8;
+  line-height: 1.78;
   color: var(--muted);
   font-weight: 300;
 }
@@ -1282,15 +1282,17 @@ body.city-explore-panel-open {
   line-height: 1.05;
 }
 
-/* CTA plus moderne */
+/* CTA aligné sur la charte (#026666 -> #013333 au survol) */
 .accompagnement-cta .rounded-cta {
-  background: rgba(0, 102, 102, 0.10);
-  border-color: rgba(0, 102, 102, 0.55);
+  background: #026666;
+  color: #ffffff;
+  border: 2px solid #026666;
 }
 
 .accompagnement-cta .rounded-cta:hover {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
+  background: #013333;
+  color: #ffffff;
+  border-color: #013333;
 }
 
 /* Mobile: garder une carte aérée */
