@@ -9,15 +9,13 @@
 
 .main-read {
       width: min(100% - 40px, 1100px);
-      margin: 1.2rem auto 2rem;
-      padding: 1.6rem;
+      margin: 1rem auto 2.5rem;
+      padding: clamp(1.15rem, 2vw, 1.75rem) clamp(1.75rem, 3.5vw, 3rem) clamp(1.75rem, 3.5vw, 3rem);
       box-sizing: border-box;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(5, 59, 59, 0.12);
-      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
     }
 
     /* Hero — structure type présentation.inconcertta.fr, palette claire InCitta */
@@ -131,25 +129,26 @@
       text-decoration: none;
     }
 
-    /* CTA principal plateforme — fond #BF7D40, texte blanc */
+    /* CTA principal plateforme — charte centrale #026666 -> #013333 */
     .page-hero .hero-cta-row .btn-hero-cta-prominent,
     .main-read .cta-row .btn-hero-cta-prominent {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      min-height: 54px;
+      min-height: 48px;
       padding: 0 1.65rem;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 1.05rem;
-      letter-spacing: -0.02em;
+      border-radius: var(--btn-radius, 10px);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.96rem;
+      letter-spacing: 0.01em;
       text-decoration: none;
-      border: none;
+      border: 2px solid #026666;
       color: #fff !important;
-      background: #BF7D40;
-      box-shadow: 0 4px 18px rgba(191, 125, 64, 0.35);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease, background 0.2s ease;
+      background: #026666;
+      box-shadow: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     }
 
     .page-hero .hero-cta-row .btn-hero-cta-prominent i,
@@ -159,15 +158,16 @@
 
     .page-hero .hero-cta-row .btn-hero-cta-prominent:hover,
     .main-read .cta-row .btn-hero-cta-prominent:hover {
-      filter: brightness(1.07);
-      transform: translateY(-4px);
-      box-shadow: 0 6px 24px rgba(191, 125, 64, 0.45);
+      background: #013333;
+      border-color: #013333;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
     }
 
     .page-hero .hero-cta-row .btn-hero-cta-prominent:focus-visible,
     .main-read .cta-row .btn-hero-cta-prominent:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 0 0 6px rgba(191, 125, 64, 0.45);
+      box-shadow: var(--ring);
     }
 
     .hero-cta-row .btn-hero-secondary,
@@ -176,45 +176,46 @@
       align-items: center;
       justify-content: center;
       gap: 0.45rem;
-      min-height: 48px;
-      padding: 0 1.2rem;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: -0.01em;
-      border: 2px solid #B79D30;
-      background: rgba(255, 255, 255, 0.98);
-      color: #B79D30 !important;
-      box-shadow: 0 2px 14px rgba(183, 157, 48, 0.18);
-      transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+      min-height: 46px;
+      padding: 0 1.35rem;
+      border-radius: var(--btn-radius, 10px);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.92rem;
+      letter-spacing: 0.01em;
+      border: 2px solid #026666;
+      background: transparent;
+      color: #026666 !important;
+      box-shadow: none;
+      transition: transform 0.15s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
     }
 
     .hero-cta-row .btn-hero-secondary:hover,
     .page-hero-logo .btn-hero-secondary:hover {
-      transform: translateY(-4px);
-      background: rgba(183, 157, 48, 0.12);
-      border-color: #B79D30 !important;
-      color: #B79D30 !important;
-      box-shadow: 0 4px 18px rgba(183, 157, 48, 0.22);
+      transform: translateY(-1px);
+      background: #013333;
+      border-color: #013333 !important;
+      color: #ffffff !important;
+      box-shadow: var(--shadow-sm);
     }
 
     .hero-cta-row .btn-hero-secondary:focus-visible,
     .page-hero-logo .btn-hero-secondary:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 0 0 5px rgba(183, 157, 48, 0.55);
+      box-shadow: var(--ring);
     }
 
     .page-hero-logo .hero-plaquette-cta.btn-hero-secondary {
-      border: 2px solid #BF7D40 !important;
-      color: #BF7D40 !important;
-      box-shadow: 0 2px 14px rgba(191, 125, 64, 0.18);
+      border: 2px solid #026666 !important;
+      color: #026666 !important;
+      box-shadow: none;
     }
 
     .page-hero-logo .hero-plaquette-cta.btn-hero-secondary:hover {
-      background: rgba(191, 125, 64, 0.12);
-      border-color: #BF7D40 !important;
-      color: #BF7D40 !important;
-      box-shadow: 0 4px 18px rgba(191, 125, 64, 0.22);
+      background: #013333;
+      border-color: #013333 !important;
+      color: #ffffff !important;
+      box-shadow: var(--shadow-sm);
     }
 
     .hero-footnote {
@@ -418,20 +419,25 @@
     }
 
     .page-title {
-      font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+      font-size: clamp(1.4rem, 2.4vw, 1.85rem);
       color: var(--primary);
-      margin: 0 0 0.65rem;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      line-height: 1.2;
+      margin: 0 0 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      line-height: 1.28;
+      padding-bottom: 0.4rem;
+      border-bottom: 1.5px solid var(--accent-warm);
+      display: inline-block;
     }
 
     .page-lead {
-      font-size: 1.05rem;
-      line-height: 1.72;
-      color: #000;
+      font-family: var(--font-heading);
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: var(--muted);
       margin: 0;
-      font-weight: 400;
+      font-weight: 300;
       text-align: left;
     }
 
@@ -440,7 +446,7 @@
     .page-lead .inconcertta-brand .inconcertta-i,
     .page-lead .inconcertta-brand .inconcertta-n,
     .page-lead .inconcertta-brand .inconcertta-core {
-      color: #000 !important;
+      color: var(--text) !important;
     }
 
     /* Corps de texte (hors titres) : marque en noir */
@@ -448,15 +454,20 @@
     .main-read section p .inconcertta-brand .inconcertta-i,
     .main-read section p .inconcertta-brand .inconcertta-n,
     .main-read section p .inconcertta-brand .inconcertta-core {
-      color: #000 !important;
+      color: var(--text) !important;
     }
 
     .main-read h2 {
-      font-size: 1.15rem;
+      font-size: 1.22rem;
       color: var(--primary);
       margin: 2rem 0 0.85rem;
-      font-weight: 800;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0;
       line-height: 1.3;
+      padding-bottom: 0.35rem;
+      border-bottom: 1.5px solid var(--accent-warm);
+      display: inline-block;
     }
 
     .main-read h2:first-of-type {
@@ -474,7 +485,7 @@
     /* Zone de texte = largeur du bloc .main-read */
     .main-read p {
       text-align: left;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-weight: 400;
       color: #000;
       line-height: 1.72;
@@ -493,7 +504,7 @@
     }
 
     .main-read .city-guide-bento .feature-card p {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: 0.875rem;
       line-height: 1.62;
       color: rgba(10, 10, 10, 0.78);
@@ -727,10 +738,12 @@
     .city-guide-bento .feature-card {
       position: relative;
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: auto minmax(0, 1fr);
       column-gap: 0.75rem;
       row-gap: 0.55rem;
       align-items: center;
+      min-width: 0;
+      box-sizing: border-box;
       overflow: hidden;
       background: #f5f5f5;
       border: 1px solid rgba(10, 10, 10, 0.14);
@@ -754,209 +767,53 @@
       }
     }
 
-    /* Panaché charte InCitta / InConcertta — cartes contrastées (fond / texte blanc ou gris) */
+    /* Cartes fonctionnalités — design épuré aligné sur la charte centrale */
     .page-inconcertta .city-guide-bento .feature-card {
-      border-width: 1px;
-      border-style: solid;
-      border-radius: 14px;
-      padding: 1.15rem 1.2rem 1.22rem;
-      box-shadow: 0 8px 26px rgba(1, 51, 51, 0.07);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card .icon {
-      border-radius: 10px;
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(1) {
-      --ic-card-bg: #026666;
-      --ic-card-hover-bg: #026666;
-      --ic-card-border: rgba(1, 51, 51, 1);
-      --ic-card-accent: #B79D30;
-      --ic-card-title: #ffffff;
-      --ic-card-body: rgba(255, 255, 255, 0.78);
-      --ic-card-strong: #f0d890;
-      --ic-card-icon-bg: rgba(255, 255, 255, 0.14);
-      --ic-card-icon-border: rgba(1, 51, 51, 1);
-      --ic-card-icon-color: #ffffff;
-      --ic-card-shine: rgba(255, 255, 255, 0.18);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(2) {
-      --ic-card-bg: rgba(2, 102, 102, 0.16);
-      --ic-card-hover-bg: rgba(2, 102, 102, 0.22);
-      --ic-card-border: rgba(2, 102, 102, 0.32);
-      --ic-card-border-hover: rgba(2, 102, 102, 0.38);
-      --ic-card-accent: #026666;
-      --ic-card-title: #013333;
-      --ic-card-body: rgba(10, 10, 10, 0.72);
-      --ic-card-strong: #026666;
-      --ic-card-icon-bg: rgba(2, 102, 102, 0.2);
-      --ic-card-icon-border: rgba(2, 102, 102, 0.32);
-      --ic-card-icon-color: #026666;
-      --ic-card-shine: rgba(255, 255, 255, 0.45);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(3) {
-      --ic-card-bg: #BF7D40;
-      --ic-card-hover-bg: #BF7D40;
-      --ic-card-border: rgba(191, 125, 64, 1);
-      --ic-card-accent: #ffffff;
-      --ic-card-title: #ffffff;
-      --ic-card-body: rgba(255, 255, 255, 0.88);
-      --ic-card-strong: #fff8ec;
-      --ic-card-icon-bg: rgba(255, 255, 255, 0.2);
-      --ic-card-icon-border: rgba(191, 125, 64, 1);
-      --ic-card-icon-color: #ffffff;
-      --ic-card-shine: rgba(255, 255, 255, 0.22);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(4) {
-      --ic-card-bg: #026666;
-      --ic-card-hover-bg: #026666;
-      --ic-card-border: rgba(0, 102, 102, 1);
-      --ic-card-accent: #BF7D40;
-      --ic-card-title: #ffffff;
-      --ic-card-body: rgba(255, 255, 255, 0.8);
-      --ic-card-strong: #f5c992;
-      --ic-card-icon-bg: rgba(255, 255, 255, 0.13);
-      --ic-card-icon-border: rgba(0, 102, 102, 1);
-      --ic-card-icon-color: #ffffff;
-      --ic-card-shine: rgba(255, 255, 255, 0.16);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(5) {
-      --ic-card-bg: rgba(0, 51, 51, 0.14);
-      --ic-card-hover-bg: rgba(0, 51, 51, 0.18);
-      --ic-card-border: rgba(0, 51, 51, 0.26);
-      --ic-card-border-hover: rgba(0, 51, 51, 0.32);
-      --ic-card-accent: #003333;
-      --ic-card-title: #003333;
-      --ic-card-body: rgba(10, 10, 10, 0.7);
-      --ic-card-strong: #026666;
-      --ic-card-icon-bg: rgba(0, 51, 51, 0.12);
-      --ic-card-icon-border: rgba(0, 51, 51, 0.26);
-      --ic-card-icon-color: #003333;
-      --ic-card-shine: rgba(255, 255, 255, 0.42);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(6) {
-      --ic-card-bg: #BF7D40;
-      --ic-card-hover-bg: #BF7D40;
-      --ic-card-border: rgba(191, 125, 64, 1);
-      --ic-card-accent: #fff8ec;
-      --ic-card-title: #ffffff;
-      --ic-card-body: rgba(255, 255, 255, 0.85);
-      --ic-card-strong: #ffffff;
-      --ic-card-icon-bg: rgba(255, 255, 255, 0.18);
-      --ic-card-icon-border: rgba(191, 125, 64, 1);
-      --ic-card-icon-color: #ffffff;
-      --ic-card-shine: rgba(255, 255, 255, 0.2);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(7) {
-      --ic-card-bg: rgba(2, 102, 102, 0.16);
-      --ic-card-hover-bg: rgba(2, 102, 102, 0.2);
-      --ic-card-border: rgba(1, 51, 51, 0.24);
-      --ic-card-border-hover: rgba(1, 51, 51, 0.3);
-      --ic-card-accent: #013333;
-      --ic-card-title: #013333;
-      --ic-card-body: rgba(10, 10, 10, 0.68);
-      --ic-card-strong: #006666;
-      --ic-card-icon-bg: rgba(2, 102, 102, 0.16);
-      --ic-card-icon-border: rgba(1, 51, 51, 0.24);
-      --ic-card-icon-color: #026666;
-      --ic-card-shine: rgba(255, 255, 255, 0.4);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(8) {
-      --ic-card-bg: #026666;
-      --ic-card-hover-bg: #026666;
-      --ic-card-border: rgba(1, 51, 51, 1);
-      --ic-card-accent: #B79D30;
-      --ic-card-title: #ffffff;
-      --ic-card-body: rgba(255, 255, 255, 0.76);
-      --ic-card-strong: #f0d890;
-      --ic-card-icon-bg: rgba(255, 255, 255, 0.12);
-      --ic-card-icon-border: rgba(1, 51, 51, 1);
-      --ic-card-icon-color: #ffffff;
-      --ic-card-shine: rgba(255, 255, 255, 0.15);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card--geo-sig {
-      --ic-card-bg: rgba(183, 157, 48, 0.22);
-      --ic-card-hover-bg: rgba(183, 157, 48, 0.28);
-      --ic-card-border: rgba(183, 157, 48, 0.38);
-      --ic-card-border-hover: rgba(183, 157, 48, 0.44);
-      --ic-card-accent: #8f7824;
-      --ic-card-title: #3d3410;
-      --ic-card-body: rgba(30, 26, 8, 0.72);
-      --ic-card-strong: #BF7D40;
-      --ic-card-icon-bg: rgba(183, 157, 48, 0.22);
-      --ic-card-icon-border: rgba(183, 157, 48, 0.38);
-      --ic-card-icon-color: #8f7824;
-      --ic-card-shine: rgba(255, 255, 255, 0.5);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(10) {
-      --ic-card-bg: #B79D30;
-      --ic-card-hover-bg: #B79D30;
-      --ic-card-border: rgba(183, 157, 48, 1);
-      --ic-card-accent: #ffffff;
-      --ic-card-title: #ffffff;
-      --ic-card-body: rgba(255, 255, 255, 0.9);
-      --ic-card-strong: #ffffff;
-      --ic-card-icon-bg: rgba(255, 255, 255, 0.18);
-      --ic-card-icon-border: rgba(255, 255, 255, 0.35);
-      --ic-card-icon-color: #ffffff;
-      --ic-card-shine: rgba(255, 255, 255, 0.35);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(11) {
-      --ic-card-bg: #003333;
-      --ic-card-hover-bg: #003333;
-      --ic-card-border: rgba(0, 51, 51, 1);
-      --ic-card-accent: #BF7D40;
-      --ic-card-title: #ffffff;
-      --ic-card-body: rgba(255, 255, 255, 0.77);
-      --ic-card-strong: #f5c992;
-      --ic-card-icon-bg: rgba(255, 255, 255, 0.13);
-      --ic-card-icon-border: rgba(0, 51, 51, 1);
-      --ic-card-icon-color: #ffffff;
-      --ic-card-shine: rgba(255, 255, 255, 0.17);
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card {
-      background: var(--ic-card-bg, #f5f5f5);
-      border-color: var(--ic-card-border, rgba(10, 10, 10, 0.14));
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius, 6px);
+      padding: 1.35rem 1.35rem 1.4rem;
+      box-shadow: var(--shadow-sm);
+      align-items: start;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .page-inconcertta .city-guide-bento .feature-card:hover {
-      background: var(--ic-card-hover-bg, #fafafa);
-      border-color: var(--ic-card-border-hover, var(--ic-card-border, rgba(10, 10, 10, 0.28)));
-      box-shadow: 0 16px 40px rgba(1, 51, 51, 0.15);
-      transform: translateY(-4px);
+      background: var(--surface);
+      border-color: rgba(2, 102, 102, 0.35);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
     }
 
     .page-inconcertta .city-guide-bento .feature-card .icon {
-      background: var(--ic-card-icon-bg, rgba(10, 10, 10, 0.06));
-      border-color: var(--ic-card-icon-border, rgba(10, 10, 10, 0.1));
-      color: var(--ic-card-icon-color, #0a0a0a);
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--card-radius, 6px);
+      background: rgba(2, 102, 102, 0.08);
+      border: none;
+      color: #026666;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
     .page-inconcertta .city-guide-bento .feature-card:hover .icon {
-      background: var(--ic-card-icon-bg, rgba(10, 10, 10, 0.08));
-      border-color: var(--ic-card-icon-border, rgba(10, 10, 10, 0.18));
-      color: var(--ic-card-icon-color, #0a0a0a);
-      filter: none;
+      background: #026666;
+      color: #ffffff;
     }
 
     .page-inconcertta .city-guide-bento .feature-card h3,
     .page-inconcertta .city-guide-bento .feature-card:hover h3 {
-      color: var(--ic-card-title, #0a0a0a);
+      color: var(--primary);
+      padding-bottom: 0.3rem;
+      border-bottom: 1.5px solid var(--accent-warm);
     }
 
     .page-inconcertta .city-guide-bento .feature-card p {
-      color: var(--ic-card-body, rgba(10, 10, 10, 0.78));
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.68;
     }
 
     .page-inconcertta .city-guide-bento .feature-card p+p {
@@ -964,7 +821,53 @@
     }
 
     .page-inconcertta .city-guide-bento .feature-card p strong {
-      color: var(--ic-card-strong, var(--ic-card-accent, #0a0a0a));
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Touches de couleur douces et rythmées pour donner du relief sans alourdir */
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(1),
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(4),
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(8),
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(11) {
+      background: #f2f8f7;
+      border-color: rgba(2, 102, 102, 0.18);
+    }
+
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(1):hover,
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(4):hover,
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(8):hover,
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(11):hover {
+      background: #eaf4f2;
+      border-color: rgba(2, 102, 102, 0.35);
+    }
+
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(3),
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(6),
+    .page-inconcertta .city-guide-bento .feature-card--geo-sig {
+      background: #fdf8f2;
+      border-color: rgba(230, 152, 67, 0.25);
+    }
+
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(3):hover,
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(6):hover,
+    .page-inconcertta .city-guide-bento .feature-card--geo-sig:hover {
+      background: #faf2e6;
+      border-color: rgba(230, 152, 67, 0.45);
+    }
+
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(3) .icon,
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(6) .icon,
+    .page-inconcertta .city-guide-bento .feature-card--geo-sig .icon {
+      background: rgba(230, 152, 67, 0.14);
+      color: #b86d1c;
+    }
+
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(3):hover .icon,
+    .page-inconcertta .city-guide-bento .feature-card:nth-of-type(6):hover .icon,
+    .page-inconcertta .city-guide-bento .feature-card--geo-sig:hover .icon {
+      background: #e69843;
+      color: #ffffff;
     }
 
     .page-inconcertta .city-guide-bento .feature-card::before,
@@ -984,7 +887,7 @@
 
     .main-read .city-guide-bento .feature-card p.feature-card__kicker {
       margin: 0 0 0.5rem;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: 0.62rem;
       font-weight: 600;
       letter-spacing: 0.14em;
@@ -1074,13 +977,16 @@
       grid-column: 2;
       grid-row: 1;
       margin: 0;
+      min-width: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
       align-self: center;
-      font-family: 'Outfit', 'Playfair Display', sans-serif !important;
-      font-size: clamp(1.2rem, 2.1vw, 1.45rem);
+      font-family: var(--font-heading) !important;
+      font-size: clamp(1rem, 1.35vw, 1.15rem);
       font-weight: 600;
       font-style: normal;
       letter-spacing: 0.01em;
-      line-height: 1.25;
+      line-height: 1.28;
       color: #0a0a0a;
       transition: color 0.22s ease;
     }
@@ -1092,6 +998,8 @@
 
     .city-guide-bento .feature-card p {
       grid-column: 1 / -1;
+      min-width: 0;
+      overflow-wrap: break-word;
       margin: 0;
       text-align: left;
     }
@@ -1155,62 +1063,68 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 0.65rem 1.25rem;
-      border-radius: 999px;
-      background: var(--primary-2);
+      padding: 0.65rem 1.35rem;
+      border-radius: var(--btn-radius, 10px);
+      background: #026666;
       color: #fff !important;
+      font-family: var(--font-heading);
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       text-decoration: none;
-      border: none;
-      transition: background 0.18s ease, transform 0.12s ease;
+      border: 2px solid #026666;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
     }
 
     .btn-primary-ic:hover {
-      background: var(--primary);
+      background: #013333;
+      border-color: #013333;
       transform: translateY(-1px);
     }
 
     .btn-outline-ic {
       display: inline-flex;
       align-items: center;
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      border: 2px solid var(--primary-2);
-      color: var(--primary-2) !important;
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--btn-radius, 10px);
+      border: 2px solid #026666;
+      color: #026666 !important;
+      font-family: var(--font-heading);
       font-weight: 600;
       font-size: 0.92rem;
       text-decoration: none;
       background: transparent;
-      transition: background 0.18s ease, color 0.18s ease;
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
     }
 
     .btn-outline-ic:hover {
-      background: var(--primary);
+      background: #013333;
       color: #fff !important;
-      border-color: var(--primary);
+      border-color: #013333;
+      transform: translateY(-1px);
     }
 
-    /* CTA marque — orange InConcertta, texte blanc */
+    /* CTA — charte centrale #026666 -> #013333 */
     .btn-discover-platform {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 0.65rem 1.25rem;
-      border-radius: 999px;
-      background: #BF7D40;
+      padding: 0.65rem 1.35rem;
+      border-radius: var(--btn-radius, 10px);
+      background: #026666;
       color: #fff !important;
+      font-family: var(--font-heading);
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       text-decoration: none;
-      border: none;
-      transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
-      box-shadow: 0 2px 8px rgba(191, 125, 64, 0.35);
+      border: 2px solid #026666;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+      box-shadow: none;
     }
 
     .btn-discover-platform:hover {
-      background: #a66a35;
+      background: #013333;
+      border-color: #013333;
       color: #fff !important;
       transform: translateY(-1px);
       box-shadow: 0 4px 14px rgba(191, 125, 64, 0.45);
@@ -1238,7 +1152,7 @@
       font-weight: 400;
       margin: 0 0 1rem;
       text-align: center;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
     }
 
     .demo-invite strong {
@@ -1467,76 +1381,10 @@
         0 4px 10px rgba(5, 59, 59, 0.06);
     }
 
-    .page-inconcertta .city-guide-bento .feature-card {
-      border-width: 1px;
-      border-style: solid;
-      border-color: var(--ic-card-border, rgba(2, 102, 102, 0.45));
-    }
-
-    @media (min-width: 901px) {
-      .page-inconcertta .city-guide-bento .feature-card {
-        transition:
-          transform 0.4s cubic-bezier(0.22, 0.85, 0.32, 1),
-          border-color 0.4s ease,
-          background 0.4s ease,
-          box-shadow 0.4s ease;
-      }
-
-      .page-inconcertta .city-guide-bento .feature-card:hover {
-        transform: translateY(-4px);
-        border-color: var(--ic-card-border-hover, var(--ic-card-border, #003333));
-        box-shadow:
-          0 10px 26px rgba(0, 51, 51, 0.12),
-          0 2px 8px rgba(0, 51, 51, 0.07);
-      }
-
-      .page-inconcertta .city-guide-bento .feature-card:hover .icon {
-        border-color: var(--ic-card-icon-border, rgba(2, 102, 102, 0.38));
-        color: var(--ic-card-icon-color, #026666);
-        background: var(--ic-card-icon-bg, rgba(2, 102, 102, 0.1));
-      }
-    }
-
     @media (max-width: 900px) {
       .page-inconcertta .city-guide-bento .feature-card {
         border-width: 1px;
       }
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card .icon {
-      border-color: var(--ic-card-icon-border, rgba(2, 102, 102, 0.38));
-      color: var(--ic-card-icon-color, #026666);
-      background: var(--ic-card-icon-bg, rgba(2, 102, 102, 0.1));
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:is( :nth-of-type(1),
-      :nth-of-type(3),
-      :nth-of-type(4),
-      :nth-of-type(6),
-      :nth-of-type(8),
-      :nth-of-type(11)) .icon,
-    .page-inconcertta .city-guide-bento .feature-card:is( :nth-of-type(1),
-      :nth-of-type(3),
-      :nth-of-type(4),
-      :nth-of-type(6),
-      :nth-of-type(8),
-      :nth-of-type(11)):hover .icon {
-      color: #ffffff;
-    }
-
-    .page-inconcertta .city-guide-bento .feature-card:is( :nth-of-type(1),
-      :nth-of-type(3),
-      :nth-of-type(4),
-      :nth-of-type(6),
-      :nth-of-type(8),
-      :nth-of-type(11)) .icon .feature-icon-svg,
-    .page-inconcertta .city-guide-bento .feature-card:is( :nth-of-type(1),
-      :nth-of-type(3),
-      :nth-of-type(4),
-      :nth-of-type(6),
-      :nth-of-type(8),
-      :nth-of-type(11)):hover .icon .feature-icon-svg {
-      color: #ffffff;
     }
 
     .page-inconcertta .hero-cta-row .btn-hero-cta-prominent,

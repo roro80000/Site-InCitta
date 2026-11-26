@@ -9,14 +9,13 @@
 
 .main-read{
   width: min(100% - 40px, 1100px);
-  margin: 1.2rem auto 2rem;
-  padding: 1.6rem;
+  margin: 1.5rem auto 2.5rem;
+  padding: clamp(1.75rem, 3.5vw, 3rem);
   box-sizing: border-box;
-  background: rgba(255,255,255,0.78);
-  border: 1px solid rgba(5,59,59,0.12);
-  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
   box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(10px);
 }
 .page-intro {
   margin-bottom: 1.25rem;
@@ -70,14 +69,18 @@
   font-weight: 500;
 }
 .page-title{
-  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  font-size: clamp(1.55rem, 2.6vw, 2.05rem);
   color: var(--primary);
   margin: 0;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  line-height: 1.3;
+  padding-bottom: 0.45rem;
+  border-bottom: 1.5px solid var(--accent-warm);
+  display: inline-block;
 }
- .page-lead{font-size:1.05rem;line-height:1.65;color:#000;font-weight:600}
+ .page-lead{font-family:var(--font-heading);font-size:1.18rem;line-height:1.8;color:var(--muted);font-weight:300}
  .content-wrap { max-width: 1200px; margin: 0 auto; padding: 0 4px; box-sizing: border-box; }
  .content-grid{display:flex;gap:1.25rem;align-items:flex-start;max-width:1200px;margin:0 auto;padding:0}
  .content-grid--single .content-text{flex:1;min-width:0;max-width:100%}
@@ -86,13 +89,13 @@
    .content-grid{flex-direction:column;align-items:stretch}
  }
  /* Espacement et mise en forme des titres */
- .main-read h2{font-size:20px;color:var(--primary);margin-top:1.25rem}
- .main-read h3{margin-top:2rem;margin-bottom:0.85rem;line-height:1.3;font-size:1.05rem;color:var(--primary);font-weight:800}
- .content-text p{ text-align:justify; text-justify:inter-word; font-family:'Inter',system-ui,-apple-system,sans-serif; font-weight:300; color:#000; line-height:1.65; }
+ .main-read h2{font-size:1.25rem;color:var(--primary);margin-top:2rem;font-weight:600;text-transform:uppercase;letter-spacing:0;padding-bottom:0.35rem;border-bottom:1.5px solid var(--accent-warm);display:inline-block}
+ .main-read h3{margin-top:1.75rem;margin-bottom:0.75rem;line-height:1.35;font-size:1.05rem;color:var(--primary);font-weight:600;letter-spacing:0}
+ .content-text p{ text-align:left; font-family:var(--font-body); font-weight:400; color:var(--text); line-height:1.78; }
  .page-back-row {
-   margin-top: 2.25rem;
+   margin-top: 2.5rem;
    padding-top: 1.5rem;
-   border-top: 1px solid rgba(5, 59, 59, 0.1);
+   border-top: 1px solid #ececec;
    display: flex;
    justify-content: center;
  }
@@ -101,25 +104,26 @@
    align-items: center;
    justify-content: center;
    gap: 0.5rem;
-   min-height: 48px;
-   padding: 0 1.35rem;
-   border-radius: 999px;
-   border: 2px solid var(--primary-2);
-   background: rgba(255, 255, 255, 0.95);
-   color: var(--primary-2) !important;
-   font-family: 'Inter', system-ui, sans-serif;
-   font-size: 0.95rem;
+   min-height: 46px;
+   padding: 0 1.6rem;
+   border-radius: 10px;
+   border: 2px solid #026666;
+   background: #026666;
+   color: #ffffff !important;
+   font-family: var(--font-heading);
+   font-size: 0.86rem;
    font-weight: 600;
+   letter-spacing: 0.01em;
    text-decoration: none;
-   box-shadow: 0 4px 18px rgba(5, 59, 59, 0.08);
-   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+   box-shadow: none;
+   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
  }
  .page-back-btn:hover {
-   background: var(--primary);
+   background: #013333;
    color: #fff !important;
-   border-color: var(--primary);
-   transform: translateY(-2px);
-   box-shadow: 0 10px 28px rgba(5, 59, 59, 0.14);
+   border-color: #013333;
+   transform: translateY(-1px);
+   box-shadow: 0 6px 18px rgba(1, 51, 51, 0.18);
  }
  .page-back-btn:focus-visible {
    outline: none;
@@ -147,17 +151,16 @@
 }
 
 .level-card{
-  background: rgba(255,255,255,0.92);
-  border: 2px solid #026666;
-  border-radius: clamp(28px, 5vw, 40px);
-  padding: 1rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.35rem 1.45rem;
   box-shadow: var(--shadow-sm);
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 .level-card:hover{
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: #003333;
 }
 
 .level-head{

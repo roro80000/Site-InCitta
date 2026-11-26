@@ -7,18 +7,29 @@
   display: block;
 }
 
-/* Zone de lecture centrée (largeur A4) hors en-tête et pied de page */
+/* Zone de lecture centrée alignée sur la charte centrale */
     .main-read {
-      max-width: 210mm;
-      margin: 2rem auto;
-      padding: 1.5rem;
+      width: min(100% - 40px, 1100px);
+      margin: 1.5rem auto 2.5rem;
+      padding: clamp(1.75rem, 3.5vw, 3rem);
       box-sizing: border-box;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      border: 1px solid rgba(5, 59, 59, 0.12);
-      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
+    }
+
+    .main-read h1 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      line-height: 1.28;
+      margin: 0 0 1.25rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1.5px solid var(--accent-warm);
+      display: inline-block;
     }
 
     /* Mise en page de la section À propos :
@@ -81,8 +92,9 @@
       width: 100%;
       height: auto;
       object-fit: contain;
-      display: inline-block;
-      border-radius: 14px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 6px;
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
     }
 

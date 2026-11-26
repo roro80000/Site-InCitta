@@ -7,22 +7,22 @@ body.page-observatoire {
   max-width: 100%;
 }
 
-/* Alias locaux → charte styles.css (comme programmation-territoriale / inconcertta) */
+/* Alias locaux → charte centrale styles.css */
 .page-observatoire {
   --primary-deep: var(--primary);
   --primary-dark: var(--primary);
   --primary-light: #e6f4f1;
   --primary-soft: rgba(2, 102, 102, 0.08);
   --accent-mint: var(--accent);
-  --surface-card: transparent;
-  --border-subtle: rgba(5, 59, 59, 0.12);
+  --surface-card: var(--surface);
+  --border-subtle: var(--border);
   --text-dark: var(--text);
   --text-body: var(--text);
   --text-muted: var(--muted);
-  --radius-sm: 10px;
-  --radius-md: var(--radius);
-  --radius-lg: 18px;
-  --radius-pill: 9999px;
+  --radius-sm: var(--card-radius, 6px);
+  --radius-md: var(--card-radius, 6px);
+  --radius-lg: var(--card-radius, 6px);
+  --radius-pill: var(--btn-radius, 10px);
   --shadow-ambient: var(--shadow-sm);
 }
 
@@ -35,15 +35,13 @@ body.page-observatoire {
 
 .page-observatoire .main-read {
   width: min(100% - 40px, 1100px);
-  margin: 1.2rem auto 2rem;
-  padding: 1.6rem;
+  margin: 1.5rem auto 2.5rem;
+  padding: clamp(1.75rem, 3.5vw, 3rem);
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(5, 59, 59, 0.12);
-  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .page-back-bar {
@@ -132,13 +130,17 @@ body.page-observatoire {
 }
 
 .obs-hero-title {
-  font-family: 'Outfit', 'Playfair Display', sans-serif;
-  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   color: var(--primary);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin: 0 0 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.28;
+  letter-spacing: 0;
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--accent-warm);
+  display: inline-block;
 }
 
 .obs-hero-title span {
@@ -146,14 +148,14 @@ body.page-observatoire {
 }
 
 .obs-hero-lead {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: #000;
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: var(--muted);
   max-width: none;
   margin: 0 0 1rem;
-  font-weight: 600;
-  text-align: justify;
-  text-justify: inter-word;
+  font-weight: 300;
+  text-align: left;
 }
 
 .obs-hero-lead+.obs-hero-lead {
@@ -202,7 +204,7 @@ body.page-observatoire {
 
 .obs-stat-val {
   display: block;
-  font-family: 'Outfit', 'Inter', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.75rem, 3vw, 2.2rem);
   font-weight: 800;
   color: var(--primary);
@@ -258,13 +260,17 @@ body.page-observatoire {
 }
 
 .obs-section-title {
-  font-family: 'Outfit', 'Playfair Display', sans-serif;
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-family: var(--font-heading);
+  font-size: clamp(1.18rem, 2vw, 1.48rem);
   color: var(--primary);
-  font-weight: 800;
-  line-height: 1.25;
-  margin: 0 0 0.5rem;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin: 0 0 0.65rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1.5px solid var(--accent-warm);
+  display: inline-block;
+  letter-spacing: 0;
 }
 
 .obs-section-desc {
@@ -447,14 +453,15 @@ body.page-observatoire {
 .obs-ecosystem-banner {
   margin-top: 2rem;
   padding: 1.75rem 2rem;
-  background: #BF7D40;
+  background: var(--primary);
   color: #ffffff;
   border-radius: var(--radius-md);
-  box-shadow: 0 12px 32px rgba(191, 125, 64, 0.28);
+  border-bottom: 2px solid var(--accent-warm);
+  box-shadow: var(--shadow-md);
 }
 
 .obs-ecosystem-banner__title {
-  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  font-family: var(--font-heading);
   font-size: calc(clamp(1.15rem, 2.2vw, 1.45rem) + 1pt);
   font-weight: 800;
   margin: 0 0 0.75rem;
@@ -989,7 +996,7 @@ body.page-observatoire {
 }
 
 .trust-banner h3 {
-  font-family: 'Outfit', 'Playfair Display', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.3rem, 2vw, 1.7rem);
   color: #ffffff;
   margin: 0 0 0.75rem;
@@ -1049,7 +1056,7 @@ body.page-observatoire {
 }
 
 .cta-highlight-title {
-  font-family: 'Outfit', 'Playfair Display', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.15rem, 2vw, 1.45rem);
   color: var(--primary);
   font-weight: 800;
@@ -1082,57 +1089,57 @@ body.page-observatoire {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px;
-  padding: 0 1.35rem;
-  border-radius: 999px;
-  border: 2px solid var(--primary-2);
-  background: var(--primary);
+  min-height: 46px;
+  padding: 0 1.45rem;
+  border-radius: var(--btn-radius, 10px);
+  border: 2px solid #026666;
+  background: #026666;
   color: #ffffff !important;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.95rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 4px 18px rgba(5, 59, 59, 0.12);
+  box-shadow: none;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .page-cta-primary:hover {
-  background: var(--primary-2);
-  border-color: var(--primary-2);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(5, 59, 59, 0.14);
+  background: #013333;
+  border-color: #013333;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .page-cta-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 1.35rem;
-  border-radius: 999px;
-  border: 2px solid var(--primary-2);
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--primary-2) !important;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.95rem;
+  min-height: 46px;
+  padding: 0 1.45rem;
+  border-radius: var(--btn-radius, 10px);
+  border: 2px solid #026666;
+  background: transparent;
+  color: #026666 !important;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 4px 18px rgba(5, 59, 59, 0.08);
+  box-shadow: none;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .page-cta-secondary:hover {
-  background: var(--primary);
+  background: #013333;
   color: #fff !important;
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(5, 59, 59, 0.14);
+  border-color: #013333;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .page-back-row {
   margin-top: 2.25rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(5, 59, 59, 0.1);
+  border-top: 1px solid #ececec;
   display: flex;
   justify-content: center;
 }
@@ -1142,26 +1149,26 @@ body.page-observatoire {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px;
-  padding: 0 1.35rem;
-  border-radius: 999px;
-  border: 2px solid var(--primary-2);
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--primary-2) !important;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.95rem;
+  min-height: 46px;
+  padding: 0 1.6rem;
+  border-radius: var(--btn-radius, 10px);
+  border: 2px solid #026666;
+  background: #026666;
+  color: #ffffff !important;
+  font-family: var(--font-heading);
+  font-size: 0.86rem;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 4px 18px rgba(5, 59, 59, 0.08);
+  box-shadow: none;
   transition: all 0.15s ease;
 }
 
 .page-back-btn:hover {
-  background: var(--primary);
+  background: #013333;
   color: #fff !important;
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(5, 59, 59, 0.14);
+  border-color: #013333;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .page-back-btn:focus-visible {
@@ -1206,7 +1213,7 @@ body.page-observatoire {
 }
 
 .obs-limits-header h3 {
-  font-family: 'Outfit', 'Playfair Display', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--primary-deep);
@@ -1296,7 +1303,7 @@ body.page-observatoire {
   box-sizing: border-box;
   min-height: 2.75rem;
   padding: 0.65rem 0.85rem;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 0.9375rem;
   border: 1px solid rgba(5, 59, 59, 0.2);
   border-radius: 10px;
@@ -1735,21 +1742,62 @@ body.page-observatoire {
   justify-content: center;
   gap: 0.55rem;
   padding: 0.65rem 1.25rem;
-  background: var(--primary);
+  background: #026666;
   color: #ffffff !important;
-  border-radius: 999px;
+  border-radius: var(--btn-radius, 10px);
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
   margin-top: 0.9rem;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(5, 59, 59, 0.15);
+  box-shadow: none;
 }
 
 .obs-pdf-download-btn:hover {
-  background: var(--primary-2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(5, 59, 59, 0.24);
+  background: #013333;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.obs-report-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.55rem;
+}
+
+.obs-report-tab {
+  appearance: none;
+  border: none;
+  border-bottom: 1.5px solid transparent;
+  background: transparent;
+  color: var(--muted-2);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.15rem 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+
+.obs-report-tab + .obs-report-tab::before {
+  content: "·";
+  margin-right: 0.75rem;
+  color: var(--border);
+  font-weight: 400;
+}
+
+.obs-report-tab:hover {
+  color: var(--primary);
+}
+
+.obs-report-tab.is-active {
+  background: transparent;
+  color: var(--primary);
+  border-bottom-color: var(--accent-warm);
 }
 
 .obs-gallery-sub-link {

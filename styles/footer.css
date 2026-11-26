@@ -17,7 +17,7 @@
 /* Pied de page site — logo et copyright centrés */
 .footer--site {
   position: relative;
-  background: #133333;
+  background: #013333;
   color: #fff;
 }
 
@@ -94,6 +94,13 @@
 
 .footer--site .footer-site-copy a {
   color: #dcdcdc;
+}
+
+.footer--site .footer-site-credit {
+  margin: 0.45rem auto 0;
+  text-align: center;
+  max-width: none;
+  width: 100%;
 }
 
 .footer--site .footer-site-admin {

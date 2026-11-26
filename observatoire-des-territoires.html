@@ -116,7 +116,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="styles/pages/observatoire.css">
@@ -150,18 +150,6 @@
   </nav>
 
   <main class="main-read">
-
-    <nav class="page-back-bar" aria-label="Fil d'Ariane">
-      <a href="index.html" class="page-back-bar__link">
-        <svg class="page-back-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
-        Accueil
-      </a>
-      <span class="page-back-bar__sep" aria-hidden="true">/</span>
-      <span class="page-back-bar__here">Observatoire</span>
-    </nav>
 
     <header class="obs-hero">
       <h1 class="obs-hero-title">
@@ -642,10 +630,18 @@
 
         <!-- 2. Rapport d'analyse & synthèse décisionnelle en mode feuille -->
         <article class="obs-gallery-card obs-gallery-card--report">
+          <div class="obs-report-tabs" role="tablist" aria-label="Choisir un exemple de rapport">
+            <button type="button" class="obs-report-tab is-active" data-report="logement" role="tab" aria-selected="true">
+              Diagnostic Logement (13 p.)
+            </button>
+            <button type="button" class="obs-report-tab" data-report="abs" role="tab" aria-selected="false">
+              Analyse des Besoins Sociaux — ABS (19 p.)
+            </button>
+          </div>
           <figure class="obs-gallery-figure obs-gallery-figure--pdf">
             <button type="button" id="obsPdfViewerLink" class="obs-pdf-sheet-wrapper"
               title="Agrandir cette feuille en plein écran">
-              <img id="obsPdfCurrentImg" src="assets/Ex_observatoire/rapport_pages/page-01.webp"
+              <img id="obsPdfCurrentImg" src="assets/Ex_observatoire/rapports/diagnostic-logement/page-01.webp"
                 alt="Page 1 du rapport territorial : Diagnostic Logement InCitta"
                 class="obs-gallery-img obs-gallery-img--sheet" width="900" height="1274" loading="lazy"
                 decoding="async">
@@ -686,86 +682,86 @@
             aria-label="Sélectionner une feuille du diagnostic">
             <button type="button" class="obs-map-thumb obs-pdf-thumb is-active" data-index="0" role="tab"
               aria-selected="true" aria-label="Feuille 1 : Couverture">
-              <img src="assets/Ex_observatoire/rapport_pages/page-01.webp" alt="Vignette P.1" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-01.webp" alt="Vignette P.1" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">1. Titre</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="1" role="tab" aria-selected="false"
               aria-label="Feuille 2 : Sommaire">
-              <img src="assets/Ex_observatoire/rapport_pages/page-02.webp" alt="Vignette P.2" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-02.webp" alt="Vignette P.2" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">2. Sommaire</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="2" role="tab" aria-selected="false"
               aria-label="Feuille 3 : Synthèse">
-              <img src="assets/Ex_observatoire/rapport_pages/page-03.webp" alt="Vignette P.3" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-03.webp" alt="Vignette P.3" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">3. Synthèse</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="3" role="tab" aria-selected="false"
               aria-label="Feuille 4 : Cadrage">
-              <img src="assets/Ex_observatoire/rapport_pages/page-04.webp" alt="Vignette P.4" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-04.webp" alt="Vignette P.4" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">4. Cadrage</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="4" role="tab" aria-selected="false"
               aria-label="Feuille 5 : Parc & SIG">
-              <img src="assets/Ex_observatoire/rapport_pages/page-05.webp" alt="Vignette P.5" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-05.webp" alt="Vignette P.5" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">5. Parc SIG</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="5" role="tab" aria-selected="false"
               aria-label="Feuille 6 : Ancienneté">
-              <img src="assets/Ex_observatoire/rapport_pages/page-06.webp" alt="Vignette P.6" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-06.webp" alt="Vignette P.6" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">6. Âge bâti</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="6" role="tab" aria-selected="false"
               aria-label="Feuille 7 : Logement social">
-              <img src="assets/Ex_observatoire/rapport_pages/page-07.webp" alt="Vignette P.7" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-07.webp" alt="Vignette P.7" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">7. Social</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="7" role="tab" aria-selected="false"
               aria-label="Feuille 8 : Vacance">
-              <img src="assets/Ex_observatoire/rapport_pages/page-08.webp" alt="Vignette P.8" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-08.webp" alt="Vignette P.8" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">8. Vacance</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="8" role="tab" aria-selected="false"
               aria-label="Feuille 9 : Époques de construction">
-              <img src="assets/Ex_observatoire/rapport_pages/page-09.webp" alt="Vignette P.9" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-09.webp" alt="Vignette P.9" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">9. Époques</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="9" role="tab" aria-selected="false"
               aria-label="Feuille 10 : Marché immobilier">
-              <img src="assets/Ex_observatoire/rapport_pages/page-10.webp" alt="Vignette P.10" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-10.webp" alt="Vignette P.10" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">10. Immo</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="10" role="tab" aria-selected="false"
               aria-label="Feuille 11 : Vulnérabilité énergétique">
-              <img src="assets/Ex_observatoire/rapport_pages/page-11.webp" alt="Vignette P.11" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-11.webp" alt="Vignette P.11" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">11. Énergie</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="11" role="tab" aria-selected="false"
               aria-label="Feuille 12 : Orientations stratégiques">
-              <img src="assets/Ex_observatoire/rapport_pages/page-12.webp" alt="Vignette P.12" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-12.webp" alt="Vignette P.12" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">12. Stratégie</span>
             </button>
             <button type="button" class="obs-map-thumb obs-pdf-thumb" data-index="12" role="tab" aria-selected="false"
               aria-label="Feuille 13 : InCitta">
-              <img src="assets/Ex_observatoire/rapport_pages/page-13.webp" alt="Vignette P.13" width="28" height="40"
+              <img src="assets/Ex_observatoire/rapports/diagnostic-logement/page-13.webp" alt="Vignette P.13" width="28" height="40"
                 loading="lazy">
               <span class="obs-map-thumb__label">13. InCitta</span>
             </button>
           </div>
 
           <div class="obs-gallery-content">
-            <h3 class="obs-gallery-title">Rapport d'analyse &amp; synthèse décisionnelle</h3>
+            <h3 class="obs-gallery-title" id="obsPdfTitle">Rapport d'analyse &amp; synthèse décisionnelle</h3>
             <p class="obs-gallery-desc" id="obsPdfDesc">
               Titre &amp; Cadrage institutionnel : Diagnostic Territorial Logement &amp; Habitat pour une commune
               croisant les données publiques de l'habitat, de la fiscalité et des marchés
@@ -1021,6 +1017,7 @@
         <p class="footer-site-copy">&copy; 2026 InCitta. <span data-i18n="footer.rights">Tous droits réservés.</span> |
           <a href="mentions-legales.html">Mentions légales</a>
         </p>
+        <p class="footer-site-credit" style="margin:0.45rem 0 0;font-size:0.85rem;color:#ffffff;text-align:center;">Une création maison de <a href="https://ronanottini.fr/" target="_blank" rel="noopener noreferrer" style="color:#ffffff;text-decoration:underline;">InCitta</a></p>
       </div>
     </div>
   </footer>
@@ -1196,134 +1193,98 @@
       if (prevBtn) prevBtn.addEventListener('click', () => setMap(currentMapIndex - 1));
       if (nextBtn) nextBtn.addEventListener('click', () => setMap(currentMapIndex + 1));
 
-      // --- Switcher Feuilles du Rapport PDF ---
-      const obsPdfPages = [
-        {
-          num: 1,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-01.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-01.png',
-          title: 'Couverture & Cadrage',
-          badge: 'Feuille 1/13 : Couverture',
-          alt: 'Couverture du diagnostic territorial Logement — InCitta',
-          desc: 'Titre & cadrage institutionnel : Diagnostic Territorial Logement & Habitat pour une commune croisant les données publiques de l\'habitat, de la fiscalité et des marchés fonciers.'
+      // --- Switcher Feuilles des Rapports PDF (Diagnostic Logement & ABS) ---
+      const obsReports = {
+        logement: {
+          title: "Rapport d'analyse & synthèse décisionnelle — Diagnostic Logement",
+          pdfUrl: 'assets/Ex_observatoire/rapports/diagnostic-logement/Diagnostic_Logement_InCitta.pdf',
+          downloadLabel: 'Télécharger le Diagnostic Logement (PDF)',
+          pages: [
+            { num: 1, label: '1. Titre', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-01.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-01.png', title: 'Couverture & Cadrage', alt: 'Couverture du diagnostic territorial Logement — InCitta', desc: 'Titre & cadrage institutionnel : Diagnostic Territorial Logement & Habitat pour une commune croisant les données publiques de l\'habitat, de la fiscalité et des marchés fonciers.' },
+            { num: 2, label: '2. Sommaire', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-02.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-02.png', title: 'Sommaire du rapport', alt: 'Sommaire du diagnostic territorial en 10 chapitres — InCitta', desc: 'Sommaire structuré en 10 chapitres : cadrage, statuts d\'occupation, parc social, vacance résidentielle, dynamique des prix immobiliers, vulnérabilité énergétique et orientations.' },
+            { num: 3, label: '3. Synthèse', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-03.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-03.png', title: 'Synthèse exécutive', alt: 'Synthèse exécutive et repères territoriaux — InCitta', desc: 'Repères territoriaux : profil d\'armature, populations de référence, enjeux prioritaires et comparaisons chiffrées.' },
+            { num: 4, label: '4. Cadrage', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-04.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-04.png', title: 'Cadrage méthodologique', alt: 'Cadrage méthodologique et périmètre d\'observation — InCitta', desc: 'Méthodologie & périmètre : explicitation des sources souveraines certifiées, effectifs du carroyage statistique fin et règles de neutralité d\'observation.' },
+            { num: 5, label: '5. Parc SIG', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-05.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-05.png', title: 'Parc & Carto 200 m', alt: 'Parc de logements et carroyage statistique 200 m — InCitta', desc: 'Structure du parc et statuts d\'occupation : cartographie statistique au carreau 200 m, typologie pavillonnaire et part de résidences principales.' },
+            { num: 6, label: '6. Âge bâti', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-06.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-06.png', title: 'Ancienneté du bâti', alt: 'Ancienneté et époques de construction du bâti — InCitta', desc: 'Époques de construction du bâti : quantification des logements construits avant 1945, 1946-1970, 1971-1990 et après 1990 pour le ciblage de la rénovation.' },
+            { num: 7, label: '7. Social', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-07.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-07.png', title: 'Logement social', alt: 'Logement social et équilibres de peuplement — InCitta', desc: 'Parc locatif social : 21,1 % des résidences principales, cartographie SIG carroyée 200 m de la répartition sociale et analyse de la tension d\'attribution.' },
+            { num: 8, label: '8. Vacance', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-08.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-08.png', title: 'Vacance résidentielle', alt: 'Vacance résidentielle et analyse du parc — InCitta', desc: 'Vacance du parc : analyse différenciée de la vacance de courte durée et de longue durée (> 2 ans) issue du croisement des données fiscales certifiées.' },
+            { num: 9, label: '9. Époques', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-09.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-09.png', title: 'Cartographie époques', alt: 'Cartographie comparée bâti récent vs bâti ancien — InCitta', desc: 'Cartographie comparée : confrontation spatiale des logements récents post-1990 et du bâti ancien d\'avant 1945 à la maille 200 m.' },
+            { num: 10, label: '10. Immo', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-10.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-10.png', title: 'Marché immobilier', alt: 'Marché immobilier et prix au m² — InCitta', desc: 'Marché immobilier résidentiel : prix médian au m² (maisons et appartements), historique des mutations foncières et attractivité du territoire.' },
+            { num: 11, label: '11. Énergie', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-11.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-11.png', title: 'Performance & DPE', alt: 'Performance énergétique et vulnérabilité du bâti — InCitta', desc: 'Diagnostic énergétique & précarité : part des passoires thermiques (classes F-G), vulnérabilité financière des ménages face aux coûts énergétiques.' },
+            { num: 12, label: '12. Stratégie', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-12.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-12.png', title: 'Orientations stratégiques', alt: 'Orientations stratégiques et programmation de l\'habitat — InCitta', desc: 'Feuille de route stratégique : 4 orientations opérationnelles prioritaires directement adossées aux constats chiffrés pour éclairer les arbitrages d\'élus.' },
+            { num: 13, label: '13. InCitta', webp: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-13.webp', png: 'assets/Ex_observatoire/rapports/diagnostic-logement/page-13.png', title: 'Méthode InCitta', alt: 'Présentation de l\'Observatoire Territorial InCitta', desc: 'À propos de l\'Observatoire InCitta : intégration automatisée de 150 sources officielles et production instantanée de diagnostics de précision sous 48h.' }
+          ]
         },
-        {
-          num: 2,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-02.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-02.png',
-          title: 'Sommaire du rapport',
-          badge: 'Feuille 2/13 : Sommaire',
-          alt: 'Sommaire du diagnostic territorial en 10 chapitres — InCitta',
-          desc: 'Sommaire structuré en 10 chapitres : cadrage, statuts d\'occupation, parc social, vacance résidentielle, dynamique des prix immobiliers, vulnérabilité énergétique et orientations.'
-        },
-        {
-          num: 3,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-03.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-03.png',
-          title: 'Synthèse exécutive',
-          badge: 'Feuille 3/13 : Synthèse',
-          alt: 'Synthèse exécutive et repères territoriaux — InCitta',
-          desc: 'Repères territoriaux : profil d\'armature, populations de référence, enjeux prioritaires et comparaisons chiffrées.'
-        },
-        {
-          num: 4,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-04.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-04.png',
-          title: 'Cadrage méthodologique',
-          badge: 'Feuille 4/13 : Cadrage',
-          alt: 'Cadrage méthodologique et périmètre d\'observation — InCitta',
-          desc: 'Méthodologie & périmètre : explicitation des sources souveraines certifiées, effectifs du carroyage statistique fin et règles de neutralité d\'observation.'
-        },
-        {
-          num: 5,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-05.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-05.png',
-          title: 'Parc & Carto 200 m',
-          badge: 'Feuille 5/13 : Parc & SIG',
-          alt: 'Parc de logements et carroyage statistique 200 m — InCitta',
-          desc: 'Structure du parc et statuts d\'occupation : cartographie statistique au carreau 200 m, typologie pavillonnaire et part de résidences principales.'
-        },
-        {
-          num: 6,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-06.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-06.png',
-          title: 'Ancienneté du bâti',
-          badge: 'Feuille 6/13 : Ancienneté',
-          alt: 'Ancienneté et époques de construction du bâti — InCitta',
-          desc: 'Époques de construction du bâti : quantification des logements construits avant 1945, 1946-1970, 1971-1990 et après 1990 pour le ciblage de la rénovation.'
-        },
-        {
-          num: 7,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-07.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-07.png',
-          title: 'Logement social',
-          badge: 'Feuille 7/13 : Log. social',
-          alt: 'Logement social et équilibres de peuplement — InCitta',
-          desc: 'Parc locatif social : 21,1 % des résidences principales, cartographie SIG carroyée 200 m de la répartition sociale et analyse de la tension d\'attribution.'
-        },
-        {
-          num: 8,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-08.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-08.png',
-          title: 'Vacance résidentielle',
-          badge: 'Feuille 8/13 : Vacance',
-          alt: 'Vacance résidentielle et analyse du parc — InCitta',
-          desc: 'Vacance du parc : analyse différenciée de la vacance de courte durée et de longue durée (> 2 ans) issue du croisement des données fiscales certifiées.'
-        },
-        {
-          num: 9,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-09.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-09.png',
-          title: 'Cartographie époques',
-          badge: 'Feuille 9/13 : Époques',
-          alt: 'Cartographie comparée bâti récent vs bâti ancien — InCitta',
-          desc: 'Cartographie comparée : confrontation spatiale des logements récents post-1990 et du bâti ancien d\'avant 1945 à la maille 200 m.'
-        },
-        {
-          num: 10,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-10.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-10.png',
-          title: 'Marché immobilier',
-          badge: 'Feuille 10/13 : Marché immobilier',
-          alt: 'Marché immobilier et prix au m² — InCitta',
-          desc: 'Marché immobilier résidentiel : prix médian au m² (maisons et appartements), historique des mutations foncières et attractivité du territoire.'
-        },
-        {
-          num: 11,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-11.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-11.png',
-          title: 'Performance & DPE',
-          badge: 'Feuille 11/13 : Énergie',
-          alt: 'Performance énergétique et vulnérabilité du bâti — InCitta',
-          desc: 'Diagnostic énergétique & précarité : part des passoires thermiques (classes F-G), vulnérabilité financière des ménages face aux coûts énergétiques.'
-        },
-        {
-          num: 12,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-12.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-12.png',
-          title: 'Orientations stratégiques',
-          badge: 'Feuille 12/13 : Stratégie',
-          alt: 'Orientations stratégiques et programmation de l\'habitat — InCitta',
-          desc: 'Feuille de route stratégique : 4 orientations opérationnelles prioritaires directement adossées aux constats chiffrés pour éclairer les arbitrages d\'élus.'
-        },
-        {
-          num: 13,
-          webp: 'assets/Ex_observatoire/rapport_pages/page-13.webp',
-          png: 'assets/Ex_observatoire/rapport_pages/page-13.png',
-          title: 'Méthode InCitta',
-          badge: 'Feuille 13/13 : InCitta',
-          alt: 'Présentation de l\'Observatoire Territorial InCitta',
-          desc: 'À propos de l\'Observatoire InCitta : intégration automatisée de 150 sources officielles et production instantanée de diagnostics de précision sous 48h.'
+        abs: {
+          title: 'Analyse des Besoins Sociaux (ABS) — Exemple communal',
+          pdfUrl: 'assets/Ex_observatoire/rapports/abs/ABS_InCitta.pdf',
+          downloadLabel: 'Télécharger l\'ABS complète (PDF)',
+          pages: [
+            { num: 1, label: '1. Titre', webp: 'assets/Ex_observatoire/rapports/abs/page-01.webp', png: 'assets/Ex_observatoire/rapports/abs/page-01.png', title: 'Couverture ABS', alt: 'Couverture de l\'Analyse des besoins sociaux — InCitta', desc: 'Analyse des besoins sociaux (ABS) pour une commune de l\'Aisne : diagnostic social complet croisant données démographiques, sociales, de santé et d\'accès aux droits.' },
+            { num: 2, label: '2. Sommaire', webp: 'assets/Ex_observatoire/rapports/abs/page-02.webp', png: 'assets/Ex_observatoire/rapports/abs/page-02.png', title: 'Sommaire ABS', alt: 'Sommaire de l\'Analyse des besoins sociaux en 7 chapitres — InCitta', desc: 'Sommaire en 7 chapitres : cadrage méthodologique, démographie, enfance & jeunesse, personnes âgées, précarité & logement, santé & accès aux services, orientations et fiches-actions.' },
+            { num: 3, label: '3. Cadrage', webp: 'assets/Ex_observatoire/rapports/abs/page-03.webp', png: 'assets/Ex_observatoire/rapports/abs/page-03.png', title: 'Cadrage méthodologique', alt: 'Cadrage méthodologique et périmètre ABS — InCitta', desc: 'Démarche et périmètre : cadre réglementaire de l\'ABS, échelles de comparaison intercommunale et sources publiques mobilisées.' },
+            { num: 4, label: '4. Démographie', webp: 'assets/Ex_observatoire/rapports/abs/page-04.webp', png: 'assets/Ex_observatoire/rapports/abs/page-04.png', title: 'Démographie & ménages', alt: 'Dynamique de population et structure des ménages — InCitta', desc: 'Dynamique de population : évolution démographique, structure par âge et composition des ménages.' },
+            { num: 5, label: '5. Ménages SIG', webp: 'assets/Ex_observatoire/rapports/abs/page-05.webp', png: 'assets/Ex_observatoire/rapports/abs/page-05.png', title: 'Carto ménages 200 m', alt: 'Cartographie des personnes seules et familles monoparentales au carreau 200 m — InCitta', desc: 'Cartographie Filosofi carroyée 200 m : part des ménages d\'une personne et taux de familles monoparentales.' },
+            { num: 6, label: '6. Jeunesse', webp: 'assets/Ex_observatoire/rapports/abs/page-06.webp', png: 'assets/Ex_observatoire/rapports/abs/page-06.png', title: 'Enfance, jeunesse & insertion', alt: 'Petite enfance, enfance et insertion des jeunes — InCitta', desc: 'Petite enfance, enfance et jeunesse : accueil des tout-petits, scolarisation, parcours des jeunes et insertion.' },
+            { num: 7, label: '7. Seniors', webp: 'assets/Ex_observatoire/rapports/abs/page-07.webp', png: 'assets/Ex_observatoire/rapports/abs/page-07.png', title: 'Personnes âgées & autonomie', alt: 'Poids des seniors et vieillissement de la population — InCitta', desc: 'Poids des seniors : vieillissement de la population, isolement des aînés et anticipation de la perte d\'autonomie.' },
+            { num: 8, label: '8. Autonomie', webp: 'assets/Ex_observatoire/rapports/abs/page-08.webp', png: 'assets/Ex_observatoire/rapports/abs/page-08.png', title: 'Hébergement & domicile', alt: 'Hébergement et services à domicile pour seniors — InCitta', desc: 'Hébergement et services à domicile : couverture des équipements d\'accueil, soins à domicile et besoins de maintien à domicile.' },
+            { num: 9, label: '9. Précarité', webp: 'assets/Ex_observatoire/rapports/abs/page-09.webp', png: 'assets/Ex_observatoire/rapports/abs/page-09.png', title: 'Précarité, logement & mobilité', alt: 'Niveau de vie et pauvreté monétaire — InCitta', desc: 'Niveau de vie et pauvreté monétaire : médiane des revenus, taux de pauvreté et fragilités sociales.' },
+            { num: 10, label: '10. Logement', webp: 'assets/Ex_observatoire/rapports/abs/page-10.webp', png: 'assets/Ex_observatoire/rapports/abs/page-10.png', title: 'Logement social & vulnérabilité', alt: 'Logement social et vulnérabilité résidentielle — InCitta', desc: 'Logement social et vulnérabilité résidentielle : part de parc social, ancienneté du bâti et précarité énergétique.' },
+            { num: 11, label: '11. Santé', webp: 'assets/Ex_observatoire/rapports/abs/page-11.webp', png: 'assets/Ex_observatoire/rapports/abs/page-11.png', title: 'Santé & offre de soins', alt: 'Offre de soins de premier recours — InCitta', desc: 'Offre de soins de premier recours : densité médicale, professionnels de santé et accessibilité territoriale.' },
+            { num: 12, label: '12. ALD', webp: 'assets/Ex_observatoire/rapports/abs/page-12.webp', png: 'assets/Ex_observatoire/rapports/abs/page-12.png', title: 'Santé de la population', alt: 'Santé de la population et affections de longue durée — InCitta', desc: 'Santé de la population : cadrage des affections de longue durée (ALD) et enjeux de prévention.' },
+            { num: 13, label: '13. Proximité', webp: 'assets/Ex_observatoire/rapports/abs/page-13.webp', png: 'assets/Ex_observatoire/rapports/abs/page-13.png', title: 'Accès aux droits & soins', alt: 'Accès de proximité aux droits, transports et soins — InCitta', desc: 'Accès de proximité aux droits et aux soins : superposition cartographique des populations, arrêts de transport et services.' },
+            { num: 14, label: '14. AFOM', webp: 'assets/Ex_observatoire/rapports/abs/page-14.webp', png: 'assets/Ex_observatoire/rapports/abs/page-14.png', title: 'Synthèse & matrice AFOM', alt: 'Matrice AFOM de l\'Analyse des besoins sociaux — InCitta', desc: 'Synthèse stratégique et matrice AFOM : atouts, faiblesses, opportunités et menaces du territoire.' },
+            { num: 15, label: '15. Actions', webp: 'assets/Ex_observatoire/rapports/abs/page-15.webp', png: 'assets/Ex_observatoire/rapports/abs/page-15.png', title: 'Fiches-actions (1)', alt: 'Fiches-actions opérationnelles ABS — InCitta', desc: 'Fiches-actions opérationnelles déclinant la matrice AFOM pour nourrir la convention territoriale et les priorités du CCAS.' },
+            { num: 16, label: '16. Enfance', webp: 'assets/Ex_observatoire/rapports/abs/page-16.webp', png: 'assets/Ex_observatoire/rapports/abs/page-16.png', title: 'Fiche-action Petite enfance', alt: 'Fiche-action petite enfance, parentalité et modes de garde — InCitta', desc: 'Fiche-action n° 2 : petite enfance, soutien à la parentalité et développement de modes de garde adaptés.' },
+            { num: 17, label: '17. Énergie', webp: 'assets/Ex_observatoire/rapports/abs/page-17.webp', png: 'assets/Ex_observatoire/rapports/abs/page-17.png', title: 'Fiche-action Précarité énergétique', alt: 'Fiche-action précarité énergétique et mal-logement — InCitta', desc: 'Fiche-action n° 4 : repérage de la précarité énergétique, lutte contre le mal-logement et mobilisation préventive du FSL.' },
+            { num: 18, label: '18. Sources', webp: 'assets/Ex_observatoire/rapports/abs/page-18.webp', png: 'assets/Ex_observatoire/rapports/abs/page-18.png', title: 'Annexes — Sources & millésimes', alt: 'Annexes sources et millésimes ABS — InCitta', desc: 'Annexes méthodologiques : inventaire exhaustif des sources publiques, producteurs de données et millésimes utilisés.' },
+            { num: 19, label: '19. Limites', webp: 'assets/Ex_observatoire/rapports/abs/page-19.webp', png: 'assets/Ex_observatoire/rapports/abs/page-19.png', title: 'Annexes — Limites & méthode', alt: 'Limites méthodologiques et données complémentaires — InCitta', desc: 'Limites méthodologiques et données non intégrées : transparence sur le périmètre open data et les données internes mobilisables en mission.' }
+          ]
         }
-      ];
+      };
 
+      let currentReportKey = 'logement';
+      let obsPdfPages = obsReports[currentReportKey].pages;
       let currentPdfIndex = 0;
       const pdfImg = document.getElementById('obsPdfCurrentImg');
+      const pdfTitle = document.getElementById('obsPdfTitle');
       const pdfDesc = document.getElementById('obsPdfDesc');
-      const pdfThumbs = document.querySelectorAll('.obs-pdf-thumb');
+      const pdfThumbsContainer = document.getElementById('obsPdfThumbsContainer');
+      const reportTabs = document.querySelectorAll('.obs-report-tab');
       const pdfPrevBtn = document.getElementById('obsPdfPrev');
       const pdfNextBtn = document.getElementById('obsPdfNext');
-      const pdfThumbsContainer = document.getElementById('obsPdfThumbsContainer');
+
+      function renderPdfThumbs() {
+        if (!pdfThumbsContainer) return;
+        pdfThumbsContainer.innerHTML = obsPdfPages.map((p, i) => `
+          <button type="button" class="obs-map-thumb obs-pdf-thumb${i === currentPdfIndex ? ' is-active' : ''}" data-index="${i}" role="tab" aria-selected="${i === currentPdfIndex ? 'true' : 'false'}" aria-label="Feuille ${p.num} : ${p.title}">
+            <img src="${p.webp}" alt="Vignette P.${p.num}" width="28" height="40" loading="lazy">
+            <span class="obs-map-thumb__label">${p.label}</span>
+          </button>
+        `).join('');
+
+        pdfThumbsContainer.querySelectorAll('.obs-pdf-thumb').forEach((thumb) => {
+          thumb.addEventListener('click', () => {
+            const idx = parseInt(thumb.getAttribute('data-index'), 10);
+            if (!isNaN(idx)) setPdfPage(idx);
+          });
+        });
+      }
+
+      function setReport(key) {
+        if (!obsReports[key]) return;
+        currentReportKey = key;
+        obsPdfPages = obsReports[key].pages;
+        reportTabs.forEach((tab) => {
+          const active = tab.getAttribute('data-report') === key;
+          tab.classList.toggle('is-active', active);
+          tab.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        if (pdfTitle) pdfTitle.textContent = obsReports[key].title;
+        currentPdfIndex = 0;
+        renderPdfThumbs();
+        setPdfPage(0);
+      }
 
       function setPdfPage(idx) {
         if (idx < 0) idx = obsPdfPages.length - 1;
@@ -1339,28 +1300,33 @@
             pdfImg.style.opacity = '1';
           }, 100);
         }
-        if (pdfDesc) pdfDesc.innerHTML = `${data.desc} <em>(${idx + 1}/13)</em>`;
+        if (pdfDesc) pdfDesc.innerHTML = `${data.desc} <em>(${idx + 1}/${obsPdfPages.length})</em>`;
 
-        pdfThumbs.forEach((thumb, i) => {
-          const isActive = (i === idx);
-          thumb.classList.toggle('is-active', isActive);
-          thumb.setAttribute('aria-selected', isActive ? 'true' : 'false');
-          if (isActive && pdfThumbsContainer) {
-            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          }
-        });
+        if (pdfThumbsContainer) {
+          const thumbs = pdfThumbsContainer.querySelectorAll('.obs-pdf-thumb');
+          thumbs.forEach((thumb, i) => {
+            const isActive = (i === idx);
+            thumb.classList.toggle('is-active', isActive);
+            thumb.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            if (isActive) {
+              thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+          });
+        }
 
         if (typeof updateLightbox === 'function' && lightboxModal && lightboxModal.classList.contains('is-open') && lightboxMode === 'pdf') {
           updateLightbox();
         }
       }
 
-      pdfThumbs.forEach((thumb) => {
-        thumb.addEventListener('click', () => {
-          const idx = parseInt(thumb.getAttribute('data-index'), 10);
-          if (!isNaN(idx)) setPdfPage(idx);
+      reportTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const key = tab.getAttribute('data-report');
+          if (key) setReport(key);
         });
       });
+
+      renderPdfThumbs();
 
       if (pdfPrevBtn) pdfPrevBtn.addEventListener('click', () => setPdfPage(currentPdfIndex - 1));
       if (pdfNextBtn) pdfNextBtn.addEventListener('click', () => setPdfPage(currentPdfIndex + 1));
@@ -1467,12 +1433,12 @@
         if (lightboxMode === 'map') {
           const data = obsMaps[currentMapIndex];
           if (lightboxCounter) lightboxCounter.textContent = `Carte ${currentMapIndex + 1} / ${obsMaps.length}`;
-          lightboxImg.src = data.png;
+          lightboxImg.src = data.webp;
           lightboxImg.alt = data.alt;
         } else {
           const data = obsPdfPages[currentPdfIndex];
           if (lightboxCounter) lightboxCounter.textContent = `Feuille ${data.num} / ${obsPdfPages.length}`;
-          lightboxImg.src = data.png;
+          lightboxImg.src = data.webp;
           lightboxImg.alt = data.alt;
         }
       }
